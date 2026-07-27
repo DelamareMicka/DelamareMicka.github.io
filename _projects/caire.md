@@ -1,12 +1,14 @@
 ---
 layout: page
 title: CAIRE
-description: "[À COMPLÉTER — résumé en une phrase du projet CAIRE]"
+description: "Projet lauréat de l'appel à manifestation d'intérêt CMA (France 2030)."
 importance: 1
 category: research
 related_publications: false
 ---
 
-**Référence :** ANR-23-CMAS-0031
+**Référence :** ANR-23-CMAS-0031 (France 2030, lauréat de l'appel à manifestation d'intérêt CMA)
 
-[À COMPLÉTER — objectifs du projet, rôle dans le projet, partenaires, financement, durée, résultats/livrables]
+**Rôle :** Coordinateur scientifique et expert (depuis octobre 2024) ; concepteur et expert pédagogique (juin 2023 – octobre 2024).
+
+[À COMPLÉTER — objectifs détaillés du projet, partenaires, montant du financement, durée, résultats/livrables]

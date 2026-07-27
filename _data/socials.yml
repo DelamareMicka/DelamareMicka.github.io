@@ -1,8 +1,8 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-cv_pdf: /assets/pdf/example_pdf.pdf # [À COMPLÉTER] remplacer par le vrai PDF de CV (voir MIGRATION.md)
-# email: # [À COMPLÉTER] e-mail institutionnel — décommenter et renseigner (ex. mickael.delamare@cesi.fr)
+cv_pdf: /assets/pdf/CV_Delamare_Mickael.pdf
+email: mdelamare@cesi.fr
 github_username: DelamareMicka
 rss_icon: true # comment this line to hide the RSS icon
 # orcid_id: # [À COMPLÉTER] ex. 0000-0000-0000-0000

@@ -4,19 +4,17 @@
 % ---------------------------------------------------------------------------
 % Bibliographie — rendue automatiquement par jekyll-scholar sur /publications/
 %
-% Les 3 entrées ci-dessous sont des GABARITS D'EXEMPLE (une revue, une
-% conférence, un preprint), pas de vraies publications. Le titre, les
-% auteur·rice·s, la revue/conférence, le DOI (10.1000/xxxxx est le préfixe
-% DOI réservé à la documentation par l'IANA — il ne pointe vers rien) et
-% l'ID arXiv sont des placeholders explicites [À COMPLÉTER] à remplacer par
-% de vraies références.
+% Les entrées ci-dessous sont les vraies publications listées dans le CV
+% (2 articles publiés, 3 en cours d'évaluation). Les articles en cours de
+% révision (type "unpublished") n'ont pas encore de volume/pages/doi : leur
+% statut de soumission est indiqué dans le champ `note`.
 %
 % Convention pour ajouter une nouvelle publication :
 % 1. Choisir le type BibTeX adapté : type "article" (revue), type
-%    "inproceedings" (conférence/actes), type "misc" ou "unpublished"
-%    (preprint/working paper).
-% 2. Clé de citation : nomAnnéeMotClé (ex. delamare2025bai), en minuscules,
-%    sans espaces ni accents.
+%    "inproceedings" (conférence/actes), type "unpublished" ou "misc"
+%    (preprint/working paper/soumission en cours).
+% 2. Clé de citation : delamareAnnéeMotClé, en minuscules, sans espaces ni
+%    accents (ex. delamare2026apedmetric).
 % 3. Champs qui activent les badges sur la fiche publication :
 %      - doi:      ajoute un badge DOI + lien direct
 %      - pdf:      nom de fichier dans assets/pdf/ (ou URL complète)
@@ -28,47 +26,62 @@
 %        supplémentaires (voir README.md du thème pour la liste complète)
 % 4. Champ `abbr` : court insigne affiché à gauche de l'entrée (nom de la
 %    revue/conférence en abrégé).
-% 5. Pour un preprint qui devient ensuite un article publié, garder la même
-%    clé et simplement ajouter/mettre à jour les champs (journal, doi, etc.)
-%    plutôt que de dupliquer l'entrée.
+% 5. Quand un article "unpublished" est accepté : passer son type en
+%    "article", ajouter journal/volume/pages/doi, retirer `note`, en gardant
+%    la même clé de citation plutôt que de dupliquer l'entrée.
 % ---------------------------------------------------------------------------
 
-@article{delamareXXXXjournal,
-  abbr      = {[À COMPLÉTER]},
-  title     = {[À COMPLÉTER — titre de l'article de revue]},
-  author    = {Delamare, Mickaël and Coauteur, Prenom},
-  journal   = {[À COMPLÉTER — nom de la revue]},
-  volume    = {[À COMPLÉTER]},
-  number    = {[À COMPLÉTER]},
-  pages     = {[À COMPLÉTER]},
-  year      = {20XX},
-  doi       = {10.1000/xxxxx},
-  pdf       = {example_pdf.pdf},
-  abstract  = {[À COMPLÉTER — résumé de l'article]},
+@article{delamare2020uwbeval,
+  abbr      = {Sci},
+  title     = {Static and Dynamic Evaluation of an {UWB} Localization System for Industrial Applications},
+  author    = {Delamare, M. and Boutteau, R. and Savatier, X. and Iriart, N.},
+  journal   = {Sci},
+  volume    = {2},
+  number    = {2},
+  pages     = {239},
+  year      = {2020},
+  month     = {April},
+  publisher = {MDPI},
+  doi       = {10.3390/sci2020023},
   selected  = {true}
 }
 
-@inproceedings{delamareXXXXconference,
-  abbr      = {[À COMPLÉTER]},
-  title     = {[À COMPLÉTER — titre de l'article de conférence]},
-  author    = {Delamare, Mickaël and Coauteur, Prenom},
-  booktitle = {[À COMPLÉTER — nom de la conférence, ex. International Conference on Artificial Intelligence in Education (AIED)]},
-  pages     = {[À COMPLÉTER]},
-  year      = {20XX},
-  doi       = {10.1000/xxxxx},
-  pdf       = {example_pdf.pdf},
-  abstract  = {[À COMPLÉTER — résumé de l'article]},
+@article{delamare2020peopleflow,
+  abbr      = {Sensors},
+  title     = {A New Dataset of People Flow in an Industrial Site with {UWB} and Motion Capture Systems},
+  author    = {Delamare, M. and Duval, F. and Boutteau, R.},
+  journal   = {Sensors},
+  volume    = {20},
+  number    = {16},
+  pages     = {4511},
+  year      = {2020},
+  doi       = {10.3390/s20164511},
   selected  = {true}
 }
 
-@misc{delamareXXXXpreprint,
-  abbr      = {Preprint},
-  title     = {[À COMPLÉTER — titre du preprint]},
-  author    = {Delamare, Mickaël and Coauteur, Prenom},
-  year      = {20XX},
-  eprint    = {[À COMPLÉTER — ex. 2401.01234]},
-  arxiv     = {[À COMPLÉTER — ex. 2401.01234]},
-  archiveprefix = {arXiv},
-  pdf       = {example_pdf.pdf},
-  abstract  = {[À COMPLÉTER — résumé du preprint]}
+@unpublished{delamare2026alignmentgap,
+  abbr     = {IJAIED},
+  title    = {The Constructive-Alignment Gap in {AI}-in-Education: An Umbrella Review of Applications and Ethical Shifts},
+  author   = {Delamare, M. and Baudry, D.},
+  year     = {2026},
+  note     = {Soumis à International Journal of Artificial Intelligence in Education (IJAIED, Elsevier, IF 8.5, Q1), 15 mai 2026, réf. IJAIE-D-26-00438, en cours d'évaluation éditoriale. Revue umbrella PRISMA 2020, 114 études incluses ; introduit le Biggs Alignment Index (BAI).},
+  selected = {true}
+}
+
+@unpublished{delamare2026apedmetric,
+  abbr     = {IJAIED},
+  title    = {Quantifying Pedagogical Alignment with Large Language Models: The {APed} Metric and the Reductionist Drift},
+  author   = {Delamare, M. and Maillard, F. and Cruz, C.},
+  year     = {2026},
+  note     = {Soumis à International Journal of Artificial Intelligence in Education (IJAIED), 22 mai 2026, réf. IJAIE-D-26-00450, en cours d'évaluation éditoriale. Benchmark multi-modèles (10 LLM), analyse d'accord de Bland-Altman, formalisation du Reductionist Drift.},
+  selected = {true}
+}
+
+@unpublished{delamare2026capabilites,
+  abbr     = {Éducation permanente},
+  title    = {Un dispositif {IA} pour développer les capabilités critiques},
+  author   = {Delamare, M. and Lemaire, C. and Rousseau, M.},
+  year     = {2026},
+  note     = {Soumis à Éducation permanente, en cours d'évaluation en double aveugle. Étude design-based du dispositif Grand-Mère Ylla, un agent IA aux biais volontairement visibles, utilisé pour développer les capabilités critiques d'étudiants ingénieurs.},
+  selected = {true}
 }

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Enseignant-chercheur (Associate Professor), PhD — <a href="https://www.cesi.fr/recherche/lineact/" target="_blank">CESI LINEACT UR 7527</a>, HESAM Université, campus de Rouen
+subtitle: Associate Professor / Researcher, PhD — <a href="https://www.cesi.fr/recherche/lineact/" target="_blank">CESI LINEACT UR 7527</a>, HESAM Université, Saint-Étienne-du-Rouvray
 
 profile:
   align: right
@@ -10,8 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>[À COMPLÉTER — bureau]</p>
-    <p>CESI, campus de Rouen</p>
-    <p>[À COMPLÉTER — adresse]</p>
+    <p>CESI, Saint-Étienne-du-Rouvray (76)</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +26,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Enseignant-chercheur (Associate Professor) au laboratoire [CESI LINEACT UR 7527](https://www.cesi.fr/recherche/lineact/), HESAM Université, campus de Rouen. Mes travaux portent sur l'IA en éducation (AIED), la Cognitive Network Science, et l'alignement pédagogique des grands modèles de langage (LLM) — notamment l'indice BAI, la métrique APed, et le phénomène de « sycophantie pédagogique ».
+Associate Professor / Researcher (enseignant-chercheur) au laboratoire [CESI LINEACT UR 7527](https://www.cesi.fr/recherche/lineact/), HESAM Université, Saint-Étienne-du-Rouvray. Responsable des filières Informatique et Sciences du Numérique à CESI.
 
-[À COMPLÉTER — biographie détaillée : parcours, intérêts de recherche, ce qui vous a mené à ces thématiques]
+Mes recherches se situent à l'intersection de l'IA en éducation (AIED) et de la Cognitive Network Science (CNS). Initialement centrées sur la localisation en intérieur et la reconnaissance d'actions, elles portent aujourd'hui sur l'alignement pédagogique des IA génératives.
+
+Le problème central que j'étudie est la **sycophantie pédagogique** : le désalignement structurel entre des grands modèles de langage optimisés pour la préférence immédiate de l'utilisateur et les conditions qui produisent réellement un apprentissage durable (alignement constructif de Biggs, difficultés désirables, échec productif de Kapur). Ce travail articule trois contributions complémentaires : (i) un cadre normatif combinant l'alignement constructif et l'approche par les capabilités, opérationnalisé via le **Biggs Alignment Index (BAI)** ; (ii) un instrument de mesure, **APed**, qui quantifie l'alignement pédagogique des interactions de tutorat générées par IA ; et (iii) un mécanisme correctif temps réel, l'architecture neuro-symbolique en boucle fermée **PALOMA/DANA** pour les tuteurs LLM.
+
+Je suis coordinateur scientifique de l'initiative **CAIRE** (ANR-23-CMAS-0031, France 2030).
 
 Retrouvez mes publications sur la [page dédiée](/publications/), mes projets de recherche sur la [page projets](/projects/), et mes activités d'enseignement sur la [page enseignement](/teaching/).
