@@ -20,9 +20,6 @@ Vérifié visuellement (rendu PNG des pages 1 et 3) avant intégration.
 
 ## 1. À faire en priorité
 
-- **Photo de profil** — `assets/img/prof_pic.jpg` est encore l'image
-  générique du thème. La remplacer par une vraie photo (même nom de fichier,
-  ou mettre à jour `profile.image` dans `_pages/about.md`).
 - **Liens restants** — `_data/socials.yml` : `email` et `github_username`
   sont renseignés (réels). `orcid_id`, `scholar_userid`, `hal_id`,
   `linkedin_username` restent commentés — à décommenter et renseigner si
