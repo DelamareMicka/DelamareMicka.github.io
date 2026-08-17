@@ -9,9 +9,11 @@ semesters:
   - code: '1.1'
     num: 1
     title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    title_en: Define the need to address an industrial issue in an Artificial Intelligence project
     ects: 10
     heures: 126
     themes: Ce programme intègre la logique formelle et l'algèbre booléenne pour modéliser des problèmes complexes, tout en s'appuyant sur l'algèbre linéaire et l'analyse vectorielle pour le calcul scientifique. Il combine la maîtrise théorique des fonctions et des intégrales avec l'implémentation rigoureuse de structures de données avancées (arbres, graphes) en C et Python. L'objectif est de concevoir des solutions optimisées en évaluant précisément la complexité algorithmique et la gestion mémoire. Cette synergie entre mathématiques fondamentales et informatique technique permet de résoudre des problématiques d'ingénierie logicielle de haut niveau.
+    themes_en: 'This programme brings together formal logic and Boolean algebra to model complex problems, while drawing on linear algebra and vector analysis for scientific computation. It combines a theoretical mastery of functions and integrals with the rigorous implementation of advanced data structures (trees, graphs) in C and Python. The aim is to design optimised solutions by precisely assessing algorithmic complexity and memory management. This synergy between fundamental mathematics and technical computer science makes it possible to solve high-level software engineering problems.'
     competences:
     - Analyser le besoin du client, le contexte économique, l'environnement, la technicité et les métiers de l'entreprise afin d'appréhender le périmètre du projet
     - Identifier et analyser les flux d'information et les processus et activités de l'entreprise afin de comprendre le schéma d'organisation métier
@@ -28,29 +30,56 @@ semesters:
     - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
     - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
     - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    competences_en:
+    - Analyse the client's need, the economic context, the environment, the technical aspects and the business lines of the company in order to grasp the scope of the project
+    - Identify and analyse information flows and the company's processes and activities in order to understand the business organisation model
+    - Use scientific knowledge to verify and/or identify the causes of a malfunction
+    - Use statistics to optimise the AI solution
+    - Establish a diagnosis in order to find the reasons for a malfunction
+    - Identify the various solutions/technologies likely to meet the specifications
+    - Compare existing solutions with their suitability to the need in order to contribute to technical choices
+    - Analyse and assess the risks (security) of an AI in order to help resolve them
+    - Research technical solutions and carry out technology watch to address the AI problem
+    - Compare solutions that meet the needs in order to contribute to technical choices
+    - Build and present all the elements enabling decision-making
+    - Master the different classes of algorithms (ML, DL, etc.) in order to model massive data
+    - Implement methods for collecting, storing, processing and visualising data
+    - Grasp cloud architecture concepts (AWS, Azure, etc.) and learning tools (Keras, TF, etc.)
+    - Conduct technology watch in order to identify new applications and developments
     ecues:
     - code: 1.1.1
       title: Calcul des Prédicats & Logique Formelle
+      title_en: Predicate Calculus & Formal Logic
       heures: 35
       coefficient: 1
       prerequis: Programme de terminale
+      prerequis_en: French final-year (terminale) syllabus
       objectifs:
       - Base fondamentale du raisonnement logique utilisé par les ordinateurs et les Intelligences Artificielles, elle consiste en l’appréhension du concept de logique sans interprétation du contenu des propositions.
       - L’objectif est de mettre en avant la différence entre une logique humaine et celle d’une machine afin de mieux comprendre les raisonnements des IA.
+      objectifs_en:
+      - 'A fundamental basis of the logical reasoning used by computers and Artificial Intelligence systems, this ECUE covers grasping the concept of logic without interpreting the content of the propositions themselves.'
+      - The aim is to highlight the difference between human logic and machine logic in order to better understand the reasoning of AI systems.
       prereq_matches: []
     - code: 1.1.2
       title: Représentation Binaire et Algèbre Booléenne
+      title_en: Binary Representation and Boolean Algebra
       heures: 14
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - Base fondamentale de l'informatique au sens large, la logique de Boole permet de réaliser l'ensemble des tâches des ordinateurs. En utilisant des règles simples, il est possible de construire des expressions logiques complexes et les simplifier pour obtenir des résultats souhaités. La représentation des informations et à fortiori des nombres est à la racine de l’efficacité algorithmique.
+      objectifs_en:
+      - A fundamental basis of computer science in the broad sense, Boolean logic underpins every task performed by computers. Using simple rules, it is possible to build complex logical expressions and simplify them to obtain the desired results. The representation of information, and by extension of numbers, lies at the root of algorithmic efficiency.
       prereq_matches: []
     - code: 1.1.3
       title: Algèbre Linéaire
+      title_en: Linear Algebra
       heures: 35
       coefficient: 1
       prerequis: Programme de terminal
+      prerequis_en: French final-year (terminale) syllabus
       objectifs:
       - L'algèbre est utilisée pour résoudre des équations linéaires et pour manipuler des expressions mathématiques, ce qui est important pour calculer les valeurs de résistance, de courant, de tension et d'autres paramètres électriques.
       - 'Trigonométrie : La trigonométrie est utilisée pour étudier les ondes sinusoïdales, qui sont omniprésentes dans les circuits électriques. Les fonctions trigonométriques sont utilisées pour décrire les formes d''onde, les fréquences, les phases et les amplitudes.'
@@ -58,30 +87,48 @@ semesters:
       - 'Analyse de Fourier : L''analyse de Fourier est utilisée pour décomposer les signaux en différentes fréquences, ce qui est utile pour comprendre les circuits qui utilisent des signaux à bande étroite, tels que les radios et les télécommunications.'
       - 'Statistiques : Les statistiques sont utilisées pour étudier les erreurs de mesure et pour déterminer la précision et la fiabilité des mesures de courant, de tension et d''autres paramètres électriques.'
       - 'Géométrie : La géométrie est utilisée pour décrire la géométrie des composants électriques tels que les résistances, les condensateurs et les inductances, et pour calculer leur capacitance, leur inductance et leur résistance.'
+      objectifs_en:
+      - Algebra is used to solve linear equations and to manipulate mathematical expressions, which is important for computing resistance, current, voltage and other electrical parameters.
+      - 'Trigonometry: Trigonometry is used to study sinusoidal waves, which are ubiquitous in electrical circuits. Trigonometric functions are used to describe waveforms, frequencies, phases and amplitudes.'
+      - 'Differential and integral calculus: Differential and integral calculus is used to study changes in voltage and current over time, which is important for understanding alternating-current electrical circuits.'
+      - 'Fourier analysis: Fourier analysis is used to decompose signals into different frequencies, which is useful for understanding circuits that use narrowband signals, such as radios and telecommunications.'
+      - 'Statistics: Statistics is used to study measurement errors and to determine the precision and reliability of current, voltage and other electrical parameter measurements.'
+      - 'Geometry: Geometry is used to describe the geometry of electrical components such as resistors, capacitors and inductors, and to calculate their capacitance, inductance and resistance.'
       prereq_matches: []
     - code: 1.1.4
       title: Analyse de Fonctions
+      title_en: Function Analysis
       heures: 28
       coefficient: 1
       prerequis: Maîtrise des concepts de base du calcul différentiel et intégral, une compréhension des fonctions de plusieurs variables, ainsi qu'une familiarité avec les notions de limites et de continuité
+      prerequis_en: Mastery of the basic concepts of differential and integral calculus, an understanding of functions of several variables, and familiarity with the notions of limits and continuity
       objectifs:
       - Fournir aux étudiants une compréhension approfondie des concepts fondamentaux de l'analyse des fonctions, allant des notions de dérivées et de limites à des applications avancées telles que les intégrales doubles et les équations aux dérivées partielles.
+      objectifs_en:
+      - Provide students with an in-depth understanding of the fundamental concepts of function analysis, ranging from derivatives and limits to advanced applications such as double integrals and partial differential equations.
       prereq_matches: []
     - code: 1.1.5
       title: Structures de Données et Complexité
+      title_en: Data Structures and Complexity
       heures: 14
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Utiliser les structures de données optimisées et savoir sur quoi elles reposent
       - Représenter des données dans une structure optimisée
+      objectifs_en:
+      - Use optimised data structures and understand what they are based on
+      - Represent data within an optimised structure
       prereq_matches: []
   - code: '1.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
+    title_en: Design the AI solution within the overall architecture
     ects: 5
     heures: 56
     themes: 'Ce programme développe une double expertise : la maîtrise de Python pour le calcul scientifique et la data science (Pandas, Matplotlib), et la rigueur du langage C pour la gestion mémoire (pointeurs, allocation dynamique) et la compilation modulaire. Il lie ces pratiques à une solide base en algorithmique, permettant de concevoir, documenter et analyser la complexité spatio-temporelle de solutions optimales (tris avancés, parcours DFS/BFS). L''accent est mis sur la modularité et le choix des structures de données adaptées pour résoudre des problèmes d''ingénierie logicielle complexes. Cette approche polyvalente garantit une compréhension profonde, du script de haut niveau à l''optimisation système.'
+    themes_en: 'This programme develops a dual expertise: mastery of Python for scientific computing and data science (Pandas, Matplotlib), and the rigour of the C language for memory management (pointers, dynamic allocation) and modular compilation. It links these practices to a solid grounding in algorithmics, enabling students to design, document and analyse the time and space complexity of optimal solutions (advanced sorting, DFS/BFS traversal). The emphasis is on modularity and the choice of data structures suited to solving complex software engineering problems. This versatile approach guarantees an in-depth understanding, from high-level scripting to system-level optimisation.'
     competences:
     - Identifier les algos/protocoles pour une collecte efficace des données
     - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
@@ -99,47 +146,87 @@ semesters:
     - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
     - Mettre en œuvre la solution pour répondre aux besoins
     - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    competences_en:
+    - Identify the algorithms/protocols for effective data collection
+    - Identify the need for data preprocessing in order to integrate it into the AI solution
+    - Select data sources in order to model and map them
+    - Identify and use performance indicators to justify the chosen solution
+    - Develop dashboards incorporating business data for decision-making
+    - Quantify data computing and storage capacity needs
+    - Identify the resources available within the information system
+    - Grasp the ins and outs of the AI solution
+    - Define the steps of an AI process
+    - Identify stakeholders in order to understand the full range of issues associated with the projects
+    - Identify the IT infrastructure required within the company
+    - Identify and set up performance indicators in order to choose a suitable AI model
+    - Handle algorithms on several platforms using different languages
+    - Identify and analyse the appropriate technologies to help with decision-making
+    - Implement the solution to meet the needs
+    - Test and validate the AI solution based on performance indicators
     ecues:
     - code: 1.2.1
       title: Bases de la Programmation avec Python
+      title_en: Fundamentals of Programming with Python
       heures: 14
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - Comprendre les fondements de la programmation et les spécificités du langage Python inclut la comparaison succincte avec d’autres langages, la notion d’environnement de développement, le paradigme impératif
       - Manipuler les types de données fondamentaux et les structures de contrôle en Python (variables, types de base, structures conditionnelles, boucles, fonctions, récursivité)
       - Utiliser les principales structures de données et modules de la bibliothèque standard (listes, dictionnaires, ensembles, tuples, itérateurs, fichiers, modules comme math, os, datetime)
       - Écrire et structurer des scripts Python pour résoudre des problèmes simples (décomposition en fonctions, lecture/écriture de fichiers, traitement de données, modularité du code)
       - Découvrir et exploiter les bibliothèques scientifiques de base de Python (initiation à numpy, pandas, matplotlib, en lien avec des cas d’usage en data science ou IA)
+      objectifs_en:
+      - Understand the fundamentals of programming and the specifics of the Python language, including a brief comparison with other languages, the notion of a development environment, and the imperative paradigm
+      - Handle fundamental data types and control structures in Python (variables, basic types, conditional structures, loops, functions, recursion)
+      - Use the main data structures and modules of the standard library (lists, dictionaries, sets, tuples, iterators, files, modules such as math, os, datetime)
+      - Write and structure Python scripts to solve simple problems (decomposition into functions, reading/writing files, data processing, code modularity)
+      - Discover and use Python's basic scientific libraries (introduction to numpy, pandas and matplotlib, in connection with data science or AI use cases)
       prereq_matches: []
     - code: 1.2.2
       title: Algorithmes et Complexité Algorithmique
+      title_en: Algorithms and Algorithmic Complexity
       heures: 14
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - Comprendre ce qu’est un algorithme et savoir le représenter sous forme de pseudocode (inclut la notion de procédure, de déterminisme, et d’implémentation abstraite)
       - Analyser les performances d’un algorithme en termes de complexité temporelle et spatiale (maîtrise des notations asymptotiques et comparaison d’algorithmes sur base de coûts calculés)
       - Mettre en œuvre et comparer des algorithmes de tri fondamentaux (selection sort, bubble sort, insertion sort, merge sort, quick sort, avec analyse des cas optimaux/pessimistes)
       - Résoudre des problèmes algorithmiques simples sur des tableaux 1D ou 2D (calculs statistiques de base, histogrammes, recherche de chemin avec DFS/BFS dans des matrices)
+      objectifs_en:
+      - Understand what an algorithm is and know how to represent it in pseudocode (including the notion of a procedure, determinism, and abstract implementation)
+      - Analyse the performance of an algorithm in terms of time and space complexity (mastery of asymptotic notation and comparison of algorithms based on computed costs)
+      - Implement and compare fundamental sorting algorithms (selection sort, bubble sort, insertion sort, merge sort, quick sort, with analysis of best-case/worst-case scenarios)
+      - Solve simple algorithmic problems on 1D or 2D arrays (basic statistical calculations, histograms, path search with DFS/BFS in matrices)
       prereq_matches: []
     - code: 1.2.3
       title: Programmation en Langage C*
+      title_en: Programming in the C Language*
       heures: 28
       coefficient: 1
       prerequis: ECUE Les bases de la programmation
+      prerequis_en: ECUE Fundamentals of Programming
       objectifs:
       - Les bases de C
       - Les pointeurs
+      - Workflows
+      objectifs_en:
+      - The basics of C
+      - Pointers
       - Workflows
       prereq_matches:
       - 1.2.1
   - code: '1.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    title_en: Develop and maintain an AI solution to optimise company performance while respecting an ethical and ecological approach
     ects: 3
     heures: 35
     themes: Cette thématique porte sur la conception et l'exploitation de bases de données relationnelles à travers la méthode Merise. Elle articule la structuration rigoureuse des données (dictionnaire, dépendances fonctionnelles, formes normales) avec la modélisation conceptuelle et logique (MCD/MLD) et leur manipulation opérationnelle via le langage SQL.
+    themes_en: This topic covers the design and use of relational databases using the Merise method. It combines the rigorous structuring of data (data dictionary, functional dependencies, normal forms) with conceptual and logical modelling (entity-relationship diagrams/logical data models) and their operational manipulation via the SQL language.
     competences:
     - Déployer la solution d'IA dans un Système d'information
     - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
@@ -147,42 +234,67 @@ semesters:
     - Mesurer et réduire les impacts environnementaux de la solution IA au regard des instances réglementaires
     - Sélectionner et formaliser les éléments de performances de la solution pour effectuer un reporting
     - Suivre la solution d'IA au sein du SI, garantir son efficacité et ses évolutions
+    competences_en:
+    - Deploy the AI solution within an information system
+    - Implement an AI solution in an existing information system using appropriate technologies and/or languages
+    - Ensure the configuration of the deployed AI solution
+    - Measure and reduce the environmental impacts of the AI solution with regard to regulatory bodies
+    - Select and formalise the solution's performance elements in order to produce reporting
+    - Monitor the AI solution within the information system, ensuring its effectiveness and its evolution
     ecues:
     - code: 1.3.1
       title: Modélisation de Bases de Données
+      title_en: Database Modelling
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Appliquer la méthode Merise
       - Modèle Physique de Données
       - Modèle Conceptuel de Données
       - Modèles NoSQL (graphe, document, …)
+      objectifs_en:
+      - Apply the Merise method
+      - Physical data model
+      - Conceptual data model
+      - NoSQL models (graph, document, etc.)
       prereq_matches: []
     - code: 1.3.2
       title: Requêtes et Opérations sur les Bases de Données
+      title_en: Queries and Operations on Databases
       heures: 14
       coefficient: 1
       prerequis: Modélisation de Bases de Données
+      prerequis_en: Database Modelling
       objectifs:
       - Extraire à l’aide du langage SQL des résultats (données) à partir d'une base de données relationnelle
       - Manipuler les données au travers des différentes fonctions connues du SGBDR
+      objectifs_en:
+      - Use the SQL language to extract results (data) from a relational database
+      - Manipulate data using the various functions available in an RDBMS
       prereq_matches:
       - 1.3.1
     - code: 1.3.3
       title: Construction de Bases de Données
+      title_en: Database Construction
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Concevoir une base de données relationnelle composée de plusieurs tables
+      objectifs_en:
+      - Design a relational database made up of several tables
       prereq_matches: []
   - code: '1.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    title_en: Organise and manage an artificial intelligence project and support digital change
     ects: 4
     heures: 56
     themes: Cette UE porte sur l'ingénierie de projets d'intelligence artificielle responsable, articulant la compréhension historique et technique de l'IA avec la rigueur de la gestion de projet. Elle impose l'intégration des cadres réglementaires et éthiques dès la phase d'analyse des besoins et de rédaction du cahier des charges.
+    themes_en: This UE covers the engineering of responsible artificial intelligence projects, combining a historical and technical understanding of AI with the rigour of project management. It requires the integration of regulatory and ethical frameworks from the needs-analysis and specification-writing stage onward.
     competences:
     - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
     - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
@@ -195,131 +307,210 @@ semesters:
     - Accompagner le changement numérique
     - Favoriser l'appropriation des outils numériques par les collaborateurs
     - Prendre en compte l'impact environnemental des projets afin de réduire l'empreinte carbone
+    competences_en:
+    - Adapt to project management methods such as AGILE, PMI, etc. in order to apply them to AI projects
+    - Train the users and/or maintainers of the AI solution to ensure knowledge transfer
+    - Identify the sub-projects and tasks included in the overall project in order to estimate their durations
+    - Plan AI projects using PERT and GANTT charts to build the detailed schedule
+    - Define the project's main milestones (validation points) to check that it is proceeding correctly
+    - Design the project schedule using a graphical representation tool
+    - Identify the risks inherent in the AI project in order to assess their criticality
+    - Define a response plan for the identified risks and draw up a monitoring table
+    - Support digital change
+    - Encourage employees to take ownership of digital tools
+    - Take into account the environmental impact of projects in order to reduce the carbon footprint
     ecues:
     - code: 1.4.1
       title: Histoire de l'IA et applications
+      title_en: History of AI and Applications
       heures: 14
       coefficient: 1
       prerequis: Connaitre les bases de l’algorithmie
+      prerequis_en: Knowledge of the basics of algorithmics
       objectifs:
       - Donner une définition de l’Intelligence Artificielle
       - Comprendre l’historique de l’IA
       - Identifier les domaines et sous-domaines de l’IA
       - Identifier les champs d’application de l’IA
       - Exemple d’application en robotique (MLF), Exemple d’application en ML ?
+      objectifs_en:
+      - Give a definition of Artificial Intelligence
+      - Understand the history of AI
+      - Identify the fields and sub-fields of AI
+      - Identify the areas of application of AI
+      - Example of an application in robotics (MLF); example of an application in ML?
       prereq_matches:
       - 1.2.2
     - code: 1.4.2
       title: Ethique de l'IA
+      title_en: Ethics of AI
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Définir le mot éthique
       - Identifier les principaux enjeux sociétaux, éthiques et environnementaux liés à l’usage de l’IA.
       - Comprendre les cadres réglementaires et initiatives (RGPD, IA Act, principes éthiques de l’UE, etc.).
       - Étudier des exemples réels d'utilisation de l'intelligence artificielle en les évaluant à partir du point de vue des enjeux éthiques.
+      objectifs_en:
+      - Define the word ethics
+      - Identify the main societal, ethical and environmental issues associated with the use of AI
+      - Understand the regulatory frameworks and initiatives (GDPR, AI Act, EU ethical principles, etc.)
+      - Study real-world examples of the use of artificial intelligence, assessing them from the standpoint of ethical issues
       prereq_matches: []
     - code: 1.4.3
       title: Construction d’un cahier des charges
+      title_en: Drafting a Specification Document
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Rédiger des cahiers des charges dans le cadre de projets informatiques
+      objectifs_en:
+      - Draft specification documents in the context of IT projects
       prereq_matches: []
     - code: 1.4.4
       title: Essentiel de la gestion de projet
+      title_en: Project Management Essentials
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - La gestion de projet se découvre et s’appréhende au fur et à mesure des expériences vécues. Ce module est un module d’approche. Il a pour objectif de définir les champs lexicaux, de structurer les étapes essentielles à la gestion de projet et de balayer en un temps restreint la vie d’un chef de projet informatique. Il pourrait s’apparenter à un itinéraire vu de façon rapide. L’ensemble des autres modules de ce bloc de compétences ont pour objectif d’approfondir les compétences et les connaissances
+      objectifs_en:
+      - Project management is discovered and grasped gradually through practical experience. This module is an introductory module. Its aim is to define the relevant vocabulary, structure the essential steps of project management, and provide a brief overview of the life of an IT project manager. It could be likened to a route seen at speed. All the other modules in this skills block aim to deepen the corresponding skills and knowledge.
       prereq_matches: []
   - code: '1.5'
     num: 5
     title: Anglais (Semestre 1)
+    title_en: English (Semester 1)
     ects: 2
     heures: 21
     themes: "Anglais à coloration professionnelle et technique \nAu semestre 1, l'accent est mis sur l'acquisition du lexique et de la grammaire."
+    themes_en: "Professional and technical English \nIn semester 1, the focus is on acquiring vocabulary and grammar."
     competences:
     - 'La première année de formation est l''occasion de revoir les prérequis du niveau bac (B1) :'
     - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
     - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
     - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
     - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    competences_en:
+    - 'The first year of the programme is an opportunity to revisit the baccalaureate-level (B1) prerequisites:'
+    - Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc.
+    - Can deal with most situations likely to arise while travelling in an area where the target language is spoken.
+    - Can produce simple connected text on topics that are familiar or of personal interest.
+    - Can narrate an event, an experience or a dream, describe a hope or goal, and briefly give reasons or explanations for a plan or an idea.
     ecues:
     - code: 1.5.1
       title: Anglais Semestre 1
+      title_en: English Semester 1
       heures: 21
       coefficient: 1
       prerequis: Anglais niveau A2
+      prerequis_en: English level A2
       objectifs:
       - Confirmation du niveau B1 en fin de semestre 1
+      objectifs_en:
+      - Confirmation of B1 level at the end of semester 1
       prereq_matches: []
   - code: '1.6'
     num: 6
     title: Développement des compétences professionnelles (Semestre 1)
+    title_en: Professional Skills Development (Semester 1)
     ects: 6
     heures: 70
     themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    themes_en: Varied experiences are essential for acquiring new skills. By working in different contexts, taking risks and adapting to change, individuals can develop their sense of initiative, their decision-making, and their problem-solving skills.
     competences: []
+    competences_en: []
     ecues:
     - code: 1.6.1
       title: Communication professionnelle
+      title_en: Professional Communication
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Savoir organiser, rédiger et présenter un rapport ainsi qu’une présentation orale de façon professionnelle
       - Savoir présenter son entreprise, son service et ses missions de façon claire et précise
       - S’exprimer devant un auditoire avec aisance
       - Savoir argumenter et convaincre
+      objectifs_en:
+      - Know how to organise, write and deliver a report as well as an oral presentation in a professional manner
+      - Know how to present one's company, department and duties clearly and precisely
+      - Speak confidently in front of an audience
+      - Know how to argue a case and convince an audience
       prereq_matches: []
     - code: 1.6.2
       title: PFI
+      title_en: PFI (Individual Training Plan)
       heures: 21
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Réaliser des enquêtes métiers.
       - Réaliser des enquêtes sur soi.
+      objectifs_en:
+      - Carry out surveys on professions.
+      - Carry out self-assessment surveys.
       prereq_matches: []
     - code: 1.6.3
       title: Développement des compétences transversales
+      title_en: Development of Cross-disciplinary Skills
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      objectifs_en:
+      - In this ECUE, the student and the teacher carry out an individual review of the student's professional involvement and behaviour
       prereq_matches: []
     - code: 1.6.4
       title: Engagement citoyen et transition écologique
+      title_en: Civic Engagement and Ecological Transition
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Connaitre et comprendre les enjeux de la transition écologique.
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      objectifs_en:
+      - Know and understand the issues at stake in the ecological transition.
+      - Embrace a societal commitment by demonstrating the importance of values such as environmental preservation, the fight against discrimination, respect for colleagues, the promotion of equal opportunities, and transparent communication with all stakeholders regarding project progress and potential risks.
+      - Analyse the actions to be taken and the potential difficulties to be anticipated with objectivity and a critical mind
+      - Justify the project and the structuring choices made in carrying out the civic activity
       prereq_matches: []
     - code: 1.6.5
       title: Techniques de recherche d’emplois
+      title_en: Job Search Techniques
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant est accompagné dans la création d’un CV
+      objectifs_en:
+      - In this ECUE, the student is supported in creating a CV
       prereq_matches: []
 - number: 2
   ues:
   - code: '2.1'
     num: 1
     title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    title_en: Define the need to address an industrial issue in an Artificial Intelligence project
     ects: 6
     heures: 105
     themes: Cette thématique articule l'analyse quantitative et la mise en œuvre de solutions numériques, en combinant la modélisation probabiliste et statistique pour l'aide à la décision avec le développement d'applications web dynamiques. Elle vise à transformer des données brutes en indicateurs fiables (tests d'hypothèses, lois de probabilité) intégrés au sein d'interfaces web interactives, accessibles et sécurisées.
+    themes_en: This topic combines quantitative analysis with the implementation of digital solutions, bringing together probabilistic and statistical modelling for decision support with the development of dynamic web applications. It aims to turn raw data into reliable indicators (hypothesis testing, probability distributions) integrated within interactive, accessible and secure web interfaces.
     competences:
     - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
     - Utiliser les statistiques pour optimiser la solution IA
@@ -334,38 +525,66 @@ semesters:
     - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
     - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
     - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    competences_en:
+    - Use scientific knowledge to verify and/or identify the causes of a malfunction
+    - Use statistics to optimise the AI solution
+    - Establish a diagnosis in order to find the reasons for a malfunction
+    - Identify the various solutions/technologies likely to meet the specifications
+    - Compare existing solutions with their suitability to the need in order to contribute to technical choices
+    - Analyse and assess the risks (security) of an AI in order to help resolve them
+    - Research technical solutions and carry out technology watch to address the AI problem
+    - Compare solutions that meet the needs in order to contribute to technical choices
+    - Build and present all the elements enabling decision-making
+    - Master the different classes of algorithms (ML, DL, etc.) in order to model massive data
+    - Implement methods for collecting, storing, processing and visualising data
+    - Grasp cloud architecture concepts (AWS, Azure, etc.) and learning tools (Keras, TF, etc.)
+    - Conduct technology watch in order to identify new applications and developments
     ecues:
     - code: 2.1.1
       title: Probabilités
+      title_en: Probability
       heures: 21
       coefficient: 1
       prerequis: Une compréhension solide des mathématiques de base, être familiarisé avec les notions de calcul, compétences en logique et en raisonnement, une introduction aux statistiques descriptives, et la capacité à résoudre des problèmes mathématiques et logiques.
+      prerequis_en: A solid understanding of basic mathematics, familiarity with calculus concepts, skills in logic and reasoning, an introduction to descriptive statistics, and the ability to solve mathematical and logical problems.
       objectifs:
       - Fournir une compréhension approfondie des concepts fondamentaux des probabilités, de leur application à des problèmes concrets, et d'analyser des situations réelles en utilisant divers outils probabilistes et statistiques.
+      objectifs_en:
+      - Provide an in-depth understanding of the fundamental concepts of probability, of their application to concrete problems, and of the analysis of real-world situations using various probabilistic and statistical tools.
       prereq_matches:
       - 1.1.1
     - code: 2.1.2
       title: Statistiques
+      title_en: Statistics
       heures: 28
       coefficient: 1
       prerequis: Bonne compréhension des mathématiques de base, des compétences en logique et en raisonnement, une familiarité avec les outils informatiques de base, et la capacité à résoudre des problèmes mathématiques et logiques.
+      prerequis_en: A good understanding of basic mathematics, skills in logic and reasoning, familiarity with basic computing tools, and the ability to solve mathematical and logical problems.
       objectifs:
       - Développer une compréhension approfondie des statistiques descriptives, de la représentation graphique des données, des techniques d'échantillonnage, et de l'analyse des sondages, afin d'interpréter des données pour aider à la prise de décision
+      objectifs_en:
+      - Develop an in-depth understanding of descriptive statistics, graphical data representation, sampling techniques and survey analysis, in order to interpret data to support decision-making
       prereq_matches: []
     - code: 2.1.3
       title: Développement Web
+      title_en: Web Development
       heures: 56
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - À la fin de cet ECUE, les étudiants seront en mesure de comprendre les concepts de base du développement web et de créer des sites web simples pour répondre à des besoins avec du contexte entreprise.
+      objectifs_en:
+      - By the end of this ECUE, students will be able to understand the basic concepts of web development and create simple websites to meet needs in a business context.
       prereq_matches: []
   - code: '2.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
+    title_en: Design the AI solution within the overall architecture
     ects: 4
     heures: 77
     themes: Ce programme complet de développement logiciel lie la Programmation Orientée Objet sous Python à l'algorithmique de graphes (Dijkstra, flux, arbres). Il impose une rigueur de conception via la modélisation UML (classes, séquences) et la validation par tests unitaires JUnit. L'objectif est de savoir structurer des données complexes (collections, I/O) pour résoudre des problèmes d'optimisation de réseaux et de maintenance logicielle.
+    themes_en: This comprehensive software development programme links Object-Oriented Programming in Python to graph algorithmics (Dijkstra, flows, trees). It requires rigorous design through UML modelling (class and sequence diagrams) and validation through JUnit unit testing. The aim is to know how to structure complex data (collections, I/O) in order to solve network optimisation and software maintenance problems.
     competences:
     - Identifier les algos/protocoles pour une collecte efficace des données
     - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
@@ -383,37 +602,72 @@ semesters:
     - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
     - Mettre en œuvre la solution pour répondre aux besoins
     - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    competences_en:
+    - Identify the algorithms/protocols for effective data collection
+    - Identify the need for data preprocessing in order to integrate it into the AI solution
+    - Select data sources in order to model and map them
+    - Identify and use performance indicators to justify the chosen solution
+    - Develop dashboards incorporating business data for decision-making
+    - Quantify data computing and storage capacity needs
+    - Identify the resources available within the information system
+    - Grasp the ins and outs of the AI solution
+    - Define the steps of an AI process
+    - Identify stakeholders in order to understand the full range of issues associated with the projects
+    - Identify the IT infrastructure required within the company
+    - Identify and set up performance indicators in order to choose a suitable AI model
+    - Handle algorithms on several platforms using different languages
+    - Identify and analyse the appropriate technologies to help with decision-making
+    - Implement the solution to meet the needs
+    - Test and validate the AI solution based on performance indicators
     ecues:
     - code: 2.2.1
       title: Programmation Orientée Objet avec Python
+      title_en: Object-Oriented Programming with Python
       heures: 35
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - Comprendre les principes fondamentaux de la programmation orientée objet
       - Maîtriser l’utilisation des structures de données dynamiques, des collections avancées et des itérateurs/générateurs pour structurer et manipuler efficacement les données.
       - Appliquer les mécanismes de gestion des entrées/sorties et gérer les exceptions pour assurer la robustesse du programme.
       - Concevoir, lire et utiliser des diagrammes UML (classes et séquences) pour modéliser la structure et le comportement des systèmes orientés objet.
       - Développer des tests unitaires fiables pour garantir la qualité et la maintenabilité du code, tout en comprenant le fonctionnement du ramasse-miettes
+      objectifs_en:
+      - Understand the fundamental principles of object-oriented programming
+      - Master the use of dynamic data structures, advanced collections and iterators/generators in order to structure and manipulate data efficiently.
+      - Apply input/output management mechanisms and handle exceptions in order to ensure the robustness of the program.
+      - Design, read and use UML diagrams (class and sequence diagrams) to model the structure and behaviour of object-oriented systems.
+      - Develop reliable unit tests to ensure code quality and maintainability, while understanding how the garbage collector works
       prereq_matches: []
     - code: 2.2.2
       title: Algorithmique de Graphes
+      title_en: Graph Algorithmics
       heures: 42
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Modéliser un problème à l'aide de la théorie des graphes
       - Réalisation de programmes en appliquant la théorie des graphes
       - Découvertes des outils mathématiques de la théorie des graphes
       - Modélisation et résolution de problèmes avec la théorie des graphes
       - Applications informatiques et représentation informatique des graphes
+      objectifs_en:
+      - Model a problem using graph theory
+      - Write programs applying graph theory
+      - Discover the mathematical tools of graph theory
+      - Model and solve problems using graph theory
+      - Computer applications and computational representation of graphs
       prereq_matches: []
   - code: '2.3'
     num: 3
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    title_en: Organise and manage an artificial intelligence project and support digital change
     ects: 4
     heures: 63
     themes: 'Cette thématique articule l''exploitation stratégique des données à travers la Business Intelligence et le Big Data, en couvrant l''intégralité de la chaîne de valeur : de la collecte éthique et du stockage distribué à l''analyse exploratoire et la visualisation d''indicateurs d''aide à la décision.'
+    themes_en: 'This topic covers the strategic use of data through Business Intelligence and Big Data, spanning the entire value chain: from ethical collection and distributed storage to exploratory analysis and the visualisation of decision-support indicators.'
     competences:
     - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
     - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
@@ -429,22 +683,45 @@ semesters:
     - Conduire les réunions de suivi de projet en IA
     - Actualiser les données des tableaux de bord (coûts, réalisé, risques, etc.) pour réguler les aléas
     - Organiser et mener les réunions et échanges pour garantir le bon déroulement du projet
+    competences_en:
+    - Adapt to project management methods such as AGILE, PMI, etc. in order to apply them to AI projects
+    - Train the users and/or maintainers of the AI solution to ensure knowledge transfer
+    - Identify the sub-projects and tasks included in the overall project in order to estimate their durations
+    - Plan AI projects using PERT and GANTT charts to build the detailed schedule
+    - Define the project's main milestones (validation points) to check that it is proceeding correctly
+    - Design the project schedule using a graphical representation tool
+    - Identify the risks inherent in the AI project in order to assess their criticality
+    - Define a response plan for the identified risks and draw up a monitoring table
+    - Support digital change
+    - Encourage employees to take ownership of digital tools
+    - Take into account the environmental impact of projects in order to reduce the carbon footprint
+    - Lead AI project follow-up meetings
+    - Update dashboard data (costs, actuals, risks, etc.) to manage contingencies
+    - Organise and lead meetings and discussions to ensure the project runs smoothly
     ecues:
     - code: 2.3.1
       title: Business Intelligence
+      title_en: Business Intelligence
       heures: 21
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - Afin d'aider les futurs managers à utiliser et à comprendre l'analytique, ce cours fournit aux étudiants une base solide de l'analyse des données et de l'intelligence économique, renforcée par des exercices pratiques. Ce cours adopte une approche managériale de l'intelligence économique, en mettant l'accent sur les applications et les mises en œuvre qui se cachent derrière les concepts. Cette approche permet aux étudiants de comprendre le fonctionnement de l'analyse des données et de l'intelligence économique d'une manière qui les aidera à adopter ces technologies dans leurs futures fonctions managériales. Des cas réels seront couverts qui présentent un défi, une solution et des résultats. Chaque cas est associé à des questions permettant aux étudiants d'approfondir les détails et de réfléchir de manière critique sur le cas.
+      objectifs_en:
+      - To help future managers use and understand analytics, this course provides students with a solid foundation in data analysis and business intelligence, reinforced by practical exercises. The course takes a managerial approach to business intelligence, focusing on the applications and implementations behind the concepts. This approach helps students understand how data analysis and business intelligence work in a way that will help them adopt these technologies in their future managerial roles. Real-world cases will be covered, each presenting a challenge, a solution and results. Each case is accompanied by questions enabling students to explore the details further and think critically about the case.
       prereq_matches: []
     - code: 2.3.2
       title: Big Data
+      title_en: Big Data
       heures: 42
       coefficient: 1
       prerequis: Bonne compréhension de la programmation en Python, une familiarité avec les bases de données et le langage SQL, une connaissance des concepts statistiques de base, une compréhension de l'algèbre linéaire, des notions de base en réseaux informatiques et architectures de stockage, ainsi qu'une introduction au machine learning.
+      prerequis_en: A good understanding of programming in Python, familiarity with databases and the SQL language, knowledge of basic statistical concepts, an understanding of linear algebra, basic notions of computer networks and storage architectures, as well as an introduction to machine learning.
       objectifs:
       - Fournir aux étudiants les compétences pratiques et théoriques nécessaires pour manipuler, analyser et stocker de grandes quantités de données en utilisant des techniques et outils modernes de Big Data et de machine learning.
+      objectifs_en:
+      - Provide students with the practical and theoretical skills needed to handle, analyse and store large volumes of data using modern Big Data and machine learning techniques and tools.
       prereq_matches:
       - 1.1.3
       - 1.2.1
@@ -454,121 +731,179 @@ semesters:
   - code: '2.4'
     num: 4
     title: Anglais
+    title_en: English
     ects: 2
     heures: 28
     themes: 'Anglais à coloration professionnelle et technique
 
       Au semestre 2, l''accent est mis sur l''acquisition du lexique et de la grammaire, on renforce également l''expression orale.'
+    themes_en: 'Professional and technical English
+
+      In semester 2, the focus is on acquiring vocabulary and grammar, and oral expression is also reinforced.'
     competences:
     - 'La première année de formation est l''occasion de revoir les prérequis du niveau bac (B1) :'
     - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
     - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
     - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
     - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    competences_en:
+    - 'The first year of the programme is an opportunity to revisit the baccalaureate-level (B1) prerequisites:'
+    - Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc.
+    - Can deal with most situations likely to arise while travelling in an area where the target language is spoken.
+    - Can produce simple connected text on topics that are familiar or of personal interest.
+    - Can narrate an event, an experience or a dream, describe a hope or goal, and briefly give reasons or explanations for a plan or an idea.
     ecues:
     - code: 2.4.1
       title: Anglais Semestre 2
+      title_en: English Semester 2
       heures: 28
       coefficient: 1
       prerequis: Anglais semestre 1
+      prerequis_en: English semester 1
       objectifs:
       - Renforcement du niveau B1
+      objectifs_en:
+      - Reinforcement of B1 level
       prereq_matches:
       - 1.5.1
   - code: '2.5'
     num: 5
     title: Développement des compétences professionnelles (Semestre 2)
+    title_en: Professional Skills Development (Semester 2)
     ects: 2
     heures: 42
     themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    themes_en: Varied experiences are essential for acquiring new skills. By working in different contexts, taking risks and adapting to change, individuals can develop their sense of initiative, their decision-making, and their problem-solving skills.
     competences: []
+    competences_en: []
     ecues:
     - code: 2.5.1
       title: Communication professionnelle
+      title_en: Professional Communication
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Savoir organiser, rédiger et présenter un rapport ainsi qu’une présentation orale de façon professionnelle
       - Savoir présenter son entreprise, son service et ses missions de façon claire et précise
       - S’exprimer devant un auditoire avec aisance
       - Savoir argumenter et convaincre
+      objectifs_en:
+      - Know how to organise, write and deliver a report as well as an oral presentation in a professional manner
+      - Know how to present one's company, department and duties clearly and precisely
+      - Speak confidently in front of an audience
+      - Know how to argue a case and convince an audience
       prereq_matches: []
     - code: 2.5.2
       title: PFI - Cible Métier
+      title_en: PFI - Career Target
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Identifier les compétences attendues sur un poste
       - Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés
+      objectifs_en:
+      - Identify the skills expected for a position
+      - Draw up an action plan based on a self-assessment of skills and the objectives set
       prereq_matches: []
     - code: 2.5.3
       title: Développement des compétences transversales
+      title_en: Development of Cross-disciplinary Skills
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      objectifs_en:
+      - In this ECUE, the student and the teacher carry out an individual review of the student's professional involvement and behaviour
       prereq_matches: []
     - code: 2.5.4
       title: Engagement citoyen et transition écologique
+      title_en: Civic Engagement and Ecological Transition
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      objectifs_en:
+      - Embrace a societal commitment by demonstrating the importance of values such as environmental preservation, the fight against discrimination, respect for colleagues, the promotion of equal opportunities, and transparent communication with all stakeholders regarding project progress and potential risks.
+      - Analyse the actions to be taken and the potential difficulties to be anticipated with objectivity and a critical mind
+      - Justify the project and the structuring choices made in carrying out the civic activity
       prereq_matches: []
   - code: '2.6'
     num: 6
     title: Mission entreprise
+    title_en: Company Placement
     ects: 6
     heures: 0
     themes: Stage en entreprise
+    themes_en: Company internship
     competences: []
+    competences_en: []
     ecues:
     - code: 2.6.1
       title: Mission entreprise
+      title_en: Company Placement
       heures: 0
       coefficient: 1
       prerequis: Avoir passé, au moins 8 semaines en entreprise.
+      prerequis_en: Have spent at least 8 weeks in a company.
       objectifs: []
+      objectifs_en: []
       prereq_matches: []
     - code: 2.6.2
       title: Rapport d'étonnement
+      title_en: First Impressions Report
       heures: 0
       coefficient: 1
       prerequis: Avoir passé, au moins 6 semaines en entreprise.
+      prerequis_en: Have spent at least 6 weeks in a company.
       objectifs:
       - Après 6 à 8 semaines passées en entreprise, l’élève produit un rapport décrivant l’entreprise où il effectue son stage. Le rapport doit présenter l’entreprise, les activités de l’entreprise, le service où il se trouve, le poste qu’il occupe. Il effectue une première prise de recul sur son vécu, sous forme d’un étonnement.
+      objectifs_en:
+      - After 6 to 8 weeks spent in a company, the student produces a report describing the company where they are doing their placement. The report must present the company, its activities, the department the student is working in, and the position they hold. The student carries out an initial step back from their experience in the form of a first-impressions account.
       prereq_matches:
       - 2.6.1
   - code: '2.7'
     num: 7
     title: Mission internationale
+    title_en: International Placement
     ects: 6
     heures: 0
     themes: Mission internationale
+    themes_en: International placement
     competences: []
+    competences_en: []
     ecues:
     - code: 2.7.1
       title: Mission internationale
+      title_en: International Placement
       heures: 0
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Voir la note pédagogique de la Mission internationale
+      objectifs_en:
+      - See the International Placement guidance notes
       prereq_matches: []
 - number: 3
   ues:
   - code: '3.1'
     num: 1
     title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    title_en: Define the need to address an industrial issue in an Artificial Intelligence project
     ects: 10
     heures: 112
     themes: Cette UE vise à donner aux étudiants les fondements mathématiques et neuro-computationnels nécessaires pour analyser et formaliser une problématique industrielle en intelligence artificielle. Elle articule algèbre linéaire, réduction de dimension (ACP, SVD) et principes de la communication neuronale afin de comprendre comment structurer, transformer et interpréter des données dans un contexte métier. L’ensemble permet de passer d’un besoin industriel exprimé à une modélisation rigoureuse et techniquement exploitable dans un projet IA.
+    themes_en: This UE aims to give students the mathematical and neuro-computational foundations needed to analyse and formalise an industrial issue in artificial intelligence. It combines linear algebra, dimensionality reduction (PCA, SVD) and the principles of neuronal communication in order to understand how to structure, transform and interpret data in a business context. Together, these enable students to move from an expressed industrial need to a rigorous model that can be put to technical use in an AI project.
     competences:
     - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
     - Utiliser les statistiques pour optimiser la solution IA
@@ -581,9 +916,22 @@ semesters:
     - Construire et exposer tous les éléments permettant la prise de décision
     - S'approprier les différentes classes d'algorithmes (ML, DL,…) pour modéliser les données massives
     - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
+    competences_en:
+    - Use scientific knowledge to verify and/or identify the causes of a malfunction
+    - Use statistics to optimise the AI solution
+    - Establish a diagnosis in order to find the reasons for a malfunction
+    - Identify the various solutions/technologies likely to meet the specifications
+    - Compare existing solutions with their suitability to the need in order to contribute to technical choices
+    - Analyse and assess the risks (security) of an AI in order to help resolve them
+    - Research technical solutions and carry out technology watch to address the AI problem
+    - Compare solutions that meet the needs in order to contribute to technical choices
+    - Build and present all the elements enabling decision-making
+    - Master the different classes of algorithms (ML, DL, etc.) in order to model massive data
+    - Implement methods for collecting, storing, processing and visualising data
     ecues:
     - code: 3.1.1
       title: Propriétés Algébriques des Endomorphismes
+      title_en: Algebraic Properties of Endomorphisms
       heures: 42
       coefficient: 1
       prerequis: 'Maîtrise des bases de l’algèbre linéaire (vecteurs, matrices, systèmes linéaires)
@@ -591,16 +939,28 @@ semesters:
         Calcul matriciel élémentaire
 
         Résolution de systèmes d’équations'
+      prerequis_en: 'Mastery of the basics of linear algebra (vectors, matrices, linear systems)
+
+        Elementary matrix calculus
+
+        Solving systems of equations'
       objectifs:
       - Modéliser une transformation à l’aide d’une application linéaire.
       - Calculer noyau, image et rang d’un endomorphisme.
       - Déterminer valeurs propres et vecteurs propres d’une matrice.
       - Vérifier la diagonalisabilité d’un opérateur.
       - Interpréter une décomposition spectrale dans un contexte de traitement de données.
+      objectifs_en:
+      - Model a transformation using a linear map.
+      - Compute the kernel, image and rank of an endomorphism.
+      - Determine the eigenvalues and eigenvectors of a matrix.
+      - Check whether an operator is diagonalisable.
+      - Interpret a spectral decomposition in a data-processing context.
       prereq_matches:
       - 1.1.3
     - code: 3.1.2
       title: Analyse en composentes principales et décompositions en valeurs singulières
+      title_en: Principal Component Analysis and Singular Value Decomposition
       heures: 35
       coefficient: 1
       prerequis: 'Maîtrise des notions d’algèbre linéaire (valeurs propres, matrices)
@@ -608,6 +968,11 @@ semesters:
         Bases en statistiques descriptives
 
         Notions élémentaires de programmation Python'
+      prerequis_en: 'Mastery of linear algebra notions (eigenvalues, matrices)
+
+        Basics of descriptive statistics
+
+        Elementary notions of Python programming'
       objectifs:
       - Préparer un jeu de données pour analyse multivariée.
       - Construire et interpréter une matrice de covariance.
@@ -615,6 +980,13 @@ semesters:
       - Appliquer une décomposition en valeurs singulières.
       - Justifier le choix du nombre de composantes retenues.
       - Identifier les limites et biais d’une réduction de dimension.
+      objectifs_en:
+      - Prepare a dataset for multivariate analysis.
+      - Build and interpret a covariance matrix.
+      - Implement PCA (Principal Component Analysis).
+      - Apply a singular value decomposition.
+      - Justify the choice of the number of components retained.
+      - Identify the limitations and biases of a dimensionality reduction.
       prereq_matches:
       - 1.1.3
       - 1.2.1
@@ -623,6 +995,7 @@ semesters:
       - 2.2.1
     - code: 3.1.3
       title: Communication Neuronale
+      title_en: Neuronal Communication
       heures: 35
       coefficient: 1
       prerequis: 'Notions de biologie générale (niveau lycée)
@@ -630,6 +1003,11 @@ semesters:
         Bases de modélisation mathématique simples
 
         Intérêt pour les systèmes dynamiques'
+      prerequis_en: 'Notions of general biology (high-school level)
+
+        Basics of simple mathematical modelling
+
+        Interest in dynamical systems'
       objectifs:
       - Décrire l’organisation fonctionnelle du neurone biologique.
       - Expliquer les mécanismes du potentiel d’action.
@@ -637,13 +1015,22 @@ semesters:
       - Comparer neurone biologique et neurone artificiel.
       - Simuler un modèle simplifié de neurone.
       - Identifier les limites de l’analogie cerveau / IA.
+      objectifs_en:
+      - Describe the functional organisation of the biological neuron.
+      - Explain the mechanisms of the action potential.
+      - Describe synaptic transmission.
+      - Compare the biological neuron with the artificial neuron.
+      - Simulate a simplified neuron model.
+      - Identify the limits of the brain/AI analogy.
       prereq_matches: []
   - code: '3.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
+    title_en: Design the AI solution within the overall architecture
     ects: 8
     heures: 84
     themes: Cette thématique porte sur l'optimisation algorithmique et l'analyse de données non supervisée, en articulant l'implémentation de structures de données complexes (graphes, arbres) avec les méthodes de partitionnement (K-means, DBSCAN). Elle vise à évaluer la performance des systèmes via la complexité Big O et la précision des calculs de similarité pour le traitement de l'information.
+    themes_en: This topic covers algorithmic optimisation and unsupervised data analysis, combining the implementation of complex data structures (graphs, trees) with clustering methods (K-means, DBSCAN). It aims to assess system performance through Big O complexity and the precision of similarity calculations for information processing.
     competences:
     - Identifier les algos/protocoles pour une collecte efficace des données
     - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
@@ -661,17 +1048,41 @@ semesters:
     - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
     - Mettre en œuvre la solution pour répondre aux besoins
     - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    competences_en:
+    - Identify the algorithms/protocols for effective data collection
+    - Identify the need for data preprocessing in order to integrate it into the AI solution
+    - Select data sources in order to model and map them
+    - Identify and use performance indicators to justify the chosen solution
+    - Develop dashboards incorporating business data for decision-making
+    - Quantify data computing and storage capacity needs
+    - Identify the resources available within the information system
+    - Grasp the ins and outs of the AI solution
+    - Define the steps of an AI process
+    - Identify stakeholders in order to understand the full range of issues associated with the projects
+    - Identify the IT infrastructure required within the company
+    - Identify and set up performance indicators in order to choose a suitable AI model
+    - Handle algorithms on several platforms using different languages
+    - Identify and analyse the appropriate technologies to help with decision-making
+    - Implement the solution to meet the needs
+    - Test and validate the AI solution based on performance indicators
     ecues:
     - code: 3.2.1
       title: Structures de Données Optimisées
+      title_en: Optimised Data Structures
       heures: 42
       coefficient: 1
       prerequis: Algorithmique de base, structures de données fondamentales (listes, piles, files), langage de programmation (Python ou Java), notions de complexité algorithmique
+      prerequis_en: Basic algorithmics, fundamental data structures (lists, stacks, queues), a programming language (Python or Java), notions of algorithmic complexity
       objectifs:
       - Maîtriser les structures de données avancées et leurs cas d'usage
       - Analyser et comparer l'efficacité algorithmique des structures
       - Concevoir des solutions optimisées en termes de mémoire et de temps d'exécution
       - Implémenter et tester des structures dans un contexte applicatif réel
+      objectifs_en:
+      - Master advanced data structures and their use cases
+      - Analyse and compare the algorithmic efficiency of the structures
+      - Design solutions optimised in terms of memory and execution time
+      - Implement and test structures in a real application context
       prereq_matches:
       - 1.1.5
       - 1.2.1
@@ -681,14 +1092,21 @@ semesters:
       - 2.2.2
     - code: 3.2.2
       title: Méthodes d'Agrégation et Calculs de Similarités
+      title_en: Clustering Methods and Similarity Calculations
       heures: 42
       coefficient: 1
       prerequis: Statistiques descriptives, algèbre linéaire (vecteurs, produit scalaire), notions de Python (NumPy, Pandas), bases de la science des données
+      prerequis_en: Descriptive statistics, linear algebra (vectors, dot product), notions of Python (NumPy, Pandas), basics of data science
       objectifs:
       - Comprendre et appliquer les principales métriques de similarité et de distance
       - Mettre en œuvre des algorithmes de clustering non supervisés
       - Évaluer et interpréter la qualité des regroupements obtenus
       - Choisir la méthode adaptée au contexte applicatif
+      objectifs_en:
+      - Understand and apply the main similarity and distance metrics
+      - Implement unsupervised clustering algorithms
+      - Evaluate and interpret the quality of the resulting groupings
+      - Choose the method suited to the application context
       prereq_matches:
       - 1.1.3
       - 1.2.1
@@ -697,9 +1115,11 @@ semesters:
   - code: '3.3'
     num: 3
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    title_en: Organise and manage an artificial intelligence project and support digital change
     ects: 6
     heures: 63
     themes: Cette thématique porte sur le pilotage opérationnel et la sécurisation du cycle de vie logiciel, en conciliant les méthodes agiles (Scrum) et traditionnelles (MOA/MOE) avec les impératifs de qualité technique. Elle intègre la conduite du changement, la rigueur des phases de test et de recette, ainsi que l'optimisation durable du code source sous le prisme de la cybersécurité.
+    themes_en: This topic covers operational management and securing the software life cycle, reconciling agile methods (Scrum) with traditional ones (client/contracting-authority and project-management roles) alongside technical quality requirements. It incorporates change management, the rigour of testing and acceptance phases, and the sustainable optimisation of source code through the lens of cybersecurity.
     competences:
     - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
     - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
@@ -716,126 +1136,203 @@ semesters:
     - Actualiser les données des tableaux de bord (coûts, réalisé, risques, etc.) pour réguler les aléas
     - Organiser et mener les réunions et échanges pour garantir le bon déroulement du projet
     - Synthétiser et formaliser les documents de reporting à destination du comité de pilotage
+    competences_en:
+    - Adapt to project management methods such as AGILE, PMI, etc. in order to apply them to AI projects
+    - Train the users and/or maintainers of the AI solution to ensure knowledge transfer
+    - Identify the sub-projects and tasks included in the overall project in order to estimate their durations
+    - Plan AI projects using PERT and GANTT charts to build the detailed schedule
+    - Define the project's main milestones (validation points) to check that it is proceeding correctly
+    - Design the project schedule using a graphical representation tool
+    - Identify the risks inherent in the AI project in order to assess their criticality
+    - Define a response plan for the identified risks and draw up a monitoring table
+    - Support digital change
+    - Encourage employees to take ownership of digital tools
+    - Take into account the environmental impact of projects in order to reduce the carbon footprint
+    - Lead AI project follow-up meetings
+    - Update dashboard data (costs, actuals, risks, etc.) to manage contingencies
+    - Organise and lead meetings and discussions to ensure the project runs smoothly
+    - Summarise and formalise reporting documents for the steering committee
     ecues:
     - code: 3.3.1
       title: Gestion des relations MOA/MOE
+      title_en: Managing Client/Contracting-Authority and Project-Management Relationships (MOA/MOE)
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Acquérir les méthodes pour favoriser la réussite d'un projet en anticipant les changements induits
+      objectifs_en:
+      - Acquire methods for fostering the success of a project by anticipating the changes it brings about
       prereq_matches: []
     - code: 3.3.2
       title: Méthodes et outils projets
+      title_en: Project Methods and Tools
       heures: 21
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Perfectionner sa connaissance de la gestion de projet (Scope Management) Concevoir une méthodologie de type WBS
+      objectifs_en:
+      - Refine one's knowledge of project management (Scope Management); design a WBS-type methodology
       prereq_matches: []
     - code: 3.3.3
       title: Introduction aux méthodes agiles
+      title_en: Introduction to Agile Methods
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - S’approprier les méthodes et les outils de la méthode "Agile"
+      objectifs_en:
+      - Master the methods and tools of the "Agile" approach
       prereq_matches: []
     - code: 3.3.4
       title: Normes et optimisation du code source
+      title_en: Coding Standards and Source Code Optimisation
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Concevoir et structurer des programmes avec logique et intelligence, modéliser des problèmes concrets
       - Faciliter la maintenance du code d’un programme
       - Analyser et faire évoluer un code source existant afin de le rendre plus performant
       - Choisir, implémenter et maitriser un outil de gestion de version
+      objectifs_en:
+      - Design and structure programs logically and intelligently, and model concrete problems
+      - Facilitate the maintenance of a program's code
+      - Analyse and evolve existing source code in order to make it more efficient
+      - Choose, implement and master a version-control tool
       prereq_matches: []
     - code: 3.3.5
       title: Sensibilisation à la cybersécurité
+      title_en: Cybersecurity Awareness
       heures: 14
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Reconnaître et éviter les menaces courantes en cybersécurité, telles que le phishing et les malwares, en appliquant des bonnes pratiques de sécurité.
+      objectifs_en:
+      - Recognise and avoid common cybersecurity threats, such as phishing and malware, by applying good security practices.
       prereq_matches: []
     - code: 3.3.6
       title: Tests et recette des applications
+      title_en: Application Testing and Acceptance
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Créer des test unitaires
+      objectifs_en:
+      - Create unit tests
       prereq_matches: []
   - code: '3.4'
     num: 4
     title: Anglais
+    title_en: English
     ects: 2
     heures: 21
     themes: 'Anglais à coloration professionnelle et technique
 
       Réunions professionnelles'
+    themes_en: 'Professional and technical English
+
+      Business meetings'
     competences:
     - Consolidation du niveau B1
     - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
     - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
     - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
     - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    competences_en:
+    - Consolidation of B1 level
+    - Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc.
+    - Can deal with most situations likely to arise while travelling in an area where the target language is spoken.
+    - Can produce simple connected text on topics that are familiar or of personal interest.
+    - Can narrate an event, an experience or a dream, describe a hope or goal, and briefly give reasons or explanations for a plan or an idea.
     ecues:
     - code: 3.4.1
       title: Anglais Semestre 3
+      title_en: English Semester 3
       heures: 21
       coefficient: 1
       prerequis: Anglais semestre 2
+      prerequis_en: English semester 2
       objectifs:
       - Consolidation du niveau B1
+      objectifs_en:
+      - Consolidation of B1 level
       prereq_matches:
       - 1.5.1
       - 2.4.1
   - code: '3.5'
     num: 5
     title: Développement des compétences professionnelles (Semestre 3)
+    title_en: Professional Skills Development (Semester 3)
     ects: 4
     heures: 35
     themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    themes_en: Varied experiences are essential for acquiring new skills. By working in different contexts, taking risks and adapting to change, individuals can develop their sense of initiative, their decision-making, and their problem-solving skills.
     competences: []
+    competences_en: []
     ecues:
     - code: 3.5.1
       title: Communication professionnelle
+      title_en: Professional Communication
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+      objectifs_en:
+      - In this ECUE, the student learns to develop their professional communication. This will enable them to improve their working relationships and demonstrate effectiveness.
       prereq_matches: []
     - code: 3.5.2
       title: Développement des compétences transversales
+      title_en: Development of Cross-disciplinary Skills
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      objectifs_en:
+      - In this ECUE, the student and the teacher carry out an individual review of the student's professional involvement and behaviour
       prereq_matches: []
     - code: 3.5.3
       title: Engagement citoyen et transition écologique
+      title_en: Civic Engagement and Ecological Transition
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Connaitre et comprendre les enjeux de la transition écologique.
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      objectifs_en:
+      - Know and understand the issues at stake in the ecological transition.
+      - Embrace a societal commitment by demonstrating the importance of values such as environmental preservation, the fight against discrimination, respect for colleagues, the promotion of equal opportunities, and transparent communication with all stakeholders regarding project progress and potential risks.
+      - Analyse the actions to be taken and the potential difficulties to be anticipated with objectivity and a critical mind
+      - Justify the project and the structuring choices made in carrying out the civic activity
       prereq_matches: []
 - number: 4
   ues:
   - code: '4.1'
     num: 1
     title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    title_en: Define the need to address an industrial issue in an Artificial Intelligence project
     ects: 4
     heures: 63
     themes: Cette UE vise à aborder l'optimisation combinatoire et la recherche opérationnelle appliquées aux problématiques industrielles d'intelligence artificielle. La modélisation mathématique des contraintes et objectifs industriels (logistique, planification, ressources). Les méthodes exactes vs approchées pour la résolution de problèmes NP-difficiles. L'intégration des solveurs d'optimisation dans les pipelines de décision automatique.
+    themes_en: This UE addresses combinatorial optimisation and operations research applied to industrial artificial intelligence issues. It covers the mathematical modelling of industrial constraints and objectives (logistics, planning, resources); exact versus approximate methods for solving NP-hard problems; and the integration of optimisation solvers into automated decision pipelines.
     competences:
     - Construire les études d'opportunité en lien avec les acteurs métier (étude de cadrage, faisabilité, etc.)
     - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
@@ -851,9 +1348,25 @@ semesters:
     - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
     - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
     - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    competences_en:
+    - Build opportunity studies in conjunction with business stakeholders (scoping study, feasibility, etc.)
+    - Use scientific knowledge to verify and/or identify the causes of a malfunction
+    - Use statistics to optimise the AI solution
+    - Establish a diagnosis in order to find the reasons for a malfunction
+    - Identify the various solutions/technologies likely to meet the specifications
+    - Compare existing solutions with their suitability to the need in order to contribute to technical choices
+    - Analyse and assess the risks (security) of an AI in order to help resolve them
+    - Research technical solutions and carry out technology watch to address the AI problem
+    - Compare solutions that meet the needs in order to contribute to technical choices
+    - Build and present all the elements enabling decision-making
+    - Master the different classes of algorithms (ML, DL, etc.) in order to model massive data
+    - Implement methods for collecting, storing, processing and visualising data
+    - Grasp cloud architecture concepts (AWS, Azure, etc.) and learning tools (Keras, TF, etc.)
+    - Conduct technology watch in order to identify new applications and developments
     ecues:
     - code: 4.1.1
       title: Méta-Heuristiques et Algorithmes d'Optimisation
+      title_en: Metaheuristics and Optimisation Algorithms
       heures: 42
       coefficient: 3
       prerequis: 'Algorithmique et structures de données
@@ -863,12 +1376,25 @@ semesters:
         Mathématiques : analyse (dérivées, gradients), probabilités et statistiques descriptives
 
         Notions de complexité algorithmique (notation O)'
+      prerequis_en: 'Algorithmics and data structures
+
+        Python programming (numpy, matplotlib)
+
+        Mathematics: analysis (derivatives, gradients), probability and descriptive statistics
+
+        Notions of algorithmic complexity (O notation)'
       objectifs:
       - Comprendre la nature des problèmes d'optimisation combinatoire rencontrés dans les projets industriels
       - Maîtriser les concepts fondamentaux des méta-heuristiques (exploration vs exploitation, voisinage, paysage de fitness)
       - Être capable d'implémenter et paramétrer les principales méta-heuristiques (algorithmes évolutionnaires, méthodes de voisinage, recherche dispersée)
       - Savoir évaluer les performances et la robustesse d'une solution optimisée par rapport aux contraintes industrielles
       - Identifier les cas d'usage où les méta-heuristiques surpassent les méthodes exactes (grandes instances, temps réel)
+      objectifs_en:
+      - Understand the nature of the combinatorial optimisation problems encountered in industrial projects
+      - Master the fundamental concepts of metaheuristics (exploration vs exploitation, neighbourhood, fitness landscape)
+      - Be able to implement and configure the main metaheuristics (evolutionary algorithms, neighbourhood methods, scatter search)
+      - Know how to evaluate the performance and robustness of an optimised solution against industrial constraints
+      - Identify use cases where metaheuristics outperform exact methods (large instances, real time)
       prereq_matches:
       - 1.1.5
       - 1.2.1
@@ -881,9 +1407,11 @@ semesters:
       - 3.2.1
     - code: 4.1.2
       title: Programmation Linéaire en Nombres Entiers
+      title_en: Integer Linear Programming
       heures: 21
       coefficient: 2
       prerequis: "Algèbre linéaire (matrices, vecteurs, résolution de systèmes) \nProgrammation Python (utilisation de bibliothèques)\nLogique propositionnelle et modélisation mathématique de base"
+      prerequis_en: "Linear algebra (matrices, vectors, solving systems) \nPython programming (using libraries)\nPropositional logic and basic mathematical modelling"
       objectifs:
       - Formuler mathématiquement des problèmes industriels complexes sous forme de programmes linéaires en nombres entiers (PLNE)
       - Maîtriser la modélisation avec variables binaires, entières
@@ -891,6 +1419,13 @@ semesters:
       - Utiliser des solveurs industriels standards (CPLEX, Gurobi, ou alternatives open-source comme CBC, SCIP, OR-Tools)
       - Analyser la qualité des solutions (relaxation linéaire, gap d'optimalité) et interpréter les analyses de sensibilité
       - Intégrer la résolution PLNE dans une architecture décisionnelle d'entreprise
+      objectifs_en:
+      - Mathematically formulate complex industrial problems as integer linear programs (ILP)
+      - Master modelling using binary and integer variables
+      - Understand and apply exact resolution methods (Branch and Bound, cutting planes, branch-and-cut)
+      - Use standard industrial solvers (CPLEX, Gurobi, or open-source alternatives such as CBC, SCIP, OR-Tools)
+      - Analyse the quality of solutions (linear relaxation, optimality gap) and interpret sensitivity analyses
+      - Integrate ILP resolution into a company's decision-making architecture
       prereq_matches:
       - 1.1.3
       - 1.2.1
@@ -899,9 +1434,11 @@ semesters:
   - code: '4.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
+    title_en: Design the AI solution within the overall architecture
     ects: 2
     heures: 35
     themes: Ce module explore l'évolution technique et l'architecture des LLM, de leur conception aux stratégies de prompting, tout en analysant leurs applications concrètes. Il intègre une dimension critique sur l'éthique, les biais et l'impact environnemental de l'IA générative. Réalisation d'un projet pratique incluant la sélection de modèles, l'optimisation des prompts et l'évaluation des résultats.
+    themes_en: This module explores the technical evolution and architecture of LLMs, from their design to prompting strategies, while analysing their concrete applications. It incorporates a critical perspective on the ethics, biases and environmental impact of generative AI. Students carry out a practical project involving model selection, prompt optimisation and results evaluation.
     competences:
     - Identifier les différentes sources de données
     - Identifier les algos/protocoles pour une collecte efficace des données
@@ -920,14 +1457,36 @@ semesters:
     - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
     - Mettre en œuvre la solution pour répondre aux besoins
     - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    competences_en:
+    - Identify the various data sources
+    - Identify the algorithms/protocols for effective data collection
+    - Identify the need for data preprocessing in order to integrate it into the AI solution
+    - Select data sources in order to model and map them
+    - Identify and use performance indicators to justify the chosen solution
+    - Develop dashboards incorporating business data for decision-making
+    - Quantify data computing and storage capacity needs
+    - Identify the resources available within the information system
+    - Grasp the ins and outs of the AI solution
+    - Define the steps of an AI process
+    - Identify stakeholders in order to understand the full range of issues associated with the projects
+    - Identify the IT infrastructure required within the company
+    - Identify and set up performance indicators in order to choose a suitable AI model
+    - Handle algorithms on several platforms using different languages
+    - Identify and analyse the appropriate technologies to help with decision-making
+    - Implement the solution to meet the needs
+    - Test and validate the AI solution based on performance indicators
     ecues:
     - code: 4.2.1
       title: Fonctionnement de l’IA Générative et Prompting
+      title_en: How Generative AI Works, and Prompting
       heures: 35
       coefficient: 1
       prerequis: Bonne compréhension de la programmation, en particulier en Python, des bases en apprentissage automatique (machine learning), des connaissances en statistiques et algèbre linéaire, une introduction au traitement du langage naturel (NLP), ainsi que des notions de base en informatique et réseaux.
+      prerequis_en: A good understanding of programming, particularly in Python, basics in machine learning, knowledge of statistics and linear algebra, an introduction to natural language processing (NLP), as well as basic notions of computing and networks.
       objectifs:
       - Fournir aux étudiants une compréhension approfondie des modèles de langage de grande taille (LLM), de leur historique, de leurs applications, de leur architecture, ainsi que des défis éthiques et pratiques associés à leur utilisation.
+      objectifs_en:
+      - Provide students with an in-depth understanding of large language models (LLMs), their history, their applications, their architecture, and the ethical and practical challenges associated with their use.
       prereq_matches:
       - 1.1.3
       - 1.2.1
@@ -938,9 +1497,11 @@ semesters:
   - code: '4.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    title_en: Develop and maintain an AI solution to optimise company performance while respecting an ethical and ecological approach
     ects: 4
     heures: 63
     themes: Cette thématique porte sur la conception de modèles de machine learning performants, articulant les approches supervisées (régression) et non supervisées (clustering) pour répondre à des problématiques métiers. Elle impose l'intégration systématique de la sobriété numérique et de la lutte contre les biais algorithmiques pour garantir des solutions d'IA éthiques et écoresponsables.
+    themes_en: This topic covers the design of high-performing machine learning models, combining supervised (regression) and unsupervised (clustering) approaches to address business problems. It requires the systematic integration of digital sobriety and the fight against algorithmic bias in order to guarantee ethical and eco-responsible AI solutions.
     competences:
     - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
     - Assurer la configuration de la solution d'IA déployée
@@ -952,14 +1513,29 @@ semesters:
     - Utiliser des scripts Python s'appuyant sur des bibliothèques dédiées IA pour maintenir la solution déployée
     - Analyser les résultats de la solution IA afin d'en évaluer l'impact écologique
     - Mettre en place des solutions correctives si les résultats ne sont pas optimaux
+    competences_en:
+    - Implement an AI solution in an existing information system using appropriate technologies and/or languages
+    - Ensure the configuration of the deployed AI solution
+    - Measure and reduce the environmental impacts of the AI solution with regard to regulatory bodies
+    - Select and formalise the solution's performance elements in order to produce reporting
+    - Monitor the AI solution within the information system, ensuring its effectiveness and its evolution
+    - Maintain the AI system in place to guarantee continuity of service
+    - Configure AI solutions and master the associated metrics to validate performance
+    - Use Python scripts based on dedicated AI libraries to maintain the deployed solution
+    - Analyse the results of the AI solution in order to assess its ecological impact
+    - Implement corrective solutions if the results are not optimal
     ecues:
     - code: 4.3.1
       title: Apprentissage Supervisé
+      title_en: Supervised Learning
       heures: 19
       coefficient: 1
       prerequis: "Bases de programmation Python (pandas, numpy) ; \nNotions fondamentales de statistiques (moyenne, variance, distribution) ; manipulation de données tabulaires.\nPas de prérequis mathématiques avancés."
+      prerequis_en: "Basics of Python programming (pandas, numpy); \nFundamental notions of statistics (mean, variance, distribution); handling of tabular data.\nNo advanced mathematical prerequisites."
       objectifs:
       - Cet ECUE introduit les concepts fondamentaux de l’apprentissage supervisé. Les étudiants découvrent les notions de jeu d’entraînement/test, de sur-apprentissage et de généralisation. Ils étudient les principaux algorithmes (arbres de décision, forêts aléatoires, SVM, k-NN) et apprennent à évaluer leurs performances via des métriques clés (précision, rappel, F1-score, AUC). L’intégration d’une approche éthique (détection de biais) et écologique (sobriété des modèles) est abordée tout au long du cours.
+      objectifs_en:
+      - This ECUE introduces the fundamental concepts of supervised learning. Students discover the notions of training/test sets, overfitting and generalisation. They study the main algorithms (decision trees, random forests, SVM, k-NN) and learn to evaluate their performance using key metrics (precision, recall, F1-score, AUC). The integration of an ethical approach (bias detection) and an ecological approach (model sobriety) is addressed throughout the course.
       prereq_matches:
       - 1.2.1
       - 1.2.3
@@ -968,39 +1544,54 @@ semesters:
       - 4.1.2
     - code: 4.3.2
       title: Modèles de Régression
+      title_en: Regression Models
       heures: 19
       coefficient: 1
       prerequis: L’ECUE 4.3.1 validé ; maîtrise des opérations matricielles et algèbre linéaire élémentaire ; statistiques descriptives et inférentielles ; utilisation de scikit-learn pour l’entraînement de modèles simples.
+      prerequis_en: ECUE 4.3.1 passed; mastery of matrix operations and elementary linear algebra; descriptive and inferential statistics; use of scikit-learn for training simple models.
       objectifs:
       - Cet ECUE approfondit la modélisation prédictive quantitative à travers les techniques de régression. Les étudiants maîtrisent la régression linéaire simple et multiple, la régression logistique, ainsi que les méthodes de régularisation (Ridge, Lasso, ElasticNet).
       - Ils apprennent à diagnostiquer la qualité d’un modèle (R², RMSE, résidus), à détecter le sur-apprentissage et à optimiser les hyperparamètres. La construction responsable des modèles — en termes d’équité et de minimisation de l’empreinte computationnelle — est intégrée aux travaux pratiques.
+      objectifs_en:
+      - This ECUE explores quantitative predictive modelling in depth through regression techniques. Students master simple and multiple linear regression, logistic regression, as well as regularisation methods (Ridge, Lasso, ElasticNet).
+      - They learn to diagnose the quality of a model (R², RMSE, residuals), to detect overfitting and to optimise hyperparameters. The responsible construction of models — in terms of fairness and minimising computational footprint — is incorporated into the practical work.
       prereq_matches:
       - 1.1.3
       - 2.1.2
     - code: 4.3.3
       title: Clustering Automatique et Fonctions Pertes
+      title_en: Automatic Clustering and Loss Functions
       heures: 18
       coefficient: 1
-      prerequis: "Les ECUEs « Apprentissage Supervisé » et « Modèles de Régression » finalisés\nNotions de géométrie vectorielle et distances ;\nCalcul différentiel élémentaire (dérivées, gradient) ; \nMaîtrise de matplotlib/seaborn pour la visualisation multidimensionnelle."
+      prerequis: "Les ECUEs « Apprentissage Supervisé » et « Modèles de Régression » finalisés\nNotions de géométrie vectorielle et distances ;\nCalcul différentiel élémentaire (dérivées, gradient) ; \nMaîtrise de matplotlib/seaborn pour la visualisation multidimensionnelle."
+      prerequis_en: "The ECUEs \"Supervised Learning\" and \"Regression Models\" completed\nNotions of vector geometry and distances;\nElementary differential calculus (derivatives, gradient); \nMastery of matplotlib/seaborn for multidimensional visualisation."
       objectifs:
       - Cet ECUE aborde l’apprentissage non supervisé à travers les techniques de clustering et approfondit le rôle crucial des fonctions de perte dans l’entraînement des modèles. Les étudiants maîtrisent les algorithmes K-Means, DBSCAN et la classification hiérarchique (CAH), ainsi que la réduction dimensionnelle (ACP, t-SNE). Ils comprennent les fonctions de perte (MSE, Cross-Entropy, Hinge) et leur rôle dans l’optimisation par descente de gradient. L’ECUE intègre une réflexion sur l’interprétabilité, l’équité des groupes formés et l’efficience computationnelle.
+      objectifs_en:
+      - This ECUE covers unsupervised learning through clustering techniques and explores in depth the crucial role of loss functions in model training. Students master the K-Means and DBSCAN algorithms and hierarchical clustering (HCA), as well as dimensionality reduction (PCA, t-SNE). They understand loss functions (MSE, Cross-Entropy, Hinge) and their role in gradient-descent optimisation. The ECUE incorporates a discussion of interpretability, the fairness of the resulting groups, and computational efficiency.
       prereq_matches:
       - 4.3.1
       - 4.3.2
     - code: 4.3.4
       title: Ethique numérique et écologique
+      title_en: Digital and Ecological Ethics
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Les étudiants devront comprendre les impacts numériques et éthiques sur l'écologie afin de les prendre en compte dans l'implémentation de leur solution.
+      objectifs_en:
+      - Students must understand the digital and ethical impacts on ecology in order to take them into account when implementing their solution.
       prereq_matches: []
   - code: '4.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    title_en: Organise and manage an artificial intelligence project and support digital change
     ects: 4
     heures: 56
     themes: Cette UE porte sur la réalisation opérationnelle d'une solution d'IA performante en intégrant les impératifs de la Responsabilité Sociétale des Entreprises (RSE) et des normes ISO 26000 et IEC 27001. Elle exige de savoir défendre une démarche technique tout en garantissant la sécurité des informations et la résolution éthique des problématiques liées au droit du travail.
+    themes_en: This UE covers the operational delivery of a high-performing AI solution while integrating the requirements of Corporate Social Responsibility (CSR) and the ISO 26000 and IEC 27001 standards. It requires the ability to defend a technical approach while guaranteeing information security and the ethical resolution of labour-law-related issues.
     competences:
     - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
     - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
@@ -1020,17 +1611,41 @@ semesters:
     - Etablir la documentation technique des projets IA et transmettre les documents aux parties prenantes
     - Assurer le transfert de compétences auprès des administrateurs pour garantir la viabilité de la solution
     - Organiser et animer la capitalisation de l'expérience à l'issue du projet IA
+    competences_en:
+    - Adapt to project management methods such as AGILE, PMI, etc. in order to apply them to AI projects
+    - Train the users and/or maintainers of the AI solution to ensure knowledge transfer
+    - Identify the sub-projects and tasks included in the overall project in order to estimate their durations
+    - Plan AI projects using PERT and GANTT charts to build the detailed schedule
+    - Define the project's main milestones (validation points) to check that it is proceeding correctly
+    - Design the project schedule using a graphical representation tool
+    - Identify the risks inherent in the AI project in order to assess their criticality
+    - Define a response plan for the identified risks and draw up a monitoring table
+    - Support digital change
+    - Encourage employees to take ownership of digital tools
+    - Take into account the environmental impact of projects in order to reduce the carbon footprint
+    - Lead AI project follow-up meetings
+    - Update dashboard data (costs, actuals, risks, etc.) to manage contingencies
+    - Organise and lead meetings and discussions to ensure the project runs smoothly
+    - Summarise and formalise reporting documents for the steering committee
+    - Produce technical documentation for AI projects and pass the documents on to stakeholders
+    - Ensure skills transfer to administrators to guarantee the viability of the solution
+    - Organise and facilitate the capitalisation of experience at the end of the AI project
     ecues:
     - code: 4.4.1
       title: Projet intelligence Artificielle
+      title_en: Artificial Intelligence Project
       heures: 35
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Dans cette ECUE les étudiants seront amenés à réaliser un projet de développement en mettant en œuvre les outils de pilotage (de la demande client à la réalisation du projet)
+      objectifs_en:
+      - In this ECUE, students will carry out a development project using project management tools (from the client request through to project delivery)
       prereq_matches: []
     - code: 4.4.2
       title: RSE/Droit du Travail Spécifique à l'IA et Normes de Sécurité ISO et IEC27001
+      title_en: CSR/Labour Law Specific to AI, and ISO and IEC 27001 Security Standards
       heures: 21
       coefficient: 1
       prerequis: 'Connaissances de base en informatique et en IA
@@ -1038,6 +1653,11 @@ semesters:
         Capacité d’analyse et de réflexion critique, compétences en communication et travail d’équipe
 
         Curiosités, ouverture d’esprit, sensibilité aux questions éthiques et la responsabilité sociale'
+      prerequis_en: 'Basic knowledge of computing and AI
+
+        Analytical and critical thinking skills, communication and teamwork skills
+
+        Curiosity, open-mindedness, and sensitivity to ethical issues and social responsibility'
       objectifs:
       - Les étudiants devront comprendre les impacts numériques et éthiques de l’Intelligence Artificielle sur l’environnement afin de les prendre en compte dans l'implémentation de leur solution.
       - Comprendre les concepts fondamentaux de la RSE et des normes ISO 26000 et IEC 27001 dans le contexte de l'Intelligence Artificielle.
@@ -1046,10 +1666,19 @@ semesters:
       - Analyser des études de cas sur la RSE et l'IA.
       - Évaluer les plans de gestion des risques pour la sécurité de l'information dans les projets d'IA.
       - Créer un projet intégratif de RSE pour une organisation fictive utilisant l'IA
+      objectifs_en:
+      - Students must understand the digital and ethical impacts of Artificial Intelligence on the environment in order to take them into account when implementing their solution.
+      - Understand the fundamental concepts of CSR and the ISO 26000 and IEC 27001 standards in the context of Artificial Intelligence.
+      - Describe the principles and core subjects of ISO 26000 as applied to AI.
+      - Explain the implementation of the IEC 27001 standard to secure AI systems.
+      - Analyse case studies on CSR and AI.
+      - Evaluate information-security risk management plans in AI projects.
+      - Create an integrative CSR project for a fictitious organisation using AI
       prereq_matches: []
   - code: '4.5'
     num: 5
     title: Anglais
+    title_en: English
     ects: 2
     heures: 28
     themes: 'Anglais à coloration professionnelle et technique
@@ -1057,21 +1686,37 @@ semesters:
       Sujets de réflexion sur des problèmes liés à l’interculturalité
 
       Mobilité internationale'
+    themes_en: 'Professional and technical English
+
+      Discussion topics on issues related to interculturality
+
+      International mobility'
     competences:
     - Consolider le niveau B1
     - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
     - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
     - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
     - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    competences_en:
+    - Consolidate B1 level
+    - Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc.
+    - Can deal with most situations likely to arise while travelling in an area where the target language is spoken.
+    - Can produce simple connected text on topics that are familiar or of personal interest.
+    - Can narrate an event, an experience or a dream, describe a hope or goal, and briefly give reasons or explanations for a plan or an idea.
     ecues:
     - code: 4.5.1
       title: Anglais Semestre 4
+      title_en: English Semester 4
       heures: 28
       coefficient: 1
       prerequis: Anglais semestre 3
+      prerequis_en: English semester 3
       objectifs:
       - Consolidation du niveau B1
       - Mobilité internationale
+      objectifs_en:
+      - Consolidation of B1 level
+      - International mobility
       prereq_matches:
       - 1.5.1
       - 2.4.1
@@ -1079,75 +1724,110 @@ semesters:
   - code: '4.6'
     num: 6
     title: Développement des compétences professionnelles (Semestre 4)
+    title_en: Professional Skills Development (Semester 4)
     ects: 2
     heures: 35
     themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    themes_en: Varied experiences are essential for acquiring new skills. By working in different contexts, taking risks and adapting to change, individuals can develop their sense of initiative, their decision-making, and their problem-solving skills.
     competences: []
+    competences_en: []
     ecues:
     - code: 4.6.1
       title: Communication professionnelle
+      title_en: Professional Communication
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+      objectifs_en:
+      - In this ECUE, the student learns to develop their professional communication. This will enable them to improve their working relationships and demonstrate effectiveness.
       prereq_matches: []
     - code: 4.6.2
       title: Développement des compétences transversales
+      title_en: Development of Cross-disciplinary Skills
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      objectifs_en:
+      - In this ECUE, the student and the teacher carry out an individual review of the student's professional involvement and behaviour
       prereq_matches: []
     - code: 4.6.3
       title: Engagement citoyen et transition écologique
+      title_en: Civic Engagement and Ecological Transition
       heures: 14
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      objectifs_en:
+      - Embrace a societal commitment by demonstrating the importance of values such as environmental preservation, the fight against discrimination, respect for colleagues, the promotion of equal opportunities, and transparent communication with all stakeholders regarding project progress and potential risks.
+      - Analyse the actions to be taken and the potential difficulties to be anticipated with objectivity and a critical mind
+      - Justify the project and the structuring choices made in carrying out the civic activity
       prereq_matches: []
   - code: '4.7'
     num: 7
     title: Mission entreprise
+    title_en: Company Placement
     ects: 12
     heures: 0
     themes: Stage en entreprise
+    themes_en: Company internship
     competences: []
+    competences_en: []
     ecues:
     - code: 4.7.1
       title: Mission entreprise
+      title_en: Company Placement
       heures: 0
       coefficient: 1
       prerequis: Avoir passé, au moins 8 semaines en entreprise.
+      prerequis_en: Have spent at least 8 weeks in a company.
       objectifs: []
+      objectifs_en: []
       prereq_matches:
       - 2.6.1
     - code: 4.7.2
       title: Mémoire technique
+      title_en: Technical Dissertation
       heures: 0
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
-      - 'Mémoire technique :'
+      - 'Mémoire technique :'
       - Observer l’objet de l’étude.
       - Repérer et approfondir un savoir-faire de l’entreprise et élargir ainsi son domaine de compétences,
       - Rencontrer les personnes aptes à lui transmettre les informations nécessaires à l’acquisition du savoir-faire étudié.
       - Travailler la recherche d’informations, par l’identification des ressources, l’analyse et le tri des informations,
       - Comprendre les concepts techniques, en étudier les applications et observer la mise en œuvre,
       - Rédiger un rapport synthétique en restituant de manière claire et parfaitement accessible son travail.
+      objectifs_en:
+      - 'Technical dissertation:'
+      - Observe the subject of the study.
+      - Identify and deepen a particular know-how of the company, thereby broadening the student's field of skills,
+      - Meet the people able to pass on the information needed to acquire the know-how being studied.
+      - Work on information research, through the identification of resources and the analysis and sorting of information,
+      - Understand the technical concepts, study their applications and observe their implementation,
+      - Write a summary report presenting the work clearly and in a fully accessible manner.
       prereq_matches: []
 - number: 5
   ues:
   - code: '5.1'
     num: 1
     title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    title_en: Define the need to address an industrial issue in an Artificial Intelligence project
     ects: 3
     heures: 49
     themes: Dans cette UE, l'étudiant va s'initier aux activités de la recherche à travers la découverte des plateformes de publication, la méthodologie de recherche documentaire, l’analyse critique de sources et la construction d’une bibliographie pertinente. Il traite également de la structuration d’un article scientifique, de l’évaluation de travaux de recherche et de la communication scientifique via des supports tels que le poster ou la présentation orale. L’ensemble permet aux étudiants de planifier un projet de recherche, de contribuer à son développement et de vulgariser les connaissances produites.
+    themes_en: In this UE, students are introduced to research activities through the discovery of publication platforms, documentary research methodology, the critical analysis of sources and the construction of a relevant bibliography. It also covers the structure of a scientific article, the evaluation of research work, and scientific communication through media such as posters or oral presentations. Together, these enable students to plan a research project, contribute to its development, and popularise the knowledge produced.
     competences:
     - Analyser le besoin du client, le contexte économique, l'environnement, la technicité et les métiers de l'entreprise afin d'appréhender le périmètre du projet
     - Identifier et analyser les flux d'information et les processus et activités de l'entreprise afin de comprendre le schéma d'organisation métier
@@ -1167,21 +1847,46 @@ semesters:
     - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
     - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
     - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    competences_en:
+    - Analyse the client's need, the economic context, the environment, the technical aspects and the business lines of the company in order to grasp the scope of the project
+    - Identify and analyse information flows and the company's processes and activities in order to understand the business organisation model
+    - Build opportunity studies in conjunction with business stakeholders (scoping study, feasibility, etc.)
+    - Draft a scoping note (or project charter) to define the overall scope of the project
+    - Use scientific knowledge to verify and/or identify the causes of a malfunction
+    - Use statistics to optimise the AI solution
+    - Establish a diagnosis in order to find the reasons for a malfunction
+    - Identify the various solutions/technologies likely to meet the specifications
+    - Compare existing solutions with their suitability to the need in order to contribute to technical choices
+    - Analyse and assess the risks (security) of an AI in order to help resolve them
+    - Research technical solutions and carry out technology watch to address the AI problem
+    - Compare solutions that meet the needs in order to contribute to technical choices
+    - Build and present all the elements enabling decision-making
+    - Research and contact entrepreneurship support organisations
+    - Master the different classes of algorithms (ML, DL, etc.) in order to model massive data
+    - Implement methods for collecting, storing, processing and visualising data
+    - Grasp cloud architecture concepts (AWS, Azure, etc.) and learning tools (Keras, TF, etc.)
+    - Conduct technology watch in order to identify new applications and developments
     ecues:
     - code: 5.1.1
       title: Initiation à la recherche
+      title_en: Introduction to Research
       heures: 49
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - 'À la fin de cette mission, les participants seront capables d''appliquer une méthodologie de recherche permettant l''identification de ressources pertinentes, et la rédaction de rapports scientifiques sous forme d''article (journal, ou conférence). Aussi, les participant seront amenés à communiquer autour de leurs problématiques en utilisant des supports tels que : PPT ou poster.'
+      objectifs_en:
+      - By the end of this assignment, participants will be able to apply a research methodology enabling the identification of relevant resources and the writing of scientific reports in article form (journal or conference paper). Participants will also be required to communicate about their research questions using media such as slide decks or posters.
       prereq_matches: []
   - code: '5.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
+    title_en: Design the AI solution within the overall architecture
     ects: 5
     heures: 77
     themes: L'objectif général d'un cours de deep learning est de donner aux étudiants une compréhension approfondie des réseaux de neurones profonds et de leurs applications dans divers domaines tels que la vision
+    themes_en: The general aim of a deep learning course is to give students an in-depth understanding of deep neural networks and their applications in various fields such as vision
     competences:
     - Identifier les différentes sources de données
     - Identifier les algos/protocoles pour une collecte efficace des données
@@ -1200,9 +1905,28 @@ semesters:
     - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
     - Mettre en œuvre la solution pour répondre aux besoins
     - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    competences_en:
+    - Identify the various data sources
+    - Identify the algorithms/protocols for effective data collection
+    - Identify the need for data preprocessing in order to integrate it into the AI solution
+    - Select data sources in order to model and map them
+    - Identify and use performance indicators to justify the chosen solution
+    - Develop dashboards incorporating business data for decision-making
+    - Quantify data computing and storage capacity needs
+    - Identify the resources available within the information system
+    - Grasp the ins and outs of the AI solution
+    - Define the steps of an AI process
+    - Identify stakeholders in order to understand the full range of issues associated with the projects
+    - Identify the IT infrastructure required within the company
+    - Identify and set up performance indicators in order to choose a suitable AI model
+    - Handle algorithms on several platforms using different languages
+    - Identify and analyse the appropriate technologies to help with decision-making
+    - Implement the solution to meet the needs
+    - Test and validate the AI solution based on performance indicators
     ecues:
     - code: 5.2.1
       title: Deep Learning
+      title_en: Deep Learning
       heures: 35
       coefficient: 1
       prerequis: 'Algèbre linéaire
@@ -1210,6 +1934,11 @@ semesters:
         Programmation en python,
 
         Mise en place d’un environnement Jupyter notebook sous Anaconda navigator.'
+      prerequis_en: 'Linear algebra
+
+        Programming in Python,
+
+        Setting up a Jupyter notebook environment using Anaconda Navigator.'
       objectifs:
       - Identifier les rôles des différentes parties prenantes pour comprendre leurs besoins
       - Participer à l’écriture et au maintien d’un algorithme fiable et efficace pour la mise en place d'algorithmes de deep learning
@@ -1230,6 +1959,26 @@ semesters:
       - Décrire le fonctionnement d’un réseau entièrement Convolutif (FCN)
       - Décrire le réseau U-NET
       - Appliquer les CNN et les FCN pour la détection et la segmentation dans un cas pratique.
+      objectifs_en:
+      - Identify the roles of the various stakeholders in order to understand their needs
+      - Contribute to the writing and maintenance of a reliable and efficient algorithm for implementing deep learning algorithms
+      - Master the different classes of AI algorithms, their limitations and biases, and their application to the data — potentially massive — relevant to the project
+      - Describe the main neural network architectures (fully connected networks, convolutional neural networks (CNN), fully convolutional networks (FCN))
+      - Choose the architecture according to the problem identified.
+      - Evaluate the effectiveness of a neural network according to the problem identified.
+      - Program a neural network using the TensorFlow and Keras framework.
+      - Present and defend the results obtained with a neural network.
+      - Understand the challenges posed by a dataset for deep learning.
+      - Identify the biases in a dataset.
+      - Choose an appropriate split of a dataset (training, validation, test).
+      - Choose the metrics of a neural network according to the problem identified.
+      - Evaluate the performance of a neural network architecture.
+      - Identify use cases for a CNN/FCN in the healthcare field.
+      - Understand the principles of semantic segmentation.
+      - 'Explain the different blocks of a CNN: Convolution, MaxPooling'
+      - Describe how a fully convolutional network (FCN) works
+      - Describe the U-NET network
+      - Apply CNNs and FCNs to detection and segmentation in a practical case.
       prereq_matches:
       - 1.1.3
       - 1.2.1
@@ -1238,9 +1987,11 @@ semesters:
       - 4.1.2
     - code: 5.2.2
       title: Reinforcement Learning
+      title_en: Reinforcement Learning
       heures: 14
       coefficient: 1
       prerequis: "Programmation en Python \nNotions de probabilités \nNotions d'optimisation \nNotions de chaînes de markov"
+      prerequis_en: "Programming in Python \nNotions of probability \nNotions of optimisation \nNotions of Markov chains"
       objectifs:
       - Définir le cadre formel de l'apprentissage par renforcement (agent, environnement, état, action, récompense)
       - Distinguer l'apprentissage par renforcement des autres paradigmes d'apprentissage automatique (supervisé, non supervisé)
@@ -1250,6 +2001,15 @@ semesters:
       - Appliquer l'apprentissage par renforcement à un environnement simple (grille, jeu)
       - Évaluer la convergence et la performance d'un agent par l'analyse des courbes de récompenses cumulées
       - Identifier des cas d'usage du reinforcement learning dans l'industrie
+      objectifs_en:
+      - Define the formal framework of reinforcement learning (agent, environment, state, action, reward)
+      - Distinguish reinforcement learning from other machine learning paradigms (supervised, unsupervised)
+      - Explain the exploration vs exploitation trade-off
+      - Describe and implement the Q-Learning algorithm
+      - Interpret a Q-table in order to derive an optimal policy
+      - Apply reinforcement learning to a simple environment (grid, game)
+      - Evaluate the convergence and performance of an agent by analysing cumulative reward curves
+      - Identify use cases for reinforcement learning in industry
       prereq_matches:
       - 1.2.1
       - 1.2.3
@@ -1260,6 +2020,7 @@ semesters:
       - 4.1.2
     - code: 5.2.3
       title: Chaînes de Markov et Automates
+      title_en: Markov Chains and Automata
       heures: 28
       coefficient: 1
       prerequis: 'Notions de probabilités (probabilité conditionnelle, loi de probabilité discrète)
@@ -1267,6 +2028,11 @@ semesters:
         Calcul matriciel de base (produit de matrices, vecteurs)
 
         Programmation Python (boucles, numpy)'
+      prerequis_en: 'Notions of probability (conditional probability, discrete probability distribution)
+
+        Basic matrix calculus (matrix products, vectors)
+
+        Python programming (loops, numpy)'
       objectifs:
       - Définir et représenter un automate fini (déterministe et non déterministe)
       - Analyser le comportement d'un automate sur un mot d'entrée
@@ -1278,6 +2044,17 @@ semesters:
       - Implémenter une simulation de chaîne de Markov en Python
       - Appliquer les chaînes de Markov à un problème concret (modélisation de parcours patient, génération de texte, fiabilité de systèmes)
       - Faire le lien entre chaînes de Markov et MDP (passerelle avec l'ECUE 5.2.2)
+      objectifs_en:
+      - Define and represent a finite automaton (deterministic and non-deterministic)
+      - Analyse the behaviour of an automaton on an input word
+      - Build an automaton from a simple specification
+      - Define a discrete-time Markov chain and its components (states, transition matrix)
+      - Compute n-step transition probabilities via matrix products
+      - Determine the stationary distribution of a Markov chain
+      - Classify the states of a Markov chain (absorbing, recurrent, transient)
+      - Implement a simulation of a Markov chain in Python
+      - Apply Markov chains to a concrete problem (modelling patient pathways, text generation, system reliability)
+      - Make the connection between Markov chains and MDPs (bridge with ECUE 5.2.2)
       prereq_matches:
       - 1.2.1
       - 1.2.3
@@ -1287,9 +2064,11 @@ semesters:
   - code: '5.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    title_en: Develop and maintain an AI solution to optimise company performance while respecting an ethical and ecological approach
     ects: 3
     heures: 42
     themes: Cette thématique porte sur la conception et le développement d'architectures web Full Stack, en articulant le pattern MVC et les principes d'API REST. Elle impose une maîtrise des interactions client-serveur sécurisées (PHP/PDO, Fetch API) et la mise en œuvre de mécanismes d'authentification et de protection contre les failles critiques.
+    themes_en: This topic covers the design and development of Full Stack web architectures, combining the MVC pattern with REST API principles. It requires mastery of secure client-server interactions (PHP/PDO, Fetch API) and the implementation of authentication mechanisms and protection against critical vulnerabilities.
     competences:
     - Déployer la solution d'IA dans un Système d'information
     - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
@@ -1302,22 +2081,40 @@ semesters:
     - Utiliser des scripts Python s'appuyant sur des bibliothèques dédiées IA pour maintenir la solution déployée
     - Analyser les résultats de la solution IA afin d'en évaluer l'impact écologique
     - Mettre en place des solutions correctives si les résultats ne sont pas optimaux
+    competences_en:
+    - Deploy the AI solution within an information system
+    - Implement an AI solution in an existing information system using appropriate technologies and/or languages
+    - Ensure the configuration of the deployed AI solution
+    - Measure and reduce the environmental impacts of the AI solution with regard to regulatory bodies
+    - Select and formalise the solution's performance elements in order to produce reporting
+    - Monitor the AI solution within the information system, ensuring its effectiveness and its evolution
+    - Maintain the AI system in place to guarantee continuity of service
+    - Configure AI solutions and master the associated metrics to validate performance
+    - Use Python scripts based on dedicated AI libraries to maintain the deployed solution
+    - Analyse the results of the AI solution in order to assess its ecological impact
+    - Implement corrective solutions if the results are not optimal
     ecues:
     - code: 5.3.1
       title: Développement Web Full Stack
+      title_en: Full Stack Web Development
       heures: 42
       coefficient: 1
       prerequis: 'UE 2.1.4 : Développement Web'
+      prerequis_en: 'UE 2.1.4: Web Development'
       objectifs:
       - À la fin de ce cours, les étudiants seront en mesure de comprendre les concepts avancés du développement web full stack et de créer des applications web complètes et dynamiques.
+      objectifs_en:
+      - By the end of this course, students will be able to understand advanced full stack web development concepts and create complete, dynamic web applications.
       prereq_matches:
       - 2.1.3
   - code: '5.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    title_en: Organise and manage an artificial intelligence project and support digital change
     ects: 3
     heures: 49
     themes: Cette thématique porte sur la maîtrise stratégique de la transition numérique, en articulant le pilotage rigoureux des ressources et des délais avec les impératifs juridiques et l'agilité managériale. Elle vise à pérenniser la valeur du projet par une capitalisation des expériences et un accompagnement humain structuré lors des phases de changement.
+    themes_en: This topic covers the strategic mastery of digital transition, combining the rigorous management of resources and deadlines with legal requirements and managerial agility. It aims to sustain the value of the project through the capitalisation of experience and structured human support during periods of change.
     competences:
     - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
     - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
@@ -1337,86 +2134,145 @@ semesters:
     - Etablir la documentation technique des projets IA et transmettre les documents aux parties prenantes
     - Assurer le transfert de compétences auprès des administrateurs pour garantir la viabilité de la solution
     - Organiser et animer la capitalisation de l'expérience à l'issue du projet IA
+    competences_en:
+    - Adapt to project management methods such as AGILE, PMI, etc. in order to apply them to AI projects
+    - Train the users and/or maintainers of the AI solution to ensure knowledge transfer
+    - Identify the sub-projects and tasks included in the overall project in order to estimate their durations
+    - Plan AI projects using PERT and GANTT charts to build the detailed schedule
+    - Define the project's main milestones (validation points) to check that it is proceeding correctly
+    - Design the project schedule using a graphical representation tool
+    - Identify the risks inherent in the AI project in order to assess their criticality
+    - Define a response plan for the identified risks and draw up a monitoring table
+    - Support digital change
+    - Encourage employees to take ownership of digital tools
+    - Take into account the environmental impact of projects in order to reduce the carbon footprint
+    - Lead AI project follow-up meetings
+    - Update dashboard data (costs, actuals, risks, etc.) to manage contingencies
+    - Organise and lead meetings and discussions to ensure the project runs smoothly
+    - Summarise and formalise reporting documents for the steering committee
+    - Produce technical documentation for AI projects and pass the documents on to stakeholders
+    - Ensure skills transfer to administrators to guarantee the viability of the solution
+    - Organise and facilitate the capitalisation of experience at the end of the AI project
     ecues:
     - code: 5.4.1
       title: Accompagnement au Changement et à la Transition Numérique
+      title_en: Support for Change and Digital Transition
       heures: 7
       coefficient: 1
       prerequis: Demander 2 mois avant de réaliser une analyse de la dynamique digitale de leur entreprise.
+      prerequis_en: Request, 2 months in advance, an analysis of the digital dynamics of their company.
       objectifs:
       - Adapter son mode de management aux évolutions induites par le développement du numérique
       - Favoriser les relations de collaboration au sein des équipes
       - Développer son agilité managériale
+      objectifs_en:
+      - Adapt one's management style to the changes brought about by digital development
+      - Foster collaborative relationships within teams
+      - Develop one's managerial agility
       prereq_matches:
       - 2.6.1
       - 4.7.1
     - code: 5.4.2
       title: Pilotage du projet informatique
+      title_en: IT Project Management
       heures: 28
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Savoir piloter un projet afin de garantir l’avancement d’un projet et sa qualité
+      objectifs_en:
+      - Know how to manage a project in order to guarantee its progress and quality
       prereq_matches: []
     - code: 5.4.3
       title: Législation du projet informatique
+      title_en: IT Project Law
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Piloter un projet en intégrant les règles juridiques relatives aux spécificités des différents contrats informatiques
+      objectifs_en:
+      - Manage a project while incorporating the legal rules relating to the specificities of the various IT contracts
       prereq_matches: []
     - code: 5.4.4
       title: Capitalisation et promotion du projet
+      title_en: Project Capitalisation and Promotion
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Acquérir les méthodes de communication liées au projet et capitaliser sur les acquis
+      objectifs_en:
+      - Acquire communication methods related to the project and capitalise on what has been learned
       prereq_matches: []
   - code: '5.4'
     num: 4
     title: Anglais
+    title_en: English
     ects: 2
     heures: 35
     themes: 'Anglais à coloration professionnelle et technique
 
       Exploitation de la mobilité internationale'
+    themes_en: 'Professional and technical English
+
+      Building on international mobility'
     competences:
     - Consolider le niveau B1+
     - Peut comprendre une information factuelle directe sur des sujets de la vie quotidienne ou relatifs au travail en distinguant les messages généraux et les points de détail, à condition que l’articulation soit claire et l’accent courant.
     - Peut parcourir un texte assez long pour y localiser une information recherchée et peut réunir des informations provenant de différentes parties du texte, ou de textes différents, afin d’accomplir une tâche précise.
     - Peut expliquer comment faire quelque chose en donnant des instructions détaillées.
     - Peut développer une argumentation suffisamment bien pour être compris sans difficulté la plupart du temps.
+    competences_en:
+    - Consolidate B1+ level
+    - Can understand straightforward factual information about everyday or job-related topics, identifying both general messages and specific details, provided speech is clearly articulated in a generally familiar accent.
+    - Can scan longer texts in order to locate desired information, and gather information from different parts of a text, or from different texts, in order to fulfil a specific task.
+    - Can give detailed instructions on how to do something.
+    - Can develop an argument well enough to be followed without difficulty most of the time.
     ecues:
     - code: 5.4.1
       title: Anglais Semestre 5
+      title_en: English Semester 5
       heures: 35
       coefficient: 1
       prerequis: Anglais semestre 4
+      prerequis_en: English semester 4
       objectifs:
       - Consolidation du niveau B1+
+      objectifs_en:
+      - Consolidation of B1+ level
       prereq_matches:
       - 2.6.1
       - 4.7.1
   - code: '5.6'
     num: 6
     title: Développement des compétences professionnelles (Semestre 5)
+    title_en: Professional Skills Development (Semester 5)
     ects: 2
     heures: 28
     themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    themes_en: Varied experiences are essential for acquiring new skills. By working in different contexts, taking risks and adapting to change, individuals can develop their sense of initiative, their decision-making, and their problem-solving skills.
     competences: []
+    competences_en: []
     ecues:
     - code: 5.6.1
       title: Communication professionnelle
+      title_en: Professional Communication
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+      objectifs_en:
+      - In this ECUE, the student learns to develop their professional communication. This will enable them to improve their working relationships and demonstrate effectiveness.
       prereq_matches: []
     - code: 5.6.2
       title: PFI - Démarche RH
+      title_en: PFI - HR Approach
       heures: 7
       coefficient: 1
       prerequis: 'Durant tout le cycle, l’étudiant est amené à bâtir son projet professionnel, à travers la démarche PFI : Plan de Formation Individuel.
@@ -1424,41 +2280,64 @@ semesters:
         Identifier les compétences attendues sur un poste
 
         Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés'
+      prerequis_en: 'Throughout the programme, the student builds their professional plan through the PFI approach: Individual Training Plan.
+
+        Identify the skills expected for a position
+
+        Draw up an action plan based on a self-assessment of skills and the objectives set'
       objectifs:
       - Voir la note pédagogique
+      objectifs_en:
+      - See the guidance notes
       prereq_matches: []
     - code: 5.6.3
       title: Développement des compétences transversales
+      title_en: Development of Cross-disciplinary Skills
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      objectifs_en:
+      - In this ECUE, the student and the teacher carry out an individual review of the student's professional involvement and behaviour
       prereq_matches: []
     - code: 5.6.4
       title: Engagement citoyen et transition écologique
+      title_en: Civic Engagement and Ecological Transition
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Connaitre et comprendre les enjeux de la transition écologique.
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      objectifs_en:
+      - Know and understand the issues at stake in the ecological transition.
+      - Embrace a societal commitment by demonstrating the importance of values such as environmental preservation, the fight against discrimination, respect for colleagues, the promotion of equal opportunities, and transparent communication with all stakeholders regarding project progress and potential risks.
+      - Analyse the actions to be taken and the potential difficulties to be anticipated with objectivity and a critical mind
+      - Justify the project and the structuring choices made in carrying out the civic activity
       prereq_matches: []
   - code: '5.7'
     num: 7
     title: Mission entreprise
+    title_en: Company Placement
     ects: 12
     heures: 0
     themes: Mission en entreprise
+    themes_en: Company placement
     competences: []
+    competences_en: []
     ecues:
     - code: 5.7.1
       title: Mission entreprise
+      title_en: Company Placement
       heures: 0
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Remplir les missions professionnelles assignées en début de semestre.
       - Atteindre le niveau requis des compétences visées sur le semestre.
@@ -1468,15 +2347,26 @@ semesters:
       - Mettre en œuvre son expertise scientifique ou technique au sein de l’organisation
       - Organiser sa mission et manager les ressources
       - Organiser sa propre activité et le développement de ses compétences
+      objectifs_en:
+      - Carry out the professional assignments set at the start of the semester.
+      - Reach the required level of the skills targeted for the semester.
+      - Understand and embrace the company's challenges and strategy
+      - Analyse and seek solutions to a problem of designing, delivering or improving a product, system or service
+      - Lead a project to design, deliver or improve a product, system or service
+      - Apply one's scientific or technical expertise within the organisation
+      - Organise one's assignment and manage resources
+      - Organise one's own activity and the development of one's skills
       prereq_matches: []
 - number: 6
   ues:
   - code: '6.1'
     num: 1
     title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    title_en: Define the need to address an industrial issue in an Artificial Intelligence project
     ects: 2
     heures: 42
     themes: L’UE aborde les fondements de l’innovation et de l’entrepreneuriat en entreprise. Elle traite des différences entre créativité et innovation, des typologies d’innovations et des méthodes permettant de générer, structurer et développer des idées nouvelles. L’UE explore également les processus d’innovation et les outils mobilisables pour accompagner la création de valeur. Elle introduit ensuite les bases de l’entrepreneuriat, la posture entrepreneuriale, les étapes du processus entrepreneurial et les structures d’accompagnement. L’ensemble permet aux étudiants de comprendre comment émergent les idées innovantes, comment elles se transforment en projets, et comment elles peuvent être portées dans un cadre entrepreneurial.
+    themes_en: This UE covers the fundamentals of innovation and entrepreneurship within a company. It addresses the differences between creativity and innovation, the typologies of innovation, and the methods for generating, structuring and developing new ideas. The UE also explores innovation processes and the tools that can be used to support value creation. It then introduces the basics of entrepreneurship, the entrepreneurial mindset, the stages of the entrepreneurial process, and support structures. Together, these enable students to understand how innovative ideas emerge, how they turn into projects, and how they can be carried forward within an entrepreneurial framework.
     competences:
     - Analyser le besoin du client, le contexte économique, l'environnement, la technicité et les métiers de l'entreprise afin d'appréhender le périmètre du projet
     - Identifier et analyser les flux d'information et les processus et activités de l'entreprise afin de comprendre le schéma d'organisation métier
@@ -1489,29 +2379,51 @@ semesters:
     - Construire et exposer tous les éléments permettant la prise de décision
     - Rechercher et contacter les structures d'accompagnement à l'entrepreneuriat
     - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    competences_en:
+    - Analyse the client's need, the economic context, the environment, the technical aspects and the business lines of the company in order to grasp the scope of the project
+    - Identify and analyse information flows and the company's processes and activities in order to understand the business organisation model
+    - Build opportunity studies in conjunction with business stakeholders (scoping study, feasibility, etc.)
+    - Draft a scoping note (or project charter) to define the overall scope of the project
+    - Identify the various solutions/technologies likely to meet the specifications
+    - Compare existing solutions with their suitability to the need in order to contribute to technical choices
+    - Research technical solutions and carry out technology watch to address the AI problem
+    - Compare solutions that meet the needs in order to contribute to technical choices
+    - Build and present all the elements enabling decision-making
+    - Research and contact entrepreneurship support organisations
+    - Conduct technology watch in order to identify new applications and developments
     ecues:
     - code: 6.1.1
       title: Techniques d'innovation
+      title_en: Innovation Techniques
       heures: 28
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - A l'issue de cette ECUE, les étudiants seront sensibilisés aux méthodologies de gestion de l'innovation dans les entreprises
+      objectifs_en:
+      - By the end of this ECUE, students will be familiar with innovation management methodologies within companies
       prereq_matches: []
     - code: 6.1.2
       title: Entrepreneuriat
+      title_en: Entrepreneurship
       heures: 14
       coefficient: 1
       prerequis: Aucun prérequis
+      prerequis_en: No prerequisites
       objectifs:
       - A l'issue de cette ECUE, les étudiants auront les notions de bases de l'entrepreneuriat avec les différents statuts juridiques
+      objectifs_en:
+      - By the end of this ECUE, students will have the basic notions of entrepreneurship along with the various legal statuses
       prereq_matches: []
   - code: '6.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
+    title_en: Design the AI solution within the overall architecture
     ects: 3
     heures: 63
     themes: Cette unité d'enseignement combine l'architecture et l'administration des réseaux locaux (modèles OSI/TCP-IP, adressage IPv4/v6, configuration Cisco et Active Directory) avec les outils mathématiques du traitement de signal (Transformée de Fourier, filtrage, échantillonnage). Elle traite également de la théorie de l'information appliquée à l'image, incluant les mécanismes de compression avec et sans perte (Huffman, DCT, standard JPEG). L'ensemble vise à maîtriser la chaîne complète de transmission, du traitement des données jusqu'à leur acheminement réseau.
+    themes_en: This teaching unit combines local network architecture and administration (OSI/TCP-IP models, IPv4/v6 addressing, Cisco and Active Directory configuration) with the mathematical tools of signal processing (Fourier transform, filtering, sampling). It also covers information theory applied to images, including lossy and lossless compression mechanisms (Huffman, DCT, the JPEG standard). Together, these aim to master the complete transmission chain, from data processing through to its routing across the network.
     competences:
     - Identifier les différentes sources de données
     - Identifier les algos/protocoles pour une collecte efficace des données
@@ -1529,46 +2441,82 @@ semesters:
     - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
     - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
     - Mettre en œuvre la solution pour répondre aux besoins
+    competences_en:
+    - Identify the various data sources
+    - Identify the algorithms/protocols for effective data collection
+    - Identify the need for data preprocessing in order to integrate it into the AI solution
+    - Select data sources in order to model and map them
+    - Identify and use performance indicators to justify the chosen solution
+    - Develop dashboards incorporating business data for decision-making
+    - Quantify data computing and storage capacity needs
+    - Identify the resources available within the information system
+    - Grasp the ins and outs of the AI solution
+    - Define the steps of an AI process
+    - Identify stakeholders in order to understand the full range of issues associated with the projects
+    - Identify the IT infrastructure required within the company
+    - Identify and set up performance indicators in order to choose a suitable AI model
+    - Handle algorithms on several platforms using different languages
+    - Identify and analyse the appropriate technologies to help with decision-making
+    - Implement the solution to meet the needs
     ecues:
     - code: 6.2.1
       title: Architecture du Réseau Local
+      title_en: Local Network Architecture
       heures: 21
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Maîtriser l'architecture, la configuration de base et la sécurisation des réseaux locaux commutés en environnements IPv4 et IPv6
+      objectifs_en:
+      - Master the architecture, basic configuration and security of switched local networks in IPv4 and IPv6 environments
       prereq_matches: []
     - code: 6.2.2
       title: Administration Système et Réseau Local
+      title_en: System and Local Network Administration
       heures: 14
       coefficient: 1
       prerequis: Utiliser Microsoft windows
+      prerequis_en: Use of Microsoft Windows
       objectifs:
       - Comprendre le fonctionnement d'active directory
       - Comprendre l'organisation d'un réseau local et configurer celui-ci
+      objectifs_en:
+      - Understand how Active Directory works
+      - Understand the organisation of a local network and configure it
       prereq_matches: []
     - code: 6.2.3
       title: Transformée de Fourier
+      title_en: Fourier Transform
       heures: 14
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Maîtriser les outils de l'analyse spectrale pour passer du signal analogique au traitement numérique, afin de modéliser et de filtrer des informations fréquentielles.
+      objectifs_en:
+      - Master spectral analysis tools in order to move from analogue signals to digital processing, so as to model and filter frequency-domain information.
       prereq_matches: []
     - code: 6.2.4
       title: Compression d'image
+      title_en: Image Compression
       heures: 14
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Maîtriser les principes de la compression de données visuelles en exploitant la réduction des redondances statistiques et psychovisuelles
+      objectifs_en:
+      - Master the principles of visual data compression by exploiting the reduction of statistical and psychovisual redundancies
       prereq_matches: []
   - code: '6.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    title_en: Develop and maintain an AI solution to optimise company performance while respecting an ethical and ecological approach
     ects: 1
     heures: 28
     themes: Cette thématique porte sur la conception logicielle avancée et la vision par ordinateur, articulant la modélisation par diagrammes UML et l'application de Design Patterns. Elle vise à maîtriser la chaîne complète du traitement d'images via OpenCV, de l'acquisition numérique et la calibration de caméra jusqu'à l'implémentation d'algorithmes de segmentation et d'extraction de caractéristiques.
+    themes_en: This topic covers advanced software design and computer vision, combining UML diagram modelling with the application of Design Patterns. It aims to master the complete image-processing chain using OpenCV, from digital acquisition and camera calibration through to the implementation of segmentation and feature-extraction algorithms.
     competences:
     - Déployer la solution d'IA dans un Système d'information
     - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
@@ -1581,15 +2529,32 @@ semesters:
     - Utiliser des scripts Python s'appuyant sur des bibliothèques dédiées IA pour maintenir la solution déployée
     - Analyser les résultats de la solution IA afin d'en évaluer l'impact écologique
     - Mettre en place des solutions correctives si les résultats ne sont pas optimaux
+    competences_en:
+    - Deploy the AI solution within an information system
+    - Implement an AI solution in an existing information system using appropriate technologies and/or languages
+    - Ensure the configuration of the deployed AI solution
+    - Measure and reduce the environmental impacts of the AI solution with regard to regulatory bodies
+    - Select and formalise the solution's performance elements in order to produce reporting
+    - Monitor the AI solution within the information system, ensuring its effectiveness and its evolution
+    - Maintain the AI system in place to guarantee continuity of service
+    - Configure AI solutions and master the associated metrics to validate performance
+    - Use Python scripts based on dedicated AI libraries to maintain the deployed solution
+    - Analyse the results of the AI solution in order to assess its ecological impact
+    - Implement corrective solutions if the results are not optimal
     ecues:
     - code: 6.3.1
       title: Langage de modélisation unifié (UML)
+      title_en: Unified Modeling Language (UML)
       heures: 7
       coefficient: 1
       prerequis: Connaitre les principes de la programmation orientée obje
+      prerequis_en: Knowledge of the principles of object-oriented programming
       objectifs:
       - Traduire un besoin exprimé en réalisant des diagrammes de base UML
       - Décrire l’utilisation et l’utilisabilité d’une application au travers des diagrammes UML
+      objectifs_en:
+      - Translate an expressed need by producing basic UML diagrams
+      - Describe the use and usability of an application through UML diagrams
       prereq_matches:
       - 1.2.1
       - 1.2.3
@@ -1597,27 +2562,38 @@ semesters:
       - 4.1.2
     - code: 6.3.2
       title: Traitement d'images (reconnaissance)
+      title_en: Image Processing (Recognition)
       heures: 21
       coefficient: 1
       prerequis: Connaissance du langage Python
+      prerequis_en: Knowledge of the Python language
       objectifs:
       - Appliquer des algorithmes sur des images afin de les améliorer ou d’en extraire des informations de plus haut niveau (contours, points d’intérêts, segmentation)
+      objectifs_en:
+      - Apply algorithms to images in order to enhance them or extract higher-level information from them (edges, points of interest, segmentation)
       prereq_matches:
       - 1.2.1
       - 2.2.1
   - code: '6.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    title_en: Organise and manage an artificial intelligence project and support digital change
     ects: 3
     heures: 49
     themes: 'Durant cette UE, les étudiants seront amenés à sélectionner un sujet de projet et à le gérer du début à la fin. Durant le temps du projet, les équipes devront proposer, concevoir, implémenter et évaluer une solution d’IA.
 
       A la fin du projet, les étudiants devront fournir une présentation appliquant l''ensemble des concepts acquis durant la formation devant un jury d’experts qui validera les résultats obtenus par l’équipe.'
+    themes_en: 'During this UE, students will select a project topic and manage it from start to finish. Over the course of the project, teams will propose, design, implement and evaluate an AI solution.
+
+      At the end of the project, students must give a presentation applying all the concepts acquired during the programme in front of a panel of experts, who will validate the results obtained by the team.'
     competences:
     - L’ensemble du référentiel de compétences
+    competences_en:
+    - The entire skills framework
     ecues:
     - code: 6.4.1
       title: Projet IA
+      title_en: AI Project
       heures: 49
       coefficient: 1
       prerequis: 'Initiation à la recherche
@@ -1631,8 +2607,21 @@ semesters:
         Communication professionnelle
 
         Démarche éthique du projet I.A.'
+      prerequis_en: 'Introduction to Research
+
+        Supervised project
+
+        Ethics
+
+        Innovation
+
+        Professional Communication
+
+        Ethical approach to the AI project'
       objectifs:
       - Dans cette UE les étudiants seront amenés à réaliser un projet, en mettant en œuvre les outils de pilotage, et seront amené à identifier les pistes d'améliorations de ce dernier afin de prendre du recul.
+      objectifs_en:
+      - In this UE, students will carry out a project using project management tools, and will identify areas for improvement in order to gain perspective on it.
       prereq_matches:
       - 1.6.1
       - 2.5.1
@@ -1644,25 +2633,39 @@ semesters:
   - code: '6.5'
     num: 5
     title: Anglais
+    title_en: English
     ects: 1
     heures: 35
     themes: 'Anglais à coloration professionnelle et technique
 
       Exploration des notions de Responsabilité sociétale des entreprises et de Développement durable'
+    themes_en: 'Professional and technical English
+
+      Exploring the notions of Corporate Social Responsibility and Sustainable Development'
     competences:
     - Consolider le niveau B1+
     - Peut comprendre une information factuelle directe sur des sujets de la vie quotidienne ou relatifs au travail en distinguant les messages généraux et les points de détail, à condition que l’articulation soit claire et l’accent courant.
     - Peut parcourir un texte assez long pour y localiser une information recherchée et peut réunir des informations provenant de différentes parties du texte, ou de textes différents, afin d’accomplir une tâche précise.
     - Peut expliquer comment faire quelque chose en donnant des instructions détaillées.
     - Peut développer une argumentation suffisamment bien pour être compris sans difficulté la plupart du temps.
+    competences_en:
+    - Consolidate B1+ level
+    - Can understand straightforward factual information about everyday or job-related topics, identifying both general messages and specific details, provided speech is clearly articulated in a generally familiar accent.
+    - Can scan longer texts in order to locate desired information, and gather information from different parts of a text, or from different texts, in order to fulfil a specific task.
+    - Can give detailed instructions on how to do something.
+    - Can develop an argument well enough to be followed without difficulty most of the time.
     ecues:
     - code: 6.5.1
       title: Anglais semestre 6
+      title_en: English Semester 6
       heures: 35
       coefficient: 1
       prerequis: Anglais semestre 5
+      prerequis_en: English semester 5
       objectifs:
       - Consolidation du niveau B1+
+      objectifs_en:
+      - Consolidation of B1+ level
       prereq_matches:
       - 1.5.1
       - 2.4.1
@@ -1672,16 +2675,21 @@ semesters:
   - code: '6.6'
     num: 6
     title: Développement des compétences professionnelles (semestre 6)
+    title_en: Professional Skills Development (Semester 6)
     ects: 1
     heures: 42
     themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    themes_en: Varied experiences are essential for acquiring new skills. By working in different contexts, taking risks and adapting to change, individuals can develop their sense of initiative, their decision-making, and their problem-solving skills.
     competences: []
+    competences_en: []
     ecues:
     - code: 6.6.1
       title: Communication professionnelle
+      title_en: Professional Communication
       heures: 21
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Construire un argumentaire
       - Préparer une présentation orale efficace, en fonction du but et du public visé
@@ -1689,49 +2697,78 @@ semesters:
       - Structurer ses écrits
       - Ecrire en respectant les règles d’orthographe de la langue française
       - Comprendre comment gérer les changements dans les projets de manière efficace, en minimisant les impacts négatifs et en maximisant les opportunités pour atteindre les objectifs de projet
+      objectifs_en:
+      - Build an argument
+      - Prepare an effective oral presentation, tailored to the purpose and the target audience
+      - Produce a professional piece of writing
+      - Structure one's writing
+      - Write in accordance with the spelling rules of the French language
+      - Understand how to manage change in projects effectively, minimising negative impacts and maximising opportunities to achieve project objectives
       prereq_matches: []
     - code: 6.6.2
       title: PFI - Soutenance Finale
+      title_en: PFI - Final Defence
       heures: 7
       coefficient: 1
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - 'Durant tout le cycle, l’élève est amené à bâtir son projet professionnel, à travers la démarche PFI : Plan de Formation Individuel.'
       - Identifier les compétences attendues sur un poste
       - Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés
       - Réaliser un bilan sur les 3 années
+      objectifs_en:
+      - 'Throughout the programme, the student builds their professional plan through the PFI approach: Individual Training Plan.'
+      - Identify the skills expected for a position
+      - Draw up an action plan based on a self-assessment of skills and the objectives set
+      - Carry out a review of the 3 years
       prereq_matches: []
     - code: 6.6.3
       title: Développement des compétences transversales
+      title_en: Development of Cross-disciplinary Skills
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      objectifs_en:
+      - In this ECUE, the student and the teacher carry out an individual review of the student's professional involvement and behaviour
       prereq_matches: []
     - code: 6.6.4
       title: Engagement citoyen et transition écologique
+      title_en: Civic Engagement and Ecological Transition
       heures: 7
       coefficient: 1
       prerequis: Aucun
+      prerequis_en: None
       objectifs:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      objectifs_en:
+      - Embrace a societal commitment by demonstrating the importance of values such as environmental preservation, the fight against discrimination, respect for colleagues, the promotion of equal opportunities, and transparent communication with all stakeholders regarding project progress and potential risks.
+      - Analyse the actions to be taken and the potential difficulties to be anticipated with objectivity and a critical mind
+      - Justify the project and the structuring choices made in carrying out the civic activity
       prereq_matches: []
   - code: '6.7'
     num: 7
     title: Mission entreprise
+    title_en: Company Placement
     ects: 10
     heures: 0
     themes: Mission en entreprise
+    themes_en: Company placement
     competences: []
+    competences_en: []
     ecues:
     - code: 6.7.1
       title: Mission entreprise
+      title_en: Company Placement
       heures: 0
       coefficient: null
       prerequis: ''
+      prerequis_en: ''
       objectifs:
       - Remplir les missions professionnelles assignées en début de semestre.
       - Atteindre le niveau requis des compétences visées sur le semestre.
@@ -1741,10 +2778,20 @@ semesters:
       - Mettre en œuvre son expertise scientifique ou technique au sein de l’organisation
       - Organiser sa mission et manager les ressources
       - Organiser sa propre activité et le développement de ses compétences
+      objectifs_en:
+      - Carry out the professional assignments set at the start of the semester.
+      - Reach the required level of the skills targeted for the semester.
+      - Understand and embrace the company's challenges and strategy
+      - Analyse and seek solutions to a problem of designing, delivering or improving a product, system or service
+      - Lead a project to design, deliver or improve a product, system or service
+      - Apply one's scientific or technical expertise within the organisation
+      - Organise one's assignment and manage resources
+      - Organise one's own activity and the development of one's skills
       prereq_matches: []
   - code: '6.8'
     num: 8
     title: PFE
+    title_en: Final-Year Project (PFE)
     ects: 10
     heures: 0
     themes: '• Se reporter à la note pédagogique PFE sur Moodle.
@@ -1752,13 +2799,23 @@ semesters:
       • Se reporter au règlement des études.
 
       • Se reporter au livret d’apprentissage'
+    themes_en: '• Refer to the PFE (Final-Year Project) guidance notes on Moodle.
+
+      • Refer to the study regulations.
+
+      • Refer to the apprenticeship logbook'
     competences: []
+    competences_en: []
     ecues:
     - code: 6.8.1
       title: PFE
+      title_en: Final-Year Project (PFE)
       heures: 0
       coefficient: 1
       prerequis: Alternance
+      prerequis_en: Work-study programme (apprenticeship)
       objectifs:
       - Validation du diplôme BACHELOR en SCIENCES ET INGENIERIE
+      objectifs_en:
+      - Validation of the BACHELOR's degree in SCIENCES ET INGENIERIE (Science and Engineering)
       prereq_matches: []

@@ -116,14 +116,73 @@ pas été fait ici.
 
 ## 7. Langue / bilinguisme
 
-Le site est configuré en français par défaut (`lang: fr`). al-folio v1.x n'a
-pas de support i18n natif robuste (pas de bascule de langue intégrée). Pour
-un site bilingue, l'approche la plus simple sans plugin supplémentaire est :
-dupliquer chaque page importante avec un suffixe (ex. `_pages/about.md` /
-`_pages/about-en.md`), et ajouter un petit lien manuel "EN / FR" en haut de
-chaque page. Cette convention n'a pas été appliquée à toutes les pages — à
-mettre en place page par page une fois le contenu français stabilisé (le CV
-fourni est en anglais et pourrait servir de base pour une version `-en`).
+Le site dispose maintenant d'une bascule FR/EN entièrement côté client
+(bouton dans la barre de navigation, à côté du bouton clair/sombre). Aucun
+plugin i18n : le contenu des deux langues est présent simultanément dans le
+HTML généré, et seul l'affichage est basculé.
+
+**Mécanisme** (implémenté dans `_layouts/default.liquid`,
+`_layouts/page.liquid`, `_layouts/post.liquid`, `_includes/header.liquid` et
+`_includes/metadata.liquid`, tous des copies locales qui surchargent le
+thème al-folio) :
+- Classes CSS `.lang-fr` / `.lang-en` (blocs) et `.lang-fr-i` / `.lang-en-i`
+  (inline), affichées/masquées selon l'attribut `data-lang="en"` sur
+  `<html>`.
+- Préférence persistée dans `localStorage` (`lang-pref`), appliquée par un
+  `<script>` placé tout en haut de `<head>` pour éviter un flash de la
+  mauvaise langue au chargement.
+- Convention de contenu : blocs de plusieurs paragraphes →
+  `<div class="lang-fr" markdown="1">...</div>` suivi d'un
+  `<div class="lang-en" markdown="1">...</div>` ; texte court dans un seul
+  élément (titre de nav, cellule de tableau, front matter YAML) →
+  `<span class="lang-fr-i">...</span><span class="lang-en-i">...</span>`
+  côte à côte.
+- Front matter des pages : `title` (FR) + `title_en` (EN, optionnel, repris
+  par la nav et par les fiches de projet/enseignement avec fallback sur
+  `title` si absent).
+
+**Couverture** : l'intégralité du contenu rédactionnel est bilingue —
+`about.md`, `cv.md` (voir remarque ci-dessous), `publications.md` (+ notes
+`_bibliography/papers.bib`), `projects.md` et les 3 fiches projet,
+`teaching.md` et les 3 fiches d'enseignement, `supervision.md`, les 2
+billets de blog, la carte de cursus (`curriculum-ia.md` +
+`_data/curriculum_ia.yml`, 40 UE / 97 ECUE), `404.md`, et les chaînes
+globales de `_config.yml` (`description`, `footer_text`, `blog_name`,
+`blog_description`, `keywords`).
+
+**Bug corrigé en cours de route** : le gem original (`metadata.liquid`)
+injecte `page.title`/`page.description` bruts dans `<title>…</title>` (texte
+seul — les balises `<span>` s'affichaient littéralement) et dans des
+attributs `content="…"` (les guillemets doubles de `class="lang-fr-i"`
+fermaient l'attribut en avance, ce qui faisait fuiter le reste de la balise
+comme texte visible en haut de `<body>`, juste après `</head>`). Idem pour
+les titres `<h1>` des pages en `layout: page` / `layout: post`
+(`page.liquid`/`post.liquid` du gem, qui n'affichaient que `page.title` sans
+jamais lire `page.title_en`). Les trois fichiers ont été surchargés
+localement : `metadata.liquid` passe `page.title`/`page.description` par
+`strip_html` (avec un espace inséré avant chaque `<span>` pour ne pas
+recoller les deux langues) avant de les mettre dans `<title>`/`content="…"`/
+JSON-LD ; `page.liquid`/`post.liquid` affichent désormais
+`<span class="lang-fr-i">{{ page.title }}</span><span class="lang-en-i">{{ page.title_en | default: page.title }}</span>`
+au lieu de `{{ page.title }}` seul. Vérifié par test Playwright automatisé
+sur les 16 pages du site (bascule + persistance + absence de texte
+"fuité") avant commit.
+
+**Limites connues, volontairement non traitées** (chrome du thème
+al-folio, dans les gems, non surchargé) :
+- L'attribut `lang` de `<html>` n'est pas mis à jour par la bascule (reste
+  `fr`, valeur de `site.lang`) — impact mineur sur l'accessibilité/lecteurs
+  d'écran quand la page est affichée en anglais.
+- D'éventuels textes d'interface générés par le thème lui-même (ex. état
+  vide "no news", libellés de pagination) restent en anglais par défaut
+  (langue du thème) et n'ont pas été cherchés/surchargés individuellement.
+
+**Page CV** : `cv.md` est passée de `layout: cv` / `cv_format: jsonresume`
+(rendu server-side par le plugin `al_folio_cv` depuis
+`assets/json/resume.json`, incompatible avec la bascule côté client) à
+`layout: page` avec le contenu écrit directement en Markdown bilingue.
+`assets/json/resume.json` n'est donc plus utilisé pour l'affichage de la
+page (peut être retiré si non utilisé ailleurs).
 
 ## 8. Couleur d'accent et favicon
 

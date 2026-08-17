@@ -1,8 +1,10 @@
 ---
 layout: page
 title: maquette pédagogique — programme IA
+title_en: AI programme curriculum map
 permalink: /curriculum-ia/
-description: Carte interactive du parcours Intelligence Artificielle (CESI) — survolez une UE ou un ECUE pour afficher ses crédits, ses prérequis et ses objectifs pédagogiques.
+description: >
+  <span class="lang-fr-i">Carte interactive du parcours Intelligence Artificielle (CESI) — survolez une UE ou un ECUE pour afficher ses crédits, ses prérequis et ses objectifs pédagogiques.</span><span class="lang-en-i">Interactive map of the Artificial Intelligence programme (CESI) — hover over a UE or an ECUE to display its credits, prerequisites and learning objectives.</span>
 nav: false
 _styles: >
   .curric-intro { margin-bottom: 1.5rem; }
@@ -59,32 +61,43 @@ _styles: >
   [hidden] { display: none !important; }
 ---
 
+<div class="lang-fr" markdown="1">
+
 Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez — ou touchez sur mobile — une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
 
 Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille — c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
+
+</div>
+<div class="lang-en" markdown="1">
+
+Interactive map of the **Artificial Intelligence programme** that I run at CESI (6 semesters). Hover — or tap on mobile — over a UE (teaching unit) or an ECUE (course component) to display its detail in the panel (on the right on large screens, at the top on mobile): ECTS credits, hours, prerequisites and learning objectives.
+
+Content taken directly from the official course specification sheets (one sheet per UE). The **prerequisites shown are the text exactly as written in each sheet**. In addition, earlier ECUEs likely to cover these prerequisites are **automatically detected by keyword matching** between this text and the titles of previous ECUEs, and highlighted in <span style="color:#d9822b; font-weight:700;">orange</span> in the grid — this is an approximate visual aid, not an official link validated in the curriculum (the sheets do not encode this link explicitly). Deliberately absent from this page: teacher names and detailed hourly breakdown (lecture/tutorial/lab), which fall under the internal management of the programme.
+
+</div>
 
 <div class="curric-layout">
 <div class="curric-main">
 <div class="curric-grid">
 {% for sem in site.data.curriculum_ia.semesters %}
   <div class="curric-sem">
-    <div class="curric-sem-title">Semestre {{ sem.number }}</div>
+    <div class="curric-sem-title"><span class="lang-fr-i">Semestre {{ sem.number }}</span><span class="lang-en-i">Semester {{ sem.number }}</span></div>
     {% for ue in sem.ues %}
       <div class="curric-ue">
         <div class="curric-item curric-ue-header" tabindex="0">
           <span class="code">UE {{ ue.code }}</span>
           <span class="ects">{{ ue.ects }} ECTS</span><br>
-          {{ ue.title }}
+          <span class="lang-fr-i">{{ ue.title }}</span><span class="lang-en-i">{{ ue.title_en | default: ue.title }}</span>
           <div class="item-detail" hidden>
-            <div class="breadcrumb">Semestre {{ sem.number }} · UE {{ ue.code }}</div>
-            <h3>{{ ue.title }}</h3>
-            <p class="meta">{{ ue.heures }} h · {{ ue.ects }} crédits ECTS</p>
-            {% if ue.themes and ue.themes != "" %}<p>{{ ue.themes }}</p>{% endif %}
+            <div class="breadcrumb"><span class="lang-fr-i">Semestre {{ sem.number }} · UE {{ ue.code }}</span><span class="lang-en-i">Semester {{ sem.number }} · UE {{ ue.code }}</span></div>
+            <h3><span class="lang-fr-i">{{ ue.title }}</span><span class="lang-en-i">{{ ue.title_en | default: ue.title }}</span></h3>
+            <p class="meta">{{ ue.heures }} h · {{ ue.ects }} <span class="lang-fr-i">crédits ECTS</span><span class="lang-en-i">ECTS credits</span></p>
+            {% if ue.themes and ue.themes != "" %}<p><span class="lang-fr-i">{{ ue.themes }}</span><span class="lang-en-i">{{ ue.themes_en | default: ue.themes }}</span></p>{% endif %}
             {% if ue.competences.size > 0 %}
             <details>
-              <summary>Compétences visées ({{ ue.competences.size }})</summary>
+              <summary><span class="lang-fr-i">Compétences visées ({{ ue.competences.size }})</span><span class="lang-en-i">Skills targeted ({{ ue.competences.size }})</span></summary>
               <ul>
-                {% for c in ue.competences %}<li>{{ c }}</li>{% endfor %}
+                {% for c in ue.competences %}<li><span class="lang-fr-i">{{ c }}</span><span class="lang-en-i">{{ ue.competences_en[forloop.index0] | default: c }}</span></li>{% endfor %}
               </ul>
             </details>
             {% endif %}
@@ -93,25 +106,25 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
         <div class="curric-ue-body">
           {% for ecue in ue.ecues %}
             <div class="curric-item curric-ecue" tabindex="0" id="item-{{ ecue.code }}" data-code="{{ ecue.code }}" data-prereqs="{{ ecue.prereq_matches | join: ' ' }}">
-              <span class="code">{{ ecue.code }}</span>{{ ecue.title }}
+              <span class="code">{{ ecue.code }}</span><span class="lang-fr-i">{{ ecue.title }}</span><span class="lang-en-i">{{ ecue.title_en | default: ecue.title }}</span>
               <div class="item-detail" hidden>
-                <div class="breadcrumb">Semestre {{ sem.number }} · UE {{ ue.code }} · ECUE {{ ecue.code }}</div>
-                <h3>{{ ecue.title }}</h3>
-                <p class="meta">{{ ecue.heures }} h{% if ecue.coefficient %} · coefficient interne {{ ecue.coefficient }}{% endif %}</p>
+                <div class="breadcrumb"><span class="lang-fr-i">Semestre {{ sem.number }} · UE {{ ue.code }} · ECUE {{ ecue.code }}</span><span class="lang-en-i">Semester {{ sem.number }} · UE {{ ue.code }} · ECUE {{ ecue.code }}</span></div>
+                <h3><span class="lang-fr-i">{{ ecue.title }}</span><span class="lang-en-i">{{ ecue.title_en | default: ecue.title }}</span></h3>
+                <p class="meta">{{ ecue.heures }} h{% if ecue.coefficient %} · <span class="lang-fr-i">coefficient interne {{ ecue.coefficient }}</span><span class="lang-en-i">internal coefficient {{ ecue.coefficient }}</span>{% endif %}</p>
                 <div class="prereq">
-                  <strong>Prérequis :</strong>
-                  {% if ecue.prerequis and ecue.prerequis != "" %}{{ ecue.prerequis }}{% else %}Aucun prérequis spécifique{% endif %}
+                  <strong><span class="lang-fr-i">Prérequis :</span><span class="lang-en-i">Prerequisites:</span></strong>
+                  {% if ecue.prerequis and ecue.prerequis != "" %}<span class="lang-fr-i">{{ ecue.prerequis }}</span><span class="lang-en-i">{{ ecue.prerequis_en | default: ecue.prerequis }}</span>{% else %}<span class="lang-fr-i">Aucun prérequis spécifique</span><span class="lang-en-i">No specific prerequisites</span>{% endif %}
                 </div>
                 {% if ecue.prereq_matches.size > 0 %}
-                <p class="prereq-note">🔎 ECUE antérieurs détectés automatiquement comme couvrant probablement ces prérequis (à vérifier) :</p>
+                <p class="prereq-note">🔎 <span class="lang-fr-i">ECUE antérieurs détectés automatiquement comme couvrant probablement ces prérequis (à vérifier) :</span><span class="lang-en-i">Earlier ECUEs automatically detected as likely covering these prerequisites (to be verified):</span></p>
                 <ul class="prereq-links">
                   {% for pc in ecue.prereq_matches %}<li><a href="#item-{{ pc }}" data-jump="{{ pc }}">{{ pc }}</a></li>{% endfor %}
                 </ul>
                 {% endif %}
                 {% if ecue.objectifs.size > 0 %}
-                <strong>Objectifs :</strong>
+                <strong><span class="lang-fr-i">Objectifs :</span><span class="lang-en-i">Objectives:</span></strong>
                 <ul>
-                  {% for o in ecue.objectifs %}<li>{{ o }}</li>{% endfor %}
+                  {% for o in ecue.objectifs %}<li><span class="lang-fr-i">{{ o }}</span><span class="lang-en-i">{{ ecue.objectifs_en[forloop.index0] | default: o }}</span></li>{% endfor %}
                 </ul>
                 {% endif %}
               </div>
@@ -125,7 +138,7 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
 </div>
 </div>
 <div id="curric-panel" class="curric-panel">
-  <p class="placeholder">Survolez une UE ou un ECUE pour voir son détail ici.</p>
+  <p class="placeholder"><span class="lang-fr-i">Survolez une UE ou un ECUE pour voir son détail ici.</span><span class="lang-en-i">Hover over a UE or an ECUE to see its detail here.</span></p>
 </div>
 </div>
 

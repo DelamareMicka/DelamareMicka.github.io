@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <!-- Language toggle: applied before first paint to avoid a flash of the
+       wrong language. Persisted in localStorage, read by every page. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('lang-pref') === 'en') {
+          document.documentElement.setAttribute('data-lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Head -->
+  <head>
+    {% if page.redirect %}
+      {% if page.redirect == true %}
+        {% assign redirect = site.baseurl | append: '/' %}
+      {% elsif page.redirect contains '://' %}
+        {% assign redirect = page.redirect %}
+      {% else %}
+        {% assign redirect = page.redirect | relative_url %}
+      {% endif %}
+      <meta http-equiv="refresh" content="3; url={{ redirect }}">
+    {% endif %}
+    {% include head.liquid %}
+    <style>
+      /* Bilingual content toggle (about.md, cv.md, projects, etc.):
+         .lang-fr / .lang-en wrap the French / English version of the same
+         block or inline text; html[data-lang="en"] flips which one shows. */
+      .lang-en, .lang-en-i { display: none; }
+      html[data-lang="en"] .lang-fr { display: none; }
+      html[data-lang="en"] .lang-en { display: block; }
+      html[data-lang="en"] .lang-fr-i { display: none; }
+      html[data-lang="en"] .lang-en-i { display: inline; }
+    </style>
+  </head>
+
+  <!-- Body -->
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <!-- Header -->
+    {% include header.liquid %}
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      {% if page.toc and page.toc.sidebar %}
+        {% assign toc_collapse = page.toc.collapse | default: 'expanded' %}
+        {% assign toc_collapse_depth = page.toc.collapse_depth | default: '' %}
+        {% if page.toc.sidebar == 'right' %}
+          <div class="row">
+            <!-- main content area -->
+            <div class="col-sm-9">{{ content }}</div>
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-3">
+              <nav
+                id="toc-sidebar"
+                class="sticky-top toc toc-sidebar"
+                aria-label="Table of contents"
+                data-toc-collapse="{{ toc_collapse }}"
+                data-toc-collapse-depth="{{ toc_collapse_depth }}"
+              ></nav>
+            </div>
+          </div>
+        {% else %}
+          <div class="row">
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-3">
+              <nav
+                id="toc-sidebar"
+                class="sticky-top toc toc-sidebar"
+                aria-label="Table of contents"
+                data-toc-collapse="{{ toc_collapse }}"
+                data-toc-collapse-depth="{{ toc_collapse_depth }}"
+              ></nav>
+            </div>
+            <!-- main content area -->
+            <div class="col-sm-9">{{ content }}</div>
+          </div>
+        {% endif %}
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+
+    <!-- Footer -->
+    {% include footer.liquid %}
+
+    <!-- JavaScripts -->
+    {% include scripts.liquid %}
+
+    <script>
+      (function () {
+        var btn = document.getElementById('lang-toggle');
+        if (!btn) return;
+        var label = document.getElementById('lang-toggle-label');
+        function apply(lang) {
+          if (lang === 'en') {
+            document.documentElement.setAttribute('data-lang', 'en');
+            if (label) label.textContent = 'FR';
+          } else {
+            document.documentElement.removeAttribute('data-lang');
+            if (label) label.textContent = 'EN';
+          }
+        }
+        apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'fr' : 'en';
+          try { localStorage.setItem('lang-pref', next); } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script>
+  </body>
+</html>

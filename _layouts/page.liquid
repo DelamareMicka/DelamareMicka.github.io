@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post">
+  <header class="post-header">
+    <!-- Pages set title (FR) + title_en (EN) as separate front-matter keys rather
+         than inline spans, to avoid embedding raw HTML/quotes in a YAML scalar
+         the theme also drops into content="..." attributes elsewhere (see
+         _includes/metadata.liquid). Render both languages here so the toggle
+         still applies to the on-page H1, not just the nav/meta. -->
+    <h1 class="post-title"><span class="lang-fr-i">{{ page.title }}</span><span class="lang-en-i">{{ page.title_en | default: page.title }}</span></h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.plugins contains 'al_comments' %}
+    {% include plugins/al_comments.liquid %}
+  {% endif %}
+</div>

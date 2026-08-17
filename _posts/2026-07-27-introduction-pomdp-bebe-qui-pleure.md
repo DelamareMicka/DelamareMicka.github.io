@@ -1,12 +1,16 @@
 ---
 layout: post
 title: "Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui pleure »"
+title_en: "Introduction to POMDPs: deciding under partial observability with the “crying baby” problem"
 date: 2026-07-27 10:00:00+0200
-description: Notes sur les processus de décision markoviens partiellement observables (POMDP) — le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l'exemple pédagogique du « bébé qui pleure ».
+description: >
+  <span class="lang-fr-i">Notes sur les processus de décision markoviens partiellement observables (POMDP) — le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l'exemple pédagogique du « bébé qui pleure ».</span><span class="lang-en-i">Notes on partially observable Markov decision processes (POMDPs) — the formal 7-tuple, Bayesian belief updating and solution methods (QMDP, FIB, PBVI, POMCP), built around the classic "crying baby" teaching example.</span>
 tags: pomdp ia decision
 categories: notes-de-lecture
 related_posts: false
 ---
+
+<div class="lang-fr" markdown="1">
 
 Ce billet est un ensemble de notes prises en regardant [*POMDPs: Partially Observable Markov Decision Processes*](https://www.youtube.com/watch?v=KDFzObtE6cs), un cours de la série *Decision Making Under Uncertainty* de Julia Academy (Robert Moss, Stanford University), qui s'appuie sur l'écosystème [`POMDPs.jl`](https://github.com/JuliaPOMDP/POMDPs.jl). L'exemple pédagogique utilisé — le « bébé qui pleure » (*crying baby problem*) — et les notebooks associés sont disponibles sur le dépôt [JuliaAcademy/Decision-Making-Under-Uncertainty](https://github.com/JuliaAcademy/Decision-Making-Under-Uncertainty).
 
@@ -175,3 +179,177 @@ Le formalisme de croyance des POMDP — maintenir une distribution de probabilit
 - M. J. Kochenderfer, T. A. Wheeler, K. H. Wray, *Algorithms for Decision Making*, MIT Press, 2022. [algorithmsbook.com](https://algorithmsbook.com)
 - M. Littman, A. Cassandra, L. Kaelbling, « Learning Policies for Partially Observable Environments: Scaling Up », *ICML*, 1995.
 - D. Silver, J. Veness, « Monte-Carlo Planning in Large POMDPs », *NeurIPS*, 2010.
+
+</div>
+
+<div class="lang-en" markdown="1">
+
+This post is a set of notes taken while watching [*POMDPs: Partially Observable Markov Decision Processes*](https://www.youtube.com/watch?v=KDFzObtE6cs), a lecture from Julia Academy's *Decision Making Under Uncertainty* series (Robert Moss, Stanford University), which builds on the [`POMDPs.jl`](https://github.com/JuliaPOMDP/POMDPs.jl) ecosystem. The teaching example used — the *crying baby problem* — and the accompanying notebooks are available in the [JuliaAcademy/Decision-Making-Under-Uncertainty](https://github.com/JuliaAcademy/Decision-Making-Under-Uncertainty) repository.
+
+*A version without formulas or jargon is available here: [Deciding without knowing everything: what the "crying baby" teaches us about AI](/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/).*
+
+## From MDPs to POMDPs
+
+A Markov decision process (MDP) assumes the agent knows the system's state $s$ exactly at every instant. That is rarely true: most real systems — a robot with noisy sensors, a patient whose exact health state is unknown, or an intelligent tutor that can only *observe* a student's responses without knowing their true knowledge state — only give access to partial **observations** of the underlying state.
+
+A POMDP (*Partially Observable MDP*) formalises this as a 7-tuple:
+
+$$\langle \mathcal{S}, \mathcal{A}, \mathcal{O}, T, R, O, \gamma \rangle$$
+
+| Symbol | Description | Role |
+|:---|:---|:---|
+| $\mathcal{S}$ | State space | true states, not directly observed |
+| $\mathcal{A}$ | Action space | actions available to the agent |
+| $\mathcal{O}$ | Observation space | what the agent actually perceives |
+| $T$ | Transition function | $T(s' \mid s, a)$ |
+| $R$ | Reward function | $R(s, a)$ |
+| $O$ | Observation function | $O(o \mid s', a)$ |
+| $\gamma \in [0,1]$ | Discount factor | weights future rewards |
+
+The difference from an MDP lies in the two elements highlighted in the original formulation: the observation space $\mathcal{O}$ and the observation function $O$. The agent never receives the true state — only an observation — and must therefore maintain a **belief** over the true state: a probability distribution over $\mathcal{S}$.
+
+## The crying baby example
+
+The classic toy problem used to illustrate a POMDP has two states, two actions and two observations:
+
+$$
+\begin{align}
+\mathcal{S} &= \{\text{hungry}, \text{full}\}\\
+\mathcal{A} &= \{\text{feed}, \text{ignore}\}\\
+\mathcal{O} &= \{\text{crying}, \text{quiet}\}
+\end{align}
+$$
+
+We never know directly whether the baby is hungry — we only *hear* whether it is crying or not, and must decide whether to feed it or ignore it based solely on that observation (and the history so far).
+
+**Transition** $T(s' \mid s, a)$ — feeding always leaves the baby full; ignoring it lets it become hungry with a 10% probability if it was full, and it stays hungry if it already was:
+
+$$
+\begin{align}
+T(\text{full} \mid s, \text{feed}) &= 100\% \quad \text{regardless of } s\\
+T(\text{hungry} \mid \text{hungry}, \text{ignore}) &= 100\%\\
+T(\text{hungry} \mid \text{full}, \text{ignore}) &= 10\%
+\end{align}
+$$
+
+**Observation** $O(o \mid s')$ — a hungry baby cries 80% of the time, a full baby only cries 10% of the time (so false signals are possible in both directions):
+
+$$
+\begin{align}
+O(\text{crying} \mid \text{hungry}) &= 80\%\\
+O(\text{crying} \mid \text{full}) &= 10\%
+\end{align}
+$$
+
+**Reward** $R(s, a)$ — additive: a cost of $-10$ at every time step the baby is hungry, plus a cost of $-5$ every time it is fed (feeding is never free):
+
+$$R(s, a) = \underbrace{(-10 \text{ if } s=\text{hungry, else } 0)}_{\text{cost of leaving it hungry}} + \underbrace{(-5 \text{ if } a=\text{feed, else } 0)}_{\text{cost of feeding}}$$
+
+With a discount factor $\gamma = 0.9$ over an infinite horizon.
+
+## Belief and belief updating
+
+Since the true state is hidden, the policy $\pi$ no longer takes the state as input but the **belief** $b$:
+
+$$\pi(s) = a \quad \text{(MDP)} \qquad\qquad \pi(b) = a \quad \text{(POMDP)}$$
+
+For the baby, $\mathbf{b} = [\,p(\text{hungry}),\; p(\text{full})\,]$, a non-negative probability vector summing to 1.
+
+Belief updating is a classic Bayes filter: **predict** the new state with the transition model, then **correct** with the likelihood of the observation received, and renormalise:
+
+$$b'(s') \;\propto\; O(o \mid s', a) \sum_{s} T(s' \mid s, a)\, b(s)$$
+
+Here is the numerical trace from the notebook, starting from a uniform belief $b_0 = [0.5,\ 0.5]$ (recomputed from the probabilities above):
+
+| Step | Action | Observation | Resulting belief $[p(\text{hungry}), p(\text{full})]$ |
+|:---:|:---|:---|:---|
+| $b_0$ | — | — | $[0.500,\ 0.500]$ |
+| $b_1$ | ignore | crying | $[0.907,\ 0.093]$ |
+| $b_2$ | feed | quiet | $[0.000,\ 1.000]$ |
+| $b_3$ | ignore | quiet | $[0.024,\ 0.976]$ |
+| $b_4$ | ignore | quiet | $[0.030,\ 0.970]$ |
+| $b_5$ | ignore | crying | $[0.537,\ 0.463]$ |
+
+Two interesting points: feeding ($b_2$) collapses the belief onto `full` *deterministically*, since the transition model states that feeding always leaves the baby full — regardless of the observation received afterwards. And at step $b_5$, a single crying signal after several quiet steps is enough to push the belief back towards `hungry`, but only slightly above uniform uncertainty (0.537 versus 0.5): the accumulated belief carries more weight than a single observation.
+
+## Solving a POMDP: alpha vectors
+
+Since the state is no longer known exactly, the utility of a belief $b$ is computed as:
+
+$$U(b) = \sum_s b(s)\, U(s) = \boldsymbol{\alpha}^\top \mathbf{b}$$
+
+where $\boldsymbol{\alpha}$ is an **alpha vector**: the expected utility for each underlying state, for a given action. The optimal (or approximate) policy then becomes a set of alpha vectors, and choosing an action amounts to finding the vector that maximises $\boldsymbol{\alpha}^\top \mathbf{b}$ for the current belief.
+
+Three classic *offline* methods, from simplest to most informed:
+
+- **QMDP** — treats each belief state as if it were the true state (reducing the problem to an MDP), then applies value iteration:
+  $$\alpha_a^{(k+1)}(s) = R(s,a) + \gamma\sum_{s'} T(s' \mid s, a) \max_{a'} \alpha_{a'}^{(k)}(s')$$
+  Known limitation: QMDP does not "understand" that an action can serve to *reduce uncertainty* (there is no information-gathering term in its update).
+
+- **FIB** (*Fast Informed Bound*) — additionally uses the observation model, making it more informed than QMDP:
+  $$\alpha_a^{(k+1)}(s) = R(s,a) + \gamma\sum_o \max_{a'} \sum_{s'} O(o \mid a,s')\, T(s' \mid s, a)\, \alpha_{a'}^{(k)}(s')$$
+
+- **PBVI** (*Point-Based Value Iteration*) — instead of covering the entire belief space, operates on a finite set of $m$ sampled beliefs, each with an associated alpha vector; it is a lower bound on the optimal value function, generally more accurate than QMDP/FIB for a reasonable computational cost.
+
+For *online* solving, `POMDPs.jl` provides **POMCP** (*Partially Observable Monte Carlo Planning*), which builds a UCT-guided search tree from the current belief rather than precomputing a full policy — useful when the state space is too large for offline solving.
+
+## Concise definition in Julia
+
+The notebook summarises the whole problem in a compact `QuickPOMDP` definition:
+
+```julia
+using POMDPs, POMDPModelTools, QuickPOMDPs
+
+@enum State hungry full
+@enum Action feed ignore
+@enum Observation crying quiet
+
+pomdp = QuickPOMDP(
+    states       = [hungry, full],
+    actions      = [feed, ignore],
+    observations = [crying, quiet],
+    initialstate = [full],
+    discount     = 0.9,
+
+    transition = function T(s, a)
+        if a == feed
+            return SparseCat([hungry, full], [0, 1])
+        elseif s == hungry && a == ignore
+            return SparseCat([hungry, full], [1, 0])
+        elseif s == full && a == ignore
+            return SparseCat([hungry, full], [0.1, 0.9])
+        end
+    end,
+
+    observation = function O(s, a, s′)
+        if s′ == hungry
+            return SparseCat([crying, quiet], [0.8, 0.2])
+        elseif s′ == full
+            return SparseCat([crying, quiet], [0.1, 0.9])
+        end
+    end,
+
+    reward = (s,a) -> (s == hungry ? -10 : 0) + (a == feed ? -5 : 0)
+)
+
+using QMDP
+policy = solve(QMDPSolver(), pomdp)
+
+𝐛 = [0.2, 0.8]        # belief: p(hungry)=0.2, p(full)=0.8
+a = action(policy, 𝐛)  # query the policy with the belief, not the state
+```
+
+## An echo of my own research
+
+The POMDP belief formalism — maintaining a probability distribution over a hidden state from noisy observations — resonates directly with a central problem in AI for education: a tutor (human or artificial) never observes a learner's true knowledge state, only indirect traces (answers, response times, hesitations). It is structurally the same problem as the crying baby, with a substantially richer latent state. I have not yet formally pursued this direction in my work on pedagogical alignment, but the parallel is too clear not to note here.
+
+## Further reading
+
+- Source video: [*POMDPs: Partially Observable Markov Decision Processes*](https://www.youtube.com/watch?v=KDFzObtE6cs) (Julia Academy)
+- Notebook and code: [JuliaAcademy/Decision-Making-Under-Uncertainty](https://github.com/JuliaAcademy/Decision-Making-Under-Uncertainty)
+- M. Egorov, Z. N. Sunberg, E. Balaban, T. A. Wheeler, J. K. Gupta, M. J. Kochenderfer, "POMDPs.jl: A Framework for Sequential Decision Making under Uncertainty," *Journal of Machine Learning Research*, vol. 18, no. 26, 2017. [jmlr.org/papers/v18/16-300.html](http://jmlr.org/papers/v18/16-300.html)
+- M. J. Kochenderfer, T. A. Wheeler, K. H. Wray, *Algorithms for Decision Making*, MIT Press, 2022. [algorithmsbook.com](https://algorithmsbook.com)
+- M. Littman, A. Cassandra, L. Kaelbling, "Learning Policies for Partially Observable Environments: Scaling Up," *ICML*, 1995.
+- D. Silver, J. Veness, "Monte-Carlo Planning in Large POMDPs," *NeurIPS*, 2010.
+
+</div>

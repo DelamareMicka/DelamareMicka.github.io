@@ -7,15 +7,18 @@ first_name: Mickaël
 middle_name:
 last_name: Delamare
 contact_note: >
-  [À COMPLÉTER — préciser le meilleur moyen de vous contacter, ex. e-mail institutionnel]
+  [À COMPLÉTER — préciser le meilleur moyen de vous contacter, ex. e-mail institutionnel] /
+  [TO BE COMPLETED — specify the best way to contact you, e.g. institutional e-mail]
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Site académique de Mickaël Delamare, enseignant-chercheur (Associate Professor) au laboratoire
   CESI LINEACT UR 7527 — campus de Rouen. Travaux sur l'IA en éducation (AIED),
-  la Cognitive Network Science et l'alignement pédagogique des modèles de langage (LLM).
+  la Cognitive Network Science et l'alignement pédagogique des modèles de langage (LLM). ―
+  Academic website of Mickaël Delamare, Associate Professor at the CESI LINEACT UR 7527 lab —
+  Rouen campus. Research on AI in education (AIED), Cognitive Network Science and the
+  pedagogical alignment of large language models (LLMs).
 footer_text: >
-  Propulsé par <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
-  Hébergé par <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT
+  <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</span>
+keywords: AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT, AI in education, pedagogical alignment, large language models
 lang: fr # site en français par défaut ; voir MIGRATION.md pour la convention bilingue (pages -en.md)
 icon: 🎓 # placeholder — remplacer par une image (ex. assets/img/favicon.png) ou un autre emoji
 
@@ -123,8 +126,10 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Carnet de recherche # blog_name will be displayed in your blog page
-blog_description: Notes sur l'IA en éducation, l'alignement pédagogique des LLM et la cognitive network science
+blog_name: >
+  <span class="lang-fr-i">Carnet de recherche</span><span class="lang-en-i">Research notebook</span>
+blog_description: >
+  <span class="lang-fr-i">Notes sur l'IA en éducation, l'alignement pédagogique des LLM et la cognitive network science</span><span class="lang-en-i">Notes on AI in education, pedagogical alignment of LLMs and cognitive network science</span>
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
