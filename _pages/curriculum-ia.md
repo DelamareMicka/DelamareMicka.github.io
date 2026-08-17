@@ -118,13 +118,23 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
 <script>
 (function () {
   var panel = document.getElementById('curric-panel');
-  var items = document.querySelectorAll('.curric-item');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.curric-item'));
+
+  // Build a lookup once instead of re-querying the DOM for every prereq code on every hover.
+  var byCode = Object.create(null);
+  items.forEach(function (i) {
+    var code = i.getAttribute('data-code');
+    if (code) byCode[code] = i;
+  });
+
+  var highlighted = [];
+  var activeItem = null;
 
   function clearHighlights() {
-    items.forEach(function (i) {
-      i.classList.remove('active');
-      i.classList.remove('prereq-highlight');
-    });
+    if (activeItem) activeItem.classList.remove('active');
+    highlighted.forEach(function (i) { i.classList.remove('prereq-highlight'); });
+    highlighted.length = 0;
+    activeItem = null;
   }
 
   function reveal(item) {
@@ -133,31 +143,47 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
     panel.innerHTML = detail.innerHTML;
     clearHighlights();
     item.classList.add('active');
+    activeItem = item;
 
     var codes = (item.getAttribute('data-prereqs') || '').trim();
     if (codes) {
       codes.split(/\s+/).forEach(function (code) {
-        var target = document.querySelector('.curric-ecue[data-code="' + code + '"]');
-        if (target) target.classList.add('prereq-highlight');
-      });
-    }
-
-    panel.querySelectorAll('[data-jump]').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var jumpTo = document.getElementById('item-' + link.getAttribute('data-jump'));
-        if (jumpTo) {
-          jumpTo.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          reveal(jumpTo);
+        var target = byCode[code];
+        if (target) {
+          target.classList.add('prereq-highlight');
+          highlighted.push(target);
         }
       });
-    });
+    }
+  }
+
+  // Event delegation: one click listener on the panel instead of re-binding on every reveal().
+  panel.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-jump]');
+    if (!link) return;
+    e.preventDefault();
+    var jumpTo = byCode[link.getAttribute('data-jump')];
+    if (jumpTo) {
+      jumpTo.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      reveal(jumpTo);
+    }
+  });
+
+  // Debounce hover: while the cursor sweeps across many cards, only the one it
+  // settles on for a moment triggers the (costlier) panel/highlight update.
+  var pending = null;
+  function scheduleReveal(item) {
+    if (pending) clearTimeout(pending);
+    pending = setTimeout(function () { reveal(item); }, 60);
   }
 
   items.forEach(function (item) {
-    item.addEventListener('mouseenter', function () { reveal(item); });
-    item.addEventListener('focus', function () { reveal(item); });
-    item.addEventListener('click', function () { reveal(item); });
+    item.addEventListener('mouseenter', function () { scheduleReveal(item); });
+    item.addEventListener('focus', function () { scheduleReveal(item); });
+    item.addEventListener('click', function () {
+      if (pending) clearTimeout(pending);
+      reveal(item);
+    });
   });
 })();
 </script>
