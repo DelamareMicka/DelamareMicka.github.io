@@ -100,9 +100,10 @@ d'actualité et volontairement omis du CV.
 
 ## 6. Blog (`_posts/`)
 
-Un seul billet d'exemple : `_posts/2026-07-23-exemple-maths-citation.md`, qui
-montre la syntaxe des maths et d'une citation bibliographique — à réécrire ou
-dupliquer comme point de départ pour de vrais billets, puis à supprimer.
+Le billet d'exemple générique a été retiré maintenant qu'un premier vrai
+billet existe : `_posts/2026-07-27-introduction-pomdp-bebe-qui-pleure.md`,
+des notes en français sur les POMDP (à partir d'une vidéo Julia Academy),
+avec maths et un exemple de code Julia.
 
 **Note sur les maths** : la demande initiale mentionnait KaTeX, mais
 al-folio v1.x utilise **MathJax** pour le rendu mathématique
