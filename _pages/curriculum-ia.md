@@ -6,18 +6,29 @@ description: Carte interactive du parcours Intelligence Artificielle (CESI) — 
 nav: false
 _styles: >
   .curric-intro { margin-bottom: 1.5rem; }
+  /* Panel lives in its own column, beside the grid rather than stacked above it.
+     A sticky/fixed panel stacked ABOVE a scrolling grid ends up covering grid
+     rows once the page scrolls past it -- any card under that covered strip
+     can no longer receive real hover events (or flickers at the boundary),
+     which is what caused the freeze. Side-by-side columns never overlap. */
+  .curric-layout { display: flex; gap: 1rem; align-items: flex-start; }
+  .curric-main { flex: 1 1 auto; min-width: 0; }
   .curric-panel {
+    flex: 0 0 19rem;
+    width: 19rem;
     position: sticky;
-    top: 70px;
+    top: 76px;
     z-index: 5;
     background: var(--global-card-bg-color);
     border: 1px solid var(--global-divider-color);
     border-radius: 0.5rem;
     padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
-    min-height: 5rem;
-    max-height: 42vh;
+    max-height: calc(100vh - 100px);
     overflow-y: auto;
+  }
+  @media (max-width: 900px) {
+    .curric-layout { flex-direction: column; }
+    .curric-panel { position: static; width: 100%; flex: none; max-height: 40vh; margin-bottom: 1rem; order: -1; }
   }
   .curric-panel .placeholder { color: var(--global-text-color-light); font-style: italic; }
   .curric-panel .breadcrumb { font-size: 0.8rem; color: var(--global-text-color-light); text-transform: uppercase; letter-spacing: 0.03em; }
@@ -48,14 +59,12 @@ _styles: >
   [hidden] { display: none !important; }
 ---
 
-Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez — ou touchez sur mobile — une UE ou un ECUE pour afficher son détail dans le bandeau ci-dessous : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
+Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez — ou touchez sur mobile — une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
 
 Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille — c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
 
-<div id="curric-panel" class="curric-panel">
-  <p class="placeholder">Survolez une UE ou un ECUE pour voir son détail ici.</p>
-</div>
-
+<div class="curric-layout">
+<div class="curric-main">
 <div class="curric-grid">
 {% for sem in site.data.curriculum_ia.semesters %}
   <div class="curric-sem">
@@ -113,6 +122,11 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
     {% endfor %}
   </div>
 {% endfor %}
+</div>
+</div>
+<div id="curric-panel" class="curric-panel">
+  <p class="placeholder">Survolez une UE ou un ECUE pour voir son détail ici.</p>
+</div>
 </div>
 
 <script>
