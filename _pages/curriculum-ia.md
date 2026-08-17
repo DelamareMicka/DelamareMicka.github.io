@@ -16,6 +16,8 @@ _styles: >
     padding: 1rem 1.25rem;
     margin-bottom: 1.5rem;
     min-height: 5rem;
+    max-height: 42vh;
+    overflow-y: auto;
   }
   .curric-panel .placeholder { color: var(--global-text-color-light); font-style: italic; }
   .curric-panel .breadcrumb { font-size: 0.8rem; color: var(--global-text-color-light); text-transform: uppercase; letter-spacing: 0.03em; }
@@ -34,12 +36,21 @@ _styles: >
   .curric-item:hover, .curric-item:focus, .curric-item.active { border-color: var(--global-theme-color); background: color-mix(in srgb, var(--global-theme-color) 10%, transparent); outline: none; }
   .curric-ue-header.active { background: color-mix(in srgb, var(--global-theme-color) 18%, transparent); }
   .curric-item .code { font-weight: 700; opacity: 0.7; margin-right: 0.25em; }
+  .curric-item.prereq-highlight { border-color: #d9822b; background: color-mix(in srgb, #d9822b 16%, transparent); }
+  .curric-panel .prereq-links { list-style: none; padding: 0; margin: 0.25rem 0 0.75rem; }
+  .curric-panel .prereq-links li { display: inline-block; margin: 0.15rem 0.35rem 0.15rem 0; }
+  .curric-panel .prereq-links a {
+    display: inline-block; border: 1px solid #d9822b; color: #d9822b; border-radius: 999px;
+    padding: 0.1rem 0.6rem; font-size: 0.78rem; text-decoration: none; cursor: pointer;
+  }
+  .curric-panel .prereq-links a:hover { background: color-mix(in srgb, #d9822b 16%, transparent); }
+  .curric-panel .prereq-note { font-size: 0.75rem; color: var(--global-text-color-light); margin: -0.25rem 0 0.75rem; }
   [hidden] { display: none !important; }
 ---
 
 Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez — ou touchez sur mobile — une UE ou un ECUE pour afficher son détail dans le bandeau ci-dessous : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
 
-Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche** — une description des connaissances attendues, pas un graphe automatique reliant chaque ECUE à un ECUE précis en amont (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
+Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille — c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
 
 <div id="curric-panel" class="curric-panel">
   <p class="placeholder">Survolez une UE ou un ECUE pour voir son détail ici.</p>
@@ -72,7 +83,7 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
         </div>
         <div class="curric-ue-body">
           {% for ecue in ue.ecues %}
-            <div class="curric-item curric-ecue" tabindex="0">
+            <div class="curric-item curric-ecue" tabindex="0" id="item-{{ ecue.code }}" data-code="{{ ecue.code }}" data-prereqs="{{ ecue.prereq_matches | join: ' ' }}">
               <span class="code">{{ ecue.code }}</span>{{ ecue.title }}
               <div class="item-detail" hidden>
                 <div class="breadcrumb">Semestre {{ sem.number }} · UE {{ ue.code }} · ECUE {{ ecue.code }}</div>
@@ -82,6 +93,12 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
                   <strong>Prérequis :</strong>
                   {% if ecue.prerequis and ecue.prerequis != "" %}{{ ecue.prerequis }}{% else %}Aucun prérequis spécifique{% endif %}
                 </div>
+                {% if ecue.prereq_matches.size > 0 %}
+                <p class="prereq-note">🔎 ECUE antérieurs détectés automatiquement comme couvrant probablement ces prérequis (à vérifier) :</p>
+                <ul class="prereq-links">
+                  {% for pc in ecue.prereq_matches %}<li><a href="#item-{{ pc }}" data-jump="{{ pc }}">{{ pc }}</a></li>{% endfor %}
+                </ul>
+                {% endif %}
                 {% if ecue.objectifs.size > 0 %}
                 <strong>Objectifs :</strong>
                 <ul>
@@ -102,13 +119,41 @@ Contenu directement issu des fiches pédagogiques officielles (une fiche par UE)
 (function () {
   var panel = document.getElementById('curric-panel');
   var items = document.querySelectorAll('.curric-item');
+
+  function clearHighlights() {
+    items.forEach(function (i) {
+      i.classList.remove('active');
+      i.classList.remove('prereq-highlight');
+    });
+  }
+
   function reveal(item) {
     var detail = item.querySelector('.item-detail');
     if (!detail) return;
     panel.innerHTML = detail.innerHTML;
-    items.forEach(function (i) { i.classList.remove('active'); });
+    clearHighlights();
     item.classList.add('active');
+
+    var codes = (item.getAttribute('data-prereqs') || '').trim();
+    if (codes) {
+      codes.split(/\s+/).forEach(function (code) {
+        var target = document.querySelector('.curric-ecue[data-code="' + code + '"]');
+        if (target) target.classList.add('prereq-highlight');
+      });
+    }
+
+    panel.querySelectorAll('[data-jump]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var jumpTo = document.getElementById('item-' + link.getAttribute('data-jump'));
+        if (jumpTo) {
+          jumpTo.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          reveal(jumpTo);
+        }
+      });
+    });
   }
+
   items.forEach(function (item) {
     item.addEventListener('mouseenter', function () { reveal(item); });
     item.addEventListener('focus', function () { reveal(item); });

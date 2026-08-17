@@ -1,6 +1,8 @@
 # Maquette pédagogique — programme IA (CESI)
 # Généré à partir des fiches UE officielles (DATA/*.docx).
 # Volontairement exclus : noms d'enseignants, heures CM/TD/TP/Projet détaillées, statut docteur/non-docteur (données internes RH).
+# prereq_matches : détection automatique par correspondance de mots-clés entre le texte des
+# prérequis et les titres des ECUE antérieurs (heuristique, à vérifier -- pas un lien officiel).
 semesters:
 - number: 1
   ues:
@@ -35,6 +37,7 @@ semesters:
       objectifs:
       - Base fondamentale du raisonnement logique utilisé par les ordinateurs et les Intelligences Artificielles, elle consiste en l’appréhension du concept de logique sans interprétation du contenu des propositions.
       - L’objectif est de mettre en avant la différence entre une logique humaine et celle d’une machine afin de mieux comprendre les raisonnements des IA.
+      prereq_matches: []
     - code: 1.1.2
       title: Représentation Binaire et Algèbre Booléenne
       heures: 14
@@ -42,6 +45,7 @@ semesters:
       prerequis: Aucun prérequis
       objectifs:
       - Base fondamentale de l'informatique au sens large, la logique de Boole permet de réaliser l'ensemble des tâches des ordinateurs. En utilisant des règles simples, il est possible de construire des expressions logiques complexes et les simplifier pour obtenir des résultats souhaités. La représentation des informations et à fortiori des nombres est à la racine de l’efficacité algorithmique.
+      prereq_matches: []
     - code: 1.1.3
       title: Algèbre Linéaire
       heures: 35
@@ -54,6 +58,7 @@ semesters:
       - 'Analyse de Fourier : L''analyse de Fourier est utilisée pour décomposer les signaux en différentes fréquences, ce qui est utile pour comprendre les circuits qui utilisent des signaux à bande étroite, tels que les radios et les télécommunications.'
       - 'Statistiques : Les statistiques sont utilisées pour étudier les erreurs de mesure et pour déterminer la précision et la fiabilité des mesures de courant, de tension et d''autres paramètres électriques.'
       - 'Géométrie : La géométrie est utilisée pour décrire la géométrie des composants électriques tels que les résistances, les condensateurs et les inductances, et pour calculer leur capacitance, leur inductance et leur résistance.'
+      prereq_matches: []
     - code: 1.1.4
       title: Analyse de Fonctions
       heures: 28
@@ -61,6 +66,7 @@ semesters:
       prerequis: Maîtrise des concepts de base du calcul différentiel et intégral, une compréhension des fonctions de plusieurs variables, ainsi qu'une familiarité avec les notions de limites et de continuité
       objectifs:
       - Fournir aux étudiants une compréhension approfondie des concepts fondamentaux de l'analyse des fonctions, allant des notions de dérivées et de limites à des applications avancées telles que les intégrales doubles et les équations aux dérivées partielles.
+      prereq_matches: []
     - code: 1.1.5
       title: Structures de Données et Complexité
       heures: 14
@@ -69,6 +75,7 @@ semesters:
       objectifs:
       - Utiliser les structures de données optimisées et savoir sur quoi elles reposent
       - Représenter des données dans une structure optimisée
+      prereq_matches: []
   - code: '1.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
@@ -104,6 +111,7 @@ semesters:
       - Utiliser les principales structures de données et modules de la bibliothèque standard (listes, dictionnaires, ensembles, tuples, itérateurs, fichiers, modules comme math, os, datetime)
       - Écrire et structurer des scripts Python pour résoudre des problèmes simples (décomposition en fonctions, lecture/écriture de fichiers, traitement de données, modularité du code)
       - Découvrir et exploiter les bibliothèques scientifiques de base de Python (initiation à numpy, pandas, matplotlib, en lien avec des cas d’usage en data science ou IA)
+      prereq_matches: []
     - code: 1.2.2
       title: Algorithmes et Complexité Algorithmique
       heures: 14
@@ -114,6 +122,7 @@ semesters:
       - Analyser les performances d’un algorithme en termes de complexité temporelle et spatiale (maîtrise des notations asymptotiques et comparaison d’algorithmes sur base de coûts calculés)
       - Mettre en œuvre et comparer des algorithmes de tri fondamentaux (selection sort, bubble sort, insertion sort, merge sort, quick sort, avec analyse des cas optimaux/pessimistes)
       - Résoudre des problèmes algorithmiques simples sur des tableaux 1D ou 2D (calculs statistiques de base, histogrammes, recherche de chemin avec DFS/BFS dans des matrices)
+      prereq_matches: []
     - code: 1.2.3
       title: Programmation en Langage C*
       heures: 28
@@ -123,6 +132,8 @@ semesters:
       - Les bases de C
       - Les pointeurs
       - Workflows
+      prereq_matches:
+      - 1.2.1
   - code: '1.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
@@ -147,6 +158,7 @@ semesters:
       - Modèle Physique de Données
       - Modèle Conceptuel de Données
       - Modèles NoSQL (graphe, document, …)
+      prereq_matches: []
     - code: 1.3.2
       title: Requêtes et Opérations sur les Bases de Données
       heures: 14
@@ -155,6 +167,7 @@ semesters:
       objectifs:
       - Extraire à l’aide du langage SQL des résultats (données) à partir d'une base de données relationnelle
       - Manipuler les données au travers des différentes fonctions connues du SGBDR
+      prereq_matches: []
     - code: 1.3.3
       title: Construction de Bases de Données
       heures: 7
@@ -162,6 +175,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Concevoir une base de données relationnelle composée de plusieurs tables
+      prereq_matches: []
   - code: '1.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -192,6 +206,7 @@ semesters:
       - Identifier les domaines et sous-domaines de l’IA
       - Identifier les champs d’application de l’IA
       - Exemple d’application en robotique (MLF), Exemple d’application en ML ?
+      prereq_matches: []
     - code: 1.4.2
       title: Ethique de l'IA
       heures: 14
@@ -202,6 +217,7 @@ semesters:
       - Identifier les principaux enjeux sociétaux, éthiques et environnementaux liés à l’usage de l’IA.
       - Comprendre les cadres réglementaires et initiatives (RGPD, IA Act, principes éthiques de l’UE, etc.).
       - Étudier des exemples réels d'utilisation de l'intelligence artificielle en les évaluant à partir du point de vue des enjeux éthiques.
+      prereq_matches: []
     - code: 1.4.3
       title: Construction d’un cahier des charges
       heures: 14
@@ -209,6 +225,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Rédiger des cahiers des charges dans le cadre de projets informatiques
+      prereq_matches: []
     - code: 1.4.4
       title: Essentiel de la gestion de projet
       heures: 14
@@ -216,6 +233,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - La gestion de projet se découvre et s’appréhende au fur et à mesure des expériences vécues. Ce module est un module d’approche. Il a pour objectif de définir les champs lexicaux, de structurer les étapes essentielles à la gestion de projet et de balayer en un temps restreint la vie d’un chef de projet informatique. Il pourrait s’apparenter à un itinéraire vu de façon rapide. L’ensemble des autres modules de ce bloc de compétences ont pour objectif d’approfondir les compétences et les connaissances
+      prereq_matches: []
   - code: '1.5'
     num: 5
     title: Anglais (Semestre 1)
@@ -236,6 +254,7 @@ semesters:
       prerequis: Anglais niveau A2
       objectifs:
       - Confirmation du niveau B1 en fin de semestre 1
+      prereq_matches: []
   - code: '1.6'
     num: 6
     title: Développement des compétences professionnelles (Semestre 1)
@@ -254,6 +273,7 @@ semesters:
       - Savoir présenter son entreprise, son service et ses missions de façon claire et précise
       - S’exprimer devant un auditoire avec aisance
       - Savoir argumenter et convaincre
+      prereq_matches: []
     - code: 1.6.2
       title: PFI
       heures: 21
@@ -262,6 +282,7 @@ semesters:
       objectifs:
       - Réaliser des enquêtes métiers.
       - Réaliser des enquêtes sur soi.
+      prereq_matches: []
     - code: 1.6.3
       title: Développement des compétences transversales
       heures: 7
@@ -269,6 +290,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      prereq_matches: []
     - code: 1.6.4
       title: Engagement citoyen et transition écologique
       heures: 14
@@ -279,6 +301,7 @@ semesters:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      prereq_matches: []
     - code: 1.6.5
       title: Techniques de recherche d’emplois
       heures: 14
@@ -286,6 +309,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant est accompagné dans la création d’un CV
+      prereq_matches: []
 - number: 2
   ues:
   - code: '2.1'
@@ -316,6 +340,8 @@ semesters:
       prerequis: Une compréhension solide des mathématiques de base, être familiarisé avec les notions de calcul, compétences en logique et en raisonnement, une introduction aux statistiques descriptives, et la capacité à résoudre des problèmes mathématiques et logiques.
       objectifs:
       - Fournir une compréhension approfondie des concepts fondamentaux des probabilités, de leur application à des problèmes concrets, et d'analyser des situations réelles en utilisant divers outils probabilistes et statistiques.
+      prereq_matches:
+      - 1.1.1
     - code: 2.1.2
       title: Statistiques
       heures: 28
@@ -323,6 +349,7 @@ semesters:
       prerequis: Bonne compréhension des mathématiques de base, des compétences en logique et en raisonnement, une familiarité avec les outils informatiques de base, et la capacité à résoudre des problèmes mathématiques et logiques.
       objectifs:
       - Développer une compréhension approfondie des statistiques descriptives, de la représentation graphique des données, des techniques d'échantillonnage, et de l'analyse des sondages, afin d'interpréter des données pour aider à la prise de décision
+      prereq_matches: []
     - code: 2.1.3
       title: Développement Web
       heures: 56
@@ -330,6 +357,7 @@ semesters:
       prerequis: Aucun prérequis
       objectifs:
       - À la fin de cet ECUE, les étudiants seront en mesure de comprendre les concepts de base du développement web et de créer des sites web simples pour répondre à des besoins avec du contexte entreprise.
+      prereq_matches: []
   - code: '2.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
@@ -365,6 +393,7 @@ semesters:
       - Appliquer les mécanismes de gestion des entrées/sorties et gérer les exceptions pour assurer la robustesse du programme.
       - Concevoir, lire et utiliser des diagrammes UML (classes et séquences) pour modéliser la structure et le comportement des systèmes orientés objet.
       - Développer des tests unitaires fiables pour garantir la qualité et la maintenabilité du code, tout en comprenant le fonctionnement du ramasse-miettes
+      prereq_matches: []
     - code: 2.2.2
       title: Algorithmique de Graphes
       heures: 42
@@ -376,6 +405,7 @@ semesters:
       - Découvertes des outils mathématiques de la théorie des graphes
       - Modélisation et résolution de problèmes avec la théorie des graphes
       - Applications informatiques et représentation informatique des graphes
+      prereq_matches: []
   - code: '2.3'
     num: 3
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -405,6 +435,7 @@ semesters:
       prerequis: Aucun prérequis
       objectifs:
       - Afin d'aider les futurs managers à utiliser et à comprendre l'analytique, ce cours fournit aux étudiants une base solide de l'analyse des données et de l'intelligence économique, renforcée par des exercices pratiques. Ce cours adopte une approche managériale de l'intelligence économique, en mettant l'accent sur les applications et les mises en œuvre qui se cachent derrière les concepts. Cette approche permet aux étudiants de comprendre le fonctionnement de l'analyse des données et de l'intelligence économique d'une manière qui les aidera à adopter ces technologies dans leurs futures fonctions managériales. Des cas réels seront couverts qui présentent un défi, une solution et des résultats. Chaque cas est associé à des questions permettant aux étudiants d'approfondir les détails et de réfléchir de manière critique sur le cas.
+      prereq_matches: []
     - code: 2.3.2
       title: Big Data
       heures: 42
@@ -412,6 +443,12 @@ semesters:
       prerequis: Bonne compréhension de la programmation en Python, une familiarité avec les bases de données et le langage SQL, une connaissance des concepts statistiques de base, une compréhension de l'algèbre linéaire, des notions de base en réseaux informatiques et architectures de stockage, ainsi qu'une introduction au machine learning.
       objectifs:
       - Fournir aux étudiants les compétences pratiques et théoriques nécessaires pour manipuler, analyser et stocker de grandes quantités de données en utilisant des techniques et outils modernes de Big Data et de machine learning.
+      prereq_matches:
+      - 1.1.3
+      - 1.2.1
+      - 1.2.3
+      - 2.1.2
+      - 2.2.1
   - code: '2.4'
     num: 4
     title: Anglais
@@ -434,6 +471,8 @@ semesters:
       prerequis: Anglais semestre 1
       objectifs:
       - Renforcement du niveau B1
+      prereq_matches:
+      - 1.5.1
   - code: '2.5'
     num: 5
     title: Développement des compétences professionnelles (Semestre 2)
@@ -452,6 +491,7 @@ semesters:
       - Savoir présenter son entreprise, son service et ses missions de façon claire et précise
       - S’exprimer devant un auditoire avec aisance
       - Savoir argumenter et convaincre
+      prereq_matches: []
     - code: 2.5.2
       title: PFI - Cible Métier
       heures: 14
@@ -460,6 +500,7 @@ semesters:
       objectifs:
       - Identifier les compétences attendues sur un poste
       - Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés
+      prereq_matches: []
     - code: 2.5.3
       title: Développement des compétences transversales
       heures: 7
@@ -467,6 +508,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      prereq_matches: []
     - code: 2.5.4
       title: Engagement citoyen et transition écologique
       heures: 7
@@ -476,6 +518,7 @@ semesters:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      prereq_matches: []
   - code: '2.6'
     num: 6
     title: Mission entreprise
@@ -490,6 +533,7 @@ semesters:
       coefficient: 1
       prerequis: Avoir passé, au moins 8 semaines en entreprise.
       objectifs: []
+      prereq_matches: []
     - code: 2.6.2
       title: Rapport d'étonnement
       heures: 0
@@ -497,6 +541,8 @@ semesters:
       prerequis: Avoir passé, au moins 6 semaines en entreprise.
       objectifs:
       - Après 6 à 8 semaines passées en entreprise, l’élève produit un rapport décrivant l’entreprise où il effectue son stage. Le rapport doit présenter l’entreprise, les activités de l’entreprise, le service où il se trouve, le poste qu’il occupe. Il effectue une première prise de recul sur son vécu, sous forme d’un étonnement.
+      prereq_matches:
+      - 2.6.1
   - code: '2.7'
     num: 7
     title: Mission internationale
@@ -512,6 +558,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Voir la note pédagogique de la Mission internationale
+      prereq_matches: []
 - number: 3
   ues:
   - code: '3.1'
@@ -548,6 +595,8 @@ semesters:
       - Déterminer valeurs propres et vecteurs propres d’une matrice.
       - Vérifier la diagonalisabilité d’un opérateur.
       - Interpréter une décomposition spectrale dans un contexte de traitement de données.
+      prereq_matches:
+      - 1.1.3
     - code: 3.1.2
       title: Analyse en composentes principales et décompositions en valeurs singulières
       heures: 35
@@ -564,6 +613,12 @@ semesters:
       - Appliquer une décomposition en valeurs singulières.
       - Justifier le choix du nombre de composantes retenues.
       - Identifier les limites et biais d’une réduction de dimension.
+      prereq_matches:
+      - 1.1.3
+      - 1.2.1
+      - 1.2.3
+      - 2.1.2
+      - 2.2.1
     - code: 3.1.3
       title: Communication Neuronale
       heures: 35
@@ -580,6 +635,7 @@ semesters:
       - Comparer neurone biologique et neurone artificiel.
       - Simuler un modèle simplifié de neurone.
       - Identifier les limites de l’analogie cerveau / IA.
+      prereq_matches: []
   - code: '3.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
@@ -614,6 +670,13 @@ semesters:
       - Analyser et comparer l'efficacité algorithmique des structures
       - Concevoir des solutions optimisées en termes de mémoire et de temps d'exécution
       - Implémenter et tester des structures dans un contexte applicatif réel
+      prereq_matches:
+      - 1.1.5
+      - 1.2.1
+      - 1.2.2
+      - 1.2.3
+      - 2.2.1
+      - 2.2.2
     - code: 3.2.2
       title: Méthodes d'Agrégation et Calculs de Similarités
       heures: 42
@@ -624,6 +687,9 @@ semesters:
       - Mettre en œuvre des algorithmes de clustering non supervisés
       - Évaluer et interpréter la qualité des regroupements obtenus
       - Choisir la méthode adaptée au contexte applicatif
+      prereq_matches:
+      - 1.1.3
+      - 2.1.2
   - code: '3.3'
     num: 3
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -654,6 +720,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Acquérir les méthodes pour favoriser la réussite d'un projet en anticipant les changements induits
+      prereq_matches: []
     - code: 3.3.2
       title: Méthodes et outils projets
       heures: 21
@@ -661,6 +728,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Perfectionner sa connaissance de la gestion de projet (Scope Management) Concevoir une méthodologie de type WBS
+      prereq_matches: []
     - code: 3.3.3
       title: Introduction aux méthodes agiles
       heures: 7
@@ -668,6 +736,7 @@ semesters:
       prerequis: ''
       objectifs:
       - S’approprier les méthodes et les outils de la méthode "Agile"
+      prereq_matches: []
     - code: 3.3.4
       title: Normes et optimisation du code source
       heures: 7
@@ -678,6 +747,7 @@ semesters:
       - Faciliter la maintenance du code d’un programme
       - Analyser et faire évoluer un code source existant afin de le rendre plus performant
       - Choisir, implémenter et maitriser un outil de gestion de version
+      prereq_matches: []
     - code: 3.3.5
       title: Sensibilisation à la cybersécurité
       heures: 14
@@ -685,6 +755,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Reconnaître et éviter les menaces courantes en cybersécurité, telles que le phishing et les malwares, en appliquant des bonnes pratiques de sécurité.
+      prereq_matches: []
     - code: 3.3.6
       title: Tests et recette des applications
       heures: 7
@@ -692,6 +763,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Créer des test unitaires
+      prereq_matches: []
   - code: '3.4'
     num: 4
     title: Anglais
@@ -714,6 +786,9 @@ semesters:
       prerequis: Anglais semestre 2
       objectifs:
       - Consolidation du niveau B1
+      prereq_matches:
+      - 1.5.1
+      - 2.4.1
   - code: '3.5'
     num: 5
     title: Développement des compétences professionnelles (Semestre 3)
@@ -729,6 +804,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+      prereq_matches: []
     - code: 3.5.2
       title: Développement des compétences transversales
       heures: 7
@@ -736,6 +812,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      prereq_matches: []
     - code: 3.5.3
       title: Engagement citoyen et transition écologique
       heures: 14
@@ -746,6 +823,7 @@ semesters:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      prereq_matches: []
 - number: 4
   ues:
   - code: '4.1'
@@ -787,6 +865,16 @@ semesters:
       - Être capable d'implémenter et paramétrer les principales méta-heuristiques (algorithmes évolutionnaires, méthodes de voisinage, recherche dispersée)
       - Savoir évaluer les performances et la robustesse d'une solution optimisée par rapport aux contraintes industrielles
       - Identifier les cas d'usage où les méta-heuristiques surpassent les méthodes exactes (grandes instances, temps réel)
+      prereq_matches:
+      - 1.1.5
+      - 1.2.1
+      - 1.2.2
+      - 1.2.3
+      - 2.1.1
+      - 2.1.2
+      - 2.2.1
+      - 2.2.2
+      - 3.2.1
     - code: 4.1.2
       title: Programmation Linéaire en Nombres Entiers
       heures: 21
@@ -799,6 +887,11 @@ semesters:
       - Utiliser des solveurs industriels standards (CPLEX, Gurobi, ou alternatives open-source comme CBC, SCIP, OR-Tools)
       - Analyser la qualité des solutions (relaxation linéaire, gap d'optimalité) et interpréter les analyses de sensibilité
       - Intégrer la résolution PLNE dans une architecture décisionnelle d'entreprise
+      prereq_matches:
+      - 1.1.3
+      - 1.2.1
+      - 1.2.3
+      - 2.2.1
   - code: '4.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
@@ -831,6 +924,13 @@ semesters:
       prerequis: Bonne compréhension de la programmation, en particulier en Python, des bases en apprentissage automatique (machine learning), des connaissances en statistiques et algèbre linéaire, une introduction au traitement du langage naturel (NLP), ainsi que des notions de base en informatique et réseaux.
       objectifs:
       - Fournir aux étudiants une compréhension approfondie des modèles de langage de grande taille (LLM), de leur historique, de leurs applications, de leur architecture, ainsi que des défis éthiques et pratiques associés à leur utilisation.
+      prereq_matches:
+      - 1.1.3
+      - 1.2.1
+      - 1.2.3
+      - 2.1.2
+      - 2.2.1
+      - 4.1.2
   - code: '4.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
@@ -856,6 +956,12 @@ semesters:
       prerequis: "Bases de programmation Python (pandas, numpy) ; \nNotions fondamentales de statistiques (moyenne, variance, distribution) ; manipulation de données tabulaires.\nPas de prérequis mathématiques avancés."
       objectifs:
       - Cet ECUE introduit les concepts fondamentaux de l’apprentissage supervisé. Les étudiants découvrent les notions de jeu d’entraînement/test, de sur-apprentissage et de généralisation. Ils étudient les principaux algorithmes (arbres de décision, forêts aléatoires, SVM, k-NN) et apprennent à évaluer leurs performances via des métriques clés (précision, rappel, F1-score, AUC). L’intégration d’une approche éthique (détection de biais) et écologique (sobriété des modèles) est abordée tout au long du cours.
+      prereq_matches:
+      - 1.2.1
+      - 1.2.3
+      - 2.1.2
+      - 2.2.1
+      - 4.1.2
     - code: 4.3.2
       title: Modèles de Régression
       heures: 19
@@ -864,6 +970,9 @@ semesters:
       objectifs:
       - Cet ECUE approfondit la modélisation prédictive quantitative à travers les techniques de régression. Les étudiants maîtrisent la régression linéaire simple et multiple, la régression logistique, ainsi que les méthodes de régularisation (Ridge, Lasso, ElasticNet).
       - Ils apprennent à diagnostiquer la qualité d’un modèle (R², RMSE, résidus), à détecter le sur-apprentissage et à optimiser les hyperparamètres. La construction responsable des modèles — en termes d’équité et de minimisation de l’empreinte computationnelle — est intégrée aux travaux pratiques.
+      prereq_matches:
+      - 1.1.3
+      - 2.1.2
     - code: 4.3.3
       title: Clustering Automatique et Fonctions Pertes
       heures: 18
@@ -871,6 +980,9 @@ semesters:
       prerequis: "Les ECUEs « Apprentissage Supervisé » et « Modèles de Régression » finalisés\nNotions de géométrie vectorielle et distances ;\nCalcul différentiel élémentaire (dérivées, gradient) ; \nMaîtrise de matplotlib/seaborn pour la visualisation multidimensionnelle."
       objectifs:
       - Cet ECUE aborde l’apprentissage non supervisé à travers les techniques de clustering et approfondit le rôle crucial des fonctions de perte dans l’entraînement des modèles. Les étudiants maîtrisent les algorithmes K-Means, DBSCAN et la classification hiérarchique (CAH), ainsi que la réduction dimensionnelle (ACP, t-SNE). Ils comprennent les fonctions de perte (MSE, Cross-Entropy, Hinge) et leur rôle dans l’optimisation par descente de gradient. L’ECUE intègre une réflexion sur l’interprétabilité, l’équité des groupes formés et l’efficience computationnelle.
+      prereq_matches:
+      - 4.3.1
+      - 4.3.2
     - code: 4.3.4
       title: Ethique numérique et écologique
       heures: 7
@@ -878,6 +990,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Les étudiants devront comprendre les impacts numériques et éthiques sur l'écologie afin de les prendre en compte dans l'implémentation de leur solution.
+      prereq_matches: []
   - code: '4.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -911,6 +1024,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Dans cette ECUE les étudiants seront amenés à réaliser un projet de développement en mettant en œuvre les outils de pilotage (de la demande client à la réalisation du projet)
+      prereq_matches: []
     - code: 4.4.2
       title: RSE/Droit du Travail Spécifique à l'IA et Normes de Sécurité ISO et IEC27001
       heures: 21
@@ -928,6 +1042,7 @@ semesters:
       - Analyser des études de cas sur la RSE et l'IA.
       - Évaluer les plans de gestion des risques pour la sécurité de l'information dans les projets d'IA.
       - Créer un projet intégratif de RSE pour une organisation fictive utilisant l'IA
+      prereq_matches: []
   - code: '4.5'
     num: 5
     title: Anglais
@@ -953,6 +1068,10 @@ semesters:
       objectifs:
       - Consolidation du niveau B1
       - Mobilité internationale
+      prereq_matches:
+      - 1.5.1
+      - 2.4.1
+      - 3.4.1
   - code: '4.6'
     num: 6
     title: Développement des compétences professionnelles (Semestre 4)
@@ -968,6 +1087,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+      prereq_matches: []
     - code: 4.6.2
       title: Développement des compétences transversales
       heures: 7
@@ -975,6 +1095,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      prereq_matches: []
     - code: 4.6.3
       title: Engagement citoyen et transition écologique
       heures: 14
@@ -984,6 +1105,7 @@ semesters:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      prereq_matches: []
   - code: '4.7'
     num: 7
     title: Mission entreprise
@@ -998,6 +1120,8 @@ semesters:
       coefficient: 1
       prerequis: Avoir passé, au moins 8 semaines en entreprise.
       objectifs: []
+      prereq_matches:
+      - 2.6.1
     - code: 4.7.2
       title: Mémoire technique
       heures: 0
@@ -1011,6 +1135,7 @@ semesters:
       - Travailler la recherche d’informations, par l’identification des ressources, l’analyse et le tri des informations,
       - Comprendre les concepts techniques, en étudier les applications et observer la mise en œuvre,
       - Rédiger un rapport synthétique en restituant de manière claire et parfaitement accessible son travail.
+      prereq_matches: []
 - number: 5
   ues:
   - code: '5.1'
@@ -1046,6 +1171,7 @@ semesters:
       prerequis: ''
       objectifs:
       - 'À la fin de cette mission, les participants seront capables d''appliquer une méthodologie de recherche permettant l''identification de ressources pertinentes, et la rédaction de rapports scientifiques sous forme d''article (journal, ou conférence). Aussi, les participant seront amenés à communiquer autour de leurs problématiques en utilisant des supports tels que : PPT ou poster.'
+      prereq_matches: []
   - code: '5.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
@@ -1100,6 +1226,12 @@ semesters:
       - Décrire le fonctionnement d’un réseau entièrement Convolutif (FCN)
       - Décrire le réseau U-NET
       - Appliquer les CNN et les FCN pour la détection et la segmentation dans un cas pratique.
+      prereq_matches:
+      - 1.1.3
+      - 1.2.1
+      - 1.2.3
+      - 2.2.1
+      - 4.1.2
     - code: 5.2.2
       title: Reinforcement Learning
       heures: 14
@@ -1114,6 +1246,14 @@ semesters:
       - Appliquer l'apprentissage par renforcement à un environnement simple (grille, jeu)
       - Évaluer la convergence et la performance d'un agent par l'analyse des courbes de récompenses cumulées
       - Identifier des cas d'usage du reinforcement learning dans l'industrie
+      prereq_matches:
+      - 1.2.1
+      - 1.2.3
+      - 2.1.1
+      - 2.2.1
+      - 3.3.4
+      - 4.1.1
+      - 4.1.2
     - code: 5.2.3
       title: Chaînes de Markov et Automates
       heures: 28
@@ -1134,6 +1274,12 @@ semesters:
       - Implémenter une simulation de chaîne de Markov en Python
       - Appliquer les chaînes de Markov à un problème concret (modélisation de parcours patient, génération de texte, fiabilité de systèmes)
       - Faire le lien entre chaînes de Markov et MDP (passerelle avec l'ECUE 5.2.2)
+      prereq_matches:
+      - 1.2.1
+      - 1.2.3
+      - 2.1.1
+      - 2.2.1
+      - 4.1.2
   - code: '5.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
@@ -1160,6 +1306,7 @@ semesters:
       prerequis: 'UE 2.1.4 : Développement Web'
       objectifs:
       - À la fin de ce cours, les étudiants seront en mesure de comprendre les concepts avancés du développement web full stack et de créer des applications web complètes et dynamiques.
+      prereq_matches: []
   - code: '5.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -1195,6 +1342,9 @@ semesters:
       - Adapter son mode de management aux évolutions induites par le développement du numérique
       - Favoriser les relations de collaboration au sein des équipes
       - Développer son agilité managériale
+      prereq_matches:
+      - 2.6.1
+      - 4.7.1
     - code: 5.4.2
       title: Pilotage du projet informatique
       heures: 28
@@ -1202,6 +1352,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Savoir piloter un projet afin de garantir l’avancement d’un projet et sa qualité
+      prereq_matches: []
     - code: 5.4.3
       title: Législation du projet informatique
       heures: 7
@@ -1209,6 +1360,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Piloter un projet en intégrant les règles juridiques relatives aux spécificités des différents contrats informatiques
+      prereq_matches: []
     - code: 5.4.4
       title: Capitalisation et promotion du projet
       heures: 7
@@ -1216,6 +1368,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Acquérir les méthodes de communication liées au projet et capitaliser sur les acquis
+      prereq_matches: []
   - code: '5.4'
     num: 4
     title: Anglais
@@ -1238,6 +1391,9 @@ semesters:
       prerequis: Anglais semestre 4
       objectifs:
       - Consolidation du niveau B1+
+      prereq_matches:
+      - 2.6.1
+      - 4.7.1
   - code: '5.6'
     num: 6
     title: Développement des compétences professionnelles (Semestre 5)
@@ -1253,6 +1409,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+      prereq_matches: []
     - code: 5.6.2
       title: PFI - Démarche RH
       heures: 7
@@ -1264,6 +1421,7 @@ semesters:
         Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés'
       objectifs:
       - Voir la note pédagogique
+      prereq_matches: []
     - code: 5.6.3
       title: Développement des compétences transversales
       heures: 7
@@ -1271,6 +1429,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      prereq_matches: []
     - code: 5.6.4
       title: Engagement citoyen et transition écologique
       heures: 7
@@ -1281,6 +1440,7 @@ semesters:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      prereq_matches: []
   - code: '5.7'
     num: 7
     title: Mission entreprise
@@ -1303,6 +1463,7 @@ semesters:
       - Mettre en œuvre son expertise scientifique ou technique au sein de l’organisation
       - Organiser sa mission et manager les ressources
       - Organiser sa propre activité et le développement de ses compétences
+      prereq_matches: []
 - number: 6
   ues:
   - code: '6.1'
@@ -1331,6 +1492,7 @@ semesters:
       prerequis: Aucun prérequis
       objectifs:
       - A l'issue de cette ECUE, les étudiants seront sensibilisés aux méthodologies de gestion de l'innovation dans les entreprises
+      prereq_matches: []
     - code: 6.1.2
       title: Entrepreneuriat
       heures: 14
@@ -1338,6 +1500,7 @@ semesters:
       prerequis: Aucun prérequis
       objectifs:
       - A l'issue de cette ECUE, les étudiants auront les notions de bases de l'entrepreneuriat avec les différents statuts juridiques
+      prereq_matches: []
   - code: '6.2'
     num: 2
     title: Concevoir la solution IA dans l’architecture globale
@@ -1369,6 +1532,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Maîtriser l'architecture, la configuration de base et la sécurisation des réseaux locaux commutés en environnements IPv4 et IPv6
+      prereq_matches: []
     - code: 6.2.2
       title: Administration Système et Réseau Local
       heures: 14
@@ -1377,6 +1541,7 @@ semesters:
       objectifs:
       - Comprendre le fonctionnement d'active directory
       - Comprendre l'organisation d'un réseau local et configurer celui-ci
+      prereq_matches: []
     - code: 6.2.3
       title: Transformée de Fourier
       heures: 14
@@ -1384,6 +1549,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Maîtriser les outils de l'analyse spectrale pour passer du signal analogique au traitement numérique, afin de modéliser et de filtrer des informations fréquentielles.
+      prereq_matches: []
     - code: 6.2.4
       title: Compression d'image
       heures: 14
@@ -1391,6 +1557,7 @@ semesters:
       prerequis: ''
       objectifs:
       - Maîtriser les principes de la compression de données visuelles en exploitant la réduction des redondances statistiques et psychovisuelles
+      prereq_matches: []
   - code: '6.3'
     num: 3
     title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
@@ -1418,6 +1585,11 @@ semesters:
       objectifs:
       - Traduire un besoin exprimé en réalisant des diagrammes de base UML
       - Décrire l’utilisation et l’utilisabilité d’une application au travers des diagrammes UML
+      prereq_matches:
+      - 1.2.1
+      - 1.2.3
+      - 2.2.1
+      - 4.1.2
     - code: 6.3.2
       title: Traitement d'images (reconnaissance)
       heures: 21
@@ -1425,6 +1597,7 @@ semesters:
       prerequis: Connaissance du langage Python
       objectifs:
       - Appliquer des algorithmes sur des images afin de les améliorer ou d’en extraire des informations de plus haut niveau (contours, points d’intérêts, segmentation)
+      prereq_matches: []
   - code: '6.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -1453,6 +1626,9 @@ semesters:
         Démarche éthique du projet I.A.'
       objectifs:
       - Dans cette UE les étudiants seront amenés à réaliser un projet, en mettant en œuvre les outils de pilotage, et seront amené à identifier les pistes d'améliorations de ce dernier afin de prendre du recul.
+      prereq_matches:
+      - 5.1.1
+      - 6.1.1
   - code: '6.5'
     num: 5
     title: Anglais
@@ -1475,6 +1651,12 @@ semesters:
       prerequis: Anglais semestre 5
       objectifs:
       - Consolidation du niveau B1+
+      prereq_matches:
+      - 1.5.1
+      - 2.4.1
+      - 3.4.1
+      - 4.5.1
+      - 5.4.1
   - code: '6.6'
     num: 6
     title: Développement des compétences professionnelles (semestre 6)
@@ -1495,6 +1677,7 @@ semesters:
       - Structurer ses écrits
       - Ecrire en respectant les règles d’orthographe de la langue française
       - Comprendre comment gérer les changements dans les projets de manière efficace, en minimisant les impacts négatifs et en maximisant les opportunités pour atteindre les objectifs de projet
+      prereq_matches: []
     - code: 6.6.2
       title: PFI - Soutenance Finale
       heures: 7
@@ -1505,6 +1688,7 @@ semesters:
       - Identifier les compétences attendues sur un poste
       - Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés
       - Réaliser un bilan sur les 3 années
+      prereq_matches: []
     - code: 6.6.3
       title: Développement des compétences transversales
       heures: 7
@@ -1512,6 +1696,7 @@ semesters:
       prerequis: Aucun
       objectifs:
       - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+      prereq_matches: []
     - code: 6.6.4
       title: Engagement citoyen et transition écologique
       heures: 7
@@ -1521,6 +1706,7 @@ semesters:
       - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
       - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
       - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+      prereq_matches: []
   - code: '6.7'
     num: 7
     title: Mission entreprise
@@ -1543,6 +1729,7 @@ semesters:
       - Mettre en œuvre son expertise scientifique ou technique au sein de l’organisation
       - Organiser sa mission et manager les ressources
       - Organiser sa propre activité et le développement de ses compétences
+      prereq_matches: []
   - code: '6.8'
     num: 8
     title: PFE
@@ -1562,3 +1749,4 @@ semesters:
       prerequis: Alternance
       objectifs:
       - Validation du diplôme BACHELOR en SCIENCES ET INGENIERIE
+      prereq_matches: []
