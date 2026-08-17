@@ -5,7 +5,7 @@
     "image": "",
     "email": "mdelamare@cesi.fr",
     "phone": "",
-    "summary": "Mes recherches se situent à l'intersection de l'IA en éducation (AIED) et de la Cognitive Network Science (CNS). Initialement centrées sur la localisation en intérieur et la reconnaissance d'actions, elles portent aujourd'hui sur l'alignement pédagogique des IA génératives : la sycophantie pédagogique, le Biggs Alignment Index (BAI), la métrique APed, et l'architecture neuro-symbolique PALOMA/DANA. Coordinateur scientifique de l'initiative CAIRE (ANR-23-CMAS-0031, France 2030).",
+    "summary": "Mes recherches se situent à l'intersection de l'IA en éducation (AIED) et de la Cognitive Network Science (CNS). Initialement centrées sur la localisation en intérieur et la reconnaissance d'actions, elles portent aujourd'hui sur l'alignement pédagogique des IA génératives : la sycophantie pédagogique, le Biggs Alignment Index (BAI) et la métrique APed. Coordinateur scientifique de l'initiative CAIRE (ANR-23-CMAS-0031, France 2030).",
     "location": {
       "address": "",
       "postalCode": "",
@@ -135,8 +135,7 @@
         "Cognitive Network Science",
         "Sycophantie pédagogique",
         "Biggs Alignment Index (BAI)",
-        "Métrique APed",
-        "PALOMA/DANA"
+        "Métrique APed"
       ]
     }
   ],
