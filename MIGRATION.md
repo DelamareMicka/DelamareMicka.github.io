@@ -6,8 +6,8 @@ retrouver tous les emplacements exacts (`grep -rn "À COMPLÉTER" .`).
 
 **Mise à jour** : le CV réel (`CV_MD__English_.pdf`) a été fourni et intégré —
 biographie, poste, parcours (formation + expérience détaillées), 5 vraies
-publications et les fiches CAIRE/PALOMA-DANA sont maintenant du vrai contenu,
-plus des placeholders. Voir le détail par section ci-dessous.
+publications et la fiche CAIRE sont maintenant du vrai contenu, plus des
+placeholders. Voir le détail par section ci-dessous.
 
 ## Confidentialité : PDF du CV
 
@@ -64,10 +64,12 @@ ré-automatiser si besoin.
 - `caire.md` (ANR-23-CMAS-0031) : rôle et statut lauréat renseignés depuis le
   CV. Reste `[À COMPLÉTER]` : objectifs détaillés, partenaires, montant du
   financement, durée, résultats/livrables.
-- `paloma-dana.md` : description scientifique réelle (architecture
-  neuro-symbolique en boucle fermée, lien avec BAI/APed). Reste
-  `[À COMPLÉTER]` : état d'avancement, partenaires, financement, publications
-  associées, démonstrateur.
+- `alignement-agents-llm.md` (ex-« PALOMA/DANA » — nom de code retiré du
+  site : le papier correspondant est en review en double-aveugle, "Anonymous
+  Author(s)" / "Affiliation withheld" ; publier son titre ou son contenu
+  détaillé sous votre nom risquerait de casser l'anonymat côté relecteurs).
+  Fiche volontairement succincte tant que la décision n'est pas connue —
+  à détailler une fois la review terminée.
 - `template-project.md` : gabarit à dupliquer pour chaque nouveau projet
   (`published: false` l'exclut du site tant qu'il n'est pas complété — retirer
   cette ligne une fois la fiche prête).
