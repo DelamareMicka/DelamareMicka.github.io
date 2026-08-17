@@ -1,4 +1,5 @@
 _site
+DATA/
 .bundle
 .DS_store
 .idea

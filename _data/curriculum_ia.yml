@@ -1,0 +1,1564 @@
+# Maquette pédagogique — programme IA (CESI)
+# Généré à partir des fiches UE officielles (DATA/*.docx).
+# Volontairement exclus : noms d'enseignants, heures CM/TD/TP/Projet détaillées, statut docteur/non-docteur (données internes RH).
+semesters:
+- number: 1
+  ues:
+  - code: '1.1'
+    num: 1
+    title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    ects: 10
+    heures: 126
+    themes: Ce programme intègre la logique formelle et l'algèbre booléenne pour modéliser des problèmes complexes, tout en s'appuyant sur l'algèbre linéaire et l'analyse vectorielle pour le calcul scientifique. Il combine la maîtrise théorique des fonctions et des intégrales avec l'implémentation rigoureuse de structures de données avancées (arbres, graphes) en C et Python. L'objectif est de concevoir des solutions optimisées en évaluant précisément la complexité algorithmique et la gestion mémoire. Cette synergie entre mathématiques fondamentales et informatique technique permet de résoudre des problématiques d'ingénierie logicielle de haut niveau.
+    competences:
+    - Analyser le besoin du client, le contexte économique, l'environnement, la technicité et les métiers de l'entreprise afin d'appréhender le périmètre du projet
+    - Identifier et analyser les flux d'information et les processus et activités de l'entreprise afin de comprendre le schéma d'organisation métier
+    - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
+    - Utiliser les statistiques pour optimiser la solution IA
+    - Etablir un diagnostic afin de trouver les raisons d'un dysfonctionnement
+    - Recenser les différentes solutions/technologies susceptibles de répondre au cahier des charges
+    - Comparer les solutions existantes avec leur adéquation au besoin afin de participer aux choix techniques
+    - Analyser et évaluer les risques (sécurité) d'une IA afin de participer à leur résolution
+    - Rechercher des solutions techniques et réaliser une veille pour répondre à la problématique IA
+    - Comparer les solutions qui répondent aux besoins afin de participer aux choix techniques
+    - Construire et exposer tous les éléments permettant la prise de décision
+    - S'approprier les différentes classes d'algorithmes (ML, DL,…) pour modéliser les données massives
+    - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
+    - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
+    - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    ecues:
+    - code: 1.1.1
+      title: Calcul des Prédicats & Logique Formelle
+      heures: 35
+      coefficient: 1
+      prerequis: Programme de terminale
+      objectifs:
+      - Base fondamentale du raisonnement logique utilisé par les ordinateurs et les Intelligences Artificielles, elle consiste en l’appréhension du concept de logique sans interprétation du contenu des propositions.
+      - L’objectif est de mettre en avant la différence entre une logique humaine et celle d’une machine afin de mieux comprendre les raisonnements des IA.
+    - code: 1.1.2
+      title: Représentation Binaire et Algèbre Booléenne
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - Base fondamentale de l'informatique au sens large, la logique de Boole permet de réaliser l'ensemble des tâches des ordinateurs. En utilisant des règles simples, il est possible de construire des expressions logiques complexes et les simplifier pour obtenir des résultats souhaités. La représentation des informations et à fortiori des nombres est à la racine de l’efficacité algorithmique.
+    - code: 1.1.3
+      title: Algèbre Linéaire
+      heures: 35
+      coefficient: 1
+      prerequis: Programme de terminal
+      objectifs:
+      - L'algèbre est utilisée pour résoudre des équations linéaires et pour manipuler des expressions mathématiques, ce qui est important pour calculer les valeurs de résistance, de courant, de tension et d'autres paramètres électriques.
+      - 'Trigonométrie : La trigonométrie est utilisée pour étudier les ondes sinusoïdales, qui sont omniprésentes dans les circuits électriques. Les fonctions trigonométriques sont utilisées pour décrire les formes d''onde, les fréquences, les phases et les amplitudes.'
+      - 'Calcul différentiel et intégral : Le calcul différentiel et intégral est utilisé pour étudier les changements de tension et de courant au fil du temps, ce qui est important pour comprendre les circuits électriques à courant alternatif.'
+      - 'Analyse de Fourier : L''analyse de Fourier est utilisée pour décomposer les signaux en différentes fréquences, ce qui est utile pour comprendre les circuits qui utilisent des signaux à bande étroite, tels que les radios et les télécommunications.'
+      - 'Statistiques : Les statistiques sont utilisées pour étudier les erreurs de mesure et pour déterminer la précision et la fiabilité des mesures de courant, de tension et d''autres paramètres électriques.'
+      - 'Géométrie : La géométrie est utilisée pour décrire la géométrie des composants électriques tels que les résistances, les condensateurs et les inductances, et pour calculer leur capacitance, leur inductance et leur résistance.'
+    - code: 1.1.4
+      title: Analyse de Fonctions
+      heures: 28
+      coefficient: 1
+      prerequis: Maîtrise des concepts de base du calcul différentiel et intégral, une compréhension des fonctions de plusieurs variables, ainsi qu'une familiarité avec les notions de limites et de continuité
+      objectifs:
+      - Fournir aux étudiants une compréhension approfondie des concepts fondamentaux de l'analyse des fonctions, allant des notions de dérivées et de limites à des applications avancées telles que les intégrales doubles et les équations aux dérivées partielles.
+    - code: 1.1.5
+      title: Structures de Données et Complexité
+      heures: 14
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Utiliser les structures de données optimisées et savoir sur quoi elles reposent
+      - Représenter des données dans une structure optimisée
+  - code: '1.2'
+    num: 2
+    title: Concevoir la solution IA dans l’architecture globale
+    ects: 5
+    heures: 56
+    themes: 'Ce programme développe une double expertise : la maîtrise de Python pour le calcul scientifique et la data science (Pandas, Matplotlib), et la rigueur du langage C pour la gestion mémoire (pointeurs, allocation dynamique) et la compilation modulaire. Il lie ces pratiques à une solide base en algorithmique, permettant de concevoir, documenter et analyser la complexité spatio-temporelle de solutions optimales (tris avancés, parcours DFS/BFS). L''accent est mis sur la modularité et le choix des structures de données adaptées pour résoudre des problèmes d''ingénierie logicielle complexes. Cette approche polyvalente garantit une compréhension profonde, du script de haut niveau à l''optimisation système.'
+    competences:
+    - Identifier les algos/protocoles pour une collecte efficace des données
+    - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
+    - Sélectionner les sources de données pour les modéliser et les cartographier
+    - Identifier et exploiter les indicateurs de performance pour argumenter la solution retenue
+    - Elaborer des tableaux de bord intégrant les données métier pour la prise de décision
+    - Quantifier les besoins en capacité de calculs et de stockage des données
+    - Identifier les ressources disponibles dans le SI
+    - Appréhender les tenants et aboutissants de la solution IA
+    - Définir les étapes d'un processus d'IA
+    - Identifier les acteurs pour connaître l'ensemble des problématiques associées aux projets
+    - Identifier les infrastructures IT nécessaires au sein de l'entreprise
+    - Identifier et mettre en place des indicateurs de performance afin de choisir un modèle d'IA adapté
+    - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
+    - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
+    - Mettre en œuvre la solution pour répondre aux besoins
+    - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    ecues:
+    - code: 1.2.1
+      title: Bases de la Programmation avec Python
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - Comprendre les fondements de la programmation et les spécificités du langage Python inclut la comparaison succincte avec d’autres langages, la notion d’environnement de développement, le paradigme impératif
+      - Manipuler les types de données fondamentaux et les structures de contrôle en Python (variables, types de base, structures conditionnelles, boucles, fonctions, récursivité)
+      - Utiliser les principales structures de données et modules de la bibliothèque standard (listes, dictionnaires, ensembles, tuples, itérateurs, fichiers, modules comme math, os, datetime)
+      - Écrire et structurer des scripts Python pour résoudre des problèmes simples (décomposition en fonctions, lecture/écriture de fichiers, traitement de données, modularité du code)
+      - Découvrir et exploiter les bibliothèques scientifiques de base de Python (initiation à numpy, pandas, matplotlib, en lien avec des cas d’usage en data science ou IA)
+    - code: 1.2.2
+      title: Algorithmes et Complexité Algorithmique
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - Comprendre ce qu’est un algorithme et savoir le représenter sous forme de pseudocode (inclut la notion de procédure, de déterminisme, et d’implémentation abstraite)
+      - Analyser les performances d’un algorithme en termes de complexité temporelle et spatiale (maîtrise des notations asymptotiques et comparaison d’algorithmes sur base de coûts calculés)
+      - Mettre en œuvre et comparer des algorithmes de tri fondamentaux (selection sort, bubble sort, insertion sort, merge sort, quick sort, avec analyse des cas optimaux/pessimistes)
+      - Résoudre des problèmes algorithmiques simples sur des tableaux 1D ou 2D (calculs statistiques de base, histogrammes, recherche de chemin avec DFS/BFS dans des matrices)
+    - code: 1.2.3
+      title: Programmation en Langage C*
+      heures: 28
+      coefficient: 1
+      prerequis: ECUE Les bases de la programmation
+      objectifs:
+      - Les bases de C
+      - Les pointeurs
+      - Workflows
+  - code: '1.3'
+    num: 3
+    title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    ects: 3
+    heures: 35
+    themes: Cette thématique porte sur la conception et l'exploitation de bases de données relationnelles à travers la méthode Merise. Elle articule la structuration rigoureuse des données (dictionnaire, dépendances fonctionnelles, formes normales) avec la modélisation conceptuelle et logique (MCD/MLD) et leur manipulation opérationnelle via le langage SQL.
+    competences:
+    - Déployer la solution d'IA dans un Système d'information
+    - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
+    - Assurer la configuration de la solution d'IA déployée
+    - Mesurer et réduire les impacts environnementaux de la solution IA au regard des instances réglementaires
+    - Sélectionner et formaliser les éléments de performances de la solution pour effectuer un reporting
+    - Suivre la solution d'IA au sein du SI, garantir son efficacité et ses évolutions
+    ecues:
+    - code: 1.3.1
+      title: Modélisation de Bases de Données
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Appliquer la méthode Merise
+      - Modèle Physique de Données
+      - Modèle Conceptuel de Données
+      - Modèles NoSQL (graphe, document, …)
+    - code: 1.3.2
+      title: Requêtes et Opérations sur les Bases de Données
+      heures: 14
+      coefficient: 1
+      prerequis: Modélisation de Bases de Données
+      objectifs:
+      - Extraire à l’aide du langage SQL des résultats (données) à partir d'une base de données relationnelle
+      - Manipuler les données au travers des différentes fonctions connues du SGBDR
+    - code: 1.3.3
+      title: Construction de Bases de Données
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Concevoir une base de données relationnelle composée de plusieurs tables
+  - code: '1.4'
+    num: 4
+    title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    ects: 4
+    heures: 56
+    themes: Cette UE porte sur l'ingénierie de projets d'intelligence artificielle responsable, articulant la compréhension historique et technique de l'IA avec la rigueur de la gestion de projet. Elle impose l'intégration des cadres réglementaires et éthiques dès la phase d'analyse des besoins et de rédaction du cahier des charges.
+    competences:
+    - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
+    - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
+    - Identifier les sous-projets et tâches inclus dans le projet global pour en estimer les durées
+    - Planifier les projets IA en utilisant PERT et GANTT pour construire le planning détaillé
+    - Définir les principaux jalons du projet (points de validation) pour vérifier le bon déroulement
+    - Concevoir le planning du projet à travers un outil de représentation graphique
+    - Identifier les risques inhérents au projet IA afin d'en évaluer la criticité
+    - Définir un plan de réponses aux risques identifiés et élaborer un tableau de suivi
+    - Accompagner le changement numérique
+    - Favoriser l'appropriation des outils numériques par les collaborateurs
+    - Prendre en compte l'impact environnemental des projets afin de réduire l'empreinte carbone
+    ecues:
+    - code: 1.4.1
+      title: Histoire de l'IA et applications
+      heures: 14
+      coefficient: 1
+      prerequis: Connaitre les bases de l’algorithmie
+      objectifs:
+      - Donner une définition de l’Intelligence Artificielle
+      - Comprendre l’historique de l’IA
+      - Identifier les domaines et sous-domaines de l’IA
+      - Identifier les champs d’application de l’IA
+      - Exemple d’application en robotique (MLF), Exemple d’application en ML ?
+    - code: 1.4.2
+      title: Ethique de l'IA
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Définir le mot éthique
+      - Identifier les principaux enjeux sociétaux, éthiques et environnementaux liés à l’usage de l’IA.
+      - Comprendre les cadres réglementaires et initiatives (RGPD, IA Act, principes éthiques de l’UE, etc.).
+      - Étudier des exemples réels d'utilisation de l'intelligence artificielle en les évaluant à partir du point de vue des enjeux éthiques.
+    - code: 1.4.3
+      title: Construction d’un cahier des charges
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Rédiger des cahiers des charges dans le cadre de projets informatiques
+    - code: 1.4.4
+      title: Essentiel de la gestion de projet
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - La gestion de projet se découvre et s’appréhende au fur et à mesure des expériences vécues. Ce module est un module d’approche. Il a pour objectif de définir les champs lexicaux, de structurer les étapes essentielles à la gestion de projet et de balayer en un temps restreint la vie d’un chef de projet informatique. Il pourrait s’apparenter à un itinéraire vu de façon rapide. L’ensemble des autres modules de ce bloc de compétences ont pour objectif d’approfondir les compétences et les connaissances
+  - code: '1.5'
+    num: 5
+    title: Anglais (Semestre 1)
+    ects: 2
+    heures: 21
+    themes: "Anglais à coloration professionnelle et technique \nAu semestre 1, l'accent est mis sur l'acquisition du lexique et de la grammaire."
+    competences:
+    - 'La première année de formation est l''occasion de revoir les prérequis du niveau bac (B1) :'
+    - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
+    - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
+    - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
+    - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    ecues:
+    - code: 1.5.1
+      title: Anglais Semestre 1
+      heures: 21
+      coefficient: 1
+      prerequis: Anglais niveau A2
+      objectifs:
+      - Confirmation du niveau B1 en fin de semestre 1
+  - code: '1.6'
+    num: 6
+    title: Développement des compétences professionnelles (Semestre 1)
+    ects: 6
+    heures: 70
+    themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    competences: []
+    ecues:
+    - code: 1.6.1
+      title: Communication professionnelle
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Savoir organiser, rédiger et présenter un rapport ainsi qu’une présentation orale de façon professionnelle
+      - Savoir présenter son entreprise, son service et ses missions de façon claire et précise
+      - S’exprimer devant un auditoire avec aisance
+      - Savoir argumenter et convaincre
+    - code: 1.6.2
+      title: PFI
+      heures: 21
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Réaliser des enquêtes métiers.
+      - Réaliser des enquêtes sur soi.
+    - code: 1.6.3
+      title: Développement des compétences transversales
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+    - code: 1.6.4
+      title: Engagement citoyen et transition écologique
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Connaitre et comprendre les enjeux de la transition écologique.
+      - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
+      - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
+      - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+    - code: 1.6.5
+      title: Techniques de recherche d’emplois
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant est accompagné dans la création d’un CV
+- number: 2
+  ues:
+  - code: '2.1'
+    num: 1
+    title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    ects: 6
+    heures: 105
+    themes: Cette thématique articule l'analyse quantitative et la mise en œuvre de solutions numériques, en combinant la modélisation probabiliste et statistique pour l'aide à la décision avec le développement d'applications web dynamiques. Elle vise à transformer des données brutes en indicateurs fiables (tests d'hypothèses, lois de probabilité) intégrés au sein d'interfaces web interactives, accessibles et sécurisées.
+    competences:
+    - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
+    - Utiliser les statistiques pour optimiser la solution IA
+    - Etablir un diagnostic afin de trouver les raisons d'un dysfonctionnement
+    - Recenser les différentes solutions/technologies susceptibles de répondre au cahier des charges
+    - Comparer les solutions existantes avec leur adéquation au besoin afin de participer aux choix techniques
+    - Analyser et évaluer les risques (sécurité) d'une IA afin de participer à leur résolution
+    - Rechercher des solutions techniques et réaliser une veille pour répondre à la problématique IA
+    - Comparer les solutions qui répondent aux besoins afin de participer aux choix techniques
+    - Construire et exposer tous les éléments permettant la prise de décision
+    - S'approprier les différentes classes d'algorithmes (ML, DL,…) pour modéliser les données massives
+    - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
+    - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
+    - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    ecues:
+    - code: 2.1.1
+      title: Probabilités
+      heures: 21
+      coefficient: 1
+      prerequis: Une compréhension solide des mathématiques de base, être familiarisé avec les notions de calcul, compétences en logique et en raisonnement, une introduction aux statistiques descriptives, et la capacité à résoudre des problèmes mathématiques et logiques.
+      objectifs:
+      - Fournir une compréhension approfondie des concepts fondamentaux des probabilités, de leur application à des problèmes concrets, et d'analyser des situations réelles en utilisant divers outils probabilistes et statistiques.
+    - code: 2.1.2
+      title: Statistiques
+      heures: 28
+      coefficient: 1
+      prerequis: Bonne compréhension des mathématiques de base, des compétences en logique et en raisonnement, une familiarité avec les outils informatiques de base, et la capacité à résoudre des problèmes mathématiques et logiques.
+      objectifs:
+      - Développer une compréhension approfondie des statistiques descriptives, de la représentation graphique des données, des techniques d'échantillonnage, et de l'analyse des sondages, afin d'interpréter des données pour aider à la prise de décision
+    - code: 2.1.3
+      title: Développement Web
+      heures: 56
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - À la fin de cet ECUE, les étudiants seront en mesure de comprendre les concepts de base du développement web et de créer des sites web simples pour répondre à des besoins avec du contexte entreprise.
+  - code: '2.2'
+    num: 2
+    title: Concevoir la solution IA dans l’architecture globale
+    ects: 4
+    heures: 77
+    themes: Ce programme complet de développement logiciel lie la Programmation Orientée Objet sous Python à l'algorithmique de graphes (Dijkstra, flux, arbres). Il impose une rigueur de conception via la modélisation UML (classes, séquences) et la validation par tests unitaires JUnit. L'objectif est de savoir structurer des données complexes (collections, I/O) pour résoudre des problèmes d'optimisation de réseaux et de maintenance logicielle.
+    competences:
+    - Identifier les algos/protocoles pour une collecte efficace des données
+    - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
+    - Sélectionner les sources de données pour les modéliser et les cartographier
+    - Identifier et exploiter les indicateurs de performance pour argumenter la solution retenue
+    - Elaborer des tableaux de bord intégrant les données métier pour la prise de décision
+    - Quantifier les besoins en capacité de calculs et de stockage des données
+    - Identifier les ressources disponibles dans le SI
+    - Appréhender les tenants et aboutissants de la solution IA
+    - Définir les étapes d'un processus d'IA
+    - Identifier les acteurs pour connaître l'ensemble des problématiques associées aux projets
+    - Identifier les infrastructures IT nécessaires au sein de l'entreprise
+    - Identifier et mettre en place des indicateurs de performance afin de choisir un modèle d'IA adapté
+    - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
+    - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
+    - Mettre en œuvre la solution pour répondre aux besoins
+    - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    ecues:
+    - code: 2.2.1
+      title: Programmation Orientée Objet avec Python
+      heures: 35
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - Comprendre les principes fondamentaux de la programmation orientée objet
+      - Maîtriser l’utilisation des structures de données dynamiques, des collections avancées et des itérateurs/générateurs pour structurer et manipuler efficacement les données.
+      - Appliquer les mécanismes de gestion des entrées/sorties et gérer les exceptions pour assurer la robustesse du programme.
+      - Concevoir, lire et utiliser des diagrammes UML (classes et séquences) pour modéliser la structure et le comportement des systèmes orientés objet.
+      - Développer des tests unitaires fiables pour garantir la qualité et la maintenabilité du code, tout en comprenant le fonctionnement du ramasse-miettes
+    - code: 2.2.2
+      title: Algorithmique de Graphes
+      heures: 42
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Modéliser un problème à l'aide de la théorie des graphes
+      - Réalisation de programmes en appliquant la théorie des graphes
+      - Découvertes des outils mathématiques de la théorie des graphes
+      - Modélisation et résolution de problèmes avec la théorie des graphes
+      - Applications informatiques et représentation informatique des graphes
+  - code: '2.3'
+    num: 3
+    title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    ects: 4
+    heures: 63
+    themes: 'Cette thématique articule l''exploitation stratégique des données à travers la Business Intelligence et le Big Data, en couvrant l''intégralité de la chaîne de valeur : de la collecte éthique et du stockage distribué à l''analyse exploratoire et la visualisation d''indicateurs d''aide à la décision.'
+    competences:
+    - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
+    - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
+    - Identifier les sous-projets et tâches inclus dans le projet global pour en estimer les durées
+    - Planifier les projets IA en utilisant PERT et GANTT pour construire le planning détaillé
+    - Définir les principaux jalons du projet (points de validation) pour vérifier le bon déroulement
+    - Concevoir le planning du projet à travers un outil de représentation graphique
+    - Identifier les risques inhérents au projet IA afin d'en évaluer la criticité
+    - Définir un plan de réponses aux risques identifiés et élaborer un tableau de suivi
+    - Accompagner le changement numérique
+    - Favoriser l'appropriation des outils numériques par les collaborateurs
+    - Prendre en compte l'impact environnemental des projets afin de réduire l'empreinte carbone
+    - Conduire les réunions de suivi de projet en IA
+    - Actualiser les données des tableaux de bord (coûts, réalisé, risques, etc.) pour réguler les aléas
+    - Organiser et mener les réunions et échanges pour garantir le bon déroulement du projet
+    ecues:
+    - code: 2.3.1
+      title: Business Intelligence
+      heures: 21
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - Afin d'aider les futurs managers à utiliser et à comprendre l'analytique, ce cours fournit aux étudiants une base solide de l'analyse des données et de l'intelligence économique, renforcée par des exercices pratiques. Ce cours adopte une approche managériale de l'intelligence économique, en mettant l'accent sur les applications et les mises en œuvre qui se cachent derrière les concepts. Cette approche permet aux étudiants de comprendre le fonctionnement de l'analyse des données et de l'intelligence économique d'une manière qui les aidera à adopter ces technologies dans leurs futures fonctions managériales. Des cas réels seront couverts qui présentent un défi, une solution et des résultats. Chaque cas est associé à des questions permettant aux étudiants d'approfondir les détails et de réfléchir de manière critique sur le cas.
+    - code: 2.3.2
+      title: Big Data
+      heures: 42
+      coefficient: 1
+      prerequis: Bonne compréhension de la programmation en Python, une familiarité avec les bases de données et le langage SQL, une connaissance des concepts statistiques de base, une compréhension de l'algèbre linéaire, des notions de base en réseaux informatiques et architectures de stockage, ainsi qu'une introduction au machine learning.
+      objectifs:
+      - Fournir aux étudiants les compétences pratiques et théoriques nécessaires pour manipuler, analyser et stocker de grandes quantités de données en utilisant des techniques et outils modernes de Big Data et de machine learning.
+  - code: '2.4'
+    num: 4
+    title: Anglais
+    ects: 2
+    heures: 28
+    themes: 'Anglais à coloration professionnelle et technique
+
+      Au semestre 2, l''accent est mis sur l''acquisition du lexique et de la grammaire, on renforce également l''expression orale.'
+    competences:
+    - 'La première année de formation est l''occasion de revoir les prérequis du niveau bac (B1) :'
+    - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
+    - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
+    - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
+    - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    ecues:
+    - code: 2.4.1
+      title: Anglais Semestre 2
+      heures: 28
+      coefficient: 1
+      prerequis: Anglais semestre 1
+      objectifs:
+      - Renforcement du niveau B1
+  - code: '2.5'
+    num: 5
+    title: Développement des compétences professionnelles (Semestre 2)
+    ects: 2
+    heures: 42
+    themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    competences: []
+    ecues:
+    - code: 2.5.1
+      title: Communication professionnelle
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Savoir organiser, rédiger et présenter un rapport ainsi qu’une présentation orale de façon professionnelle
+      - Savoir présenter son entreprise, son service et ses missions de façon claire et précise
+      - S’exprimer devant un auditoire avec aisance
+      - Savoir argumenter et convaincre
+    - code: 2.5.2
+      title: PFI - Cible Métier
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Identifier les compétences attendues sur un poste
+      - Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés
+    - code: 2.5.3
+      title: Développement des compétences transversales
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+    - code: 2.5.4
+      title: Engagement citoyen et transition écologique
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
+      - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
+      - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+  - code: '2.6'
+    num: 6
+    title: Mission entreprise
+    ects: 6
+    heures: 0
+    themes: Stage en entreprise
+    competences: []
+    ecues:
+    - code: 2.6.1
+      title: Mission entreprise
+      heures: 0
+      coefficient: 1
+      prerequis: Avoir passé, au moins 8 semaines en entreprise.
+      objectifs: []
+    - code: 2.6.2
+      title: Rapport d'étonnement
+      heures: 0
+      coefficient: 1
+      prerequis: Avoir passé, au moins 6 semaines en entreprise.
+      objectifs:
+      - Après 6 à 8 semaines passées en entreprise, l’élève produit un rapport décrivant l’entreprise où il effectue son stage. Le rapport doit présenter l’entreprise, les activités de l’entreprise, le service où il se trouve, le poste qu’il occupe. Il effectue une première prise de recul sur son vécu, sous forme d’un étonnement.
+  - code: '2.7'
+    num: 7
+    title: Mission internationale
+    ects: 6
+    heures: 0
+    themes: Mission internationale
+    competences: []
+    ecues:
+    - code: 2.7.1
+      title: Mission internationale
+      heures: 0
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Voir la note pédagogique de la Mission internationale
+- number: 3
+  ues:
+  - code: '3.1'
+    num: 1
+    title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    ects: 10
+    heures: 112
+    themes: Cette UE vise à donner aux étudiants les fondements mathématiques et neuro-computationnels nécessaires pour analyser et formaliser une problématique industrielle en intelligence artificielle. Elle articule algèbre linéaire, réduction de dimension (ACP, SVD) et principes de la communication neuronale afin de comprendre comment structurer, transformer et interpréter des données dans un contexte métier. L’ensemble permet de passer d’un besoin industriel exprimé à une modélisation rigoureuse et techniquement exploitable dans un projet IA.
+    competences:
+    - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
+    - Utiliser les statistiques pour optimiser la solution IA
+    - Etablir un diagnostic afin de trouver les raisons d'un dysfonctionnement
+    - Recenser les différentes solutions/technologies susceptibles de répondre au cahier des charges
+    - Comparer les solutions existantes avec leur adéquation au besoin afin de participer aux choix techniques
+    - Analyser et évaluer les risques (sécurité) d'une IA afin de participer à leur résolution
+    - Rechercher des solutions techniques et réaliser une veille pour répondre à la problématique IA
+    - Comparer les solutions qui répondent aux besoins afin de participer aux choix techniques
+    - Construire et exposer tous les éléments permettant la prise de décision
+    - S'approprier les différentes classes d'algorithmes (ML, DL,…) pour modéliser les données massives
+    - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
+    ecues:
+    - code: 3.1.1
+      title: Propriétés Algébriques des Endomorphismes
+      heures: 42
+      coefficient: 1
+      prerequis: 'Maîtrise des bases de l’algèbre linéaire (vecteurs, matrices, systèmes linéaires)
+
+        Calcul matriciel élémentaire
+
+        Résolution de systèmes d’équations'
+      objectifs:
+      - Modéliser une transformation à l’aide d’une application linéaire.
+      - Calculer noyau, image et rang d’un endomorphisme.
+      - Déterminer valeurs propres et vecteurs propres d’une matrice.
+      - Vérifier la diagonalisabilité d’un opérateur.
+      - Interpréter une décomposition spectrale dans un contexte de traitement de données.
+    - code: 3.1.2
+      title: Analyse en composentes principales et décompositions en valeurs singulières
+      heures: 35
+      coefficient: 1
+      prerequis: 'Maîtrise des notions d’algèbre linéaire (valeurs propres, matrices)
+
+        Bases en statistiques descriptives
+
+        Notions élémentaires de programmation Python'
+      objectifs:
+      - Préparer un jeu de données pour analyse multivariée.
+      - Construire et interpréter une matrice de covariance.
+      - Mettre en œuvre une ACP.
+      - Appliquer une décomposition en valeurs singulières.
+      - Justifier le choix du nombre de composantes retenues.
+      - Identifier les limites et biais d’une réduction de dimension.
+    - code: 3.1.3
+      title: Communication Neuronale
+      heures: 35
+      coefficient: 1
+      prerequis: 'Notions de biologie générale (niveau lycée)
+
+        Bases de modélisation mathématique simples
+
+        Intérêt pour les systèmes dynamiques'
+      objectifs:
+      - Décrire l’organisation fonctionnelle du neurone biologique.
+      - Expliquer les mécanismes du potentiel d’action.
+      - Décrire la transmission synaptique.
+      - Comparer neurone biologique et neurone artificiel.
+      - Simuler un modèle simplifié de neurone.
+      - Identifier les limites de l’analogie cerveau / IA.
+  - code: '3.2'
+    num: 2
+    title: Concevoir la solution IA dans l’architecture globale
+    ects: 8
+    heures: 84
+    themes: Cette thématique porte sur l'optimisation algorithmique et l'analyse de données non supervisée, en articulant l'implémentation de structures de données complexes (graphes, arbres) avec les méthodes de partitionnement (K-means, DBSCAN). Elle vise à évaluer la performance des systèmes via la complexité Big O et la précision des calculs de similarité pour le traitement de l'information.
+    competences:
+    - Identifier les algos/protocoles pour une collecte efficace des données
+    - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
+    - Sélectionner les sources de données pour les modéliser et les cartographier
+    - Identifier et exploiter les indicateurs de performance pour argumenter la solution retenue
+    - Elaborer des tableaux de bord intégrant les données métier pour la prise de décision
+    - Quantifier les besoins en capacité de calculs et de stockage des données
+    - Identifier les ressources disponibles dans le SI
+    - Appréhender les tenants et aboutissants de la solution IA
+    - Définir les étapes d'un processus d'IA
+    - Identifier les acteurs pour connaître l'ensemble des problématiques associées aux projets
+    - Identifier les infrastructures IT nécessaires au sein de l'entreprise
+    - Identifier et mettre en place des indicateurs de performance afin de choisir un modèle d'IA adapté
+    - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
+    - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
+    - Mettre en œuvre la solution pour répondre aux besoins
+    - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    ecues:
+    - code: 3.2.1
+      title: Structures de Données Optimisées
+      heures: 42
+      coefficient: 1
+      prerequis: Algorithmique de base, structures de données fondamentales (listes, piles, files), langage de programmation (Python ou Java), notions de complexité algorithmique
+      objectifs:
+      - Maîtriser les structures de données avancées et leurs cas d'usage
+      - Analyser et comparer l'efficacité algorithmique des structures
+      - Concevoir des solutions optimisées en termes de mémoire et de temps d'exécution
+      - Implémenter et tester des structures dans un contexte applicatif réel
+    - code: 3.2.2
+      title: Méthodes d'Agrégation et Calculs de Similarités
+      heures: 42
+      coefficient: 1
+      prerequis: Statistiques descriptives, algèbre linéaire (vecteurs, produit scalaire), notions de Python (NumPy, Pandas), bases de la science des données
+      objectifs:
+      - Comprendre et appliquer les principales métriques de similarité et de distance
+      - Mettre en œuvre des algorithmes de clustering non supervisés
+      - Évaluer et interpréter la qualité des regroupements obtenus
+      - Choisir la méthode adaptée au contexte applicatif
+  - code: '3.3'
+    num: 3
+    title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    ects: 6
+    heures: 63
+    themes: Cette thématique porte sur le pilotage opérationnel et la sécurisation du cycle de vie logiciel, en conciliant les méthodes agiles (Scrum) et traditionnelles (MOA/MOE) avec les impératifs de qualité technique. Elle intègre la conduite du changement, la rigueur des phases de test et de recette, ainsi que l'optimisation durable du code source sous le prisme de la cybersécurité.
+    competences:
+    - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
+    - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
+    - Identifier les sous-projets et tâches inclus dans le projet global pour en estimer les durées
+    - Planifier les projets IA en utilisant PERT et GANTT pour construire le planning détaillé
+    - Définir les principaux jalons du projet (points de validation) pour vérifier le bon déroulement
+    - Concevoir le planning du projet à travers un outil de représentation graphique
+    - Identifier les risques inhérents au projet IA afin d'en évaluer la criticité
+    - Définir un plan de réponses aux risques identifiés et élaborer un tableau de suivi
+    - Accompagner le changement numérique
+    - Favoriser l'appropriation des outils numériques par les collaborateurs
+    - Prendre en compte l'impact environnemental des projets afin de réduire l'empreinte carbone
+    - Conduire les réunions de suivi de projet en IA
+    - Actualiser les données des tableaux de bord (coûts, réalisé, risques, etc.) pour réguler les aléas
+    - Organiser et mener les réunions et échanges pour garantir le bon déroulement du projet
+    - Synthétiser et formaliser les documents de reporting à destination du comité de pilotage
+    ecues:
+    - code: 3.3.1
+      title: Gestion des relations MOA/MOE
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Acquérir les méthodes pour favoriser la réussite d'un projet en anticipant les changements induits
+    - code: 3.3.2
+      title: Méthodes et outils projets
+      heures: 21
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Perfectionner sa connaissance de la gestion de projet (Scope Management) Concevoir une méthodologie de type WBS
+    - code: 3.3.3
+      title: Introduction aux méthodes agiles
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - S’approprier les méthodes et les outils de la méthode "Agile"
+    - code: 3.3.4
+      title: Normes et optimisation du code source
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Concevoir et structurer des programmes avec logique et intelligence, modéliser des problèmes concrets
+      - Faciliter la maintenance du code d’un programme
+      - Analyser et faire évoluer un code source existant afin de le rendre plus performant
+      - Choisir, implémenter et maitriser un outil de gestion de version
+    - code: 3.3.5
+      title: Sensibilisation à la cybersécurité
+      heures: 14
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Reconnaître et éviter les menaces courantes en cybersécurité, telles que le phishing et les malwares, en appliquant des bonnes pratiques de sécurité.
+    - code: 3.3.6
+      title: Tests et recette des applications
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Créer des test unitaires
+  - code: '3.4'
+    num: 4
+    title: Anglais
+    ects: 2
+    heures: 21
+    themes: 'Anglais à coloration professionnelle et technique
+
+      Réunions professionnelles'
+    competences:
+    - Consolidation du niveau B1
+    - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
+    - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
+    - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
+    - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    ecues:
+    - code: 3.4.1
+      title: Anglais Semestre 3
+      heures: 21
+      coefficient: 1
+      prerequis: Anglais semestre 2
+      objectifs:
+      - Consolidation du niveau B1
+  - code: '3.5'
+    num: 5
+    title: Développement des compétences professionnelles (Semestre 3)
+    ects: 4
+    heures: 35
+    themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    competences: []
+    ecues:
+    - code: 3.5.1
+      title: Communication professionnelle
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+    - code: 3.5.2
+      title: Développement des compétences transversales
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+    - code: 3.5.3
+      title: Engagement citoyen et transition écologique
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Connaitre et comprendre les enjeux de la transition écologique.
+      - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
+      - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
+      - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+- number: 4
+  ues:
+  - code: '4.1'
+    num: 1
+    title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    ects: 4
+    heures: 63
+    themes: Cette UE vise à aborder l'optimisation combinatoire et la recherche opérationnelle appliquées aux problématiques industrielles d'intelligence artificielle. La modélisation mathématique des contraintes et objectifs industriels (logistique, planification, ressources). Les méthodes exactes vs approchées pour la résolution de problèmes NP-difficiles. L'intégration des solveurs d'optimisation dans les pipelines de décision automatique.
+    competences:
+    - Construire les études d'opportunité en lien avec les acteurs métier (étude de cadrage, faisabilité, etc.)
+    - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
+    - Utiliser les statistiques pour optimiser la solution IA
+    - Etablir un diagnostic afin de trouver les raisons d'un dysfonctionnement
+    - Recenser les différentes solutions/technologies susceptibles de répondre au cahier des charges
+    - Comparer les solutions existantes avec leur adéquation au besoin afin de participer aux choix techniques
+    - Analyser et évaluer les risques (sécurité) d'une IA afin de participer à leur résolution
+    - Rechercher des solutions techniques et réaliser une veille pour répondre à la problématique IA
+    - Comparer les solutions qui répondent aux besoins afin de participer aux choix techniques
+    - Construire et exposer tous les éléments permettant la prise de décision
+    - S'approprier les différentes classes d'algorithmes (ML, DL,…) pour modéliser les données massives
+    - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
+    - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
+    - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    ecues:
+    - code: 4.1.1
+      title: Méta-Heuristiques et Algorithmes d'Optimisation
+      heures: 42
+      coefficient: 3
+      prerequis: 'Algorithmique et structures de données
+
+        Programmation Python (numpy, matplotlib)
+
+        Mathématiques : analyse (dérivées, gradients), probabilités et statistiques descriptives
+
+        Notions de complexité algorithmique (notation O)'
+      objectifs:
+      - Comprendre la nature des problèmes d'optimisation combinatoire rencontrés dans les projets industriels
+      - Maîtriser les concepts fondamentaux des méta-heuristiques (exploration vs exploitation, voisinage, paysage de fitness)
+      - Être capable d'implémenter et paramétrer les principales méta-heuristiques (algorithmes évolutionnaires, méthodes de voisinage, recherche dispersée)
+      - Savoir évaluer les performances et la robustesse d'une solution optimisée par rapport aux contraintes industrielles
+      - Identifier les cas d'usage où les méta-heuristiques surpassent les méthodes exactes (grandes instances, temps réel)
+    - code: 4.1.2
+      title: Programmation Linéaire en Nombres Entiers
+      heures: 21
+      coefficient: 2
+      prerequis: "Algèbre linéaire (matrices, vecteurs, résolution de systèmes) \nProgrammation Python (utilisation de bibliothèques)\nLogique propositionnelle et modélisation mathématique de base"
+      objectifs:
+      - Formuler mathématiquement des problèmes industriels complexes sous forme de programmes linéaires en nombres entiers (PLNE)
+      - Maîtriser la modélisation avec variables binaires, entières
+      - Comprendre et appliquer les méthodes de résolution exacte (Branch and Bound, coupes, branch-and-cut)
+      - Utiliser des solveurs industriels standards (CPLEX, Gurobi, ou alternatives open-source comme CBC, SCIP, OR-Tools)
+      - Analyser la qualité des solutions (relaxation linéaire, gap d'optimalité) et interpréter les analyses de sensibilité
+      - Intégrer la résolution PLNE dans une architecture décisionnelle d'entreprise
+  - code: '4.2'
+    num: 2
+    title: Concevoir la solution IA dans l’architecture globale
+    ects: 2
+    heures: 35
+    themes: Ce module explore l'évolution technique et l'architecture des LLM, de leur conception aux stratégies de prompting, tout en analysant leurs applications concrètes. Il intègre une dimension critique sur l'éthique, les biais et l'impact environnemental de l'IA générative. Réalisation d'un projet pratique incluant la sélection de modèles, l'optimisation des prompts et l'évaluation des résultats.
+    competences:
+    - Identifier les différentes sources de données
+    - Identifier les algos/protocoles pour une collecte efficace des données
+    - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
+    - Sélectionner les sources de données pour les modéliser et les cartographier
+    - Identifier et exploiter les indicateurs de performance pour argumenter la solution retenue
+    - Elaborer des tableaux de bord intégrant les données métier pour la prise de décision
+    - Quantifier les besoins en capacité de calculs et de stockage des données
+    - Identifier les ressources disponibles dans le SI
+    - Appréhender les tenants et aboutissants de la solution IA
+    - Définir les étapes d'un processus d'IA
+    - Identifier les acteurs pour connaître l'ensemble des problématiques associées aux projets
+    - Identifier les infrastructures IT nécessaires au sein de l'entreprise
+    - Identifier et mettre en place des indicateurs de performance afin de choisir un modèle d'IA adapté
+    - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
+    - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
+    - Mettre en œuvre la solution pour répondre aux besoins
+    - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    ecues:
+    - code: 4.2.1
+      title: Fonctionnement de l’IA Générative et Prompting
+      heures: 35
+      coefficient: 1
+      prerequis: Bonne compréhension de la programmation, en particulier en Python, des bases en apprentissage automatique (machine learning), des connaissances en statistiques et algèbre linéaire, une introduction au traitement du langage naturel (NLP), ainsi que des notions de base en informatique et réseaux.
+      objectifs:
+      - Fournir aux étudiants une compréhension approfondie des modèles de langage de grande taille (LLM), de leur historique, de leurs applications, de leur architecture, ainsi que des défis éthiques et pratiques associés à leur utilisation.
+  - code: '4.3'
+    num: 3
+    title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    ects: 4
+    heures: 63
+    themes: Cette thématique porte sur la conception de modèles de machine learning performants, articulant les approches supervisées (régression) et non supervisées (clustering) pour répondre à des problématiques métiers. Elle impose l'intégration systématique de la sobriété numérique et de la lutte contre les biais algorithmiques pour garantir des solutions d'IA éthiques et écoresponsables.
+    competences:
+    - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
+    - Assurer la configuration de la solution d'IA déployée
+    - Mesurer et réduire les impacts environnementaux de la solution IA au regard des instances réglementaires
+    - Sélectionner et formaliser les éléments de performances de la solution pour effectuer un reporting
+    - Suivre la solution d'IA au sein du SI, garantir son efficacité et ses évolutions
+    - Maintenir le système IA mis en place pour garantir la continuité de service
+    - Paramétrer des solutions IA et maîtriser les métriques associées pour valider les performances
+    - Utiliser des scripts Python s'appuyant sur des bibliothèques dédiées IA pour maintenir la solution déployée
+    - Analyser les résultats de la solution IA afin d'en évaluer l'impact écologique
+    - Mettre en place des solutions correctives si les résultats ne sont pas optimaux
+    ecues:
+    - code: 4.3.1
+      title: Apprentissage Supervisé
+      heures: 19
+      coefficient: 1
+      prerequis: "Bases de programmation Python (pandas, numpy) ; \nNotions fondamentales de statistiques (moyenne, variance, distribution) ; manipulation de données tabulaires.\nPas de prérequis mathématiques avancés."
+      objectifs:
+      - Cet ECUE introduit les concepts fondamentaux de l’apprentissage supervisé. Les étudiants découvrent les notions de jeu d’entraînement/test, de sur-apprentissage et de généralisation. Ils étudient les principaux algorithmes (arbres de décision, forêts aléatoires, SVM, k-NN) et apprennent à évaluer leurs performances via des métriques clés (précision, rappel, F1-score, AUC). L’intégration d’une approche éthique (détection de biais) et écologique (sobriété des modèles) est abordée tout au long du cours.
+    - code: 4.3.2
+      title: Modèles de Régression
+      heures: 19
+      coefficient: 1
+      prerequis: L’ECUE 4.3.1 validé ; maîtrise des opérations matricielles et algèbre linéaire élémentaire ; statistiques descriptives et inférentielles ; utilisation de scikit-learn pour l’entraînement de modèles simples.
+      objectifs:
+      - Cet ECUE approfondit la modélisation prédictive quantitative à travers les techniques de régression. Les étudiants maîtrisent la régression linéaire simple et multiple, la régression logistique, ainsi que les méthodes de régularisation (Ridge, Lasso, ElasticNet).
+      - Ils apprennent à diagnostiquer la qualité d’un modèle (R², RMSE, résidus), à détecter le sur-apprentissage et à optimiser les hyperparamètres. La construction responsable des modèles — en termes d’équité et de minimisation de l’empreinte computationnelle — est intégrée aux travaux pratiques.
+    - code: 4.3.3
+      title: Clustering Automatique et Fonctions Pertes
+      heures: 18
+      coefficient: 1
+      prerequis: "Les ECUEs « Apprentissage Supervisé » et « Modèles de Régression » finalisés\nNotions de géométrie vectorielle et distances ;\nCalcul différentiel élémentaire (dérivées, gradient) ; \nMaîtrise de matplotlib/seaborn pour la visualisation multidimensionnelle."
+      objectifs:
+      - Cet ECUE aborde l’apprentissage non supervisé à travers les techniques de clustering et approfondit le rôle crucial des fonctions de perte dans l’entraînement des modèles. Les étudiants maîtrisent les algorithmes K-Means, DBSCAN et la classification hiérarchique (CAH), ainsi que la réduction dimensionnelle (ACP, t-SNE). Ils comprennent les fonctions de perte (MSE, Cross-Entropy, Hinge) et leur rôle dans l’optimisation par descente de gradient. L’ECUE intègre une réflexion sur l’interprétabilité, l’équité des groupes formés et l’efficience computationnelle.
+    - code: 4.3.4
+      title: Ethique numérique et écologique
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Les étudiants devront comprendre les impacts numériques et éthiques sur l'écologie afin de les prendre en compte dans l'implémentation de leur solution.
+  - code: '4.4'
+    num: 4
+    title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    ects: 4
+    heures: 56
+    themes: Cette UE porte sur la réalisation opérationnelle d'une solution d'IA performante en intégrant les impératifs de la Responsabilité Sociétale des Entreprises (RSE) et des normes ISO 26000 et IEC 27001. Elle exige de savoir défendre une démarche technique tout en garantissant la sécurité des informations et la résolution éthique des problématiques liées au droit du travail.
+    competences:
+    - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
+    - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
+    - Identifier les sous-projets et tâches inclus dans le projet global pour en estimer les durées
+    - Planifier les projets IA en utilisant PERT et GANTT pour construire le planning détaillé
+    - Définir les principaux jalons du projet (points de validation) pour vérifier le bon déroulement
+    - Concevoir le planning du projet à travers un outil de représentation graphique
+    - Identifier les risques inhérents au projet IA afin d'en évaluer la criticité
+    - Définir un plan de réponses aux risques identifiés et élaborer un tableau de suivi
+    - Accompagner le changement numérique
+    - Favoriser l'appropriation des outils numériques par les collaborateurs
+    - Prendre en compte l'impact environnemental des projets afin de réduire l'empreinte carbone
+    - Conduire les réunions de suivi de projet en IA
+    - Actualiser les données des tableaux de bord (coûts, réalisé, risques, etc.) pour réguler les aléas
+    - Organiser et mener les réunions et échanges pour garantir le bon déroulement du projet
+    - Synthétiser et formaliser les documents de reporting à destination du comité de pilotage
+    - Etablir la documentation technique des projets IA et transmettre les documents aux parties prenantes
+    - Assurer le transfert de compétences auprès des administrateurs pour garantir la viabilité de la solution
+    - Organiser et animer la capitalisation de l'expérience à l'issue du projet IA
+    ecues:
+    - code: 4.4.1
+      title: Projet intelligence Artificielle
+      heures: 35
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Dans cette ECUE les étudiants seront amenés à réaliser un projet de développement en mettant en œuvre les outils de pilotage (de la demande client à la réalisation du projet)
+    - code: 4.4.2
+      title: RSE/Droit du Travail Spécifique à l'IA et Normes de Sécurité ISO et IEC27001
+      heures: 21
+      coefficient: 1
+      prerequis: 'Connaissances de base en informatique et en IA
+
+        Capacité d’analyse et de réflexion critique, compétences en communication et travail d’équipe
+
+        Curiosités, ouverture d’esprit, sensibilité aux questions éthiques et la responsabilité sociale'
+      objectifs:
+      - Les étudiants devront comprendre les impacts numériques et éthiques de l’Intelligence Artificielle sur l’environnement afin de les prendre en compte dans l'implémentation de leur solution.
+      - Comprendre les concepts fondamentaux de la RSE et des normes ISO 26000 et IEC 27001 dans le contexte de l'Intelligence Artificielle.
+      - Décrire les principes et domaines centraux de l'ISO 26000 appliqués à l'IA.
+      - Expliquer la mise en œuvre de la norme IEC 27001 pour sécuriser les systèmes d'IA.
+      - Analyser des études de cas sur la RSE et l'IA.
+      - Évaluer les plans de gestion des risques pour la sécurité de l'information dans les projets d'IA.
+      - Créer un projet intégratif de RSE pour une organisation fictive utilisant l'IA
+  - code: '4.5'
+    num: 5
+    title: Anglais
+    ects: 2
+    heures: 28
+    themes: 'Anglais à coloration professionnelle et technique
+
+      Sujets de réflexion sur des problèmes liés à l’interculturalité
+
+      Mobilité internationale'
+    competences:
+    - Consolider le niveau B1
+    - Peut comprendre les points essentiels quand un langage clair et standard est utilisé et s'il s'agit de choses familières dans le travail, à l'école, dans les loisirs, etc.
+    - Peut se débrouiller dans la plupart des situations rencontrées en voyage dans une région où la langue cible est parlée.
+    - Peut produire un discours simple et cohérent sur des sujets familiers et dans ses domaines d'intérêt.
+    - Peut raconter un événement, une expérience ou un rêve, décrire un espoir ou un but et exposer brièvement des raisons ou explications pour un projet ou une idée.
+    ecues:
+    - code: 4.5.1
+      title: Anglais Semestre 4
+      heures: 28
+      coefficient: 1
+      prerequis: Anglais semestre 3
+      objectifs:
+      - Consolidation du niveau B1
+      - Mobilité internationale
+  - code: '4.6'
+    num: 6
+    title: Développement des compétences professionnelles (Semestre 4)
+    ects: 2
+    heures: 35
+    themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    competences: []
+    ecues:
+    - code: 4.6.1
+      title: Communication professionnelle
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+    - code: 4.6.2
+      title: Développement des compétences transversales
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+    - code: 4.6.3
+      title: Engagement citoyen et transition écologique
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
+      - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
+      - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+  - code: '4.7'
+    num: 7
+    title: Mission entreprise
+    ects: 12
+    heures: 0
+    themes: Stage en entreprise
+    competences: []
+    ecues:
+    - code: 4.7.1
+      title: Mission entreprise
+      heures: 0
+      coefficient: 1
+      prerequis: Avoir passé, au moins 8 semaines en entreprise.
+      objectifs: []
+    - code: 4.7.2
+      title: Mémoire technique
+      heures: 0
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - 'Mémoire technique :'
+      - Observer l’objet de l’étude.
+      - Repérer et approfondir un savoir-faire de l’entreprise et élargir ainsi son domaine de compétences,
+      - Rencontrer les personnes aptes à lui transmettre les informations nécessaires à l’acquisition du savoir-faire étudié.
+      - Travailler la recherche d’informations, par l’identification des ressources, l’analyse et le tri des informations,
+      - Comprendre les concepts techniques, en étudier les applications et observer la mise en œuvre,
+      - Rédiger un rapport synthétique en restituant de manière claire et parfaitement accessible son travail.
+- number: 5
+  ues:
+  - code: '5.1'
+    num: 1
+    title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    ects: 3
+    heures: 49
+    themes: Dans cette UE, l'étudiant va s'initier aux activités de la recherche à travers la découverte des plateformes de publication, la méthodologie de recherche documentaire, l’analyse critique de sources et la construction d’une bibliographie pertinente. Il traite également de la structuration d’un article scientifique, de l’évaluation de travaux de recherche et de la communication scientifique via des supports tels que le poster ou la présentation orale. L’ensemble permet aux étudiants de planifier un projet de recherche, de contribuer à son développement et de vulgariser les connaissances produites.
+    competences:
+    - Analyser le besoin du client, le contexte économique, l'environnement, la technicité et les métiers de l'entreprise afin d'appréhender le périmètre du projet
+    - Identifier et analyser les flux d'information et les processus et activités de l'entreprise afin de comprendre le schéma d'organisation métier
+    - Construire les études d'opportunité en lien avec les acteurs métier (étude de cadrage, faisabilité, etc.)
+    - Elaborer une note de cadrage (ou charte projet) pour définir le périmètre global du projet
+    - Utiliser ses connaissances scientifiques pour vérifier et/ou identifier les causes d'un dysfonctionnement
+    - Utiliser les statistiques pour optimiser la solution IA
+    - Etablir un diagnostic afin de trouver les raisons d'un dysfonctionnement
+    - Recenser les différentes solutions/technologies susceptibles de répondre au cahier des charges
+    - Comparer les solutions existantes avec leur adéquation au besoin afin de participer aux choix techniques
+    - Analyser et évaluer les risques (sécurité) d'une IA afin de participer à leur résolution
+    - Rechercher des solutions techniques et réaliser une veille pour répondre à la problématique IA
+    - Comparer les solutions qui répondent aux besoins afin de participer aux choix techniques
+    - Construire et exposer tous les éléments permettant la prise de décision
+    - Rechercher et contacter les structures d'accompagnement à l'entrepreneuriat
+    - S'approprier les différentes classes d'algorithmes (ML, DL,…) pour modéliser les données massives
+    - Mettre en œuvre des méthodes de collecte, de stockage, de traitement et de visualisation des données
+    - Appréhender les concepts d'architecture cloud (AWS, Azure,…) et les outils d'apprentissage (Keras, TF, etc.)
+    - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    ecues:
+    - code: 5.1.1
+      title: Initiation à la recherche
+      heures: 49
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - 'À la fin de cette mission, les participants seront capables d''appliquer une méthodologie de recherche permettant l''identification de ressources pertinentes, et la rédaction de rapports scientifiques sous forme d''article (journal, ou conférence). Aussi, les participant seront amenés à communiquer autour de leurs problématiques en utilisant des supports tels que : PPT ou poster.'
+  - code: '5.2'
+    num: 2
+    title: Concevoir la solution IA dans l’architecture globale
+    ects: 5
+    heures: 77
+    themes: L'objectif général d'un cours de deep learning est de donner aux étudiants une compréhension approfondie des réseaux de neurones profonds et de leurs applications dans divers domaines tels que la vision
+    competences:
+    - Identifier les différentes sources de données
+    - Identifier les algos/protocoles pour une collecte efficace des données
+    - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
+    - Sélectionner les sources de données pour les modéliser et les cartographier
+    - Identifier et exploiter les indicateurs de performance pour argumenter la solution retenue
+    - Elaborer des tableaux de bord intégrant les données métier pour la prise de décision
+    - Quantifier les besoins en capacité de calculs et de stockage des données
+    - Identifier les ressources disponibles dans le SI
+    - Appréhender les tenants et aboutissants de la solution IA
+    - Définir les étapes d'un processus d'IA
+    - Identifier les acteurs pour connaître l'ensemble des problématiques associées aux projets
+    - Identifier les infrastructures IT nécessaires au sein de l'entreprise
+    - Identifier et mettre en place des indicateurs de performance afin de choisir un modèle d'IA adapté
+    - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
+    - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
+    - Mettre en œuvre la solution pour répondre aux besoins
+    - Tester et valider la solution d'IA en s'appuyant sur les indicateurs de performance
+    ecues:
+    - code: 5.2.1
+      title: Deep Learning
+      heures: 35
+      coefficient: 1
+      prerequis: 'Algèbre linéaire
+
+        Programmation en python,
+
+        Mise en place d’un environnement Jupyter notebook sous Anaconda navigator.'
+      objectifs:
+      - Identifier les rôles des différentes parties prenantes pour comprendre leurs besoins
+      - Participer à l’écriture et au maintien d’un algorithme fiable et efficace pour la mise en place d'algorithmes de deep learning
+      - S’approprier les différentes classes d'algorithmes IA, leurs limites et biais et leurs applications aux données, pouvant être massives, afférentes au projet
+      - Décrire les principales architectures de réseaux de neurones (réseaux entièrement connectés, réseaux de neurones convolutifs CNN, réseaux de neurones entièrement convolutifs FCN)
+      - Choisir l’architecture en fonction du problème identifié.
+      - Evaluer l’efficacité d’un réseau de neurones en fonction du problème identifié.
+      - Programmer un réseau de neurones avec le framework TensorFlow et Keras.
+      - Présenter et défendre les résultats obtenus sur un réseau de neurones.
+      - Comprendre les enjeux d’un jeu de données pour le deep learning.
+      - Identifier les biais d’un jeu de données.
+      - Choisir une bonne répartition d’un jeu de données (entrainement, validation, test).
+      - Choisir les métriques d’un réseau de neurones en fonction du problème identifié.
+      - Evaluer la performance d’une architecture de réseau de neurone.
+      - Identifier les cas d’applications d’un CNN/FCN dans le domaine de la santé.
+      - Comprendre les principes de la segmentation sémantique.
+      - 'Expliquer les différents blocs d’un CNN : Convolution, MaxPooling'
+      - Décrire le fonctionnement d’un réseau entièrement Convolutif (FCN)
+      - Décrire le réseau U-NET
+      - Appliquer les CNN et les FCN pour la détection et la segmentation dans un cas pratique.
+    - code: 5.2.2
+      title: Reinforcement Learning
+      heures: 14
+      coefficient: 1
+      prerequis: "Programmation en Python \nNotions de probabilités \nNotions d'optimisation \nNotions de chaînes de markov"
+      objectifs:
+      - Définir le cadre formel de l'apprentissage par renforcement (agent, environnement, état, action, récompense)
+      - Distinguer l'apprentissage par renforcement des autres paradigmes d'apprentissage automatique (supervisé, non supervisé)
+      - Expliquer le compromis exploration vs exploitation
+      - Décrire et implémenter l'algorithme Q-Learning
+      - Interpréter une table Q (Q-table) pour en déduire une politique optimale
+      - Appliquer l'apprentissage par renforcement à un environnement simple (grille, jeu)
+      - Évaluer la convergence et la performance d'un agent par l'analyse des courbes de récompenses cumulées
+      - Identifier des cas d'usage du reinforcement learning dans l'industrie
+    - code: 5.2.3
+      title: Chaînes de Markov et Automates
+      heures: 28
+      coefficient: 1
+      prerequis: 'Notions de probabilités (probabilité conditionnelle, loi de probabilité discrète)
+
+        Calcul matriciel de base (produit de matrices, vecteurs)
+
+        Programmation Python (boucles, numpy)'
+      objectifs:
+      - Définir et représenter un automate fini (déterministe et non déterministe)
+      - Analyser le comportement d'un automate sur un mot d'entrée
+      - Construire un automate à partir d'une spécification simple
+      - Définir une chaîne de Markov à temps discret et ses composants (états, matrice de transition)
+      - Calculer des probabilités de transition en n étapes par produit matriciel
+      - Déterminer la distribution stationnaire d'une chaîne de Markov
+      - Classifier les états d'une chaîne de Markov (absorbants, récurrents, transitoires)
+      - Implémenter une simulation de chaîne de Markov en Python
+      - Appliquer les chaînes de Markov à un problème concret (modélisation de parcours patient, génération de texte, fiabilité de systèmes)
+      - Faire le lien entre chaînes de Markov et MDP (passerelle avec l'ECUE 5.2.2)
+  - code: '5.3'
+    num: 3
+    title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    ects: 3
+    heures: 42
+    themes: Cette thématique porte sur la conception et le développement d'architectures web Full Stack, en articulant le pattern MVC et les principes d'API REST. Elle impose une maîtrise des interactions client-serveur sécurisées (PHP/PDO, Fetch API) et la mise en œuvre de mécanismes d'authentification et de protection contre les failles critiques.
+    competences:
+    - Déployer la solution d'IA dans un Système d'information
+    - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
+    - Assurer la configuration de la solution d'IA déployée
+    - Mesurer et réduire les impacts environnementaux de la solution IA au regard des instances réglementaires
+    - Sélectionner et formaliser les éléments de performances de la solution pour effectuer un reporting
+    - Suivre la solution d'IA au sein du SI, garantir son efficacité et ses évolutions
+    - Maintenir le système IA mis en place pour garantir la continuité de service
+    - Paramétrer des solutions IA et maîtriser les métriques associées pour valider les performances
+    - Utiliser des scripts Python s'appuyant sur des bibliothèques dédiées IA pour maintenir la solution déployée
+    - Analyser les résultats de la solution IA afin d'en évaluer l'impact écologique
+    - Mettre en place des solutions correctives si les résultats ne sont pas optimaux
+    ecues:
+    - code: 5.3.1
+      title: Développement Web Full Stack
+      heures: 42
+      coefficient: 1
+      prerequis: 'UE 2.1.4 : Développement Web'
+      objectifs:
+      - À la fin de ce cours, les étudiants seront en mesure de comprendre les concepts avancés du développement web full stack et de créer des applications web complètes et dynamiques.
+  - code: '5.4'
+    num: 4
+    title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    ects: 3
+    heures: 49
+    themes: Cette thématique porte sur la maîtrise stratégique de la transition numérique, en articulant le pilotage rigoureux des ressources et des délais avec les impératifs juridiques et l'agilité managériale. Elle vise à pérenniser la valeur du projet par une capitalisation des expériences et un accompagnement humain structuré lors des phases de changement.
+    competences:
+    - S'adapter aux méthodes de gestion de projet de type AGILE, PMI, etc. pour l'appliquer aux projets IA
+    - Former les utilisateurs et/ou les mainteneurs de la solution IA pour garantir le transfert des connaissances
+    - Identifier les sous-projets et tâches inclus dans le projet global pour en estimer les durées
+    - Planifier les projets IA en utilisant PERT et GANTT pour construire le planning détaillé
+    - Définir les principaux jalons du projet (points de validation) pour vérifier le bon déroulement
+    - Concevoir le planning du projet à travers un outil de représentation graphique
+    - Identifier les risques inhérents au projet IA afin d'en évaluer la criticité
+    - Définir un plan de réponses aux risques identifiés et élaborer un tableau de suivi
+    - Accompagner le changement numérique
+    - Favoriser l'appropriation des outils numériques par les collaborateurs
+    - Prendre en compte l'impact environnemental des projets afin de réduire l'empreinte carbone
+    - Conduire les réunions de suivi de projet en IA
+    - Actualiser les données des tableaux de bord (coûts, réalisé, risques, etc.) pour réguler les aléas
+    - Organiser et mener les réunions et échanges pour garantir le bon déroulement du projet
+    - Synthétiser et formaliser les documents de reporting à destination du comité de pilotage
+    - Etablir la documentation technique des projets IA et transmettre les documents aux parties prenantes
+    - Assurer le transfert de compétences auprès des administrateurs pour garantir la viabilité de la solution
+    - Organiser et animer la capitalisation de l'expérience à l'issue du projet IA
+    ecues:
+    - code: 5.4.1
+      title: Accompagnement au Changement et à la Transition Numérique
+      heures: 7
+      coefficient: 1
+      prerequis: Demander 2 mois avant de réaliser une analyse de la dynamique digitale de leur entreprise.
+      objectifs:
+      - Adapter son mode de management aux évolutions induites par le développement du numérique
+      - Favoriser les relations de collaboration au sein des équipes
+      - Développer son agilité managériale
+    - code: 5.4.2
+      title: Pilotage du projet informatique
+      heures: 28
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Savoir piloter un projet afin de garantir l’avancement d’un projet et sa qualité
+    - code: 5.4.3
+      title: Législation du projet informatique
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Piloter un projet en intégrant les règles juridiques relatives aux spécificités des différents contrats informatiques
+    - code: 5.4.4
+      title: Capitalisation et promotion du projet
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Acquérir les méthodes de communication liées au projet et capitaliser sur les acquis
+  - code: '5.4'
+    num: 4
+    title: Anglais
+    ects: 2
+    heures: 35
+    themes: 'Anglais à coloration professionnelle et technique
+
+      Exploitation de la mobilité internationale'
+    competences:
+    - Consolider le niveau B1+
+    - Peut comprendre une information factuelle directe sur des sujets de la vie quotidienne ou relatifs au travail en distinguant les messages généraux et les points de détail, à condition que l’articulation soit claire et l’accent courant.
+    - Peut parcourir un texte assez long pour y localiser une information recherchée et peut réunir des informations provenant de différentes parties du texte, ou de textes différents, afin d’accomplir une tâche précise.
+    - Peut expliquer comment faire quelque chose en donnant des instructions détaillées.
+    - Peut développer une argumentation suffisamment bien pour être compris sans difficulté la plupart du temps.
+    ecues:
+    - code: 5.4.1
+      title: Anglais Semestre 5
+      heures: 35
+      coefficient: 1
+      prerequis: Anglais semestre 4
+      objectifs:
+      - Consolidation du niveau B1+
+  - code: '5.6'
+    num: 6
+    title: Développement des compétences professionnelles (Semestre 5)
+    ects: 2
+    heures: 28
+    themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    competences: []
+    ecues:
+    - code: 5.6.1
+      title: Communication professionnelle
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant apprend à travailler sa communication professionnelle. Cela lui permettra d’améliorer ses relations humaines dans le cadre du travail et faire preuve d’efficacité.
+    - code: 5.6.2
+      title: PFI - Démarche RH
+      heures: 7
+      coefficient: 1
+      prerequis: 'Durant tout le cycle, l’étudiant est amené à bâtir son projet professionnel, à travers la démarche PFI : Plan de Formation Individuel.
+
+        Identifier les compétences attendues sur un poste
+
+        Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés'
+      objectifs:
+      - Voir la note pédagogique
+    - code: 5.6.3
+      title: Développement des compétences transversales
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+    - code: 5.6.4
+      title: Engagement citoyen et transition écologique
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Connaitre et comprendre les enjeux de la transition écologique.
+      - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
+      - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
+      - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+  - code: '5.7'
+    num: 7
+    title: Mission entreprise
+    ects: 12
+    heures: 0
+    themes: Mission en entreprise
+    competences: []
+    ecues:
+    - code: 5.7.1
+      title: Mission entreprise
+      heures: 0
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Remplir les missions professionnelles assignées en début de semestre.
+      - Atteindre le niveau requis des compétences visées sur le semestre.
+      - Comprendre et intégrer les enjeux et la stratégie de l’entreprise
+      - Analyser et chercher les solutions à un problème de conception, de réalisation, d’amélioration de produit, de système ou de service
+      - Conduire un projet de conception, de réalisation, d’amélioration de produit, de système ou de service
+      - Mettre en œuvre son expertise scientifique ou technique au sein de l’organisation
+      - Organiser sa mission et manager les ressources
+      - Organiser sa propre activité et le développement de ses compétences
+- number: 6
+  ues:
+  - code: '6.1'
+    num: 1
+    title: Définir le besoin pour répondre à une problématique industrielle d’un projet Intelligence Artificielle
+    ects: 2
+    heures: 42
+    themes: L’UE aborde les fondements de l’innovation et de l’entrepreneuriat en entreprise. Elle traite des différences entre créativité et innovation, des typologies d’innovations et des méthodes permettant de générer, structurer et développer des idées nouvelles. L’UE explore également les processus d’innovation et les outils mobilisables pour accompagner la création de valeur. Elle introduit ensuite les bases de l’entrepreneuriat, la posture entrepreneuriale, les étapes du processus entrepreneurial et les structures d’accompagnement. L’ensemble permet aux étudiants de comprendre comment émergent les idées innovantes, comment elles se transforment en projets, et comment elles peuvent être portées dans un cadre entrepreneurial.
+    competences:
+    - Analyser le besoin du client, le contexte économique, l'environnement, la technicité et les métiers de l'entreprise afin d'appréhender le périmètre du projet
+    - Identifier et analyser les flux d'information et les processus et activités de l'entreprise afin de comprendre le schéma d'organisation métier
+    - Construire les études d'opportunité en lien avec les acteurs métier (étude de cadrage, faisabilité, etc.)
+    - Elaborer une note de cadrage (ou charte projet) pour définir le périmètre global du projet
+    - Recenser les différentes solutions/technologies susceptibles de répondre au cahier des charges
+    - Comparer les solutions existantes avec leur adéquation au besoin afin de participer aux choix techniques
+    - Rechercher des solutions techniques et réaliser une veille pour répondre à la problématique IA
+    - Comparer les solutions qui répondent aux besoins afin de participer aux choix techniques
+    - Construire et exposer tous les éléments permettant la prise de décision
+    - Rechercher et contacter les structures d'accompagnement à l'entrepreneuriat
+    - Conduire une veille technologique pour repérer les nouvelles applications et les évolutions
+    ecues:
+    - code: 6.1.1
+      title: Techniques d'innovation
+      heures: 28
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - A l'issue de cette ECUE, les étudiants seront sensibilisés aux méthodologies de gestion de l'innovation dans les entreprises
+    - code: 6.1.2
+      title: Entrepreneuriat
+      heures: 14
+      coefficient: 1
+      prerequis: Aucun prérequis
+      objectifs:
+      - A l'issue de cette ECUE, les étudiants auront les notions de bases de l'entrepreneuriat avec les différents statuts juridiques
+  - code: '6.2'
+    num: 2
+    title: Concevoir la solution IA dans l’architecture globale
+    ects: 3
+    heures: 63
+    themes: Cette unité d'enseignement combine l'architecture et l'administration des réseaux locaux (modèles OSI/TCP-IP, adressage IPv4/v6, configuration Cisco et Active Directory) avec les outils mathématiques du traitement de signal (Transformée de Fourier, filtrage, échantillonnage). Elle traite également de la théorie de l'information appliquée à l'image, incluant les mécanismes de compression avec et sans perte (Huffman, DCT, standard JPEG). L'ensemble vise à maîtriser la chaîne complète de transmission, du traitement des données jusqu'à leur acheminement réseau.
+    competences:
+    - Identifier les différentes sources de données
+    - Identifier les algos/protocoles pour une collecte efficace des données
+    - Identifier la nécessité d'un prétraitement des données pour les intégrer dans la solution IA
+    - Sélectionner les sources de données pour les modéliser et les cartographier
+    - Identifier et exploiter les indicateurs de performance pour argumenter la solution retenue
+    - Elaborer des tableaux de bord intégrant les données métier pour la prise de décision
+    - Quantifier les besoins en capacité de calculs et de stockage des données
+    - Identifier les ressources disponibles dans le SI
+    - Appréhender les tenants et aboutissants de la solution IA
+    - Définir les étapes d'un processus d'IA
+    - Identifier les acteurs pour connaître l'ensemble des problématiques associées aux projets
+    - Identifier les infrastructures IT nécessaires au sein de l'entreprise
+    - Identifier et mettre en place des indicateurs de performance afin de choisir un modèle d'IA adapté
+    - Manipuler des algorithmes sur plusieurs plateformes avec différents langages
+    - Identifier et analyser les technologies appropriées pour aider à la prise de décisions
+    - Mettre en œuvre la solution pour répondre aux besoins
+    ecues:
+    - code: 6.2.1
+      title: Architecture du Réseau Local
+      heures: 21
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Maîtriser l'architecture, la configuration de base et la sécurisation des réseaux locaux commutés en environnements IPv4 et IPv6
+    - code: 6.2.2
+      title: Administration Système et Réseau Local
+      heures: 14
+      coefficient: 1
+      prerequis: Utiliser Microsoft windows
+      objectifs:
+      - Comprendre le fonctionnement d'active directory
+      - Comprendre l'organisation d'un réseau local et configurer celui-ci
+    - code: 6.2.3
+      title: Transformée de Fourier
+      heures: 14
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Maîtriser les outils de l'analyse spectrale pour passer du signal analogique au traitement numérique, afin de modéliser et de filtrer des informations fréquentielles.
+    - code: 6.2.4
+      title: Compression d'image
+      heures: 14
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - Maîtriser les principes de la compression de données visuelles en exploitant la réduction des redondances statistiques et psychovisuelles
+  - code: '6.3'
+    num: 3
+    title: Développer et maintenir une solution d’IA pour optimiser les performances de l’entreprise en respectant une démarche éthique et écologique
+    ects: 1
+    heures: 28
+    themes: Cette thématique porte sur la conception logicielle avancée et la vision par ordinateur, articulant la modélisation par diagrammes UML et l'application de Design Patterns. Elle vise à maîtriser la chaîne complète du traitement d'images via OpenCV, de l'acquisition numérique et la calibration de caméra jusqu'à l'implémentation d'algorithmes de segmentation et d'extraction de caractéristiques.
+    competences:
+    - Déployer la solution d'IA dans un Système d'information
+    - Implémenter une solution IA dans un SI existant avec des technologies et/ou langages appropriés
+    - Assurer la configuration de la solution d'IA déployée
+    - Mesurer et réduire les impacts environnementaux de la solution IA au regard des instances réglementaires
+    - Sélectionner et formaliser les éléments de performances de la solution pour effectuer un reporting
+    - Suivre la solution d'IA au sein du SI, garantir son efficacité et ses évolutions
+    - Maintenir le système IA mis en place pour garantir la continuité de service
+    - Paramétrer des solutions IA et maîtriser les métriques associées pour valider les performances
+    - Utiliser des scripts Python s'appuyant sur des bibliothèques dédiées IA pour maintenir la solution déployée
+    - Analyser les résultats de la solution IA afin d'en évaluer l'impact écologique
+    - Mettre en place des solutions correctives si les résultats ne sont pas optimaux
+    ecues:
+    - code: 6.3.1
+      title: Langage de modélisation unifié (UML)
+      heures: 7
+      coefficient: 1
+      prerequis: Connaitre les principes de la programmation orientée obje
+      objectifs:
+      - Traduire un besoin exprimé en réalisant des diagrammes de base UML
+      - Décrire l’utilisation et l’utilisabilité d’une application au travers des diagrammes UML
+    - code: 6.3.2
+      title: Traitement d'images (reconnaissance)
+      heures: 21
+      coefficient: 1
+      prerequis: Connaissance du langage Python
+      objectifs:
+      - Appliquer des algorithmes sur des images afin de les améliorer ou d’en extraire des informations de plus haut niveau (contours, points d’intérêts, segmentation)
+  - code: '6.4'
+    num: 4
+    title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
+    ects: 3
+    heures: 49
+    themes: 'Durant cette UE, les étudiants seront amenés à sélectionner un sujet de projet et à le gérer du début à la fin. Durant le temps du projet, les équipes devront proposer, concevoir, implémenter et évaluer une solution d’IA.
+
+      A la fin du projet, les étudiants devront fournir une présentation appliquant l''ensemble des concepts acquis durant la formation devant un jury d’experts qui validera les résultats obtenus par l’équipe.'
+    competences:
+    - L’ensemble du référentiel de compétences
+    ecues:
+    - code: 6.4.1
+      title: Projet IA
+      heures: 49
+      coefficient: 1
+      prerequis: 'Initiation à la recherche
+
+        Projet tutoré
+
+        Ethique
+
+        Innovation
+
+        Communication professionnelle
+
+        Démarche éthique du projet I.A.'
+      objectifs:
+      - Dans cette UE les étudiants seront amenés à réaliser un projet, en mettant en œuvre les outils de pilotage, et seront amené à identifier les pistes d'améliorations de ce dernier afin de prendre du recul.
+  - code: '6.5'
+    num: 5
+    title: Anglais
+    ects: 1
+    heures: 35
+    themes: 'Anglais à coloration professionnelle et technique
+
+      Exploration des notions de Responsabilité sociétale des entreprises et de Développement durable'
+    competences:
+    - Consolider le niveau B1+
+    - Peut comprendre une information factuelle directe sur des sujets de la vie quotidienne ou relatifs au travail en distinguant les messages généraux et les points de détail, à condition que l’articulation soit claire et l’accent courant.
+    - Peut parcourir un texte assez long pour y localiser une information recherchée et peut réunir des informations provenant de différentes parties du texte, ou de textes différents, afin d’accomplir une tâche précise.
+    - Peut expliquer comment faire quelque chose en donnant des instructions détaillées.
+    - Peut développer une argumentation suffisamment bien pour être compris sans difficulté la plupart du temps.
+    ecues:
+    - code: 6.5.1
+      title: Anglais semestre 6
+      heures: 35
+      coefficient: 1
+      prerequis: Anglais semestre 5
+      objectifs:
+      - Consolidation du niveau B1+
+  - code: '6.6'
+    num: 6
+    title: Développement des compétences professionnelles (semestre 6)
+    ects: 1
+    heures: 42
+    themes: Les expériences variées sont essentielles pour acquérir de nouvelles compétences. En travaillant dans divers contextes, en prenant des risques et en s’adaptant aux changements, les individus peuvent développer leur sens de l’initiative, de la prise de décision et leurs compétences en résolution de problèmes.
+    competences: []
+    ecues:
+    - code: 6.6.1
+      title: Communication professionnelle
+      heures: 21
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Construire un argumentaire
+      - Préparer une présentation orale efficace, en fonction du but et du public visé
+      - Produire un écrit professionnel
+      - Structurer ses écrits
+      - Ecrire en respectant les règles d’orthographe de la langue française
+      - Comprendre comment gérer les changements dans les projets de manière efficace, en minimisant les impacts négatifs et en maximisant les opportunités pour atteindre les objectifs de projet
+    - code: 6.6.2
+      title: PFI - Soutenance Finale
+      heures: 7
+      coefficient: 1
+      prerequis: ''
+      objectifs:
+      - 'Durant tout le cycle, l’élève est amené à bâtir son projet professionnel, à travers la démarche PFI : Plan de Formation Individuel.'
+      - Identifier les compétences attendues sur un poste
+      - Etablir un plan d’actions basé sur une auto-évaluation des compétences et des objectifs fixés
+      - Réaliser un bilan sur les 3 années
+    - code: 6.6.3
+      title: Développement des compétences transversales
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Dans cette ECUE, l’étudiant et l’enseignant font un bilan individuel sur l’implication et comportement professionnel
+    - code: 6.6.4
+      title: Engagement citoyen et transition écologique
+      heures: 7
+      coefficient: 1
+      prerequis: Aucun
+      objectifs:
+      - Intégrer un engagement sociétal en démontrant l'importance des valeurs telles que la préservation de l'environnement, la lutte contre les discriminations, le respect des collaborateurs, la promotion de l'égalité des chances, ainsi que la communication transparente avec tous les intervenants concernant l'avancement et les risques potentiels des projets.
+      - Analyser avec objectivité et esprit critique les actions à entreprendre et les difficultés potentielles à prévoir
+      - Justifier le projet et les choix structurants pour mener l'activité citoyenne
+  - code: '6.7'
+    num: 7
+    title: Mission entreprise
+    ects: 10
+    heures: 0
+    themes: Mission en entreprise
+    competences: []
+    ecues:
+    - code: 6.7.1
+      title: Mission entreprise
+      heures: 0
+      coefficient: null
+      prerequis: ''
+      objectifs:
+      - Remplir les missions professionnelles assignées en début de semestre.
+      - Atteindre le niveau requis des compétences visées sur le semestre.
+      - Comprendre et intégrer les enjeux et la stratégie de l’entreprise
+      - Analyser et chercher les solutions à un problème de conception, de réalisation, d’amélioration de produit, de système ou de service
+      - Conduire un projet de conception, de réalisation, d’amélioration de produit, de système ou de service
+      - Mettre en œuvre son expertise scientifique ou technique au sein de l’organisation
+      - Organiser sa mission et manager les ressources
+      - Organiser sa propre activité et le développement de ses compétences
+  - code: '6.8'
+    num: 8
+    title: PFE
+    ects: 10
+    heures: 0
+    themes: '• Se reporter à la note pédagogique PFE sur Moodle.
+
+      • Se reporter au règlement des études.
+
+      • Se reporter au livret d’apprentissage'
+    competences: []
+    ecues:
+    - code: 6.8.1
+      title: PFE
+      heures: 0
+      coefficient: 1
+      prerequis: Alternance
+      objectifs:
+      - Validation du diplôme BACHELOR en SCIENCES ET INGENIERIE
