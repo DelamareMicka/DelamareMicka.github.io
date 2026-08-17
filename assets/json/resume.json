@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Mickaël Delamare",
-    "label": "Associate Professor / Researcher, PhD — CESI LINEACT UR 7527, HESAM Université",
+    "label": "Associate Professor / Researcher, PhD — CESI LINEACT UR 7527",
     "image": "",
     "email": "mdelamare@cesi.fr",
     "phone": "",
@@ -17,7 +17,7 @@
   },
   "work": [
     {
-      "name": "CESI LINEACT UR 7527, HESAM Université",
+      "name": "CESI LINEACT UR 7527",
       "position": "Associate Professor / Researcher (enseignant-chercheur, poste permanent)",
       "location": "Saint-Étienne-du-Rouvray, France",
       "startDate": "2024-10-01",
@@ -73,20 +73,6 @@
   ],
   "volunteer": [],
   "education": [
-    {
-      "institution": "CESI LINEACT UR 7527",
-      "location": "France",
-      "url": "",
-      "area": "Alignement pédagogique de l'IA générative — IA en éducation (AIED) et Cognitive Network Science",
-      "studyType": "HDR (Habilitation à Diriger des Recherches) — CNU section 27, en cours",
-      "startDate": "",
-      "endDate": "",
-      "score": "",
-      "courses": [],
-      "highlights": [
-        "L'HDR est le diplôme post-doctoral français requis pour encadrer des doctorants en nom propre et candidater à un poste de professeur des universités."
-      ]
-    },
     {
       "institution": "Université de Rouen Normandie — laboratoire IRSEEM (EA 4353), ESIGELEC",
       "location": "Rouen, France",

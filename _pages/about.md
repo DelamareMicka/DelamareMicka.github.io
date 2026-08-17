@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Associate Professor / Researcher, PhD — <a href="https://www.cesi.fr/recherche/lineact/" target="_blank">CESI LINEACT UR 7527</a>, HESAM Université, Saint-Étienne-du-Rouvray
+subtitle: Associate Professor / Researcher, PhD — <a href="https://www.cesi.fr/recherche/lineact/" target="_blank">CESI LINEACT UR 7527</a>, Saint-Étienne-du-Rouvray
 
 profile:
   align: right
@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Associate Professor / Researcher (enseignant-chercheur) au laboratoire [CESI LINEACT UR 7527](https://www.cesi.fr/recherche/lineact/), HESAM Université, Saint-Étienne-du-Rouvray. Responsable des filières Informatique et Sciences du Numérique à CESI.
+Associate Professor / Researcher (enseignant-chercheur) au laboratoire [CESI LINEACT UR 7527](https://www.cesi.fr/recherche/lineact/), Saint-Étienne-du-Rouvray. Responsable des filières Informatique et Sciences du Numérique à CESI.
 
 Mes recherches se situent à l'intersection de l'IA en éducation (AIED) et de la Cognitive Network Science (CNS). Initialement centrées sur la localisation en intérieur et la reconnaissance d'actions, elles portent aujourd'hui sur l'alignement pédagogique des IA génératives.
 

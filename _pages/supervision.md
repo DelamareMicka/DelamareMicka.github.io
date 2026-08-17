@@ -7,8 +7,6 @@ nav: true
 nav_order: 5
 ---
 
-HDR (Habilitation à Diriger des Recherches) en cours — CNU section 27, laboratoire d'accueil CESI LINEACT UR 7527, sur l'alignement pédagogique de l'IA générative (AIED et Cognitive Network Science). L'HDR est le diplôme requis en France pour encadrer des doctorants en nom propre ; les encadrements ci-dessous seront complétés une fois l'HDR obtenue.
-
 ## Doctorants
 
 [À COMPLÉTER]

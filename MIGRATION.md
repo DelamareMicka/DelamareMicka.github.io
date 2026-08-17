@@ -74,10 +74,10 @@ ré-automatiser si besoin.
 
 ## 4. Encadrement doctoral (`_pages/supervision.md`)
 
-Contexte réel ajouté : l'HDR (nécessaire pour encadrer des doctorants en nom
-propre en France) est en cours. Les sections Doctorants/Étudiants de master
-restent vides avec un exemple de structure en commentaire à dupliquer — à
-remplir une fois l'HDR obtenue et des encadrements effectifs.
+Les sections Doctorants/Étudiants de master restent vides avec un exemple de
+structure en commentaire à dupliquer — à remplir une fois des encadrements
+effectifs. (La mention de l'HDR en préparation a été retirée à la demande de
+Mickaël — préférence à ne pas afficher un diplôme encore en cours.)
 
 ## 5. CV (`_pages/cv.md`, `assets/json/resume.json`)
 
@@ -127,7 +127,7 @@ fourni est en anglais et pourrait servir de base pour une version `-en`).
 
 - Couleur d'accent : `_sass/_themes.scss` (variables `$accent-color` /
   `$accent-color-dark` en tête de fichier) — actuellement un bleu
-  générique, pas une couleur de marque CESI/HESAM confirmée. Ce fichier est
+  générique, pas une couleur de marque CESI confirmée. Ce fichier est
   une copie locale de celui du thème avec seulement ces deux couleurs
   modifiées ; le reste doit rester synchronisé avec le thème.
 - Favicon : `icon: 🎓` dans `_config.yml` (emoji placeholder). Remplacer par
