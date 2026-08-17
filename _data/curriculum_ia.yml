@@ -167,7 +167,8 @@ semesters:
       objectifs:
       - Extraire à l’aide du langage SQL des résultats (données) à partir d'une base de données relationnelle
       - Manipuler les données au travers des différentes fonctions connues du SGBDR
-      prereq_matches: []
+      prereq_matches:
+      - 1.3.1
     - code: 1.3.3
       title: Construction de Bases de Données
       heures: 7
@@ -206,7 +207,8 @@ semesters:
       - Identifier les domaines et sous-domaines de l’IA
       - Identifier les champs d’application de l’IA
       - Exemple d’application en robotique (MLF), Exemple d’application en ML ?
-      prereq_matches: []
+      prereq_matches:
+      - 1.2.2
     - code: 1.4.2
       title: Ethique de l'IA
       heures: 14
@@ -689,7 +691,9 @@ semesters:
       - Choisir la méthode adaptée au contexte applicatif
       prereq_matches:
       - 1.1.3
+      - 1.2.1
       - 2.1.2
+      - 2.2.1
   - code: '3.3'
     num: 3
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -1306,7 +1310,8 @@ semesters:
       prerequis: 'UE 2.1.4 : Développement Web'
       objectifs:
       - À la fin de ce cours, les étudiants seront en mesure de comprendre les concepts avancés du développement web full stack et de créer des applications web complètes et dynamiques.
-      prereq_matches: []
+      prereq_matches:
+      - 2.1.3
   - code: '5.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -1597,7 +1602,9 @@ semesters:
       prerequis: Connaissance du langage Python
       objectifs:
       - Appliquer des algorithmes sur des images afin de les améliorer ou d’en extraire des informations de plus haut niveau (contours, points d’intérêts, segmentation)
-      prereq_matches: []
+      prereq_matches:
+      - 1.2.1
+      - 2.2.1
   - code: '6.4'
     num: 4
     title: Organiser et piloter un projet d’intelligence artificielle et accompagner le changement numérique
@@ -1627,7 +1634,12 @@ semesters:
       objectifs:
       - Dans cette UE les étudiants seront amenés à réaliser un projet, en mettant en œuvre les outils de pilotage, et seront amené à identifier les pistes d'améliorations de ce dernier afin de prendre du recul.
       prereq_matches:
+      - 1.6.1
+      - 2.5.1
+      - 3.5.1
+      - 4.6.1
       - 5.1.1
+      - 5.6.1
       - 6.1.1
   - code: '6.5'
     num: 5
