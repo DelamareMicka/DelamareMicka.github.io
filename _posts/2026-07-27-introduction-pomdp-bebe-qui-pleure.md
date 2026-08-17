@@ -10,6 +10,8 @@ related_posts: false
 
 Ce billet est un ensemble de notes prises en regardant [*POMDPs: Partially Observable Markov Decision Processes*](https://www.youtube.com/watch?v=KDFzObtE6cs), un cours de la série *Decision Making Under Uncertainty* de Julia Academy (Robert Moss, Stanford University), qui s'appuie sur l'écosystème [`POMDPs.jl`](https://github.com/JuliaPOMDP/POMDPs.jl). L'exemple pédagogique utilisé — le « bébé qui pleure » (*crying baby problem*) — et les notebooks associés sont disponibles sur le dépôt [JuliaAcademy/Decision-Making-Under-Uncertainty](https://github.com/JuliaAcademy/Decision-Making-Under-Uncertainty).
 
+*Une version sans formules ni jargon est disponible ici : [Décider sans tout savoir : ce que le « bébé qui pleure » nous apprend sur l'IA](/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/).*
+
 ## Des MDP aux POMDP
 
 Un processus de décision markovien (MDP) suppose que l'agent connaît exactement l'état $s$ du système à chaque instant. C'est rarement vrai : la plupart des systèmes réels — un robot avec des capteurs bruités, un patient dont on ne connaît pas l'état de santé exact, ou un tuteur intelligent qui ne peut qu'*observer* les réponses d'un élève sans connaître son état de connaissance réel — ne donnent accès qu'à des **observations** partielles de l'état sous-jacent.
