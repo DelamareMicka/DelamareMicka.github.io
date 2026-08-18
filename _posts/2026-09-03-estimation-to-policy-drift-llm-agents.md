@@ -4,7 +4,7 @@ title: "Un tuteur IA qui devine juste peut quand même mal enseigner"
 title_en: "An AI tutor that guesses right can still teach badly"
 date: 2026-09-03 08:00:00+0200
 description: >
-  <span class="lang-fr-i">Un tuteur IA n'agit jamais sur l'état réel de l'élève, seulement sur une estimation. Un article que je viens de terminer montre que la qualité de cette estimation ne prédit presque rien de la qualité des décisions qui en découlent, et que ça se mesure.</span><span class="lang-en-i">An AI tutor never acts on a student's real state, only on an estimate of it. A paper I've just finished shows that how good that estimate is barely predicts how good the resulting decisions are, and that this is measurable.</span>
+  <span class="lang-fr-i">Un tuteur IA n'agit jamais sur l'état réel de l'élève, seulement sur une estimation. Un article que nous venons de terminer, avec Florian et Benoît, montre que la qualité de cette estimation ne prédit presque rien de la qualité des décisions qui en découlent, et que ça se mesure.</span><span class="lang-en-i">An AI tutor never acts on a student's real state, only on an estimate of it. A paper we've just finished, with Florian and Benoît, shows that how good that estimate is barely predicts how good the resulting decisions are, and that this is measurable.</span>
 tags: llm-agents pomdp tutorat recherche
 categories: recherche
 related_posts: false
@@ -76,7 +76,7 @@ _styles: >
 
 <div class="lang-fr" markdown="1">
 
-Je viens de terminer un article qui mesure quelque chose que, jusqu'ici, personne ne pouvait vraiment mesurer : à quel point une IA tutrice se trompe *à cause de* son estimation du niveau de l'élève, plutôt qu'à cause de sa pédagogie. L'article est en cours de relecture en double aveugle ; je le lierai ici une fois la décision connue, en espérant début septembre.
+Avec Florian et Benoît, nous venons de terminer un article qui mesure quelque chose que, jusqu'ici, personne ne pouvait vraiment mesurer : à quel point une IA tutrice se trompe *à cause de* son estimation du niveau de l'élève, plutôt qu'à cause de sa pédagogie. L'article est en cours de relecture en double aveugle ; nous le lierons ici une fois la décision connue, en espérant début septembre.
 
 *Lien vers l'article : [À COMPLÉTER une fois la décision de relecture connue].*
 
@@ -133,7 +133,7 @@ La perspective la plus directe que j'en tire : les trois comptages de cet articl
 
 <div class="lang-en" markdown="1">
 
-I've just finished a paper that measures something nobody could really measure before: how much an AI tutor goes wrong *because of* its estimate of the student's level, as opposed to because of its teaching itself. The paper is currently under double-blind review; I'll link it here once the decision is known, hopefully in early September.
+Together with Florian and Benoît, we've just finished a paper that measures something nobody could really measure before: how much an AI tutor goes wrong *because of* its estimate of the student's level, as opposed to because of its teaching itself. The paper is currently under double-blind review; we'll link it here once the decision is known, hopefully in early September.
 
 *Link to the paper: [TO BE COMPLETED once the review decision is known].*
 
