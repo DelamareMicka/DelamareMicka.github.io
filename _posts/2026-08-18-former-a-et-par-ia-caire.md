@@ -30,7 +30,7 @@ Plutôt qu'un cours magistral sur les réseaux de neurones, nous avons construit
 
 **La Moral Machine.** Cet outil, basé sur les travaux d'Awad et al. (2018), confronte les étudiants aux dilemmes éthiques d'une voiture autonome en situation d'accident inévitable : qui privilégier ? L'activité rend concret un fait souvent oublié : une IA ne fait pas de choix moraux « neutres », elle applique des choix humains, codifiés à l'avance, avec toutes leurs zones grises.
 
-**L'atelier « Grand-Mère ».** Ici, les étudiants sont plongés dans un scénario où une IA générative, baptisée « Grand-Mère », doit les aider à résoudre une situation d'urgence. Le twist : elle se trompe, avec la même assurance que lorsqu'elle a raison. L'objectif est de provoquer une vraie dissonance, pour ancrer une règle simple : une réponse d'IA générative est une hypothèse à vérifier, jamais une certitude.
+**L'atelier « Grand-Mère ».** Ici, les étudiants sont plongés dans un scénario où une IA générative, baptisée « Grand-Mère », doit les aider à résoudre une situation d'urgence. Le twist : elle se trompe, avec la même assurance que lorsqu'elle a raison. L'objectif est de provoquer une vraie dissonance, pour ancrer une règle simple : une réponse d'IA générative est une hypothèse à vérifier, jamais une certitude. (Vous pouvez essayer une [petite démo inspirée de cet atelier](/grand-mere/) directement sur ce site.)
 
 **Les débats structurés.** Pour clore le parcours, des débats en petits groupes relient l'expérience vécue aux grandes questions de société (transparence, biais, confiance), et rappellent une chose que ni le jeu de Nim ni aucun algorithme ne peut remplacer : la responsabilité finale d'une décision reste humaine.
 
@@ -90,7 +90,7 @@ Rather than a lecture on neural networks, we built four hands-on activities, dep
 
 **The Moral Machine.** This tool, based on the work of Awad et al. (2018), confronts students with the ethical dilemmas of a self-driving car facing an unavoidable accident: who should it prioritise? The activity makes a often-forgotten fact concrete: an AI doesn't make "neutral" moral choices, it applies human choices, coded in advance, with all their grey areas.
 
-**The "Grandma" workshop.** Here, students are placed in a scenario where a generative AI, named "Grandma" ("Grand-Mère"), is supposed to help them resolve an emergency. The twist: it gets things wrong, with the same confidence it shows when it's right. The goal is to trigger genuine cognitive dissonance, to anchor a simple rule: a generative AI's answer is a hypothesis to verify, never a certainty.
+**The "Grandma" workshop.** Here, students are placed in a scenario where a generative AI, named "Grandma" ("Grand-Mère"), is supposed to help them resolve an emergency. The twist: it gets things wrong, with the same confidence it shows when it's right. The goal is to trigger genuine cognitive dissonance, to anchor a simple rule: a generative AI's answer is a hypothesis to verify, never a certainty. (You can try a [small demo inspired by this workshop](/grand-mere/) directly on this site.)
 
 **Structured debates.** To close the sequence, small-group debates connect the hands-on experience to broader societal questions (transparency, bias, trust), and drive home something that neither the game of Nim nor any algorithm can replace: final responsibility for a decision remains human.
 
