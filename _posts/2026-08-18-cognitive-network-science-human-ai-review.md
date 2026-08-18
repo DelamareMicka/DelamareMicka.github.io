@@ -8,6 +8,44 @@ description: >
 tags: cognitive-network-science ia recherche
 categories: recherche
 related_posts: false
+_styles: >
+  .cns-network-wrap { margin: 1.25rem 0 0.5rem; }
+  .cns-network {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+    background: var(--global-bg-color);
+    overflow: hidden;
+    touch-action: none;
+  }
+  .cns-network svg { width: 100%; height: 100%; display: block; }
+  .cns-network .cns-node circle {
+    fill: var(--global-card-bg-color);
+    stroke: var(--global-theme-color);
+    stroke-width: 1.5px;
+    cursor: grab;
+    transition: stroke-width 0.15s, fill 0.15s, opacity 0.15s;
+  }
+  .cns-network .cns-node.active circle {
+    stroke-width: 3px;
+    fill: color-mix(in srgb, var(--global-theme-color) 20%, transparent);
+  }
+  .cns-network .cns-node text {
+    font-size: 12px;
+    fill: var(--global-text-color);
+    pointer-events: none;
+    user-select: none;
+  }
+  .cns-network .cns-edge {
+    stroke: var(--global-divider-color);
+    stroke-width: 1.5px;
+    transition: stroke 0.15s, stroke-width 0.15s, opacity 0.15s;
+  }
+  .cns-network .cns-edge.active { stroke: var(--global-theme-color); stroke-width: 2.5px; }
+  .cns-network .cns-node.dim circle, .cns-network .cns-node.dim text, .cns-network .cns-edge.dim { opacity: 0.25; }
+  .cns-network-caption { font-size: 0.85rem; color: var(--global-text-color-light); margin-top: 0.5rem; font-style: italic; }
 ---
 
 <div class="lang-fr" markdown="1">
@@ -21,6 +59,11 @@ Avec Christophe Cruz, Hussam Ghanem, Samir Jabbar, Sarah Theroine, Laurent Gauti
 La Cognitive Network Science, c'est l'un des deux axes de recherche que j'indique sur ce site, à côté de l'IA en éducation. L'idée de base est simple : au lieu de représenter ce que quelqu'un sait ou ressent comme une liste de faits isolés, on le représente comme un réseau. Chaque mot, concept ou émotion devient un nœud ; chaque lien entre deux nœuds (parce qu'ils se ressemblent, se prononcent pareil, ou apparaissent souvent ensemble) devient une arête. Une fois ce réseau dessiné, on peut lui appliquer les outils classiques de la théorie des graphes : quels concepts sont les plus centraux ? Y a-t-il des zones densément connectées (des « communautés » de sens) ? Quelle est la distance, en nombre de liens, entre deux idées apparemment sans rapport ?
 
 Ce type de réseau, construit à partir des associations libres d'une personne sur un sujet donné, s'appelle un **forma mentis network** : littéralement, la structure de son état d'esprit sur ce sujet. C'est un outil puissant pour rendre visibles des biais qui, autrement, resteraient de simples impressions.
+
+<div class="cns-network-wrap">
+<div id="cns-network-fr" class="cns-network" aria-label="Schéma interactif d'un petit réseau de mots autour de « chien » et « chat »"></div>
+<p class="cns-network-caption">Glissez un mot pour le déplacer, touchez-le (ou cliquez) pour voir ses liens directs en surbrillance. « chien » a beaucoup plus de connexions que « griffe » : c'est ça, la centralité. Et « animal » relie deux groupes distincts (chien et chat) sans vraiment appartenir à aucun des deux : c'est ça, un pont entre communautés.</p>
+</div>
 
 La question que pose cette revue est directe : maintenant que les IA génératives absorbent des quantités massives de texte humain, héritent-elles aussi de la structure en réseau de la cognition humaine, biais compris ? Et peut-on utiliser les mêmes outils pour auditer les IA, comprendre les équipes mixtes humains-IA, ou concevoir de meilleurs outils pédagogiques ?
 
@@ -76,6 +119,11 @@ Cognitive Network Science is one of the two research directions I list on this s
 
 This kind of network, built from a person's free associations on a given topic, is called a **forma mentis network**: literally, the structure of their state of mind on that topic. It's a powerful tool for making visible biases that would otherwise remain mere impressions.
 
+<div class="cns-network-wrap">
+<div id="cns-network-en" class="cns-network" aria-label="Interactive diagram of a small word network around &quot;dog&quot; and &quot;cat&quot;"></div>
+<p class="cns-network-caption">Drag a word to move it, tap (or click) it to highlight its direct links. "Dog" has far more connections than "claw": that's centrality. And "animal" links two distinct groups (dog and cat) without really belonging to either: that's a bridge between communities.</p>
+</div>
+
 The question this review asks is direct: now that generative AI absorbs massive amounts of human text, does it also inherit the network structure of human cognition, biases included? And can the same tools be used to audit AI, understand mixed human-AI teams, or design better learning tools?
 
 ## A systematic review, in the strict sense of the term
@@ -117,3 +165,223 @@ Code, figures and bibliographic data: [github.com/ChristopheCruz/cns-human-ai-re
 *Link to the paper: [TO BE COMPLETED once the final DOI is assigned by the publisher].*
 
 </div>
+
+<script>
+(function () {
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var REPEL = 2200;       // node-node repulsion strength
+  var EDGE_LEN = 68;      // spring rest length
+  var SPRING_K = 0.02;    // spring stiffness
+  var CENTER_K = 0.0009;  // pull toward container centre
+  var DAMPING = 0.82;
+  var TAP_THRESHOLD = 5;  // px of movement below which a pointerup counts as a tap, not a drag
+
+  function initNetwork(containerId, nodeNames, edgePairs) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var width = container.clientWidth || 320;
+    var height = container.clientHeight || 320;
+
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+    container.appendChild(svg);
+
+    var degree = Object.create(null);
+    edgePairs.forEach(function (e) {
+      degree[e[0]] = (degree[e[0]] || 0) + 1;
+      degree[e[1]] = (degree[e[1]] || 0) + 1;
+    });
+
+    var nodes = nodeNames.map(function (name) {
+      var r = Math.min(14, 5 + (degree[name] || 0) * 1.8);
+      return {
+        name: name,
+        r: r,
+        x: width / 2 + (Math.random() - 0.5) * width * 0.7,
+        y: height / 2 + (Math.random() - 0.5) * height * 0.7,
+        vx: 0, vy: 0,
+        fx: null, fy: null // set while dragging
+      };
+    });
+    var byName = Object.create(null);
+    nodes.forEach(function (n) { byName[n.name] = n; });
+    var edges = edgePairs.map(function (e) { return { a: byName[e[0]], b: byName[e[1]] }; });
+
+    // --- SVG elements ---
+    var edgeEls = edges.map(function () {
+      var line = document.createElementNS(SVG_NS, 'line');
+      line.setAttribute('class', 'cns-edge');
+      svg.appendChild(line);
+      return line;
+    });
+
+    var nodeGroups = nodes.map(function (n) {
+      var g = document.createElementNS(SVG_NS, 'g');
+      g.setAttribute('class', 'cns-node');
+      var circle = document.createElementNS(SVG_NS, 'circle');
+      circle.setAttribute('r', n.r);
+      var text = document.createElementNS(SVG_NS, 'text');
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('dy', -(n.r + 6));
+      text.textContent = n.name;
+      g.appendChild(circle);
+      g.appendChild(text);
+      svg.appendChild(g);
+      return g;
+    });
+
+    // --- highlight state ---
+    var activeNode = null;
+    function neighborsOf(n) {
+      var set = Object.create(null);
+      edges.forEach(function (e) {
+        if (e.a === n) set[e.b.name] = true;
+        if (e.b === n) set[e.a.name] = true;
+      });
+      return set;
+    }
+    function applyHighlight() {
+      if (!activeNode) {
+        nodeGroups.forEach(function (g) { g.classList.remove('active', 'dim'); });
+        edgeEls.forEach(function (l) { l.classList.remove('active', 'dim'); });
+        return;
+      }
+      var neighbors = neighborsOf(activeNode);
+      nodes.forEach(function (n, i) {
+        var g = nodeGroups[i];
+        if (n === activeNode || neighbors[n.name]) {
+          g.classList.remove('dim');
+          g.classList.toggle('active', n === activeNode);
+        } else {
+          g.classList.add('dim');
+          g.classList.remove('active');
+        }
+      });
+      edges.forEach(function (e, i) {
+        var l = edgeEls[i];
+        if (e.a === activeNode || e.b === activeNode) {
+          l.classList.add('active');
+          l.classList.remove('dim');
+        } else {
+          l.classList.remove('active');
+          l.classList.add('dim');
+        }
+      });
+    }
+
+    // --- drag / tap handling ---
+    nodes.forEach(function (n, i) {
+      var g = nodeGroups[i];
+      var startX = 0, startY = 0, dragging = false, pointerId = null;
+
+      function toLocal(evt) {
+        var rect = svg.getBoundingClientRect();
+        return {
+          x: (evt.clientX - rect.left) * (width / rect.width),
+          y: (evt.clientY - rect.top) * (height / rect.height)
+        };
+      }
+
+      g.addEventListener('pointerdown', function (evt) {
+        var p = toLocal(evt);
+        startX = p.x; startY = p.y; dragging = false; pointerId = evt.pointerId;
+        n.fx = p.x; n.fy = p.y;
+        g.setPointerCapture(pointerId);
+        evt.preventDefault();
+      });
+
+      g.addEventListener('pointermove', function (evt) {
+        if (n.fx === null || evt.pointerId !== pointerId) return;
+        var p = toLocal(evt);
+        if (!dragging && (Math.abs(p.x - startX) > TAP_THRESHOLD || Math.abs(p.y - startY) > TAP_THRESHOLD)) {
+          dragging = true;
+        }
+        n.fx = p.x; n.fy = p.y;
+      });
+
+      function endDrag(evt) {
+        if (n.fx === null || evt.pointerId !== pointerId) return;
+        n.fx = null; n.fy = null;
+        if (!dragging) {
+          activeNode = (activeNode === n) ? null : n;
+          applyHighlight();
+        }
+        dragging = false;
+        pointerId = null;
+      }
+      g.addEventListener('pointerup', endDrag);
+      g.addEventListener('pointercancel', endDrag);
+    });
+
+    // --- physics loop ---
+    function step() {
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var a = nodes[i], b = nodes[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var distSq = Math.max(dx * dx + dy * dy, 100);
+          var force = REPEL / distSq;
+          var dist = Math.sqrt(distSq);
+          var fx = (dx / dist) * force, fy = (dy / dist) * force;
+          a.vx += fx; a.vy += fy;
+          b.vx -= fx; b.vy -= fy;
+        }
+      }
+      edges.forEach(function (e) {
+        var dx = e.b.x - e.a.x, dy = e.b.y - e.a.y;
+        var dist = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
+        var diff = (dist - EDGE_LEN) * SPRING_K;
+        var fx = (dx / dist) * diff, fy = (dy / dist) * diff;
+        e.a.vx += fx; e.a.vy += fy;
+        e.b.vx -= fx; e.b.vy -= fy;
+      });
+      nodes.forEach(function (n) {
+        n.vx += (width / 2 - n.x) * CENTER_K;
+        n.vy += (height / 2 - n.y) * CENTER_K;
+
+        if (n.fx !== null) {
+          n.x = n.fx; n.y = n.fy; n.vx = 0; n.vy = 0;
+        } else {
+          n.vx *= DAMPING; n.vy *= DAMPING;
+          n.x += n.vx; n.y += n.vy;
+        }
+        var pad = n.r + 30;
+        n.x = Math.max(pad, Math.min(width - pad, n.x));
+        n.y = Math.max(n.r + 14, Math.min(height - n.r - 6, n.y));
+      });
+
+      edgeEls.forEach(function (line, i) {
+        line.setAttribute('x1', edges[i].a.x); line.setAttribute('y1', edges[i].a.y);
+        line.setAttribute('x2', edges[i].b.x); line.setAttribute('y2', edges[i].b.y);
+      });
+      nodeGroups.forEach(function (g, i) {
+        g.setAttribute('transform', 'translate(' + nodes[i].x + ',' + nodes[i].y + ')');
+      });
+
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+
+    window.addEventListener('resize', function () {
+      width = container.clientWidth || width;
+      height = container.clientHeight || height;
+      svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+    });
+  }
+
+  var frNodes = ['chien', 'fidèle', 'aboyer', 'laisse', 'niche', 'compagnon', 'animal', 'chat', 'félin', 'griffe', 'ronronner'];
+  var frEdges = [
+    ['chien', 'fidèle'], ['chien', 'aboyer'], ['chien', 'laisse'], ['chien', 'niche'], ['chien', 'compagnon'],
+    ['fidèle', 'compagnon'], ['chien', 'animal'], ['animal', 'chat'], ['chat', 'félin'], ['chat', 'griffe'], ['chat', 'ronronner']
+  ];
+  var enNodes = ['dog', 'loyal', 'bark', 'leash', 'kennel', 'companion', 'animal', 'cat', 'feline', 'claw', 'purr'];
+  var enEdges = [
+    ['dog', 'loyal'], ['dog', 'bark'], ['dog', 'leash'], ['dog', 'kennel'], ['dog', 'companion'],
+    ['loyal', 'companion'], ['dog', 'animal'], ['animal', 'cat'], ['cat', 'feline'], ['cat', 'claw'], ['cat', 'purr']
+  ];
+
+  initNetwork('cns-network-fr', frNodes, frEdges);
+  initNetwork('cns-network-en', enNodes, enEdges);
+})();
+</script>
