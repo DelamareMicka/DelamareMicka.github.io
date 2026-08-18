@@ -1,0 +1,219 @@
+<!DOCTYPE html> <html lang="fr"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <script>
+    (function () {
+      try {
+        if (localStorage.getItem('lang-pref') === 'en') {
+          document.documentElement.setAttribute('data-lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Former à et par l'IA : concevoir un dispositif pédagogique avec le projet CAIRE | Mickaël Delamare </title> <meta name="author" content="Mickaël Delamare"> <meta name="description" content="Comment apprendre à 466 étudiants de première année à douter d'une IA, plutôt qu'à lui faire confiance aveuglément : la genèse d'un module d'acculturation à l'IA construit avec le jeu de Nim, la Moral Machine et une IA générative défaillante. How do you teach 466 first-year students to question an AI rather than trust it blindly? The story of an AI awareness module built around the game of Nim, the Moral Machine, and a deliberately unreliable generative AI."> <meta name="keywords" content="AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT, AI in education, pedagogical alignment, large language models"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8E%93&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://delamaremicka.github.io/blog/2026/former-a-et-par-ia-caire/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <style>
+      /* Bilingual content toggle (about.md, cv.md, projects, etc.):
+         .lang-fr / .lang-en wrap the French / English version of the same
+         block or inline text; html[data-lang="en"] flips which one shows. */
+      .lang-en, .lang-en-i { display: none; }
+      html[data-lang="en"] .lang-fr { display: none; }
+      html[data-lang="en"] .lang-en { display: block; }
+      html[data-lang="en"] .lang-fr-i { display: none; }
+      html[data-lang="en"] .lang-en-i { display: inline; }
+    </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="toggle-container"> <button id="lang-toggle" type="button" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-toggle-label" style="font-weight: 600; font-size: 0.85em;">EN</span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="lang-fr-i">Former à et par l'IA : concevoir un dispositif pédagogique avec le projet CAIRE</span><span class="lang-en-i">Training with and about AI: designing a teaching module for the CAIRE project</span> </h1> <p class="post-meta"> Created on August 18, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/ia"> <i class="fa-solid fa-hashtag fa-sm"></i> ia</a>   <a href="/blog/tag/pedagogie"> <i class="fa-solid fa-hashtag fa-sm"></i> pedagogie</a>   <a href="/blog/tag/enseignement"> <i class="fa-solid fa-hashtag fa-sm"></i> enseignement</a>   <a href="/blog/tag/caire"> <i class="fa-solid fa-hashtag fa-sm"></i> caire</a>   ·   <a href="/blog/category/recherche"> <i class="fa-solid fa-tag fa-sm"></i> recherche</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <div class="lang-fr"> <p>Avec Maud Rousseau, ingénieure pédagogique à CESI, nous venons de rédiger un article sur un dispositif de formation que nous avons conçu dans le cadre du projet <strong>CAIRE</strong> (France 2030) : un module d’« acculturation » à l’intelligence artificielle, déployé auprès de 466 étudiants de première année d’école d’ingénieurs. L’article est en cours de publication aux Presses universitaires de la Méditerranée (PULM) ; je le lierai ici dès qu’il sera en ligne côté éditeur. En attendant, voici de quoi il parle.</p> <p><em>Lien vers l’article : [À COMPLÉTER une fois publié par PULM].</em></p> <h2 id="le-problme-de-dpart">Le problème de départ</h2> <p>On pourrait croire qu’apprendre l’IA à des étudiants de première année consiste à leur enseigner comment ça marche techniquement. Ce n’était pas notre objectif. Un questionnaire préalable nous a montré une réalité plus inquiétante : une partie des étudiants savait déjà utiliser des outils d’IA (traduction, génération de texte), mais sans comprendre ce qui se passe « sous le capot », et avec une confiance excessive dans la fiabilité des réponses obtenues.</p> <p>Le vrai enjeu n’était donc pas technique, mais critique : comment faire en sorte que ces futurs ingénieurs ne prennent jamais l’assurance affichée par une IA pour une preuve de vérité ? Nous avons cherché à former ce que le chercheur Charles Hadji (2025) appelle des « anthropolescents avisés » : des personnes capables de reconnaître, d’assumer et de questionner leur rapport aux technologies, plutôt que de le subir.</p> <h2 id="faire-toucher-du-doigt-ce-qui-reste-abstrait">Faire toucher du doigt ce qui reste abstrait</h2> <p>Plutôt qu’un cours magistral sur les réseaux de neurones, nous avons construit quatre activités concrètes, déployées lors du séminaire de rentrée des étudiants de première année (Cycle Préparatoire Intégré).</p> <p><strong>Le jeu de Nim.</strong> C’est un jeu de retrait d’allumettes (ou de perles) vieux de plus d’un siècle (Bouton, 1901), mais il se prête remarquablement bien à faire toucher du doigt l’apprentissage par renforcement. Les étudiants jouent d’abord humain contre humain, pour ressentir intuitivement la stratégie. Puis ils construisent une « machine » toute simple : des gobelets représentant les états du jeu, des billes représentant les actions possibles. Quand la machine perd, on retire une bille de la partie jouée (punition) ; quand elle gagne, on en ajoute (récompense). Après quelques dizaines de parties, la machine « apprend » à bien jouer, sans qu’on lui ait jamais expliqué la théorie du jeu. L’idée qui s’ancre là, très concrètement : une IA n’apprend pas par compréhension, mais par ajustement statistique répété.</p> <p><strong>La Moral Machine.</strong> Cet outil, basé sur les travaux d’Awad et al. (2018), confronte les étudiants aux dilemmes éthiques d’une voiture autonome en situation d’accident inévitable : qui privilégier ? L’activité rend concret un fait souvent oublié : une IA ne fait pas de choix moraux « neutres », elle applique des choix humains, codifiés à l’avance, avec toutes leurs zones grises.</p> <p><strong>L’atelier « Grand-Mère ».</strong> Ici, les étudiants sont plongés dans un scénario où une IA générative, baptisée « Grand-Mère », doit les aider à résoudre une situation d’urgence. Le twist : elle se trompe, avec la même assurance que lorsqu’elle a raison. L’objectif est de provoquer une vraie dissonance, pour ancrer une règle simple : une réponse d’IA générative est une hypothèse à vérifier, jamais une certitude.</p> <p><strong>Les débats structurés.</strong> Pour clore le parcours, des débats en petits groupes relient l’expérience vécue aux grandes questions de société (transparence, biais, confiance), et rappellent une chose que ni le jeu de Nim ni aucun algorithme ne peut remplacer : la responsabilité finale d’une décision reste humaine.</p> <h2 id="la-mcanique-derrire-le-dispositif">La mécanique derrière le dispositif</h2> <p>Concevoir ce parcours n’a rien eu d’improvisé. Nous avons suivi le modèle ADDIE (Analyse, Design, Développement, Implémentation, Évaluation), utilisé moins comme une suite d’étapes figées que comme un cadre de pilotage permettant des allers-retours constants entre les phases, avec l’alignement pédagogique comme fil conducteur à chaque itération.</p> <p>Sur le plan théorique, le dispositif s’appuie sur les pédagogies actives (l’étudiant construit son savoir par l’expérience plutôt que de la recevoir passivement) et sur la ludopédagogie, qui utilise le jeu comme espace sécurisé pour expérimenter et se tromper sans enjeu. Ces deux piliers sont eux-mêmes mis au service d’un objectif plus large : articuler la maîtrise technique de l’IA (<em>AI literacy</em>), une posture critique face à ses usages (<em>critical AI education</em>) et une véritable citoyenneté numérique.</p> <h2 id="est-ce-que-a-a-march-">Est-ce que ça a marché ?</h2> <p>Nous avons évalué le dispositif avec le modèle de Kirkpatrick (1975), qui distingue quatre niveaux : réaction, apprentissage, comportement, résultats. Les données proviennent d’un questionnaire administré à froid auprès des 466 étudiants.</p> <p>Côté réaction (niveau 1), l’accueil a été très positif : le jeu de Nim en particulier a été qualifié de « super ludique » par les étudiants. Mais le résultat le plus intéressant se situe au niveau 2, celui des apprentissages réels. Avant le dispositif, une partie des étudiants surestimait la fiabilité des IA. Après, le discours change nettement : <em>« Avant, je pensais que les IA étaient bien plus fiables. Aujourd’hui je comprends mieux l’enjeu des IA »</em>, ou encore, à propos du fonctionnement probabiliste plutôt que sémantique d’un modèle de langage : <em>« L’IA pouvait comprendre et expliquer ce que l’on écrivait, alors qu’en réalité elle complète juste avec des probabilités. »</em></p> <p>Des signaux plus ténus, mais encourageants, apparaissent aussi au niveau 3 (changement de comportement déclaré) : les étudiants décrivent l’IA comme une « épée à double tranchant » et plusieurs disent vouloir approfondir le sujet de leur propre initiative, ce qui est exactement le genre de motivation intrinsèque qu’un dispositif ponctuel de 8 heures ne peut pas garantir, mais peut chercher à amorcer.</p> <h2 id="ce-qui-reste--amliorer">Ce qui reste à améliorer</h2> <p>Tout n’a pas aussi bien fonctionné. L’atelier « Grand-Mère » a reçu des avis plus mitigés que le jeu de Nim : la liberté d’expérimentation avec une IA générative semble demander un accompagnement plus serré que le cadre très structuré du jeu de Nim, sous peine de désorienter certains étudiants. Nous avons aussi identifié la taille des groupes de débat comme un point à retravailler pour une participation plus active.</p> <p>La suite logique de ce travail est une évaluation plus longitudinale : mesurer, plusieurs mois après la formation, si la vigilance critique observée dans les questionnaires se traduit vraiment dans les pratiques (niveau 4 de Kirkpatrick). Des entretiens semi-directifs sont prévus pour ça.</p> <h2 id="pour-aller-plus-loin">Pour aller plus loin</h2> <p>Delamare, M., &amp; Rousseau, M. (à paraître). <em>Former à et par l’IA : un exemple de conception de ressources pédagogiques dans le cadre du projet CAIRE.</em> Presses universitaires de la Méditerranée (PULM).</p> <p><em>Lien vers l’article : [À COMPLÉTER une fois publié par PULM].</em></p> </div> <div class="lang-en"> <p>Together with Maud Rousseau, a learning designer at CESI, I have just written a paper about a training module we designed as part of the <strong>CAIRE</strong> project (France 2030): an AI “acculturation” module deployed with 466 first-year engineering students. The paper is being published by Presses universitaires de la Méditerranée (PULM, a French university press); I will link it here as soon as it is live on the publisher’s side. In the meantime, here is what it is about.</p> <p><em>Link to the paper: [TO BE COMPLETED once published by PULM].</em></p> <h2 id="the-starting-problem">The starting problem</h2> <p>You might assume that teaching AI to first-year students means teaching them how it works technically. That was not our goal. A preliminary survey revealed a more worrying reality: some students already used AI tools (translation, text generation) but had no idea what was happening “under the hood,” and placed excessive trust in the reliability of the answers they got.</p> <p>The real challenge, then, wasn’t technical, but critical: how do you make sure these future engineers never mistake the confidence an AI displays for proof that it’s right? We aimed to train what researcher Charles Hadji (2025) calls “anthropolescents avisés” (“informed anthropolescents”): people able to recognise, own, and question their relationship with technology, rather than simply undergo it.</p> <h2 id="making-the-abstract-tangible">Making the abstract tangible</h2> <p>Rather than a lecture on neural networks, we built four hands-on activities, deployed during the first-year students’ integration seminar (the <em>Cycle Préparatoire Intégré</em>).</p> <p><strong>The game of Nim.</strong> This is a century-old counter-removal game (Bouton, 1901), but it turns out to be remarkably well suited to making reinforcement learning tangible. Students first play human against human, to get an intuitive feel for the strategy. They then build a very simple “machine”: cups representing the states of the game, marbles representing the possible actions. When the machine loses, a marble is removed from the play that led there (punishment); when it wins, one is added (reward). After a few dozen games, the machine “learns” to play well, without anyone ever having explained game theory to it. The idea that sticks, very concretely: an AI doesn’t learn by understanding, it learns through repeated statistical adjustment.</p> <p><strong>The Moral Machine.</strong> This tool, based on the work of Awad et al. (2018), confronts students with the ethical dilemmas of a self-driving car facing an unavoidable accident: who should it prioritise? The activity makes a often-forgotten fact concrete: an AI doesn’t make “neutral” moral choices, it applies human choices, coded in advance, with all their grey areas.</p> <p><strong>The “Grandma” workshop.</strong> Here, students are placed in a scenario where a generative AI, named “Grandma” (“Grand-Mère”), is supposed to help them resolve an emergency. The twist: it gets things wrong, with the same confidence it shows when it’s right. The goal is to trigger genuine cognitive dissonance, to anchor a simple rule: a generative AI’s answer is a hypothesis to verify, never a certainty.</p> <p><strong>Structured debates.</strong> To close the sequence, small-group debates connect the hands-on experience to broader societal questions (transparency, bias, trust), and drive home something that neither the game of Nim nor any algorithm can replace: final responsibility for a decision remains human.</p> <h2 id="the-mechanics-behind-the-module">The mechanics behind the module</h2> <p>Designing this sequence was not improvised. We followed the ADDIE model (Analysis, Design, Development, Implementation, Evaluation), used less as a fixed sequence of steps than as a steering framework allowing constant back-and-forth between phases, with pedagogical alignment as the guiding thread at every iteration.</p> <p>On the theoretical side, the module draws on active pedagogies (students build their own knowledge through experience rather than receiving it passively) and on game-based learning, which uses play as a safe space to experiment and fail without real stakes. Both of these pillars serve a broader goal: bringing together technical mastery of AI (<em>AI literacy</em>), a critical stance towards its uses (<em>critical AI education</em>), and genuine digital citizenship.</p> <h2 id="did-it-work">Did it work?</h2> <p>We evaluated the module using Kirkpatrick’s model (1975), which distinguishes four levels: reaction, learning, behaviour, results. The data came from a delayed (“cold”) questionnaire administered to the 466 students.</p> <p>On the reaction side (level 1), the response was very positive: the game of Nim in particular was described by students as “super fun.” But the most interesting result sits at level 2, actual learning. Before the module, some students overestimated how reliable AI systems are. Afterwards, the discourse shifts noticeably: <em>“Before, I thought AI was much more reliable. Now I understand the stakes of AI better,”</em> or, about the probabilistic rather than semantic nature of a language model: <em>“The AI seemed to understand and explain what we wrote, when in reality it just completes with probabilities.”</em></p> <p>Fainter but encouraging signals also appear at level 3 (self-reported behaviour change): students describe AI as a “double-edged sword,” and several say they want to dig deeper into the topic on their own initiative, which is exactly the kind of intrinsic motivation a single 8-hour module cannot guarantee, but can try to spark.</p> <h2 id="what-still-needs-work">What still needs work</h2> <p>Not everything worked equally well. The “Grandma” workshop received more mixed reviews than the game of Nim: the open-ended freedom of experimenting with a generative AI seems to require tighter scaffolding than the game of Nim’s very structured format, or it risks disorienting some students. We also identified debate group size as something to rework for more active participation.</p> <p>The logical next step is a more longitudinal evaluation: measuring, several months after the training, whether the critical vigilance observed in the questionnaires actually translates into practice (Kirkpatrick’s level 4). Semi-structured interviews are planned for that.</p> <h2 id="further-reading">Further reading</h2> <p>Delamare, M., &amp; Rousseau, M. (forthcoming). <em>Former à et par l’IA : un exemple de conception de ressources pédagogiques dans le cadre du projet CAIRE.</em> Presses universitaires de la Méditerranée (PULM).</p> <p><em>Link to the paper: [TO BE COMPLETED once published by PULM].</em></p> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mickaël Delamare. <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "Publications par catégorie, ordre antichronologique. Généré par jekyll-scholar depuis _bibliography/papers.bib.Publications by category, in reverse chronological order. Generated by jekyll-scholar from _bibliography/papers.bib.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Projets de recherche.Research projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-enseignement",
+          title: "enseignement",
+          description: "Cours et enseignements.Courses and teaching.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-encadrement-doctoral",
+          title: "encadrement doctoral",
+          description: "Encadrement de doctorants et d&#39;étudiants de master.Supervision of PhD and Master&#39;s students.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/supervision/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Curriculum vitae.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-former-à-et-par-l-39-ia-concevoir-un-dispositif-pédagogique-avec-le-projet-caire",
+        
+          title: "Former à et par l&#39;IA : concevoir un dispositif pédagogique avec le projet...",
+        
+        description: "Comment apprendre à 466 étudiants de première année à douter d&#39;une IA, plutôt qu&#39;à lui faire confiance aveuglément : la genèse d&#39;un module d&#39;acculturation à l&#39;IA construit avec le jeu de Nim, la Moral Machine et une IA générative défaillante.How do you teach 466 first-year students to question an AI rather than trust it blindly? The story of an AI awareness module built around the game of Nim, the Moral Machine, and a deliberately unreliable generative AI.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/former-a-et-par-ia-caire/";
+          
+        },
+      },{id: "post-décider-sans-tout-savoir-ce-que-le-bébé-qui-pleure-nous-apprend-sur-l-39-ia",
+        
+          title: "Décider sans tout savoir : ce que le « bébé qui pleure »...",
+        
+        description: "Version accessible (sans formules) de mon billet sur les POMDP : comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.Accessible version (no formulas) of my POMDP post: how an artificial intelligence can make good decisions even when it never sees the exact situation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/";
+          
+        },
+      },{id: "post-introduction-aux-pomdp-décider-sous-incertitude-partielle-avec-le-bébé-qui-pleure",
+        
+          title: "Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui...",
+        
+        description: "Notes sur les processus de décision markoviens partiellement observables (POMDP) : le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l&#39;exemple pédagogique du « bébé qui pleure ».Notes on partially observable Markov decision processes (POMDPs): the formal 7-tuple, Bayesian belief updating and solution methods (QMDP, FIB, PBVI, POMCP), built around the classic &quot;crying baby&quot; teaching example.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/introduction-pomdp-bebe-qui-pleure/";
+          
+        },
+      },{id: "projects-alignement-pédagogique-des-agents-llmpedagogical-alignment-of-llm-agents",
+          title: 'Alignement pédagogique des agents LLMPedagogical alignment of LLM agents',
+          description: "Travail de recherche en cours sur l&#39;alignement pédagogique des agents fondés sur des LLM, actuellement soumis en conférence.Ongoing research on the pedagogical alignment of LLM-based agents, currently under conference review.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/alignement-agents-llm/";
+            },},{id: "projects-caire",
+          title: 'CAIRE',
+          description: "Projet lauréat de l&#39;appel à manifestation d&#39;intérêt CMA (France 2030).Winner of the CMA call for expressions of interest (France 2030).",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/caire/";
+            },},{id: "teachings-responsable-des-filières-informatique-et-sciences-du-numériquehead-of-computer-science-and-digital-science-programmes",
+          title: 'Responsable des filières Informatique et Sciences du NumériqueHead of Computer Science and Digital...',
+          description: "Conception, mise en œuvre et évolution des cursus Informatique et Sciences du Numérique au sein de la Direction des Études de CESI : contenus pédagogiques, méthodes d&#39;enseignement, coordination des formations. Trois majeures créées : Data Science &amp;amp; IA, Cybersécurité, IoT (tronc commun IoT).Design, implementation and evolution of the Computer Science and Digital Science curricula within CESI&#39;s Directorate of Studies: teaching content, teaching methods, coordination of training activities. Three majors created: Data Science &amp;amp; AI, Cybersecurity, IoT (common IoT core).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/cesi-filieres-informatique-numerique/";
+            },},{id: "teachings-responsable-pédagogique-4e-année-informatique-fise-fisa-programme-leader-4th-year-computer-science-fise-fisa",
+          title: 'Responsable pédagogique, 4e année Informatique (FISE/FISA)Programme Leader, 4th-year Computer Science (FISE/FISA)',
+          description: "Responsable des promotions 2021–2022 et 2022–2023 de la filière Informatique en 4e année (FISE : formation initiale, FISA : apprentissage), avec une stratégie pédagogique fondée sur l&#39;apprentissage par problèmes (PBL) et l&#39;Active Project-Based Learning (A2P2).Responsible for the 2021–2022 and 2022–2023 cohorts of the 4th-year Computer Science programme (FISE: full-time track; FISA: apprenticeship track), with a pedagogical strategy based on Problem-Based Learning (PBL) and Active Project-Based Learning (A2P2).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/cesi-responsable-pedagogique-informatique/";
+            },},{id: "teachings-développement-de-projets-logiciels-java-sql-uml-software-project-development-java-sql-uml",
+          title: 'Développement de projets logiciels (Java, SQL, UML)Software project development (Java, SQL, UML)',
+          description: "Enseignement du développement logiciel avec Java, SQL et UML : conception d&#39;une application Java à travers les phases de spécification, codage, implémentation et test.Teaching software development with Java, SQL and UML: developing a Java application through the specification, coding, implementation and testing phases.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/esigelec-genie-logiciel/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/CV_Delamare_Mickael.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6D%64%65%6C%61%6D%61%72%65@%63%65%73%69.%66%72", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/DelamareMicka", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script>
+      (function () {
+        var btn = document.getElementById('lang-toggle');
+        if (!btn) return;
+        var label = document.getElementById('lang-toggle-label');
+        function apply(lang) {
+          if (lang === 'en') {
+            document.documentElement.setAttribute('data-lang', 'en');
+            if (label) label.textContent = 'FR';
+          } else {
+            document.documentElement.removeAttribute('data-lang');
+            if (label) label.textContent = 'EN';
+          }
+        }
+        apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'fr' : 'en';
+          try { localStorage.setItem('lang-pref', next); } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script> </body> </html>
