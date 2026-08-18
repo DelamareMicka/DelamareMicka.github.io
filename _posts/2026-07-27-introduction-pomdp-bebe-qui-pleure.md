@@ -96,9 +96,9 @@ Voici le déroulé numérique du notebook, en partant d'une croyance uniforme $b
 | $b_2$ | nourrir | silencieux | $[0.000,\ 1.000]$ |
 | $b_3$ | ignorer | silencieux | $[0.024,\ 0.976]$ |
 | $b_4$ | ignorer | silencieux | $[0.030,\ 0.970]$ |
-| $b_5$ | ignorer | pleure | $[0.537,\ 0.463]$ |
+| $b_5$ | ignorer | pleure | $[0.538,\ 0.462]$ |
 
-Deux points intéressants : nourrir ($b_2$) fait retomber la croyance sur `rassasié` de façon *déterministe*, puisque le modèle de transition dit que nourrir rassasie toujours le bébé, indépendamment de l'observation reçue ensuite. Et à l'étape $b_5$, un seul signal de pleurs après plusieurs silences suffit à faire remonter la croyance vers `affamé`, mais seulement légèrement au-dessus de l'incertitude uniforme (0.537 contre 0.5) : la croyance accumulée pèse plus qu'une observation isolée.
+Deux points intéressants : nourrir ($b_2$) fait retomber la croyance sur `rassasié` de façon *déterministe*, puisque le modèle de transition dit que nourrir rassasie toujours le bébé, indépendamment de l'observation reçue ensuite. Et à l'étape $b_5$, un seul signal de pleurs après plusieurs silences suffit à faire remonter la croyance vers `affamé`, mais seulement légèrement au-dessus de l'incertitude uniforme (0.538 contre 0.5) : la croyance accumulée pèse plus qu'une observation isolée.
 
 ## Résoudre un POMDP : vecteurs alpha
 
@@ -268,9 +268,9 @@ Here is the numerical trace from the notebook, starting from a uniform belief $b
 | $b_2$ | feed | quiet | $[0.000,\ 1.000]$ |
 | $b_3$ | ignore | quiet | $[0.024,\ 0.976]$ |
 | $b_4$ | ignore | quiet | $[0.030,\ 0.970]$ |
-| $b_5$ | ignore | crying | $[0.537,\ 0.463]$ |
+| $b_5$ | ignore | crying | $[0.538,\ 0.462]$ |
 
-Two interesting points: feeding ($b_2$) collapses the belief onto `full` *deterministically*, since the transition model states that feeding always leaves the baby full, regardless of the observation received afterwards. And at step $b_5$, a single crying signal after several quiet steps is enough to push the belief back towards `hungry`, but only slightly above uniform uncertainty (0.537 versus 0.5): the accumulated belief carries more weight than a single observation.
+Two interesting points: feeding ($b_2$) collapses the belief onto `full` *deterministically*, since the transition model states that feeding always leaves the baby full, regardless of the observation received afterwards. And at step $b_5$, a single crying signal after several quiet steps is enough to push the belief back towards `hungry`, but only slightly above uniform uncertainty (0.538 versus 0.5): the accumulated belief carries more weight than a single observation.
 
 ## Solving a POMDP: alpha vectors
 
