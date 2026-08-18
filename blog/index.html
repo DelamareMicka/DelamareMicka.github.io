@@ -1,10 +1,27 @@
-<!DOCTYPE html> <html lang="fr"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> blog | Mickaël Delamare </title> <meta name="author" content="Mickaël Delamare"> <meta name="description" content="Site académique de Mickaël Delamare, enseignant-chercheur (Associate Professor) au laboratoire CESI LINEACT UR 7527 — campus de Rouen. Travaux sur l'IA en éducation (AIED), la Cognitive Network Science et l'alignement pédagogique des modèles de langage (LLM). "> <meta name="keywords" content="AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="fr"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <script>
+    (function () {
+      try {
+        if (localStorage.getItem('lang-pref') === 'en') {
+          document.documentElement.setAttribute('data-lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> blog | Mickaël Delamare </title> <meta name="author" content="Mickaël Delamare"> <meta name="description" content="Site académique de Mickaël Delamare, enseignant-chercheur (Associate Professor) au laboratoire CESI LINEACT UR 7527, campus de Rouen. Travaux sur l'IA en éducation (AIED), la Cognitive Network Science et l'alignement pédagogique des modèles de langage (LLM). Academic website of Mickaël Delamare, Associate Professor at the CESI LINEACT UR 7527 lab, Rouen campus. Research on AI in education (AIED), Cognitive Network Science and the pedagogical alignment of large language models (LLMs). "> <meta name="keywords" content="AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT, AI in education, pedagogical alignment, large language models"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8E%93&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://delamaremicka.github.io/blog/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">enseignement </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/">encadrement doctoral </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <div class="header-bar"> <h1>Carnet de recherche</h1> <h2>Notes sur l'IA en éducation, l'alignement pédagogique des LLM et la cognitive network science</h2> </div> <div class="tag-category-list"> <ul class="p-0 m-0"> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/formatting">formatting</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/images">images</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/links">links</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/math">math</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/code">code</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/blockquotes">blockquotes</a> </li> <p>•</p> <li> <i class="fa-solid fa-tag fa-sm"></i> <a href="/blog/category/external-services">external-services</a> </li> </ul> </div> <ul class="post-list"> <li> <h3> <a class="post-title" href="/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/">Décider sans tout savoir : ce que le « bébé qui pleure » nous apprend sur l'IA</a> </h3> <p>Version accessible (sans formules) de mon billet sur les POMDP — comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.</p> <p class="post-meta"> 5 min read   ·   August 17, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/ia"> <i class="fa-solid fa-hashtag fa-sm"></i> ia</a>   <a href="/blog/tag/decision"> <i class="fa-solid fa-hashtag fa-sm"></i> decision</a>   <a href="/blog/tag/vulgarisation"> <i class="fa-solid fa-hashtag fa-sm"></i> vulgarisation</a>   ·   <a href="/blog/category/notes-de-lecture"> <i class="fa-solid fa-tag fa-sm"></i> notes-de-lecture</a> </p> </li> <li> <h3> <a class="post-title" href="/blog/2026/introduction-pomdp-bebe-qui-pleure/">Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui pleure »</a> </h3> <p>Notes sur les processus de décision markoviens partiellement observables (POMDP) — le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l'exemple pédagogique du « bébé qui pleure ».</p> <p class="post-meta"> 11 min read   ·   July 27, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/pomdp"> <i class="fa-solid fa-hashtag fa-sm"></i> pomdp</a>   <a href="/blog/tag/ia"> <i class="fa-solid fa-hashtag fa-sm"></i> ia</a>   <a href="/blog/tag/decision"> <i class="fa-solid fa-hashtag fa-sm"></i> decision</a>   ·   <a href="/blog/category/notes-de-lecture"> <i class="fa-solid fa-tag fa-sm"></i> notes-de-lecture</a> </p> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mickaël Delamare. Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  </script> <style>
+      /* Bilingual content toggle (about.md, cv.md, projects, etc.):
+         .lang-fr / .lang-en wrap the French / English version of the same
+         block or inline text; html[data-lang="en"] flips which one shows. */
+      .lang-en, .lang-en-i { display: none; }
+      html[data-lang="en"] .lang-fr { display: none; }
+      html[data-lang="en"] .lang-en { display: block; }
+      html[data-lang="en"] .lang-fr-i { display: none; }
+      html[data-lang="en"] .lang-en-i { display: inline; }
+    </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="toggle-container"> <button id="lang-toggle" type="button" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-toggle-label" style="font-weight: 600; font-size: 0.85em;">EN</span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <div class="header-bar"> <h1> <span class="lang-fr-i">Carnet de recherche</span><span class="lang-en-i">Research notebook</span> </h1> <h2> <span class="lang-fr-i">Notes sur l'IA en éducation, l'alignement pédagogique des LLM et la cognitive network science</span><span class="lang-en-i">Notes on AI in education, pedagogical alignment of LLMs and cognitive network science</span> </h2> </div> <div class="tag-category-list"> <ul class="p-0 m-0"> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/formatting">formatting</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/images">images</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/links">links</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/math">math</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/code">code</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/blockquotes">blockquotes</a> </li> <p>•</p> <li> <i class="fa-solid fa-tag fa-sm"></i> <a href="/blog/category/external-services">external-services</a> </li> </ul> </div> <ul class="post-list"> <li> <h3> <a class="post-title" href="/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/">Décider sans tout savoir : ce que le « bébé qui pleure » nous apprend sur l'IA</a> </h3> <p><span class="lang-fr-i">Version accessible (sans formules) de mon billet sur les POMDP : comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.</span><span class="lang-en-i">Accessible version (no formulas) of my POMDP post: how an artificial intelligence can make good decisions even when it never sees the exact situation.</span> </p> <p class="post-meta"> 9 min read   ·   August 17, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/ia"> <i class="fa-solid fa-hashtag fa-sm"></i> ia</a>   <a href="/blog/tag/decision"> <i class="fa-solid fa-hashtag fa-sm"></i> decision</a>   <a href="/blog/tag/vulgarisation"> <i class="fa-solid fa-hashtag fa-sm"></i> vulgarisation</a>   ·   <a href="/blog/category/notes-de-lecture"> <i class="fa-solid fa-tag fa-sm"></i> notes-de-lecture</a> </p> </li> <li> <h3> <a class="post-title" href="/blog/2026/introduction-pomdp-bebe-qui-pleure/">Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui pleure »</a> </h3> <p><span class="lang-fr-i">Notes sur les processus de décision markoviens partiellement observables (POMDP) : le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l'exemple pédagogique du « bébé qui pleure ».</span><span class="lang-en-i">Notes on partially observable Markov decision processes (POMDPs): the formal 7-tuple, Bayesian belief updating and solution methods (QMDP, FIB, PBVI, POMCP), built around the classic "crying baby" teaching example.</span> </p> <p class="post-meta"> 20 min read   ·   July 27, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/pomdp"> <i class="fa-solid fa-hashtag fa-sm"></i> pomdp</a>   <a href="/blog/tag/ia"> <i class="fa-solid fa-hashtag fa-sm"></i> ia</a>   <a href="/blog/tag/decision"> <i class="fa-solid fa-hashtag fa-sm"></i> decision</a>   ·   <a href="/blog/category/notes-de-lecture"> <i class="fa-solid fa-tag fa-sm"></i> notes-de-lecture</a> </p> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mickaël Delamare. <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -31,28 +48,28 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Publications par catégorie, ordre antichronologique. Généré par jekyll-scholar depuis _bibliography/papers.bib.",
+          description: "Publications par catégorie, ordre antichronologique. Généré par jekyll-scholar depuis _bibliography/papers.bib.Publications by category, in reverse chronological order. Generated by jekyll-scholar from _bibliography/papers.bib.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "Projets de recherche.",
+          description: "Projets de recherche.Research projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-enseignement",
           title: "enseignement",
-          description: "Cours et enseignements.",
+          description: "Cours et enseignements.Courses and teaching.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
         },{id: "nav-encadrement-doctoral",
           title: "encadrement doctoral",
-          description: "Encadrement de doctorants et d&#39;étudiants de master.",
+          description: "Encadrement de doctorants et d&#39;étudiants de master.Supervision of PhD and Master&#39;s students.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/supervision/";
@@ -68,7 +85,7 @@ ninja.data = [{
         
           title: "Décider sans tout savoir : ce que le « bébé qui pleure »...",
         
-        description: "Version accessible (sans formules) de mon billet sur les POMDP — comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.",
+        description: "Version accessible (sans formules) de mon billet sur les POMDP : comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.Accessible version (no formulas) of my POMDP post: how an artificial intelligence can make good decisions even when it never sees the exact situation.",
         section: "Posts",
         handler: () => {
           
@@ -79,36 +96,36 @@ ninja.data = [{
         
           title: "Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui...",
         
-        description: "Notes sur les processus de décision markoviens partiellement observables (POMDP) — le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l&#39;exemple pédagogique du « bébé qui pleure ».",
+        description: "Notes sur les processus de décision markoviens partiellement observables (POMDP) : le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l&#39;exemple pédagogique du « bébé qui pleure ».Notes on partially observable Markov decision processes (POMDPs): the formal 7-tuple, Bayesian belief updating and solution methods (QMDP, FIB, PBVI, POMCP), built around the classic &quot;crying baby&quot; teaching example.",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/introduction-pomdp-bebe-qui-pleure/";
           
         },
-      },{id: "projects-alignement-pédagogique-des-agents-llm",
-          title: 'Alignement pédagogique des agents LLM',
-          description: "Travail de recherche en cours sur l&#39;alignement pédagogique des agents fondés sur des LLM, actuellement soumis en conférence.",
+      },{id: "projects-alignement-pédagogique-des-agents-llmpedagogical-alignment-of-llm-agents",
+          title: 'Alignement pédagogique des agents LLMPedagogical alignment of LLM agents',
+          description: "Travail de recherche en cours sur l&#39;alignement pédagogique des agents fondés sur des LLM, actuellement soumis en conférence.Ongoing research on the pedagogical alignment of LLM-based agents, currently under conference review.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/alignement-agents-llm/";
             },},{id: "projects-caire",
           title: 'CAIRE',
-          description: "Projet lauréat de l&#39;appel à manifestation d&#39;intérêt CMA (France 2030).",
+          description: "Projet lauréat de l&#39;appel à manifestation d&#39;intérêt CMA (France 2030).Winner of the CMA call for expressions of interest (France 2030).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/caire/";
-            },},{id: "teachings-responsable-des-filières-informatique-et-sciences-du-numérique",
-          title: 'Responsable des filières Informatique et Sciences du Numérique',
-          description: "Conception, mise en œuvre et évolution des cursus Informatique et Sciences du Numérique au sein de la Direction des Études de CESI : contenus pédagogiques, méthodes d&#39;enseignement, coordination des formations. Trois majeures créées : Data Science &amp; IA, Cybersécurité, IoT (tronc commun IoT).",
+            },},{id: "teachings-responsable-des-filières-informatique-et-sciences-du-numériquehead-of-computer-science-and-digital-science-programmes",
+          title: 'Responsable des filières Informatique et Sciences du NumériqueHead of Computer Science and Digital...',
+          description: "Conception, mise en œuvre et évolution des cursus Informatique et Sciences du Numérique au sein de la Direction des Études de CESI : contenus pédagogiques, méthodes d&#39;enseignement, coordination des formations. Trois majeures créées : Data Science &amp;amp; IA, Cybersécurité, IoT (tronc commun IoT).Design, implementation and evolution of the Computer Science and Digital Science curricula within CESI&#39;s Directorate of Studies: teaching content, teaching methods, coordination of training activities. Three majors created: Data Science &amp;amp; AI, Cybersecurity, IoT (common IoT core).",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/cesi-filieres-informatique-numerique/";
-            },},{id: "teachings-responsable-pédagogique-4e-année-informatique-fise-fisa",
-          title: 'Responsable pédagogique — 4e année Informatique (FISE/FISA)',
-          description: "Responsable des promotions 2021–2022 et 2022–2023 de la filière Informatique en 4e année (FISE : formation initiale, FISA : apprentissage), avec une stratégie pédagogique fondée sur l&#39;apprentissage par problèmes (PBL) et l&#39;Active Project-Based Learning (A2P2).",
+            },},{id: "teachings-responsable-pédagogique-4e-année-informatique-fise-fisa-programme-leader-4th-year-computer-science-fise-fisa",
+          title: 'Responsable pédagogique, 4e année Informatique (FISE/FISA)Programme Leader, 4th-year Computer Science (FISE/FISA)',
+          description: "Responsable des promotions 2021–2022 et 2022–2023 de la filière Informatique en 4e année (FISE : formation initiale, FISA : apprentissage), avec une stratégie pédagogique fondée sur l&#39;apprentissage par problèmes (PBL) et l&#39;Active Project-Based Learning (A2P2).Responsible for the 2021–2022 and 2022–2023 cohorts of the 4th-year Computer Science programme (FISE: full-time track; FISA: apprenticeship track), with a pedagogical strategy based on Problem-Based Learning (PBL) and Active Project-Based Learning (A2P2).",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/cesi-responsable-pedagogique-informatique/";
-            },},{id: "teachings-développement-de-projets-logiciels-java-sql-uml",
-          title: 'Développement de projets logiciels (Java, SQL, UML)',
-          description: "Enseignement du développement logiciel avec Java, SQL et UML : conception d&#39;une application Java à travers les phases de spécification, codage, implémentation et test.",
+            },},{id: "teachings-développement-de-projets-logiciels-java-sql-uml-software-project-development-java-sql-uml",
+          title: 'Développement de projets logiciels (Java, SQL, UML)Software project development (Java, SQL, UML)',
+          description: "Enseignement du développement logiciel avec Java, SQL et UML : conception d&#39;une application Java à travers les phases de spécification, codage, implémentation et test.Teaching software development with Java, SQL and UML: developing a Java application through the specification, coding, implementation and testing phases.",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/esigelec-genie-logiciel/";
             },},{
@@ -167,4 +184,25 @@ ninja.data = [{
       },
     },];
 
-</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script>
+      (function () {
+        var btn = document.getElementById('lang-toggle');
+        if (!btn) return;
+        var label = document.getElementById('lang-toggle-label');
+        function apply(lang) {
+          if (lang === 'en') {
+            document.documentElement.setAttribute('data-lang', 'en');
+            if (label) label.textContent = 'FR';
+          } else {
+            document.documentElement.removeAttribute('data-lang');
+            if (label) label.textContent = 'EN';
+          }
+        }
+        apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'fr' : 'en';
+          try { localStorage.setItem('lang-pref', next); } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script> </body> </html>
