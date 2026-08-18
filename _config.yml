@@ -7,13 +7,13 @@ first_name: Mickaël
 middle_name:
 last_name: Delamare
 contact_note: >
-  [À COMPLÉTER — préciser le meilleur moyen de vous contacter, ex. e-mail institutionnel] /
-  [TO BE COMPLETED — specify the best way to contact you, e.g. institutional e-mail]
+  [À COMPLÉTER : préciser le meilleur moyen de vous contacter, ex. e-mail institutionnel] /
+  [TO BE COMPLETED: specify the best way to contact you, e.g. institutional e-mail]
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Site académique de Mickaël Delamare, enseignant-chercheur (Associate Professor) au laboratoire
-  CESI LINEACT UR 7527 — campus de Rouen. Travaux sur l'IA en éducation (AIED),
-  la Cognitive Network Science et l'alignement pédagogique des modèles de langage (LLM). ―
-  Academic website of Mickaël Delamare, Associate Professor at the CESI LINEACT UR 7527 lab —
+  CESI LINEACT UR 7527, campus de Rouen. Travaux sur l'IA en éducation (AIED),
+  la Cognitive Network Science et l'alignement pédagogique des modèles de langage (LLM).
+  Academic website of Mickaël Delamare, Associate Professor at the CESI LINEACT UR 7527 lab,
   Rouen campus. Research on AI in education (AIED), Cognitive Network Science and the
   pedagogical alignment of large language models (LLMs).
 footer_text: >

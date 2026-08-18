@@ -1,10 +1,10 @@
 ---
 layout: page
-title: maquette pédagogique — programme IA
+title: maquette pédagogique, programme IA
 title_en: AI programme curriculum map
 permalink: /curriculum-ia/
 description: >
-  <span class="lang-fr-i">Carte interactive du parcours Intelligence Artificielle (CESI) — survolez une UE ou un ECUE pour afficher ses crédits, ses prérequis et ses objectifs pédagogiques.</span><span class="lang-en-i">Interactive map of the Artificial Intelligence programme (CESI) — hover over a UE or an ECUE to display its credits, prerequisites and learning objectives.</span>
+  <span class="lang-fr-i">Carte interactive du parcours Intelligence Artificielle (CESI) : survolez une UE ou un ECUE pour afficher ses crédits, ses prérequis et ses objectifs pédagogiques.</span><span class="lang-en-i">Interactive map of the Artificial Intelligence programme (CESI): hover over a UE or an ECUE to display its credits, prerequisites and learning objectives.</span>
 nav: false
 _styles: >
   .curric-intro { margin-bottom: 1.5rem; }
@@ -63,16 +63,16 @@ _styles: >
 
 <div class="lang-fr" markdown="1">
 
-Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez — ou touchez sur mobile — une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
+Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez (ou touchez sur mobile) une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
 
-Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille — c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
+Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille : c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
 
 </div>
 <div class="lang-en" markdown="1">
 
-Interactive map of the **Artificial Intelligence programme** that I run at CESI (6 semesters). Hover — or tap on mobile — over a UE (teaching unit) or an ECUE (course component) to display its detail in the panel (on the right on large screens, at the top on mobile): ECTS credits, hours, prerequisites and learning objectives.
+Interactive map of the **Artificial Intelligence programme** that I run at CESI (6 semesters). Hover (or tap on mobile) over a UE (teaching unit) or an ECUE (course component) to display its detail in the panel (on the right on large screens, at the top on mobile): ECTS credits, hours, prerequisites and learning objectives.
 
-Content taken directly from the official course specification sheets (one sheet per UE). The **prerequisites shown are the text exactly as written in each sheet**. In addition, earlier ECUEs likely to cover these prerequisites are **automatically detected by keyword matching** between this text and the titles of previous ECUEs, and highlighted in <span style="color:#d9822b; font-weight:700;">orange</span> in the grid — this is an approximate visual aid, not an official link validated in the curriculum (the sheets do not encode this link explicitly). Deliberately absent from this page: teacher names and detailed hourly breakdown (lecture/tutorial/lab), which fall under the internal management of the programme.
+Content taken directly from the official course specification sheets (one sheet per UE). The **prerequisites shown are the text exactly as written in each sheet**. In addition, earlier ECUEs likely to cover these prerequisites are **automatically detected by keyword matching** between this text and the titles of previous ECUEs, and highlighted in <span style="color:#d9822b; font-weight:700;">orange</span> in the grid: this is an approximate visual aid, not an official link validated in the curriculum (the sheets do not encode this link explicitly). Deliberately absent from this page: teacher names and detailed hourly breakdown (lecture/tutorial/lab), which fall under the internal management of the programme.
 
 </div>
 

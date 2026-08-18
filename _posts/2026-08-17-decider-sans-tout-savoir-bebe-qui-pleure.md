@@ -4,7 +4,7 @@ title: "Décider sans tout savoir : ce que le « bébé qui pleure » nous appre
 title_en: "Deciding without knowing everything: what the “crying baby” teaches us about AI"
 date: 2026-08-17 10:00:00+0200
 description: >
-  <span class="lang-fr-i">Version accessible (sans formules) de mon billet sur les POMDP — comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.</span><span class="lang-en-i">Accessible version (no formulas) of my POMDP post — how an artificial intelligence can make good decisions even when it never sees the exact situation.</span>
+  <span class="lang-fr-i">Version accessible (sans formules) de mon billet sur les POMDP : comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.</span><span class="lang-en-i">Accessible version (no formulas) of my POMDP post: how an artificial intelligence can make good decisions even when it never sees the exact situation.</span>
 tags: ia decision vulgarisation
 categories: notes-de-lecture
 related_posts: false
@@ -12,7 +12,7 @@ related_posts: false
 
 <div class="lang-fr" markdown="1">
 
-Imaginez que vous gardez un bébé qui dort dans la chambre à côté. Vous n'avez pas de caméra, juste vos oreilles : vous entendez s'il pleure ou s'il est silencieux, un point c'est tout. Vous ne pouvez jamais *voir* directement s'il a faim ou s'il est rassasié — vous devez le deviner à partir de ce que vous entendez, et décider s'il faut aller le nourrir ou continuer ce que vous étiez en train de faire.
+Imaginez que vous gardez un bébé qui dort dans la chambre à côté. Vous n'avez pas de caméra, juste vos oreilles : vous entendez s'il pleure ou s'il est silencieux, un point c'est tout. Vous ne pouvez jamais *voir* directement s'il a faim ou s'il est rassasié : vous devez le deviner à partir de ce que vous entendez, et décider s'il faut aller le nourrir ou continuer ce que vous étiez en train de faire.
 
 C'est un problème d'une banalité totale. Et c'est aussi, formalisé, l'un des problèmes centraux de l'intelligence artificielle : **comment décider correctement quand on n'a jamais un accès direct à la vérité, seulement des indices ?**
 
@@ -20,9 +20,9 @@ C'est un problème d'une banalité totale. Et c'est aussi, formalisé, l'un des 
 
 Le premier réflexe serait de se dire : « s'il pleure, je le nourris ; s'il est silencieux, je ne fais rien. » Simple, non ?
 
-Le problème, c'est que les pleurs ne sont pas un signal parfait. Un bébé affamé pleure souvent, mais pas toujours — parfois il patiente en silence. Et un bébé qui vient d'être nourri peut quand même pleurer un peu, pour d'autres raisons. Réagir uniquement au dernier bruit entendu, c'est se faire piéger par ces faux signaux.
+Le problème, c'est que les pleurs ne sont pas un signal parfait. Un bébé affamé pleure souvent, mais pas toujours : parfois il patiente en silence. Et un bébé qui vient d'être nourri peut quand même pleurer un peu, pour d'autres raisons. Réagir uniquement au dernier bruit entendu, c'est se faire piéger par ces faux signaux.
 
-Ce qu'un bon gardien fait instinctivement — et ce qu'une IA doit faire explicitement — c'est **construire une intuition qui se met à jour au fil du temps**, plutôt que de réagir bêtement au dernier indice.
+Ce qu'un bon gardien fait instinctivement, et ce qu'une IA doit faire explicitement, c'est **construire une intuition qui se met à jour au fil du temps**, plutôt que de réagir bêtement au dernier indice.
 
 ## Une intuition qui évolue
 
@@ -42,16 +42,16 @@ Une fois qu'on sait maintenir cette intuition, il reste une question : comment d
 
 Il y a deux grandes familles de réponses, et elles ressemblent à deux façons de jouer aux échecs :
 
-- **Avoir un plan préparé à l'avance.** Comme un joueur qui a mémorisé un livre d'ouvertures : pour chaque situation possible, il sait déjà quoi jouer, sans réfléchir sur le moment. C'est rapide à exécuter, mais ça demande d'avoir fait tout le travail de préparation en amont — et certaines méthodes de préparation sont plus fines que d'autres (certaines « comprennent » qu'une action peut servir à en apprendre plus, d'autres pas).
+- **Avoir un plan préparé à l'avance.** Comme un joueur qui a mémorisé un livre d'ouvertures : pour chaque situation possible, il sait déjà quoi jouer, sans réfléchir sur le moment. C'est rapide à exécuter, mais ça demande d'avoir fait tout le travail de préparation en amont, et certaines méthodes de préparation sont plus fines que d'autres (certaines « comprennent » qu'une action peut servir à en apprendre plus, d'autres pas).
 - **Réfléchir sur le moment, à partir de la situation actuelle.** Comme un joueur qui simule mentalement plusieurs coups à l'avance avant de jouer, sans avoir tout mémorisé. Plus lent à chaque décision, mais ça permet de gérer des situations bien trop nombreuses pour être toutes préparées à l'avance.
 
 Les deux approches existent dans les outils que les chercheurs utilisent pour ce genre de problème, et le choix dépend surtout de la taille du problème à résoudre.
 
 ## Pourquoi c'est important
 
-Ce petit problème du bébé qui pleure est un cas d'école, mais le même principe gouverne des situations bien plus sérieuses : une voiture autonome qui doit deviner si l'ombre au bord de la route est un piéton immobile ou un simple poteau, un système médical qui doit estimer l'état d'un patient à partir de symptômes ambigus, ou — ce qui me touche directement dans mes recherches — **un tuteur, humain ou IA, qui doit deviner ce qu'un élève sait vraiment**, alors qu'il n'a accès qu'à des indices indirects : ses réponses, son temps de réflexion, ses hésitations.
+Ce petit problème du bébé qui pleure est un cas d'école, mais le même principe gouverne des situations bien plus sérieuses : une voiture autonome qui doit deviner si l'ombre au bord de la route est un piéton immobile ou un simple poteau, un système médical qui doit estimer l'état d'un patient à partir de symptômes ambigus, ou, ce qui me touche directement dans mes recherches, **un tuteur, humain ou IA, qui doit deviner ce qu'un élève sait vraiment**, alors qu'il n'a accès qu'à des indices indirects : ses réponses, son temps de réflexion, ses hésitations.
 
-Dans les trois cas, la vérité reste cachée. Ce qui change, c'est la qualité de l'intuition qu'on parvient à construire à partir des indices disponibles — et la sagesse de ne jamais lui faire dire plus qu'elle ne sait vraiment.
+Dans les trois cas, la vérité reste cachée. Ce qui change, c'est la qualité de l'intuition qu'on parvient à construire à partir des indices disponibles, et la sagesse de ne jamais lui faire dire plus qu'elle ne sait vraiment.
 
 *Pour la version avec les formules, le code et les détails techniques (dont l'exemple ci-dessus est tiré), voir [Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui pleure »](/blog/2026/introduction-pomdp-bebe-qui-pleure/).*
 
@@ -59,7 +59,7 @@ Dans les trois cas, la vérité reste cachée. Ce qui change, c'est la qualité 
 
 <div class="lang-en" markdown="1">
 
-Imagine you are looking after a baby sleeping in the next room. You have no camera, just your ears: you hear whether it is crying or quiet, and that's it. You can never *see* directly whether it is hungry or full — you have to guess from what you hear, and decide whether to go feed it or carry on with what you were doing.
+Imagine you are looking after a baby sleeping in the next room. You have no camera, just your ears: you hear whether it is crying or quiet, and that's it. You can never *see* directly whether it is hungry or full: you have to guess from what you hear, and decide whether to go feed it or carry on with what you were doing.
 
 This is about as ordinary a problem as it gets. And, once formalised, it is also one of the central problems in artificial intelligence: **how do you decide correctly when you never have direct access to the truth, only clues?**
 
@@ -67,9 +67,9 @@ This is about as ordinary a problem as it gets. And, once formalised, it is also
 
 The first instinct would be: "if it's crying, I feed it; if it's quiet, I do nothing." Simple, right?
 
-The trouble is that crying is not a perfect signal. A hungry baby cries often, but not always — sometimes it waits quietly. And a baby that has just been fed can still cry a little, for other reasons. Reacting only to the last sound you heard means falling for these false signals.
+The trouble is that crying is not a perfect signal. A hungry baby cries often, but not always: sometimes it waits quietly. And a baby that has just been fed can still cry a little, for other reasons. Reacting only to the last sound you heard means falling for these false signals.
 
-What a good caregiver does instinctively — and what an AI must do explicitly — is **build an intuition that updates over time**, rather than blindly reacting to the latest clue.
+What a good caregiver does instinctively, and what an AI must do explicitly, is **build an intuition that updates over time**, rather than blindly reacting to the latest clue.
 
 ## An intuition that evolves
 
@@ -89,16 +89,16 @@ Once we know how to maintain this intuition, one question remains: how do we dec
 
 There are two broad families of answers, and they resemble two ways of playing chess:
 
-- **Having a plan prepared in advance.** Like a player who has memorised an opening book: for every possible situation, they already know what to play, without thinking on the spot. It's fast to execute, but it requires doing all the preparation work upfront — and some preparation methods are more refined than others (some "understand" that an action can be used to learn more, others don't).
+- **Having a plan prepared in advance.** Like a player who has memorised an opening book: for every possible situation, they already know what to play, without thinking on the spot. It's fast to execute, but it requires doing all the preparation work upfront, and some preparation methods are more refined than others (some "understand" that an action can be used to learn more, others don't).
 - **Thinking on the spot, from the current situation.** Like a player who mentally simulates several moves ahead before playing, without having memorised everything. Slower for each decision, but it lets you handle far too many situations to all be prepared in advance.
 
 Both approaches exist in the tools researchers use for this kind of problem, and the choice mostly depends on the size of the problem being solved.
 
 ## Why it matters
 
-This little crying-baby problem is a textbook case, but the same principle governs much more serious situations: a self-driving car that has to guess whether the shadow at the roadside is a stationary pedestrian or just a pole, a medical system that has to estimate a patient's condition from ambiguous symptoms, or — what touches me directly in my own research — **a tutor, human or AI, that has to guess what a student actually knows**, when it only has access to indirect clues: their answers, their response time, their hesitations.
+This little crying-baby problem is a textbook case, but the same principle governs much more serious situations: a self-driving car that has to guess whether the shadow at the roadside is a stationary pedestrian or just a pole, a medical system that has to estimate a patient's condition from ambiguous symptoms, or, what touches me directly in my own research, **a tutor, human or AI, that has to guess what a student actually knows**, when it only has access to indirect clues: their answers, their response time, their hesitations.
 
-In all three cases, the truth stays hidden. What changes is the quality of the intuition we manage to build from the available clues — and the wisdom never to let it claim to know more than it really does.
+In all three cases, the truth stays hidden. What changes is the quality of the intuition we manage to build from the available clues, and the wisdom never to let it claim to know more than it really does.
 
 *For the version with formulas, code and technical detail (from which the example above is drawn), see [Introduction to POMDPs: deciding under partial observability with the "crying baby" problem](/blog/2026/introduction-pomdp-bebe-qui-pleure/).*
 

@@ -13,7 +13,7 @@ related_publications: false
 
 Projet de recherche en cours, dans la continuité de mes travaux sur la sycophantie pédagogique, le Biggs Alignment Index (BAI) et la métrique APed.
 
-*Travail en cours — fiche à compléter une fois la publication finalisée.*
+*Travail en cours, fiche à compléter une fois la publication finalisée.*
 
 </div>
 
@@ -21,6 +21,6 @@ Projet de recherche en cours, dans la continuité de mes travaux sur la sycophan
 
 Ongoing research project, building on my work on pedagogical sycophancy, the Biggs Alignment Index (BAI) and the APed metric.
 
-*Work in progress — this page will be completed once the publication is finalised.*
+*Work in progress, this page will be completed once the publication is finalised.*
 
 </div>

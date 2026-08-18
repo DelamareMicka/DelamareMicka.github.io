@@ -2,15 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: Associate Professor / Researcher, PhD — <a href="https://www.cesi.fr/recherche/lineact/" target="_blank">CESI LINEACT UR 7527</a>, Saint-Étienne-du-Rouvray
+subtitle: Associate Professor / Researcher, PhD, <a href="https://www.cesi.fr/recherche/lineact/" target="_blank">CESI LINEACT UR 7527</a>, Saint-Étienne-du-Rouvray
 
 profile:
   align: right
   image: prof_pic.jpg # [À COMPLÉTER] remplacer par une vraie photo (voir MIGRATION.md)
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p class="lang-fr-i">[À COMPLÉTER — bureau]</p>
-    <p class="lang-en-i">[TO BE COMPLETED — office]</p>
+    <p class="lang-fr-i">[À COMPLÉTER : bureau]</p>
+    <p class="lang-en-i">[TO BE COMPLETED: office]</p>
     <p>CESI, Saint-Étienne-du-Rouvray (76)</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"

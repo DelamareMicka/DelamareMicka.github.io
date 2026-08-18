@@ -16,7 +16,7 @@ nav_order: 5
 [À COMPLÉTER]
 
 <!-- Exemple d'entrée à dupliquer :
-### Prénom Nom — [À COMPLÉTER : titre de la thèse]
+### Prénom Nom ([À COMPLÉTER : titre de la thèse])
 - **Période :** [À COMPLÉTER]
 - **Direction / co-encadrement :** [À COMPLÉTER]
 - **Financement :** [À COMPLÉTER]
@@ -36,7 +36,7 @@ nav_order: 5
 [TO BE COMPLETED]
 
 <!-- Example entry to duplicate:
-### First name Last name — [TO BE COMPLETED: thesis title]
+### First name Last name ([TO BE COMPLETED: thesis title])
 - **Period:** [TO BE COMPLETED]
 - **Supervision / co-supervision:** [TO BE COMPLETED]
 - **Funding:** [TO BE COMPLETED]

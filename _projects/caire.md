@@ -14,7 +14,7 @@ related_publications: false
 
 **Rôle :** Coordinateur scientifique et expert (depuis octobre 2024) ; concepteur et expert pédagogique (juin 2023 – octobre 2024).
 
-[À COMPLÉTER — objectifs détaillés du projet, partenaires, montant du financement, durée, résultats/livrables]
+[À COMPLÉTER : objectifs détaillés du projet, partenaires, montant du financement, durée, résultats/livrables]
 
 </div>
 
@@ -24,6 +24,6 @@ related_publications: false
 
 **Role:** Scientific coordinator and expert (since October 2024); learning designer and expert (June 2023 – October 2024).
 
-[TO BE COMPLETED — detailed project objectives, partners, funding amount, duration, results/deliverables]
+[TO BE COMPLETED: detailed project objectives, partners, funding amount, duration, results/deliverables]
 
 </div>

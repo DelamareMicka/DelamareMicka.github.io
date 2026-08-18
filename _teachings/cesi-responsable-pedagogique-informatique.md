@@ -1,7 +1,7 @@
 ---
 layout: course
 title: >
-  <span class="lang-fr-i">Responsable pédagogique — 4e année Informatique (FISE/FISA)</span><span class="lang-en-i">Programme Leader — 4th-year Computer Science (FISE/FISA)</span>
+  <span class="lang-fr-i">Responsable pédagogique, 4e année Informatique (FISE/FISA)</span><span class="lang-en-i">Programme Leader, 4th-year Computer Science (FISE/FISA)</span>
 description: >
   <span class="lang-fr-i">Responsable des promotions 2021–2022 et 2022–2023 de la filière Informatique en 4e année (FISE : formation initiale, FISA : apprentissage), avec une stratégie pédagogique fondée sur l'apprentissage par problèmes (PBL) et l'Active Project-Based Learning (A2P2).</span><span class="lang-en-i">Responsible for the 2021–2022 and 2022–2023 cohorts of the 4th-year Computer Science programme (FISE: full-time track; FISA: apprenticeship track), with a pedagogical strategy based on Problem-Based Learning (PBL) and Active Project-Based Learning (A2P2).</span>
 instructor: Mickaël Delamare

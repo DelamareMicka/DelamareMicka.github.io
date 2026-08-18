@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "[À COMPLÉTER — nom du projet]"
-description: "[À COMPLÉTER — résumé en une phrase]"
+title: "[À COMPLÉTER : nom du projet]"
+description: "[À COMPLÉTER : résumé en une phrase]"
 importance: 99
 category: research
 related_publications: false
@@ -10,17 +10,17 @@ published: false # passer à true (ou retirer la ligne) une fois la fiche compl�
 
 <div class="lang-fr" markdown="1">
 
-**Référence :** [À COMPLÉTER — ex. numéro ANR/financeur, ou retirer cette ligne]
+**Référence :** [À COMPLÉTER, ex. numéro ANR/financeur, ou retirer cette ligne]
 
-[À COMPLÉTER — objectifs du projet, rôle dans le projet, partenaires, financement, durée, résultats/livrables]
+[À COMPLÉTER : objectifs du projet, rôle dans le projet, partenaires, financement, durée, résultats/livrables]
 
 </div>
 
 <div class="lang-en" markdown="1">
 
-**Reference:** [TO BE COMPLETED — e.g. grant/funder number, or remove this line]
+**Reference:** [TO BE COMPLETED, e.g. grant/funder number, or remove this line]
 
-[TO BE COMPLETED — project objectives, role in the project, partners, funding, duration, results/deliverables]
+[TO BE COMPLETED: project objectives, role in the project, partners, funding, duration, results/deliverables]
 
 </div>
 

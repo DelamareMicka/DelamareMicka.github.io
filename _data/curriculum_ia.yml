@@ -1551,10 +1551,10 @@ semesters:
       prerequis_en: ECUE 4.3.1 passed; mastery of matrix operations and elementary linear algebra; descriptive and inferential statistics; use of scikit-learn for training simple models.
       objectifs:
       - Cet ECUE approfondit la modélisation prédictive quantitative à travers les techniques de régression. Les étudiants maîtrisent la régression linéaire simple et multiple, la régression logistique, ainsi que les méthodes de régularisation (Ridge, Lasso, ElasticNet).
-      - Ils apprennent à diagnostiquer la qualité d’un modèle (R², RMSE, résidus), à détecter le sur-apprentissage et à optimiser les hyperparamètres. La construction responsable des modèles — en termes d’équité et de minimisation de l’empreinte computationnelle — est intégrée aux travaux pratiques.
+      - Ils apprennent à diagnostiquer la qualité d’un modèle (R², RMSE, résidus), à détecter le sur-apprentissage et à optimiser les hyperparamètres. La construction responsable des modèles (en termes d’équité et de minimisation de l’empreinte computationnelle) est intégrée aux travaux pratiques.
       objectifs_en:
       - This ECUE explores quantitative predictive modelling in depth through regression techniques. Students master simple and multiple linear regression, logistic regression, as well as regularisation methods (Ridge, Lasso, ElasticNet).
-      - They learn to diagnose the quality of a model (R², RMSE, residuals), to detect overfitting and to optimise hyperparameters. The responsible construction of models — in terms of fairness and minimising computational footprint — is incorporated into the practical work.
+      - They learn to diagnose the quality of a model (R², RMSE, residuals), to detect overfitting and to optimise hyperparameters. The responsible construction of models (in terms of fairness and minimising computational footprint) is incorporated into the practical work.
       prereq_matches:
       - 1.1.3
       - 2.1.2
@@ -1962,7 +1962,7 @@ semesters:
       objectifs_en:
       - Identify the roles of the various stakeholders in order to understand their needs
       - Contribute to the writing and maintenance of a reliable and efficient algorithm for implementing deep learning algorithms
-      - Master the different classes of AI algorithms, their limitations and biases, and their application to the data — potentially massive — relevant to the project
+      - Master the different classes of AI algorithms, their limitations and biases, and their application to the (potentially massive) data relevant to the project
       - Describe the main neural network architectures (fully connected networks, convolutional neural networks (CNN), fully convolutional networks (FCN))
       - Choose the architecture according to the problem identified.
       - Evaluate the effectiveness of a neural network according to the problem identified.
