@@ -32,7 +32,7 @@ Imaginons qu'on parte d'une incertitude totale : 50 % de chances que le bébé a
 2. **On le nourrit, et il se tait.** Là, plus de doute : on *sait* qu'il est rassasié (nourrir résout toujours le problème), notre intuition retombe à 0 % de faim.
 3. **On ignore, et il reste silencieux.** Léger regain de doute au fil du temps (un bébé rassasié peut redevenir affamé), mais on reste confiant : autour de 2 à 3 % de chances qu'il ait faim.
 4. **On continue d'ignorer, toujours silencieux.** Le doute progresse un peu, tranquillement.
-5. **On ignore encore, et là il pleure.** Un seul pleur après plusieurs silences ne suffit pas à tout renverser d'un coup : notre soupçon remonte à peine au-dessus de 50 % (53 %). L'historique accumulé pèse plus lourd qu'un signal isolé.
+5. **On ignore encore, et là il pleure.** Un seul pleur après plusieurs silences ne suffit pas à tout renverser d'un coup : notre soupçon remonte à peine au-dessus de 50 % (54 %). L'historique accumulé pèse plus lourd qu'un signal isolé.
 
 C'est ça, l'idée centrale : on ne remplace jamais notre intuition par le dernier indice, on la *met à jour* avec lui, en tenant compte de tout ce qu'on savait déjà. C'est exactement ce que fait un GPS quand le signal satellite faiblit une seconde : il ne se perd pas d'un coup, il continue d'estimer la position à partir de sa dernière intuition solide.
 
@@ -79,7 +79,7 @@ Suppose we start from total uncertainty: 50% chance the baby is hungry, 50% chan
 2. **We feed it, and it goes quiet.** Now there's no more doubt: we *know* it's full (feeding always fixes the problem), our intuition drops back to 0% hunger.
 3. **We ignore it, and it stays quiet.** A slight rise in doubt over time (a full baby can become hungry again), but we remain confident: around 2 to 3% chance it's hungry.
 4. **We keep ignoring it, still quiet.** Doubt creeps up a little further, quietly.
-5. **We ignore it again, and this time it cries.** A single cry after several quiet periods isn't enough to flip everything at once: our suspicion barely rises above 50% (53%). The accumulated history carries more weight than a single signal.
+5. **We ignore it again, and this time it cries.** A single cry after several quiet periods isn't enough to flip everything at once: our suspicion barely rises above 50% (54%). The accumulated history carries more weight than a single signal.
 
 That's the central idea: we never replace our intuition with the latest clue, we *update* it with that clue, taking into account everything we already knew. It's exactly what a GPS does when the satellite signal drops out for a second: it doesn't lose itself instantly, it keeps estimating position from its last solid intuition.
 
