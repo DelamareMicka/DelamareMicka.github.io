@@ -54,6 +54,14 @@ Tout n'a pas aussi bien fonctionné. L'atelier « Grand-Mère » a reçu des avi
 
 La suite logique de ce travail est une évaluation plus longitudinale : mesurer, plusieurs mois après la formation, si la vigilance critique observée dans les questionnaires se traduit vraiment dans les pratiques (niveau 4 de Kirkpatrick). Des entretiens semi-directifs sont prévus pour ça.
 
+## Le lien avec mes recherches, et ce que ça ouvre comme perspectives
+
+Ce dispositif s'inscrit dans le prolongement direct de mes travaux sur l'alignement pédagogique des IA génératives. L'atelier « Grand-Mère » en particulier touche à quelque chose que j'étudie par ailleurs sous l'angle de la **sycophantie pédagogique** : une IA qui affiche la même assurance qu'elle ait raison ou tort n'est pas seulement un problème de fiabilité factuelle, c'est un problème d'alignement, elle optimise pour paraître utile et confiante dans l'instant, pas pour la compréhension réelle de qui l'utilise. Faire vivre cette dissonance aux étudiants, très concrètement, est une manière de les acculturer à ce risque avant même qu'ils ne l'affrontent comme futurs professionnels utilisant l'IA dans leur travail.
+
+Le contraste observé entre l'accueil très positif du jeu de Nim et l'accueil plus mitigé de l'atelier « Grand-Mère » me semble aussi révélateur d'un phénomène que je retrouve dans mes travaux sur les agents pédagogiques fondés sur des LLM : un cadre très structuré (le jeu de Nim, avec ses règles fermées) facilite l'engagement immédiat, tandis qu'un espace plus ouvert (dialoguer librement avec une IA générative) demande un étayage (*scaffolding*) beaucoup plus soigné pour rester productif plutôt que déstabilisant. C'est exactement le type d'arbitrage, entre liberté d'exploration et guidage, que l'on retrouve au cœur de l'alignement constructif de Biggs, et donc au cœur du **Biggs Alignment Index (BAI)** que je développe pour évaluer ce genre de dispositif.
+
+Une perspective concrète qu'ouvre ce travail : appliquer la métrique **APed**, conçue pour quantifier l'alignement pédagogique des interactions de tutorat générées par IA, à l'atelier « Grand-Mère » lui-même, pour objectiver ce qui, dans son déroulé, fonctionne réellement comme déclencheur de réflexion critique et ce qui relève simplement de l'anecdote marquante. Ce serait une manière de faire dialoguer directement l'ingénierie pédagogique de CAIRE avec mes travaux méthodologiques sur l'évaluation de l'alignement.
+
 ## Pour aller plus loin
 
 Delamare, M., & Rousseau, M. (à paraître). *Former à et par l'IA : un exemple de conception de ressources pédagogiques dans le cadre du projet CAIRE.* Presses universitaires de la Méditerranée (PULM).
@@ -105,6 +113,14 @@ Fainter but encouraging signals also appear at level 3 (self-reported behaviour 
 Not everything worked equally well. The "Grandma" workshop received more mixed reviews than the game of Nim: the open-ended freedom of experimenting with a generative AI seems to require tighter scaffolding than the game of Nim's very structured format, or it risks disorienting some students. We also identified debate group size as something to rework for more active participation.
 
 The logical next step is a more longitudinal evaluation: measuring, several months after the training, whether the critical vigilance observed in the questionnaires actually translates into practice (Kirkpatrick's level 4). Semi-structured interviews are planned for that.
+
+## The link with my research, and the perspectives it opens
+
+This module is a direct extension of my work on the pedagogical alignment of generative AI. The "Grandma" workshop in particular touches on something I study elsewhere through the lens of **pedagogical sycophancy**: an AI that displays the same confidence whether it's right or wrong isn't just a factual-reliability problem, it's an alignment problem, it optimises for appearing helpful and confident in the moment, not for the real understanding of whoever is using it. Making students live through that dissonance, very concretely, is one way to build resistance to that risk before they face it as future professionals using AI in their own work.
+
+The contrast between the very positive reception of the game of Nim and the more mixed reception of the "Grandma" workshop also strikes me as revealing something I keep running into in my work on LLM-based pedagogical agents: a tightly structured setting (the game of Nim, with its closed rules) makes immediate engagement easy, while a more open space (freely conversing with a generative AI) needs much more careful scaffolding to stay productive rather than disorienting. That is exactly the kind of trade-off, between freedom to explore and guidance, that sits at the heart of Biggs' constructive alignment, and therefore at the heart of the **Biggs Alignment Index (BAI)** I am developing to evaluate this kind of module.
+
+One concrete perspective this work opens up: applying the **APed** metric, designed to quantify the pedagogical alignment of AI-generated tutoring interactions, to the "Grandma" workshop itself, to make explicit what, in the workshop's flow, genuinely functions as a trigger for critical reflection versus what is simply a memorable anecdote. That would be a way to put CAIRE's instructional-design work directly in dialogue with my own methodological work on evaluating alignment.
 
 ## Further reading
 
