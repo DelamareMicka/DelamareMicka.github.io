@@ -7,7 +7,7 @@ description: >
   <span class="lang-fr-i">Projets de recherche.</span><span class="lang-en-i">Research projects.</span>
 nav: true
 nav_order: 3
-display_categories: [research]
+display_categories: [research, book]
 horizontal: false
 ---
 
