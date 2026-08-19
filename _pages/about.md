@@ -37,7 +37,7 @@ Le problème central que j'étudie est la **sycophantie pédagogique** : le dés
 
 Je suis coordinateur scientifique de l'initiative **CAIRE** (ANR-23-CMAS-0031, France 2030).
 
-Retrouvez mes publications sur la [page dédiée](/publications/), mes projets de recherche sur la [page projets](/projects/), et mes activités d'enseignement sur la [page enseignement](/teaching/).
+Retrouvez mes publications sur la [page dédiée](/publications/), mes projets de recherche sur la [page projets](/projects/), mes activités d'enseignement sur la [page enseignement](/teaching/), et mon premier livre, *Décider sans tout savoir*, sur la [page livre](/livre/).
 
 </div>
 
@@ -51,6 +51,6 @@ The core problem I study is **pedagogical sycophancy**: the structural misalignm
 
 I am scientific coordinator of the **CAIRE** initiative (ANR-23-CMAS-0031, France 2030).
 
-Find my publications on the [dedicated page](/publications/), my research projects on the [projects page](/projects/), and my teaching activities on the [teaching page](/teaching/).
+Find my publications on the [dedicated page](/publications/), my research projects on the [projects page](/projects/), my teaching activities on the [teaching page](/teaching/), and my first book, *Décider sans tout savoir*, on the [book page](/livre/).
 
 </div>
