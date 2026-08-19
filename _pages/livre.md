@@ -28,13 +28,19 @@ nav_order: 3.5
     border-color: #2d4636;
     color: #f6f2ea !important;
   }
+  .book-cover {
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
 </style>
 
 <div class="row align-items-start">
-  <div class="col-sm-4">
-    <img src="/assets/img/livre-decider-sans-tout-savoir-cover.jpg" class="img-fluid rounded z-depth-1" alt="Couverture du livre Décider sans tout savoir">
+  <div class="col-sm-3">
+    <img src="/assets/img/livre-decider-sans-tout-savoir-cover.jpg" class="img-fluid rounded z-depth-1 book-cover" alt="Couverture du livre Décider sans tout savoir">
   </div>
-  <div class="col-sm-8">
+  <div class="col-sm-9">
 
 <div class="lang-fr" markdown="1">
 
