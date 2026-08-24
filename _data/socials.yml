@@ -5,7 +5,7 @@ cv_pdf: /assets/pdf/CV_Delamare_Mickael.pdf
 email: mdelamare@cesi.fr
 github_username: DelamareMicka
 rss_icon: true # comment this line to hide the RSS icon
-# orcid_id: # [À COMPLÉTER] ex. 0000-0000-0000-0000
-# scholar_userid: # [À COMPLÉTER] identifiant Google Scholar
-# hal_id: # [À COMPLÉTER] identifiant auteur HAL
-# linkedin_username: # [À COMPLÉTER] nom d'utilisateur LinkedIn
+orcid_id: 0000-0003-0119-2326
+scholar_userid: G35xNaQAAAAJ
+hal_id: mickael-delamare
+linkedin_username: delamaremickael

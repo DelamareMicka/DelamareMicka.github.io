@@ -54,7 +54,7 @@ Premier livre d'une collection à venir, destiné aux étudiants avant qu'ils ne
 - Exercices numpy et matplotlib pour prolonger la lecture
 - Bibliographie de 11 références scientifiques vérifiées
 
-<a class="book-buy-btn" href="https://www.coollibri.com/bibliotheque-en-ligne/mickael-delamare/decider-sans-tout-savoir_1653906" target="_blank" rel="noopener">Acheter le livre sur CoolLibri</a>
+<a class="book-buy-btn" href="https://www.coollibri.com/bibliotheque-en-ligne/mickael-delamare/decider-sans-tout-savoir_1655427" target="_blank" rel="noopener">Acheter le livre sur CoolLibri</a>
 
 </div>
 
@@ -72,7 +72,7 @@ First book in an upcoming collection, written for students before they join my r
 
 The book is written in French.
 
-<a class="book-buy-btn" href="https://www.coollibri.com/bibliotheque-en-ligne/mickael-delamare/decider-sans-tout-savoir_1653906" target="_blank" rel="noopener">Buy the book on CoolLibri</a>
+<a class="book-buy-btn" href="https://www.coollibri.com/bibliotheque-en-ligne/mickael-delamare/decider-sans-tout-savoir_1655427" target="_blank" rel="noopener">Buy the book on CoolLibri</a>
 
 </div>
 

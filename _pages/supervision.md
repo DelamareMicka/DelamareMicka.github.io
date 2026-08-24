@@ -13,19 +13,19 @@ nav_order: 5
 
 ## Doctorants
 
-[À COMPLÉTER]
+Aucun encadrement de thèse en cours actuellement.
 
 <!-- Exemple d'entrée à dupliquer :
-### Prénom Nom ([À COMPLÉTER : titre de la thèse])
-- **Période :** [À COMPLÉTER]
-- **Direction / co-encadrement :** [À COMPLÉTER]
-- **Financement :** [À COMPLÉTER]
-- **Résumé :** [À COMPLÉTER]
+### Prénom Nom (titre de la thèse)
+- **Période :**
+- **Direction / co-encadrement :**
+- **Financement :**
+- **Résumé :**
 -->
 
 ## Étudiants de master
 
-[À COMPLÉTER]
+Aucun encadrement de stage ou de mémoire de master en cours actuellement.
 
 </div>
 
@@ -33,18 +33,18 @@ nav_order: 5
 
 ## PhD students
 
-[TO BE COMPLETED]
+No PhD supervision currently in progress.
 
 <!-- Example entry to duplicate:
-### First name Last name ([TO BE COMPLETED: thesis title])
-- **Period:** [TO BE COMPLETED]
-- **Supervision / co-supervision:** [TO BE COMPLETED]
-- **Funding:** [TO BE COMPLETED]
-- **Summary:** [TO BE COMPLETED]
+### First name Last name (thesis title)
+- **Period:**
+- **Supervision / co-supervision:**
+- **Funding:**
+- **Summary:**
 -->
 
 ## Master's students
 
-[TO BE COMPLETED]
+No master's internship or thesis supervision currently in progress.
 
 </div>

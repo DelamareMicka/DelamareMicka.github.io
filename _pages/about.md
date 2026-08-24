@@ -6,11 +6,11 @@ subtitle: Associate Professor / Researcher, PhD, <a href="https://www.cesi.fr/re
 
 profile:
   align: right
-  image: prof_pic.jpg # [À COMPLÉTER] remplacer par une vraie photo (voir MIGRATION.md)
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p class="lang-fr-i">[À COMPLÉTER : bureau]</p>
-    <p class="lang-en-i">[TO BE COMPLETED: office]</p>
+    <p class="lang-fr-i">Bureau N015</p>
+    <p class="lang-en-i">Office N015</p>
     <p>CESI, Saint-Étienne-du-Rouvray (76)</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
