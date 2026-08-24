@@ -89,16 +89,61 @@ const NB_ASSOCIATIONS = 3;
 // 3) Faut-il présenter les concepts dans un ordre aléatoire ? (recommandé)
 const ORDRE_ALEATOIRE = true;
 
+// 4) Ton contact (affiché dans le consentement). Remplace par tes coordonnées.
+const CONTACT_ENSEIGNANT = "Mickael Delamare, mdelamare@cesi.fr — CESI";
+
+// 5) Texte de consentement affiché au démarrage. Adapte-le si besoin.
+const TEXTE_CONSENTEMENT =
+`Dans le cadre de mes recherches au CESI, je m'intéresse à la façon dont un cours modifie l'organisation des connaissances des étudiants. Tu vas faire un court exercice d'associations de mots, avant puis après la séance.
+
+Ce qui est recueilli : les mots que tu associes, un identifiant que tu choisis toi-même (tes initiales + ton jour de naissance, pas ton nom), la valence que tu indiques et le temps passé. Rien d'autre.
+
+• Participation libre : tu peux refuser ou t'arrêter à tout moment.
+• Aucune incidence sur ta note ou ton évaluation, ni dans un sens ni dans l'autre.
+• Tes réponses restent sur cet ordinateur jusqu'à ce que tu cliques « Enregistrer » ; rien n'est envoyé automatiquement.
+• Les données sont utilisées à des fins de recherche, sous forme pseudonymisée.
+
+Contact : ${CONTACT_ENSEIGNANT}.
+
+En cliquant « J'accepte de participer », tu confirmes avoir lu et compris ces informations.`;
+
 /* ============================================================
    ▲▲▲  FIN DE LA ZONE À MODIFIER — ne touche pas au reste  ▲▲▲
    ============================================================ */
 
 const app = document.getElementById("app");
-let state = { id:"", session:"", start:null, idx:0, order:[], data:{} };
+let state = { id:"", session:"", consent:false, consentTime:"", start:null, idx:0, order:[], data:{} };
 
 // ---------- utilitaires ----------
 function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
 function el(html){ const d=document.createElement("div"); d.innerHTML=html.trim(); return d.firstChild; }
+
+// ---------- écran de consentement ----------
+function screenConsent(){
+  app.innerHTML = "";
+  const c = el(`<div class="card">
+    <h1>Participation à une étude pédagogique</h1>
+    <p style="color:var(--ink);white-space:pre-line;font-size:15px">${TEXTE_CONSENTEMENT}</p>
+    <div class="row">
+      <button class="btn ghost" id="no">Je préfère ne pas participer</button>
+      <div class="spacer"></div>
+      <button class="btn" id="yes">J'accepte de participer</button>
+    </div>
+  </div>`);
+  app.appendChild(c);
+  c.querySelector("#yes").onclick=()=>{
+    state.consent=true;
+    state.consentTime=new Date().toISOString();
+    screenIntro();
+  };
+  c.querySelector("#no").onclick=()=>{
+    app.innerHTML="";
+    app.appendChild(el(`<div class="card">
+      <h1>Pas de souci</h1>
+      <p>Merci quand même — tu peux simplement fermer cette page. Ça n'a aucune conséquence.</p>
+    </div>`));
+  };
+}
 
 // ---------- écran d'accueil ----------
 function screenIntro(){
@@ -223,13 +268,13 @@ function csvCell(s){ s=(s==null?"":String(s)); return /[",\n;]/.test(s) ? '"'+s.
 
 function exportCSV(){
   const dur=Math.round((Date.now()-state.start)/1000);
-  const cols=["participant","session","horodatage","duree_sec","concept","ordre_presentation"];
+  const cols=["participant","session","consentement","horodatage_consentement","horodatage","duree_sec","concept","ordre_presentation"];
   for(let i=1;i<=NB_ASSOCIATIONS;i++) cols.push("association_"+i);
   cols.push("valence");
   const rows=[cols.join(";")];
   state.order.forEach((cue,pos)=>{
     const d=state.data[cue]||{resp:[],valence:""};
-    const line=[state.id, state.session, new Date().toISOString(), dur, cue, pos+1];
+    const line=[state.id, state.session, state.consent?"oui":"non", state.consentTime, new Date().toISOString(), dur, cue, pos+1];
     for(let i=0;i<NB_ASSOCIATIONS;i++) line.push(d.resp[i]||"");
     line.push(d.valence||"");
     rows.push(line.map(csvCell).join(";"));
@@ -241,7 +286,7 @@ function exportCSV(){
   document.body.appendChild(a); a.click(); a.remove();
 }
 
-screenIntro();
+screenConsent();
 </script>
 </body>
 </html>
