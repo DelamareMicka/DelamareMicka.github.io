@@ -61,6 +61,20 @@
       .lang-dropdown .dropdown-item.active {
         font-weight: 700;
       }
+      /* Below the navbar-expand-sm breakpoint the nav collapses into a
+         narrow vertical list; an absolutely positioned, right-aligned
+         menu then lands off-screen to the left of its own toggle. Let it
+         flow in place instead, like the rest of the collapsed menu. */
+      @media (max-width: 575.98px) {
+        .lang-dropdown .dropdown-menu.show {
+          position: static;
+          float: none;
+          left: auto;
+          right: auto;
+          margin-top: 0.25rem;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+      }
     </style>
   </head>
 
