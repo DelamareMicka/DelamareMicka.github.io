@@ -27,12 +27,40 @@
     <style>
       /* Bilingual content toggle (about.md, cv.md, projects, etc.):
          .lang-fr / .lang-en wrap the French / English version of the same
-         block or inline text; html[data-lang="en"] flips which one shows. */
-      .lang-en, .lang-en-i { display: none; }
-      html[data-lang="en"] .lang-fr { display: none; }
-      html[data-lang="en"] .lang-en { display: block; }
-      html[data-lang="en"] .lang-fr-i { display: none; }
-      html[data-lang="en"] .lang-en-i { display: inline; }
+         block or inline text; html[data-lang="en"] flips which one shows.
+         !important: some theme components (e.g. the about page's
+         .profile .more-info p rule) set their own `display` on the same
+         elements with higher selector specificity, which would otherwise
+         make both languages show at once. */
+      .lang-en, .lang-en-i { display: none !important; }
+      html[data-lang="en"] .lang-fr { display: none !important; }
+      html[data-lang="en"] .lang-en { display: block !important; }
+      html[data-lang="en"] .lang-fr-i { display: none !important; }
+      html[data-lang="en"] .lang-en-i { display: inline !important; }
+
+      /* Language switcher dropdown: self-contained show/hide and button
+         reset so it doesn't depend on the theme's Bootstrap CSS being
+         wired up for <button> based dropdown-items. */
+      .lang-dropdown .dropdown-menu {
+        display: none;
+      }
+      .lang-dropdown .dropdown-menu.show {
+        display: block;
+      }
+      .lang-dropdown .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.35rem 1.2rem;
+        clear: both;
+        text-align: left;
+        white-space: nowrap;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      .lang-dropdown .dropdown-item.active {
+        font-weight: 700;
+      }
     </style>
   </head>
 
@@ -90,23 +118,56 @@
 
     <script>
       (function () {
-        var btn = document.getElementById('lang-toggle');
-        if (!btn) return;
-        var label = document.getElementById('lang-toggle-label');
+        var toggle = document.getElementById('lang-dropdown-toggle');
+        var menu = document.getElementById('lang-dropdown-menu');
+        var label = document.getElementById('lang-dropdown-label');
+        if (!toggle || !menu) return;
+
         function apply(lang) {
           if (lang === 'en') {
             document.documentElement.setAttribute('data-lang', 'en');
-            if (label) label.textContent = 'FR';
           } else {
             document.documentElement.removeAttribute('data-lang');
-            if (label) label.textContent = 'EN';
           }
+          if (label) label.textContent = lang === 'en' ? 'EN' : 'FR';
+          Array.prototype.forEach.call(menu.querySelectorAll('[data-lang-option]'), function (item) {
+            var isActive = item.getAttribute('data-lang-option') === lang;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-current', isActive ? 'true' : 'false');
+          });
         }
+        function openMenu() {
+          menu.classList.add('show');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+        function closeMenu() {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+
         apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
-        btn.addEventListener('click', function () {
-          var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'fr' : 'en';
-          try { localStorage.setItem('lang-pref', next); } catch (e) {}
-          apply(next);
+
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (menu.classList.contains('show')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+        Array.prototype.forEach.call(menu.querySelectorAll('[data-lang-option]'), function (item) {
+          item.addEventListener('click', function () {
+            var lang = item.getAttribute('data-lang-option');
+            try { localStorage.setItem('lang-pref', lang); } catch (e) {}
+            apply(lang);
+            closeMenu();
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!toggle.contains(e.target) && !menu.contains(e.target)) closeMenu();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenu();
         });
       })();
     </script>

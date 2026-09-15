@@ -134,11 +134,23 @@
               </button>
             </li>
           {% endif %}
-          <!-- Toggle language (FR/EN) -->
-          <li class="toggle-container">
-            <button id="lang-toggle" type="button" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue">
-              <span id="lang-toggle-label" style="font-weight: 600; font-size: 0.85em;">EN</span>
+          <!-- Language switcher (FR/EN) -->
+          <li class="nav-item dropdown lang-dropdown">
+            <button
+              class="nav-link dropdown-toggle"
+              id="lang-dropdown-toggle"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              title="Switch language / Changer de langue"
+              aria-label="Switch language / Changer de langue"
+            >
+              <span id="lang-dropdown-label" style="font-weight: 600; font-size: 0.85em;">FR</span>
             </button>
+            <div class="dropdown-menu dropdown-menu-right" id="lang-dropdown-menu" aria-labelledby="lang-dropdown-toggle">
+              <button type="button" class="dropdown-item" data-lang-option="fr">Français</button>
+              <button type="button" class="dropdown-item" data-lang-option="en">English</button>
+            </div>
           </li>
         </ul>
       </div>
