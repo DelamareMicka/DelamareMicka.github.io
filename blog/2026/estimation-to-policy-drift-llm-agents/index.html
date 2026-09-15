@@ -1,0 +1,468 @@
+<!DOCTYPE html> <html lang="fr"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <script>
+    (function () {
+      try {
+        if (localStorage.getItem('lang-pref') === 'en') {
+          document.documentElement.setAttribute('data-lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Un tuteur IA qui devine juste peut quand même mal enseigner | Mickaël Delamare </title> <meta name="author" content="Mickaël Delamare"> <meta name="description" content="Un tuteur IA n'agit jamais sur l'état réel de l'élève, seulement sur une estimation. Un article que nous venons de terminer, avec Florian et Benoît, montre que la qualité de cette estimation ne prédit presque rien de la qualité des décisions qui en découlent, et que ça se mesure. An AI tutor never acts on a student's real state, only on an estimate of it. A paper we've just finished, with Florian and Benoît, shows that how good that estimate is barely predicts how good the resulting decisions are, and that this is measurable."> <meta name="keywords" content="AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT, AI in education, pedagogical alignment, large language models"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8E%93&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://delamaremicka.github.io/blog/2026/estimation-to-policy-drift-llm-agents/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <style>
+      /* Bilingual content toggle (about.md, cv.md, projects, etc.):
+         .lang-fr / .lang-en wrap the French / English version of the same
+         block or inline text; html[data-lang="en"] flips which one shows. */
+      .lang-en, .lang-en-i { display: none; }
+      html[data-lang="en"] .lang-fr { display: none; }
+      html[data-lang="en"] .lang-en { display: block; }
+      html[data-lang="en"] .lang-fr-i { display: none; }
+      html[data-lang="en"] .lang-en-i { display: inline; }
+    </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/livre/"> <span class="lang-fr-i">livre</span><span class="lang-en-i">book</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="toggle-container"> <button id="lang-toggle" type="button" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-toggle-label" style="font-weight: 600; font-size: 0.85em;">EN</span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style type="text/css">
+    .aipaa-loop-wrap { margin: 1.25rem 0 0.5rem; } .aipaa-loop { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0.35rem; } .aipaa-loop-stage {
+  flex: 1 1 120px;
+  min-width: 100px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.4rem;
+  background: var(--global-card-bg-color);
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+} .aipaa-loop-stage:hover, .aipaa-loop-stage.active {
+  border-color: var(--global-theme-color);
+  background: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+} .aipaa-loop-stage .num { display: block; font-weight: 700; font-size: 0.68rem; opacity: 0.6; margin-bottom: 0.15rem; } .aipaa-loop-arrow { display: flex; align-items: center; justify-content: center; opacity: 0.4; flex: 0 0 auto; width: 1.2rem; } .aipaa-loop-arrow::before { content: '\2192'; } @media (max-width: 640px) {
+  .aipaa-loop { flex-direction: column; }
+  .aipaa-loop-arrow { width: auto; height: 1rem; }
+  .aipaa-loop-arrow::before { content: '\2193'; }
+} .aipaa-loop-detail {
+  margin-top: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-left: 3px solid var(--global-theme-color);
+  background: color-mix(in srgb, var(--global-theme-color) 6%, transparent);
+  border-radius: 0.25rem;
+  font-size: 0.86rem;
+  min-height: 3em;
+} .aipaa-loop-note { margin-top: 0.6rem; font-size: 0.8rem; color: var(--global-text-color-light); font-style: italic; }
+.aipaa-verdicts-wrap { margin: 1.25rem 0; } .aipaa-verdicts { display: flex; flex-wrap: wrap; gap: 0.75rem; } .aipaa-verdict-panel {
+  flex: 1 1 180px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.4rem;
+  padding: 0.75rem 0.85rem;
+  cursor: pointer;
+  background: var(--global-card-bg-color);
+  transition: border-color 0.15s;
+} .aipaa-verdict-panel.active { border-color: var(--global-theme-color); } .aipaa-verdict-panel h4 { margin: 0 0 0.6rem; font-size: 0.82rem; } .aipaa-bar-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.74rem; } .aipaa-bar-label { flex: 0 0 3.4rem; opacity: 0.75; } .aipaa-bar-track { flex: 1; background: var(--global-divider-color); border-radius: 999px; height: 0.55rem; overflow: hidden; } .aipaa-bar-fill { height: 100%; border-radius: 999px; width: 0%; background: var(--global-theme-color); transition: width 0.6s ease; } .aipaa-bar-fill.alt { background: #d9822b; } .aipaa-bar-value { flex: 0 0 2.6rem; text-align: right; font-variant-numeric: tabular-nums; opacity: 0.75; } .aipaa-verdict-summary {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.3rem;
+  background: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
+  font-size: 0.85rem;
+}
+
+  </style> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="lang-fr-i">Un tuteur IA qui devine juste peut quand même mal enseigner</span><span class="lang-en-i">An AI tutor that guesses right can still teach badly</span> </h1> <p class="post-meta"> Created on September 03, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/llm-agents"> <i class="fa-solid fa-hashtag fa-sm"></i> llm-agents</a>   <a href="/blog/tag/pomdp"> <i class="fa-solid fa-hashtag fa-sm"></i> pomdp</a>   <a href="/blog/tag/tutorat"> <i class="fa-solid fa-hashtag fa-sm"></i> tutorat</a>   <a href="/blog/tag/recherche"> <i class="fa-solid fa-hashtag fa-sm"></i> recherche</a>   ·   <a href="/blog/category/recherche"> <i class="fa-solid fa-tag fa-sm"></i> recherche</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <div class="lang-fr"> <p>Avec Florian et Benoît, nous venons de terminer un article qui mesure quelque chose que, jusqu’ici, personne ne pouvait vraiment mesurer : à quel point une IA tutrice se trompe <em>à cause de</em> son estimation du niveau de l’élève, plutôt qu’à cause de sa pédagogie. L’article a été accepté à <a href="https://ijcci.scitevents.org/AIPAA.aspx" rel="external nofollow noopener" target="_blank">AIPAA 2026</a> (AI Agents : Progress, Architecture, and Applications), session spéciale d’IJCCI 2026, qui se tiendra à Angers du 28 au 30 octobre 2026.</p> <p><em>Référence complète et lien vers les actes : à ajouter ici après la conférence, une fois le DOI attribué.</em></p> <h2 id="le-problme-du-bb-qui-pleure-version-salle-de-classe">Le problème du bébé qui pleure, version salle de classe</h2> <p>Si vous avez lu mon billet sur les <a href="/blog/2026/introduction-pomdp-bebe-qui-pleure/">POMDP et le bébé qui pleure</a>, vous connaissez déjà l’idée centrale : un agent qui décide dans l’incertitude n’a jamais accès à l’état réel du monde, seulement à une observation, et doit construire une croyance à partir de ça. Un tuteur IA est exactement dans cette situation. Il ne voit jamais ce que l’élève sait vraiment ; il ne voit que ses réponses, et doit en déduire une estimation de son niveau pour décider quoi enseigner ensuite : monter en difficulté, redescendre, ou rester.</p> <p>Le problème, c’est que personne ne peut vérifier si cette estimation est bonne. Un système déployé n’a jamais accès à la vérité sur l’état de l’élève, seulement à ce que son propre capteur lui rapporte. Alors comment savoir si une meilleure estimation produit vraiment de meilleures décisions ? Jusqu’ici, la plupart des travaux se contentent de vérifier que l’élève réussit mieux à la fin, ce qui ne dit rien sur si c’est grâce à une meilleure estimation ou grâce à une tâche plus indulgente.</p> <h2 id="lastuce--fabriquer-un-monde-o-on-connat-la-vrit">L’astuce : fabriquer un monde où on connaît la vérité</h2> <p>L’idée de l’article est simple à énoncer, plus délicate à construire proprement : simuler toute la boucle (élève, capteur, estimateur, règle de décision, tuteur) dans un environnement où on impose nous-mêmes la trajectoire réelle de maîtrise de l’élève, invisible à tous les composants du système, mais connue de nous en tant qu’expérimentateurs. On peut alors comparer deux choses : les décisions que le tuteur prend réellement, à partir de son estimation, et les décisions qu’un tuteur parfait, ayant accès à la vérité, aurait prises exactement au même moment. On appelle ce second tuteur l’« oracle ». La différence entre les deux flux de décisions, c’est exactement l’erreur causée par une mauvaise estimation, rien d’autre.</p> <div class="aipaa-loop-wrap"> <div id="aipaa-loop-fr" class="aipaa-loop" aria-label="Schéma interactif de la boucle de mesure"></div> <div id="aipaa-loop-fr-detail" class="aipaa-loop-detail">Cliquez sur une étape pour voir ce qui s'y passe.</div> <p class="aipaa-loop-note">En parallèle, un « oracle » invisible applique exactement la même règle, mais directement à la vérité cachée B* plutôt qu'à l'estimation. La différence entre les deux flux de décisions, comparée aux étapes 3, 5 et 6, donne les trois mesures E, G et S présentées plus bas.</p> </div> <h2 id="cinq-faons-de-deviner-le-niveau-de-llve">Cinq façons de deviner le niveau de l’élève</h2> <p>Cinq « observateurs » sont mis à l’épreuve dans cette boucle : trois méthodes statistiques classiques (une simple moyenne mobile, un filtre de Kalman, le même genre d’outil utilisé pour suivre la position d’une fusée ou d’un GPS, et le Bayesian Knowledge Tracing, une méthode spécifique à l’éducation), et deux grands modèles de langage utilisés comme observateurs récursifs, à qui on redonne à chaque tour leurs propres estimations précédentes pour qu’ils les mettent à jour. Aucun n’est entraîné spécifiquement pour la tâche : ce sont cinq façons différentes de lire la même série de réponses et d’en tirer un niveau estimé.</p> <h2 id="trois-endroits-o-compter-lerreur-trois-verdicts-diffrents">Trois endroits où compter l’erreur, trois verdicts différents</h2> <p>C’est le résultat le plus surprenant de l’article. On peut compter l’erreur à trois endroits de la même boucle : à la lecture (l’estimation du niveau est-elle fausse ?), à la décision (la règle appliquée à l’estimation choisit-elle une action différente de celle de l’oracle ?), et à l’état laissé à l’élève (combien de temps l’élève passe-t-il, au final, à un niveau de difficulté que l’oracle n’aurait pas choisi ?). Le cas le plus net dans l’article oppose deux des cinq méthodes : sur 60 tours de dialogue, l’une des deux se trompe sur le niveau 13 fois de plus que l’autre, un écart net. Pourtant, une fois qu’on regarde les décisions réellement prises, les deux méthodes se retrouvent à moins d’un tour d’écart l’une de l’autre, quasiment à égalité. Puis, en regardant l’état où l’élève est laissé au fil du temps, l’écart réapparaît, cette fois dans l’autre sens et à hauteur de 17 tours. Trois classements différents pour les deux mêmes méthodes, selon l’endroit où on regarde. Aucun des trois n’est faux ; ils répondent juste à trois questions différentes.</p> <div class="aipaa-verdicts-wrap"> <div id="aipaa-verdicts-fr" class="aipaa-verdicts" aria-label="Comparaison interactive BKT contre Kalman aux trois endroits de mesure"></div> <div id="aipaa-verdicts-fr-summary" class="aipaa-verdict-summary"></div> </div> <p>Autre moment révélateur : une politique absurde qui ne fait jamais rien, qui laisse toujours l’élève au même niveau, obtient un score d’accord brut avec l’oracle meilleur que trois des cinq vraies méthodes testées, tout simplement parce que l’oracle lui-même ne bouge que sur 10 tours sur 60. Une méthode qui ne fait rien a donc l’air compétente sur cette mesure brute. L’article corrige ce biais avec le kappa de Cohen (une mesure d’accord qui retire ce qu’on obtiendrait par hasard), et le classement change : deux méthodes que la mesure brute plaçait mal se révèlent en fait clairement meilleures que le hasard.</p> <h2 id="ce-que-a-remet-en-cause">Ce que ça remet en cause</h2> <p>Deux enseignements se dégagent, au-delà des chiffres précis. D’abord, la frontière entre méthodes statistiques classiques et IA génératives n’est pas celle qu’on attendrait : sur la vitesse à laquelle une erreur de lecture se transforme en mauvaise décision, la plus simple des trois méthodes classiques (la moyenne mobile) se comporte comme les deux modèles de langage, pas comme les deux autres méthodes classiques. La distinction utile n’est pas « statistique contre IA », mais plutôt « une méthode dont les erreurs survivent au filtre de la règle de décision » contre « une méthode dont les erreurs s’y dissolvent ».</p> <p>Ensuite, ce travail reste prudent sur la portée de ses propres résultats : nous le présentons comme la preuve qu’une mesure de ce type est possible et informative, pas comme un classement définitif des méthodes. Nous documentons nous-mêmes une limite importante : l’élève simulé (un grand modèle de langage jouant le rôle de l’apprenant) a tendance à répondre légèrement au-dessus du niveau qu’on lui a demandé de jouer, un biais documenté ailleurs sous le nom de « paradoxe de compétence ». Ce biais touche l’élève simulé, pas les méthodes d’estimation elles-mêmes, mais il limite ce qu’on peut affirmer sur la boucle complète, ce qui nous pousse à nous appuyer surtout sur une version simplifiée de l’expérience (où l’estimateur reçoit directement le niveau réel, sans bruit de lecture) pour tirer nos conclusions les plus solides.</p> <h2 id="le-lien-avec-mes-recherches">Le lien avec mes recherches</h2> <p>Ce travail est, d’une certaine façon, la version instrumentée de ce que j’explore depuis le début sur ce site sous l’angle de la sycophantie pédagogique et de l’alignement pédagogique. La sycophantie, telle que je la conçois, porte surtout sur le <em>ton</em> d’un tuteur IA : une IA trop conciliante, qui valide plutôt qu’elle ne corrige. Cet article éclaire un mécanisme complémentaire, silencieux celui-là : même un tuteur au ton irréprochable peut dériver simplement parce que son estimation de l’élève glisse hors de la réalité, sans que rien, dans le comportement observable du système, ne le signale. C’est un désalignement structurel, pas un désalignement de style, et c’est exactement le genre de désalignement que le Biggs Alignment Index (BAI) et la métrique APed cherchent à rendre mesurable de mon côté, à un autre endroit de la chaîne.</p> <p>La perspective la plus directe que j’en tire : les trois comptages de cet article (à la lecture, à la décision, à l’état laissé à l’élève) et mes propres métriques d’alignement pourraient converger vers un même diagnostic à plusieurs étages, capable de distinguer un tuteur IA qui se trompe sur l’élève d’un tuteur IA qui, même avec une estimation correcte, choisit la mauvaise action pédagogique. Ce sont deux défaillances très différentes, et pour l’instant nos outils respectifs n’en isolent chacun qu’une partie.</p> <h2 id="pour-aller-plus-loin">Pour aller plus loin</h2> <p><em>Measuring Estimation-to-Policy Drift in LLM Agents.</em> Accepté à AIPAA 2026 (session spéciale d’IJCCI 2026), Angers, 28-30 octobre 2026. Référence complète et DOI ajoutés ici après la conférence.</p> </div> <div class="lang-en"> <p>Together with Florian and Benoît, we’ve just finished a paper that measures something nobody could really measure before: how much an AI tutor goes wrong <em>because of</em> its estimate of the student’s level, as opposed to because of its teaching itself. The paper has been accepted at <a href="https://ijcci.scitevents.org/AIPAA.aspx" rel="external nofollow noopener" target="_blank">AIPAA 2026</a> (AI Agents: Progress, Architecture, and Applications), a special session of IJCCI 2026, held in Angers, France, October 28-30, 2026.</p> <p><em>Full reference and link to the proceedings: to be added here after the conference, once the DOI is assigned.</em></p> <h2 id="the-crying-baby-problem-classroom-edition">The crying baby problem, classroom edition</h2> <p>If you’ve read my post on <a href="/blog/2026/introduction-pomdp-bebe-qui-pleure/">POMDPs and the crying baby</a>, you already know the core idea: an agent deciding under uncertainty never has access to the true state of the world, only to an observation, and has to build a belief out of that. An AI tutor is in exactly that position. It never sees what a student actually knows; it only sees their answers, and has to infer an estimate of their level from that in order to decide what to teach next: raise the difficulty, lower it, or hold steady.</p> <p>The trouble is that nobody can check whether that estimate is any good. A deployed system never has access to the truth about the student’s state, only to whatever its own sensor reports. So how do you know whether a better estimate actually produces better decisions? Most existing work simply checks whether the student ends up performing better, which says nothing about whether that’s thanks to a better estimate or to a more forgiving task.</p> <h2 id="the-trick-building-a-world-where-the-truth-is-known">The trick: building a world where the truth is known</h2> <p>The idea behind the paper is easy to state, trickier to build properly: simulate the whole loop (student, sensor, estimator, decision rule, tutor) in an environment where we ourselves impose the student’s real mastery trajectory, invisible to every component of the system, but known to us as experimenters. We can then compare two things: the decisions the tutor actually makes, based on its estimate, and the decisions a perfect tutor, with access to the truth, would have made at the exact same moment. We call that second tutor the “oracle.” The difference between the two decision streams is exactly the error caused by a bad estimate, and nothing else.</p> <div class="aipaa-loop-wrap"> <div id="aipaa-loop-en" class="aipaa-loop" aria-label="Interactive diagram of the measurement loop"></div> <div id="aipaa-loop-en-detail" class="aipaa-loop-detail">Click a stage to see what happens there.</div> <p class="aipaa-loop-note">In parallel, an invisible "oracle" applies the exact same rule, but directly to the hidden truth B* instead of to the estimate. The difference between the two decision streams, compared at stages 3, 5, and 6, gives the three measures E, G, and S presented below.</p> </div> <h2 id="five-ways-of-guessing-the-students-level">Five ways of guessing the student’s level</h2> <p>Five “observers” are put through this loop: three classic statistical methods (a simple moving average, a Kalman filter, the same kind of tool used to track a rocket’s or a GPS’s position, and Bayesian Knowledge Tracing, a method specific to education), and two large language models used as recursive observers, fed their own previous estimates at every turn so they can update them. None is trained specifically for the task: these are five different ways of reading the same sequence of answers and turning it into an estimated level.</p> <h2 id="three-places-to-count-the-error-three-different-verdicts">Three places to count the error, three different verdicts</h2> <p>This is the paper’s most surprising result. Error can be counted at three points of the same loop: at the reading (is the level estimate wrong?), at the decision (does the rule applied to the estimate choose a different action than the oracle’s?), and at the state the student is left in (how much time does the student end up spending at a difficulty level the oracle would not have chosen?). The clearest case in the paper pits two of the five methods against each other: over 60 turns of dialogue, one of them misreads the level 13 more times than the other, a clear gap. Yet once you look at the decisions actually taken, the two methods end up within one turn of each other, essentially tied. Then, looking at the state the student is left in over time, the gap reappears, this time in the other direction and to the tune of 17 turns. Three different rankings for the same two methods, depending on where you look. None of the three is wrong; they’re just answering three different questions.</p> <div class="aipaa-verdicts-wrap"> <div id="aipaa-verdicts-en" class="aipaa-verdicts" aria-label="Interactive comparison of BKT versus Kalman at the three measurement points"></div> <div id="aipaa-verdicts-en-summary" class="aipaa-verdict-summary"></div> </div> <p>Another telling moment: a policy that does literally nothing, always leaving the student at the same level, scores a higher raw agreement rate with the oracle than three of the five real methods tested, simply because the oracle itself only moves on 10 of the 60 turns. Doing nothing therefore looks competent on that raw measure. The paper corrects for this with Cohen’s kappa (an agreement measure that removes what you’d get by chance), and the ranking changes: two methods that the raw measure ranked poorly turn out to be clearly better than chance after all.</p> <h2 id="what-this-calls-into-question">What this calls into question</h2> <p>Two lessons emerge beyond the specific numbers. First, the line between classic statistical methods and generative AI isn’t where you’d expect: on how fast a reading error turns into a bad decision, the simplest of the three classic methods (the moving average) behaves like the two language models, not like the other two classic methods. The useful distinction isn’t “statistics versus AI,” but rather “a method whose errors survive the decision rule’s filter” versus “a method whose errors dissolve in it.”</p> <p>Second, this work stays careful about the scope of its own results: we present it as proof that this kind of measurement is possible and informative, not as a definitive ranking of methods. We document an important limitation ourselves: the simulated student (a large language model playing the role of the learner) tends to answer slightly above the level it was instructed to play, a bias documented elsewhere as a “competence paradox.” That bias sits in the simulated student, not in the estimation methods themselves, but it limits what can be claimed about the full loop, which is why we lean mostly on a simplified version of the experiment (where the estimator is fed the true level directly, with no reading noise) to draw our strongest conclusions.</p> <h2 id="the-link-with-my-research">The link with my research</h2> <p>This work is, in a way, the instrumented version of what I’ve been exploring on this site from the start under the lens of pedagogical sycophancy and pedagogical alignment. Sycophancy, as I frame it, is mostly about an AI tutor’s <em>tone</em>: an AI that is too accommodating, that validates rather than corrects. This paper illuminates a complementary, quieter mechanism: even a tutor with an impeccable tone can drift simply because its estimate of the student slips away from reality, with nothing in the system’s observable behaviour signalling it. That’s a structural misalignment, not a stylistic one, and it’s exactly the kind of misalignment the Biggs Alignment Index (BAI) and the APed metric are meant to make measurable on my side, at a different point in the chain.</p> <p>The most direct perspective I take from this: the paper’s three counts (at the reading, at the decision, at the state the student is left in) and my own alignment metrics could converge toward a single multi-stage diagnostic, able to tell apart an AI tutor that misreads the student from an AI tutor that, even with a correct estimate, picks the wrong pedagogical action. Those are two very different failures, and right now our respective tools each isolate only one of them.</p> <h2 id="further-reading">Further reading</h2> <p><em>Measuring Estimation-to-Policy Drift in LLM Agents.</em> Accepted at AIPAA 2026 (a special session of IJCCI 2026), Angers, France, October 28-30, 2026. Full reference and DOI added here after the conference.</p> </div> <script>
+(function () {
+  function initLoop(containerId, detailId, cfg) {
+    var container = document.getElementById(containerId);
+    var detail = document.getElementById(detailId);
+    if (!container || !detail) return;
+
+    cfg.stages.forEach(function (stage, i) {
+      if (i > 0) {
+        var arrow = document.createElement('div');
+        arrow.className = 'aipaa-loop-arrow';
+        container.appendChild(arrow);
+      }
+      var box = document.createElement('div');
+      box.className = 'aipaa-loop-stage';
+      var num = document.createElement('span');
+      num.className = 'num';
+      num.textContent = cfg.stepLabel + ' ' + stage.num;
+      box.appendChild(num);
+      box.appendChild(document.createTextNode(stage.label));
+      box.addEventListener('click', function () {
+        Array.prototype.forEach.call(container.querySelectorAll('.aipaa-loop-stage'), function (b) {
+          b.classList.remove('active');
+        });
+        box.classList.add('active');
+        detail.textContent = stage.detail;
+      });
+      container.appendChild(box);
+    });
+  }
+
+  initLoop('aipaa-loop-fr', 'aipaa-loop-fr-detail', {
+    stepLabel: 'Étape',
+    stages: [
+      { num: 1, label: 'Vérité cachée (B*)', detail: "Le niveau réel de l'élève à cet instant. Personne dans le système ne le voit jamais : il n'est connu que de nous, les expérimentateurs, pour pouvoir mesurer l'erreur." },
+      { num: 2, label: "L'élève répond", detail: "Un élève simulé répond à la question, avec une part d'aléatoire : sa réponse ne reflète jamais son niveau réel de façon parfaite." },
+      { num: 3, label: 'Le capteur lit', detail: "Un premier composant lit uniquement la réponse texte, jamais la vérité, et en tire un niveau brut. C'est la seule information dont dispose la suite de la chaîne." },
+      { num: 4, label: "L'observateur estime", detail: "Celui qu'on fait varier dans l'expérience : il intègre l'historique des lectures pour produire une estimation plus stable du niveau, sa tendance et sa confiance." },
+      { num: 5, label: 'La règle décide', detail: "Une règle fixe, identique pour tous les observateurs, transforme l'estimation en une décision : monter le niveau, le baisser, ou rester." },
+      { num: 6, label: 'Le tuteur écrit la suite', detail: "L'action choisie détermine la difficulté de la prochaine question posée à l'élève, et la boucle recommence." }
+    ]
+  });
+
+  initLoop('aipaa-loop-en', 'aipaa-loop-en-detail', {
+    stepLabel: 'Step',
+    stages: [
+      { num: 1, label: 'Hidden truth (B*)', detail: "The student's real level at this instant. No component in the system ever sees it: it's known only to us, the experimenters, so we can measure the error." },
+      { num: 2, label: 'The student answers', detail: "A simulated student answers the question, with some randomness: their answer never perfectly reflects their real level." },
+      { num: 3, label: 'The sensor reads', detail: "A first component reads only the text answer, never the truth, and extracts a raw level from it. That's the only information the rest of the chain has to work with." },
+      { num: 4, label: 'The observer estimates', detail: "The component the experiment varies: it integrates the history of readings to produce a more stable estimate of the level, its trend, and its confidence." },
+      { num: 5, label: 'The rule decides', detail: "A fixed rule, identical for every observer, turns the estimate into a decision: raise the level, lower it, or hold steady." },
+      { num: 6, label: 'The tutor writes the next item', detail: "The chosen action sets the difficulty of the next question given to the student, and the loop starts again." }
+    ]
+  });
+
+  function initVerdicts(containerId, summaryId, cfg) {
+    var container = document.getElementById(containerId);
+    var summary = document.getElementById(summaryId);
+    if (!container || !summary) return;
+
+    var panels = [];
+    cfg.panels.forEach(function (panel, idx) {
+      var el = document.createElement('div');
+      el.className = 'aipaa-verdict-panel';
+
+      var h4 = document.createElement('h4');
+      h4.textContent = panel.title;
+      el.appendChild(h4);
+
+      [['kalman', cfg.labels.kalman, panel.kalman, ''], ['bkt', cfg.labels.bkt, panel.bkt, 'alt']].forEach(function (row) {
+        var rowEl = document.createElement('div');
+        rowEl.className = 'aipaa-bar-row';
+        var label = document.createElement('span');
+        label.className = 'aipaa-bar-label';
+        label.textContent = row[1];
+        var track = document.createElement('span');
+        track.className = 'aipaa-bar-track';
+        var fill = document.createElement('span');
+        fill.className = 'aipaa-bar-fill' + (row[3] ? ' ' + row[3] : '');
+        fill.style.width = '0%';
+        fill.dataset.target = Math.min(100, (row[2] / cfg.scaleMax) * 100).toFixed(1);
+        track.appendChild(fill);
+        var value = document.createElement('span');
+        value.className = 'aipaa-bar-value';
+        value.textContent = row[2].toFixed(3);
+        rowEl.appendChild(label);
+        rowEl.appendChild(track);
+        rowEl.appendChild(value);
+        el.appendChild(rowEl);
+      });
+
+      el.addEventListener('click', function () {
+        panels.forEach(function (p) { p.classList.remove('active'); });
+        el.classList.add('active');
+        summary.textContent = panel.summary;
+      });
+
+      container.appendChild(el);
+      panels.push(el);
+    });
+
+    // reveal bar widths shortly after mount, and select the first panel by default
+    setTimeout(function () {
+      Array.prototype.forEach.call(container.querySelectorAll('.aipaa-bar-fill'), function (f) {
+        f.style.width = f.dataset.target + '%';
+      });
+    }, 50);
+    if (panels.length) panels[0].click();
+  }
+
+  initVerdicts('aipaa-verdicts-fr', 'aipaa-verdicts-fr-summary', {
+    labels: { kalman: 'Kalman', bkt: 'BKT' },
+    scaleMax: 0.45,
+    panels: [
+      {
+        title: 'À la lecture (E)', kalman: 0.083, bkt: 0.300,
+        summary: "À la lecture, l'écart est net : BKT se trompe sur le niveau 0,300 du temps contre 0,083 pour Kalman, soit environ 13 tours de plus sur 60."
+      },
+      {
+        title: 'À la décision (G)', kalman: 0.150, bkt: 0.133,
+        summary: "À la décision, l'écart s'efface presque entièrement : 0,133 contre 0,150, les deux méthodes sont à moins d'un tour d'écart."
+      },
+      {
+        title: "À l'état laissé (S)", kalman: 0.133, bkt: 0.417,
+        summary: "À l'état laissé à l'élève, l'écart réapparaît, dans l'autre sens : 0,417 contre 0,133, soit environ 17 tours de plus passés au mauvais niveau."
+      }
+    ]
+  });
+
+  initVerdicts('aipaa-verdicts-en', 'aipaa-verdicts-en-summary', {
+    labels: { kalman: 'Kalman', bkt: 'BKT' },
+    scaleMax: 0.45,
+    panels: [
+      {
+        title: 'At the reading (E)', kalman: 0.083, bkt: 0.300,
+        summary: 'At the reading stage, the gap is clear: BKT misreads the level 0.300 of the time versus 0.083 for Kalman, about 13 more turns out of 60.'
+      },
+      {
+        title: 'At the decision (G)', kalman: 0.150, bkt: 0.133,
+        summary: 'At the decision stage, the gap almost vanishes: 0.133 versus 0.150, the two methods are within one turn of each other.'
+      },
+      {
+        title: 'At the state left (S)', kalman: 0.133, bkt: 0.417,
+        summary: 'At the state the student is left in, the gap reappears, in the other direction: 0.417 versus 0.133, about 17 more turns spent at the wrong level.'
+      }
+    ]
+  });
+})();
+</script> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mickaël Delamare. <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "Publications par catégorie, ordre antichronologique. Généré par jekyll-scholar depuis _bibliography/papers.bib.Publications by category, in reverse chronological order. Generated by jekyll-scholar from _bibliography/papers.bib.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Projets de recherche.Research projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-livre",
+          title: "livre",
+          description: "Décider sans tout savoir, une introduction aux POMDP, disponible à l&#39;achat.Décider sans tout savoir, an introduction to POMDPs, available for purchase.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/livre/";
+          },
+        },{id: "nav-enseignement",
+          title: "enseignement",
+          description: "Cours et enseignements.Courses and teaching.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-encadrement-doctoral",
+          title: "encadrement doctoral",
+          description: "Encadrement de doctorants et d&#39;étudiants de master.Supervision of PhD and Master&#39;s students.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/supervision/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Curriculum vitae.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-un-tuteur-ia-qui-devine-juste-peut-quand-même-mal-enseigner",
+        
+          title: "Un tuteur IA qui devine juste peut quand même mal enseigner",
+        
+        description: "Un tuteur IA n&#39;agit jamais sur l&#39;état réel de l&#39;élève, seulement sur une estimation. Un article que nous venons de terminer, avec Florian et Benoît, montre que la qualité de cette estimation ne prédit presque rien de la qualité des décisions qui en découlent, et que ça se mesure.An AI tutor never acts on a student&#39;s real state, only on an estimate of it. A paper we&#39;ve just finished, with Florian and Benoît, shows that how good that estimate is barely predicts how good the resulting decisions are, and that this is measurable.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/estimation-to-policy-drift-llm-agents/";
+          
+        },
+      },{id: "post-former-à-et-par-l-39-ia-concevoir-un-dispositif-pédagogique-avec-le-projet-caire",
+        
+          title: "Former à et par l&#39;IA : concevoir un dispositif pédagogique avec le projet...",
+        
+        description: "Comment apprendre à 466 étudiants de première année à douter d&#39;une IA, plutôt qu&#39;à lui faire confiance aveuglément : la genèse d&#39;un module d&#39;acculturation à l&#39;IA construit avec le jeu de Nim, la Moral Machine et une IA générative défaillante.How do you teach 466 first-year students to question an AI rather than trust it blindly? The story of an AI awareness module built around the game of Nim, the Moral Machine, and a deliberately unreliable generative AI.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/former-a-et-par-ia-caire/";
+          
+        },
+      },{id: "post-cartographier-l-39-esprit-en-réseaux-la-cognitive-network-science-face-à-l-39-ia",
+        
+          title: "Cartographier l&#39;esprit en réseaux : la Cognitive Network Science face à l&#39;IA",
+        
+        description: "Une revue systématique PRISMA 2020 de 36 études (sur plus de 53 000 candidates) montre que les grands modèles de langage reproduisent, mesurablement, les mêmes biais cognitifs que les humains, comme l&#39;anxiété face aux mathématiques, quand on les représente sous forme de réseaux de concepts.A PRISMA 2020 systematic review of 36 studies (out of more than 53,000 candidates) shows that large language models measurably reproduce the same cognitive biases as humans, such as maths anxiety, once represented as networks of concepts.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/cognitive-network-science-human-ai-review/";
+          
+        },
+      },{id: "post-décider-sans-tout-savoir-ce-que-le-bébé-qui-pleure-nous-apprend-sur-l-39-ia",
+        
+          title: "Décider sans tout savoir : ce que le « bébé qui pleure »...",
+        
+        description: "Version accessible (sans formules) de mon billet sur les POMDP : comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.Accessible version (no formulas) of my POMDP post: how an artificial intelligence can make good decisions even when it never sees the exact situation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/";
+          
+        },
+      },{id: "post-introduction-aux-pomdp-décider-sous-incertitude-partielle-avec-le-bébé-qui-pleure",
+        
+          title: "Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui...",
+        
+        description: "Notes sur les processus de décision markoviens partiellement observables (POMDP) : le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l&#39;exemple pédagogique du « bébé qui pleure ».Notes on partially observable Markov decision processes (POMDPs): the formal 7-tuple, Bayesian belief updating and solution methods (QMDP, FIB, PBVI, POMCP), built around the classic &quot;crying baby&quot; teaching example.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/introduction-pomdp-bebe-qui-pleure/";
+          
+        },
+      },{id: "projects-alignement-pédagogique-des-agents-llmpedagogical-alignment-of-llm-agents",
+          title: 'Alignement pédagogique des agents LLMPedagogical alignment of LLM agents',
+          description: "Travail de recherche en cours sur l&#39;alignement pédagogique des agents fondés sur des LLM, actuellement soumis en conférence.Ongoing research on the pedagogical alignment of LLM-based agents, currently under conference review.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/alignement-agents-llm/";
+            },},{id: "projects-caire",
+          title: 'CAIRE',
+          description: "Projet lauréat de l&#39;appel à manifestation d&#39;intérêt CMA (France 2030).Winner of the CMA call for expressions of interest (France 2030).",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/caire/";
+            },},{id: "teachings-responsable-des-filières-informatique-et-sciences-du-numériquehead-of-computer-science-and-digital-science-programmes",
+          title: 'Responsable des filières Informatique et Sciences du NumériqueHead of Computer Science and Digital...',
+          description: "Conception, mise en œuvre et évolution des cursus Informatique et Sciences du Numérique au sein de la Direction des Études de CESI : contenus pédagogiques, méthodes d&#39;enseignement, coordination des formations. Trois majeures créées : Data Science &amp;amp; IA, Cybersécurité, IoT (tronc commun IoT).Design, implementation and evolution of the Computer Science and Digital Science curricula within CESI&#39;s Directorate of Studies: teaching content, teaching methods, coordination of training activities. Three majors created: Data Science &amp;amp; AI, Cybersecurity, IoT (common IoT core).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/cesi-filieres-informatique-numerique/";
+            },},{id: "teachings-responsable-pédagogique-4e-année-informatique-fise-fisa-programme-leader-4th-year-computer-science-fise-fisa",
+          title: 'Responsable pédagogique, 4e année Informatique (FISE/FISA)Programme Leader, 4th-year Computer Science (FISE/FISA)',
+          description: "Responsable des promotions 2021–2022 et 2022–2023 de la filière Informatique en 4e année (FISE : formation initiale, FISA : apprentissage), avec une stratégie pédagogique fondée sur l&#39;apprentissage par problèmes (PBL) et l&#39;Active Project-Based Learning (A2P2).Responsible for the 2021–2022 and 2022–2023 cohorts of the 4th-year Computer Science programme (FISE: full-time track; FISA: apprenticeship track), with a pedagogical strategy based on Problem-Based Learning (PBL) and Active Project-Based Learning (A2P2).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/cesi-responsable-pedagogique-informatique/";
+            },},{id: "teachings-développement-de-projets-logiciels-java-sql-uml-software-project-development-java-sql-uml",
+          title: 'Développement de projets logiciels (Java, SQL, UML)Software project development (Java, SQL, UML)',
+          description: "Enseignement du développement logiciel avec Java, SQL et UML : conception d&#39;une application Java à travers les phases de spécification, codage, implémentation et test.Teaching software development with Java, SQL and UML: developing a Java application through the specification, coding, implementation and testing phases.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/esigelec-genie-logiciel/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/CV_Delamare_Mickael.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6D%64%65%6C%61%6D%61%72%65@%63%65%73%69.%66%72", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/DelamareMicka", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0003-0119-2326", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=G35xNaQAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-hal',
+        title: 'HAL',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://cv.hal.science/mickael-delamare", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/delamaremickael", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script>
+      (function () {
+        var btn = document.getElementById('lang-toggle');
+        if (!btn) return;
+        var label = document.getElementById('lang-toggle-label');
+        function apply(lang) {
+          if (lang === 'en') {
+            document.documentElement.setAttribute('data-lang', 'en');
+            if (label) label.textContent = 'FR';
+          } else {
+            document.documentElement.removeAttribute('data-lang');
+            if (label) label.textContent = 'EN';
+          }
+        }
+        apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'fr' : 'en';
+          try { localStorage.setItem('lang-pref', next); } catch (e) {}
+          apply(next);
+        });
+      })();
+    </script> </body> </html>
