@@ -15,13 +15,41 @@
   </script> <style>
       /* Bilingual content toggle (about.md, cv.md, projects, etc.):
          .lang-fr / .lang-en wrap the French / English version of the same
-         block or inline text; html[data-lang="en"] flips which one shows. */
-      .lang-en, .lang-en-i { display: none; }
-      html[data-lang="en"] .lang-fr { display: none; }
-      html[data-lang="en"] .lang-en { display: block; }
-      html[data-lang="en"] .lang-fr-i { display: none; }
-      html[data-lang="en"] .lang-en-i { display: inline; }
-    </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/livre/"> <span class="lang-fr-i">livre</span><span class="lang-en-i">book</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="toggle-container"> <button id="lang-toggle" type="button" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-toggle-label" style="font-weight: 600; font-size: 0.85em;">EN</span> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <i class="fa-solid fa-hashtag fa-sm"></i> decision</h1> <p class="post-description">an archive of posts with this tag</p> </header> <article class="archive"> <div class="table-responsive"> <table class="table table-sm table-borderless"> <tr> <th scope="row">Aug 17, 2026</th> <td> <a class="post-link" href="/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/">Décider sans tout savoir : ce que le « bébé qui pleure » nous apprend sur l'IA</a> </td> </tr> <tr> <th scope="row">Jul 27, 2026</th> <td> <a class="post-link" href="/blog/2026/introduction-pomdp-bebe-qui-pleure/">Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui pleure »</a> </td> </tr> </table> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mickaël Delamare. <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+         block or inline text; html[data-lang="en"] flips which one shows.
+         !important: some theme components (e.g. the about page's
+         .profile .more-info p rule) set their own `display` on the same
+         elements with higher selector specificity, which would otherwise
+         make both languages show at once. */
+      .lang-en, .lang-en-i { display: none !important; }
+      html[data-lang="en"] .lang-fr { display: none !important; }
+      html[data-lang="en"] .lang-en { display: block !important; }
+      html[data-lang="en"] .lang-fr-i { display: none !important; }
+      html[data-lang="en"] .lang-en-i { display: inline !important; }
+
+      /* Language switcher dropdown: self-contained show/hide and button
+         reset so it doesn't depend on the theme's Bootstrap CSS being
+         wired up for <button> based dropdown-items. */
+      .lang-dropdown .dropdown-menu {
+        display: none;
+      }
+      .lang-dropdown .dropdown-menu.show {
+        display: block;
+      }
+      .lang-dropdown .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.35rem 1.2rem;
+        clear: both;
+        text-align: left;
+        white-space: nowrap;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      .lang-dropdown .dropdown-item.active {
+        font-weight: 700;
+      }
+    </style> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/livre/"> <span class="lang-fr-i">livre</span><span class="lang-en-i">book</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="nav-item dropdown lang-dropdown"> <button class="nav-link dropdown-toggle" id="lang-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-dropdown-label" style="font-weight: 600; font-size: 0.85em;">FR</span> </button> <div class="dropdown-menu dropdown-menu-right" id="lang-dropdown-menu" aria-labelledby="lang-dropdown-toggle"> <button type="button" class="dropdown-item" data-lang-option="fr">Français</button> <button type="button" class="dropdown-item" data-lang-option="en">English</button> </div> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <i class="fa-solid fa-hashtag fa-sm"></i> decision</h1> <p class="post-description">an archive of posts with this tag</p> </header> <article class="archive"> <div class="table-responsive"> <table class="table table-sm table-borderless"> <tr> <th scope="row">Aug 17, 2026</th> <td> <a class="post-link" href="/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/">Décider sans tout savoir : ce que le « bébé qui pleure » nous apprend sur l'IA</a> </td> </tr> <tr> <th scope="row">Jul 27, 2026</th> <td> <a class="post-link" href="/blog/2026/introduction-pomdp-bebe-qui-pleure/">Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui pleure »</a> </td> </tr> </table> </div> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Mickaël Delamare. <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -254,23 +282,56 @@ ninja.data = [{
 
 </script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script>
       (function () {
-        var btn = document.getElementById('lang-toggle');
-        if (!btn) return;
-        var label = document.getElementById('lang-toggle-label');
+        var toggle = document.getElementById('lang-dropdown-toggle');
+        var menu = document.getElementById('lang-dropdown-menu');
+        var label = document.getElementById('lang-dropdown-label');
+        if (!toggle || !menu) return;
+
         function apply(lang) {
           if (lang === 'en') {
             document.documentElement.setAttribute('data-lang', 'en');
-            if (label) label.textContent = 'FR';
           } else {
             document.documentElement.removeAttribute('data-lang');
-            if (label) label.textContent = 'EN';
           }
+          if (label) label.textContent = lang === 'en' ? 'EN' : 'FR';
+          Array.prototype.forEach.call(menu.querySelectorAll('[data-lang-option]'), function (item) {
+            var isActive = item.getAttribute('data-lang-option') === lang;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-current', isActive ? 'true' : 'false');
+          });
         }
+        function openMenu() {
+          menu.classList.add('show');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+        function closeMenu() {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+
         apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
-        btn.addEventListener('click', function () {
-          var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'fr' : 'en';
-          try { localStorage.setItem('lang-pref', next); } catch (e) {}
-          apply(next);
+
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (menu.classList.contains('show')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+        Array.prototype.forEach.call(menu.querySelectorAll('[data-lang-option]'), function (item) {
+          item.addEventListener('click', function () {
+            var lang = item.getAttribute('data-lang-option');
+            try { localStorage.setItem('lang-pref', lang); } catch (e) {}
+            apply(lang);
+            closeMenu();
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!toggle.contains(e.target) && !menu.contains(e.target)) closeMenu();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenu();
         });
       })();
     </script> </body> </html>
