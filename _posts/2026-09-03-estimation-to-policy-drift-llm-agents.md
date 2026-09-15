@@ -76,9 +76,9 @@ _styles: >
 
 <div class="lang-fr" markdown="1">
 
-Avec Florian et Benoît, nous venons de terminer un article qui mesure quelque chose que, jusqu'ici, personne ne pouvait vraiment mesurer : à quel point une IA tutrice se trompe *à cause de* son estimation du niveau de l'élève, plutôt qu'à cause de sa pédagogie. L'article est en cours de relecture en double aveugle ; nous le lierons ici une fois la décision connue, en espérant début septembre.
+Avec Florian et Benoît, nous venons de terminer un article qui mesure quelque chose que, jusqu'ici, personne ne pouvait vraiment mesurer : à quel point une IA tutrice se trompe *à cause de* son estimation du niveau de l'élève, plutôt qu'à cause de sa pédagogie. L'article a été accepté à [AIPAA 2026](https://ijcci.scitevents.org/AIPAA.aspx) (AI Agents : Progress, Architecture, and Applications), session spéciale d'IJCCI 2026, qui se tiendra à Angers du 28 au 30 octobre 2026.
 
-*Lien vers l'article : [À COMPLÉTER une fois la décision de relecture connue].*
+*Référence complète et lien vers les actes : à ajouter ici après la conférence, une fois le DOI attribué.*
 
 ## Le problème du bébé qui pleure, version salle de classe
 
@@ -125,17 +125,15 @@ La perspective la plus directe que j'en tire : les trois comptages de cet articl
 
 ## Pour aller plus loin
 
-*Measuring Estimation-to-Policy Drift in LLM Agents.* Article actuellement en relecture en double aveugle. Référence complète et lien ajoutés ici une fois la décision connue.
-
-*Lien vers l'article : [À COMPLÉTER une fois la décision de relecture connue].*
+*Measuring Estimation-to-Policy Drift in LLM Agents.* Accepté à AIPAA 2026 (session spéciale d'IJCCI 2026), Angers, 28-30 octobre 2026. Référence complète et DOI ajoutés ici après la conférence.
 
 </div>
 
 <div class="lang-en" markdown="1">
 
-Together with Florian and Benoît, we've just finished a paper that measures something nobody could really measure before: how much an AI tutor goes wrong *because of* its estimate of the student's level, as opposed to because of its teaching itself. The paper is currently under double-blind review; we'll link it here once the decision is known, hopefully in early September.
+Together with Florian and Benoît, we've just finished a paper that measures something nobody could really measure before: how much an AI tutor goes wrong *because of* its estimate of the student's level, as opposed to because of its teaching itself. The paper has been accepted at [AIPAA 2026](https://ijcci.scitevents.org/AIPAA.aspx) (AI Agents: Progress, Architecture, and Applications), a special session of IJCCI 2026, held in Angers, France, October 28-30, 2026.
 
-*Link to the paper: [TO BE COMPLETED once the review decision is known].*
+*Full reference and link to the proceedings: to be added here after the conference, once the DOI is assigned.*
 
 ## The crying baby problem, classroom edition
 
@@ -182,9 +180,7 @@ The most direct perspective I take from this: the paper's three counts (at the r
 
 ## Further reading
 
-*Measuring Estimation-to-Policy Drift in LLM Agents.* Currently under double-blind review. Full reference and link added here once the decision is known.
-
-*Link to the paper: [TO BE COMPLETED once the review decision is known].*
+*Measuring Estimation-to-Policy Drift in LLM Agents.* Accepted at AIPAA 2026 (a special session of IJCCI 2026), Angers, France, October 28-30, 2026. Full reference and DOI added here after the conference.
 
 </div>
 
