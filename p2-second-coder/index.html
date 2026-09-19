@@ -65,19 +65,24 @@
       }
     </style> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/livre/"> <span class="lang-fr-i">livre</span><span class="lang-en-i">book</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="nav-item dropdown lang-dropdown"> <button class="nav-link dropdown-toggle" id="lang-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-dropdown-label" style="font-weight: 600; font-size: 0.85em;">FR</span> </button> <div class="dropdown-menu dropdown-menu-right" id="lang-dropdown-menu" aria-labelledby="lang-dropdown-toggle"> <button type="button" class="dropdown-item" data-lang-option="fr">Français</button> <button type="button" class="dropdown-item" data-lang-option="en">English</button> </div> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="lang-fr-i">P2 — codage relationnel indépendant</span><span class="lang-en-i">P2 — independent relational coding</span> </h1> <p class="post-description"><span class="lang-fr-i">Outil de codage pour le second évaluateur indépendant (Pending Analysis P2, article "Constructive Alignment as a Relational Property of AI-Supported Learning Design").</span><span class="lang-en-i">Coding tool for the independent second rater (Pending Analysis P2, "Constructive Alignment as a Relational Property of AI-Supported Learning Design").</span> </p> </header> <article> <div class="p2-coder-tool"> <style>
   .p2-coder-tool{
-    --ink:#181d17;
-    --ink-soft:#4b5245;
-    --paper:#f7f5ee;
-    --paper-2:#edeadd;
-    --card:#fffef9;
-    --line:#dcd6bf;
-    --accent:#3f6b4a;
-    --accent-ink:#f3f7f0;
-    --accent-soft:#e3ecdf;
-    --warn:#9c4a26;
-    --warn-soft:#f4e3d7;
-    --focus:#2f5a8f;
-    --shadow: 0 1px 2px rgba(24,29,23,0.06), 0 6px 18px -10px rgba(24,29,23,0.18);
+    /* Pull from the site's own theme tokens (_sass/_themes.scss) so this
+       matches the real accent color and follows the site's actual
+       light/dark toggle instead of inventing an independent palette;
+       the values after the comma are a fallback if those tokens are
+       ever absent. */
+    --ink: var(--global-text-color, #181d17);
+    --ink-soft: var(--global-text-color-light, #4b5245);
+    --paper: var(--global-bg-color, #f7f5ee);
+    --paper-2: var(--global-code-bg-color, #edeadd);
+    --card: var(--global-card-bg-color, #fffef9);
+    --line: var(--global-divider-color, #dcd6bf);
+    --accent: var(--global-theme-color, #1f6feb);
+    --accent-ink: var(--global-hover-text-color, #fff);
+    --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+    --warn: var(--global-warning-block-title, #b29400);
+    --warn-soft: var(--global-warning-block-bg, #fff8d8);
+    --focus: var(--accent);
+    --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 6px 18px -10px rgba(0,0,0,0.18);
 
     display:block;
     background:var(--paper);
@@ -86,23 +91,6 @@
     line-height:1.5;
     padding:20px 16px 60px;
     border-radius:14px;
-  }
-  @media (prefers-color-scheme: dark){
-    .p2-coder-tool{
-      --ink:#eef0e6;
-      --ink-soft:#b7bdad;
-      --paper:#14170f;
-      --paper-2:#1c2016;
-      --card:#1a1e15;
-      --line:#343a2b;
-      --accent:#7fb888;
-      --accent-ink:#0f1a10;
-      --accent-soft:#233223;
-      --warn:#e0996f;
-      --warn-soft:#3a2418;
-      --focus:#8fb7e8;
-      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 24px -12px rgba(0,0,0,0.6);
-    }
   }
 
   .p2-coder-tool, .p2-coder-tool *{ box-sizing:border-box; }
