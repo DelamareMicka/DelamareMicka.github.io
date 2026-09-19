@@ -12,19 +12,24 @@ render_with_liquid: false
 <div class="p2-coder-tool">
 <style>
   .p2-coder-tool{
-    --ink:#181d17;
-    --ink-soft:#4b5245;
-    --paper:#f7f5ee;
-    --paper-2:#edeadd;
-    --card:#fffef9;
-    --line:#dcd6bf;
-    --accent:#3f6b4a;
-    --accent-ink:#f3f7f0;
-    --accent-soft:#e3ecdf;
-    --warn:#9c4a26;
-    --warn-soft:#f4e3d7;
-    --focus:#2f5a8f;
-    --shadow: 0 1px 2px rgba(24,29,23,0.06), 0 6px 18px -10px rgba(24,29,23,0.18);
+    /* Pull from the site's own theme tokens (_sass/_themes.scss) so this
+       matches the real accent color and follows the site's actual
+       light/dark toggle instead of inventing an independent palette;
+       the values after the comma are a fallback if those tokens are
+       ever absent. */
+    --ink: var(--global-text-color, #181d17);
+    --ink-soft: var(--global-text-color-light, #4b5245);
+    --paper: var(--global-bg-color, #f7f5ee);
+    --paper-2: var(--global-code-bg-color, #edeadd);
+    --card: var(--global-card-bg-color, #fffef9);
+    --line: var(--global-divider-color, #dcd6bf);
+    --accent: var(--global-theme-color, #1f6feb);
+    --accent-ink: var(--global-hover-text-color, #fff);
+    --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+    --warn: var(--global-warning-block-title, #b29400);
+    --warn-soft: var(--global-warning-block-bg, #fff8d8);
+    --focus: var(--accent);
+    --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 6px 18px -10px rgba(0,0,0,0.18);
 
     display:block;
     background:var(--paper);
@@ -33,23 +38,6 @@ render_with_liquid: false
     line-height:1.5;
     padding:20px 16px 60px;
     border-radius:14px;
-  }
-  @media (prefers-color-scheme: dark){
-    .p2-coder-tool{
-      --ink:#eef0e6;
-      --ink-soft:#b7bdad;
-      --paper:#14170f;
-      --paper-2:#1c2016;
-      --card:#1a1e15;
-      --line:#343a2b;
-      --accent:#7fb888;
-      --accent-ink:#0f1a10;
-      --accent-soft:#233223;
-      --warn:#e0996f;
-      --warn-soft:#3a2418;
-      --focus:#8fb7e8;
-      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 24px -12px rgba(0,0,0,0.6);
-    }
   }
 
   .p2-coder-tool, .p2-coder-tool *{ box-sizing:border-box; }
