@@ -1,0 +1,351 @@
+<!DOCTYPE html> <html lang="fr"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <script>
+    (function () {
+      try {
+        if (localStorage.getItem('lang-pref') === 'en') {
+          document.documentElement.setAttribute('data-lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> P2 — codage relationnel indépendant | Mickaël Delamare </title> <meta name="author" content="Mickaël Delamare"> <meta name="description" content="Outil de codage pour le second évaluateur indépendant (Pending Analysis P2, article " constructive alignment as a relational property of ai-supported learning design coding tool for the independent second rater analysis p2> <meta name="keywords" content="AIED, IA en éducation, alignement pédagogique, LLM, cognitive network science, CESI LINEACT, AI in education, pedagogical alignment, large language models"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8E%93&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://delamaremicka.github.io/p2-second-coder/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <style>
+      /* Bilingual content toggle (about.md, cv.md, projects, etc.):
+         .lang-fr / .lang-en wrap the French / English version of the same
+         block or inline text; html[data-lang="en"] flips which one shows.
+         !important: some theme components (e.g. the about page's
+         .profile .more-info p rule) set their own `display` on the same
+         elements with higher selector specificity, which would otherwise
+         make both languages show at once. */
+      .lang-en, .lang-en-i { display: none !important; }
+      html[data-lang="en"] .lang-fr { display: none !important; }
+      html[data-lang="en"] .lang-en { display: block !important; }
+      html[data-lang="en"] .lang-fr-i { display: none !important; }
+      html[data-lang="en"] .lang-en-i { display: inline !important; }
+
+      /* Language switcher dropdown: self-contained show/hide and button
+         reset so it doesn't depend on the theme's Bootstrap CSS being
+         wired up for <button> based dropdown-items. */
+      .lang-dropdown .dropdown-menu {
+        display: none;
+      }
+      .lang-dropdown .dropdown-menu.show {
+        display: block;
+      }
+      .lang-dropdown .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.35rem 1.2rem;
+        clear: both;
+        text-align: left;
+        white-space: nowrap;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      .lang-dropdown .dropdown-item.active {
+        font-weight: 700;
+      }
+      /* Below the navbar-expand-sm breakpoint the nav collapses into a
+         narrow vertical list; an absolutely positioned, right-aligned
+         menu then lands off-screen to the left of its own toggle. Let it
+         flow in place instead, like the rest of the collapsed menu. */
+      @media (max-width: 575.98px) {
+        .lang-dropdown .dropdown-menu.show {
+          position: static;
+          float: none;
+          left: auto;
+          right: auto;
+          margin-top: 0.25rem;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+      }
+    </style> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mickaël</span> Delamare </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/"> <span class="lang-fr-i">blog</span><span class="lang-en-i">blog</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"> <span class="lang-fr-i">publications</span><span class="lang-en-i">publications</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/"> <span class="lang-fr-i">projects</span><span class="lang-en-i">projects</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/livre/"> <span class="lang-fr-i">livre</span><span class="lang-en-i">book</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/"> <span class="lang-fr-i">enseignement</span><span class="lang-en-i">teaching</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/supervision/"> <span class="lang-fr-i">encadrement doctoral</span><span class="lang-en-i">doctoral supervision</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/"> <span class="lang-fr-i">CV</span><span class="lang-en-i">CV</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> <li class="nav-item dropdown lang-dropdown"> <button class="nav-link dropdown-toggle" id="lang-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Switch language / Changer de langue" aria-label="Switch language / Changer de langue"> <span id="lang-dropdown-label" style="font-weight: 600; font-size: 0.85em;">FR</span> </button> <div class="dropdown-menu dropdown-menu-right" id="lang-dropdown-menu" aria-labelledby="lang-dropdown-toggle"> <button type="button" class="dropdown-item" data-lang-option="fr">Français</button> <button type="button" class="dropdown-item" data-lang-option="en">English</button> </div> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="lang-fr-i">P2 — codage relationnel indépendant</span><span class="lang-en-i">P2 — independent relational coding</span> </h1> <p class="post-description"><span class="lang-fr-i">Outil de codage pour le second évaluateur indépendant (Pending Analysis P2, article "Constructive Alignment as a Relational Property of AI-Supported Learning Design").</span><span class="lang-en-i">Coding tool for the independent second rater (Pending Analysis P2, "Constructive Alignment as a Relational Property of AI-Supported Learning Design").</span> </p> </header> <article> <div class="lang-fr"> <p>Cette page sert de point d’entrée pour le codage relationnel indépendant des 37 instances codables de l’article sur l’alignement constructif dans les dispositifs d’apprentissage assistés par IA (Pending Analysis P2 : fiabilité inter-juges).</p> <p><strong>L’outil de codage</strong> (protocole complet, liste des 37 instances, formulaire de saisie, synchronisation en temps réel) est hébergé séparément :</p> <p><a class="btn btn-primary" href="https://claude.ai/artifact/8YxFUnmUJTS427fphJ1g6b" target="_blank" rel="noopener">Ouvrir l'outil de codage →</a></p> <p>Les 37 PDF sources correspondants sont transmis séparément (hors de ce site) au second codeur.</p> </div> <div class="lang-en"> <p>This page is an entry point for the independent relational coding of the 37 codable instances from the paper on constructive alignment in AI-supported learning design (Pending Analysis P2: inter-rater reliability).</p> <p><strong>The coding tool</strong> (full protocol, list of the 37 instances, entry form, live sync) is hosted separately:</p> <p><a class="btn btn-primary" href="https://claude.ai/artifact/8YxFUnmUJTS427fphJ1g6b" target="_blank" rel="noopener">Open the coding tool →</a></p> <p>The 37 source PDFs are shared with the second coder separately (outside this site).</p> </div> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Mickaël Delamare. <span class="lang-fr-i">Propulsé par <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> avec le thème <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a>. Hébergé par <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span><span class="lang-en-i">Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.</span> </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "Publications par catégorie, ordre antichronologique. Généré par jekyll-scholar depuis _bibliography/papers.bib.Publications by category, in reverse chronological order. Generated by jekyll-scholar from _bibliography/papers.bib.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Projets de recherche.Research projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-livre",
+          title: "livre",
+          description: "Décider sans tout savoir, une introduction aux POMDP, disponible à l&#39;achat.Décider sans tout savoir, an introduction to POMDPs, available for purchase.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/livre/";
+          },
+        },{id: "nav-enseignement",
+          title: "enseignement",
+          description: "Cours et enseignements.Courses and teaching.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-encadrement-doctoral",
+          title: "encadrement doctoral",
+          description: "Encadrement de doctorants et d&#39;étudiants de master.Supervision of PhD and Master&#39;s students.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/supervision/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Curriculum vitae.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-un-tuteur-ia-qui-devine-juste-peut-quand-même-mal-enseigner",
+        
+          title: "Un tuteur IA qui devine juste peut quand même mal enseigner",
+        
+        description: "Un tuteur IA n&#39;agit jamais sur l&#39;état réel de l&#39;élève, seulement sur une estimation. Un article que nous venons de terminer, avec Florian et Benoît, montre que la qualité de cette estimation ne prédit presque rien de la qualité des décisions qui en découlent, et que ça se mesure.An AI tutor never acts on a student&#39;s real state, only on an estimate of it. A paper we&#39;ve just finished, with Florian and Benoît, shows that how good that estimate is barely predicts how good the resulting decisions are, and that this is measurable.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/estimation-to-policy-drift-llm-agents/";
+          
+        },
+      },{id: "post-former-à-et-par-l-39-ia-concevoir-un-dispositif-pédagogique-avec-le-projet-caire",
+        
+          title: "Former à et par l&#39;IA : concevoir un dispositif pédagogique avec le projet...",
+        
+        description: "Comment apprendre à 466 étudiants de première année à douter d&#39;une IA, plutôt qu&#39;à lui faire confiance aveuglément : la genèse d&#39;un module d&#39;acculturation à l&#39;IA construit avec le jeu de Nim, la Moral Machine et une IA générative défaillante.How do you teach 466 first-year students to question an AI rather than trust it blindly? The story of an AI awareness module built around the game of Nim, the Moral Machine, and a deliberately unreliable generative AI.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/former-a-et-par-ia-caire/";
+          
+        },
+      },{id: "post-cartographier-l-39-esprit-en-réseaux-la-cognitive-network-science-face-à-l-39-ia",
+        
+          title: "Cartographier l&#39;esprit en réseaux : la Cognitive Network Science face à l&#39;IA",
+        
+        description: "Une revue systématique PRISMA 2020 de 36 études (sur plus de 53 000 candidates) montre que les grands modèles de langage reproduisent, mesurablement, les mêmes biais cognitifs que les humains, comme l&#39;anxiété face aux mathématiques, quand on les représente sous forme de réseaux de concepts.A PRISMA 2020 systematic review of 36 studies (out of more than 53,000 candidates) shows that large language models measurably reproduce the same cognitive biases as humans, such as maths anxiety, once represented as networks of concepts.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/cognitive-network-science-human-ai-review/";
+          
+        },
+      },{id: "post-décider-sans-tout-savoir-ce-que-le-bébé-qui-pleure-nous-apprend-sur-l-39-ia",
+        
+          title: "Décider sans tout savoir : ce que le « bébé qui pleure »...",
+        
+        description: "Version accessible (sans formules) de mon billet sur les POMDP : comment une intelligence artificielle peut prendre de bonnes décisions même quand elle ne voit jamais la situation exacte.Accessible version (no formulas) of my POMDP post: how an artificial intelligence can make good decisions even when it never sees the exact situation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/decider-sans-tout-savoir-bebe-qui-pleure/";
+          
+        },
+      },{id: "post-introduction-aux-pomdp-décider-sous-incertitude-partielle-avec-le-bébé-qui-pleure",
+        
+          title: "Introduction aux POMDP : décider sous incertitude partielle avec le « bébé qui...",
+        
+        description: "Notes sur les processus de décision markoviens partiellement observables (POMDP) : le 7-uplet formel, la mise à jour de croyance bayésienne et les méthodes de résolution (QMDP, FIB, PBVI, POMCP), à partir de l&#39;exemple pédagogique du « bébé qui pleure ».Notes on partially observable Markov decision processes (POMDPs): the formal 7-tuple, Bayesian belief updating and solution methods (QMDP, FIB, PBVI, POMCP), built around the classic &quot;crying baby&quot; teaching example.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/introduction-pomdp-bebe-qui-pleure/";
+          
+        },
+      },{id: "projects-alignement-pédagogique-des-agents-llmpedagogical-alignment-of-llm-agents",
+          title: 'Alignement pédagogique des agents LLMPedagogical alignment of LLM agents',
+          description: "Travail de recherche en cours sur l&#39;alignement pédagogique des agents fondés sur des LLM, actuellement soumis en conférence.Ongoing research on the pedagogical alignment of LLM-based agents, currently under conference review.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/alignement-agents-llm/";
+            },},{id: "projects-caire",
+          title: 'CAIRE',
+          description: "Projet lauréat de l&#39;appel à manifestation d&#39;intérêt CMA (France 2030).Winner of the CMA call for expressions of interest (France 2030).",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/caire/";
+            },},{id: "teachings-responsable-des-filières-informatique-et-sciences-du-numériquehead-of-computer-science-and-digital-science-programmes",
+          title: 'Responsable des filières Informatique et Sciences du NumériqueHead of Computer Science and Digital...',
+          description: "Conception, mise en œuvre et évolution des cursus Informatique et Sciences du Numérique au sein de la Direction des Études de CESI : contenus pédagogiques, méthodes d&#39;enseignement, coordination des formations. Trois majeures créées : Data Science &amp;amp; IA, Cybersécurité, IoT (tronc commun IoT).Design, implementation and evolution of the Computer Science and Digital Science curricula within CESI&#39;s Directorate of Studies: teaching content, teaching methods, coordination of training activities. Three majors created: Data Science &amp;amp; AI, Cybersecurity, IoT (common IoT core).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/cesi-filieres-informatique-numerique/";
+            },},{id: "teachings-responsable-pédagogique-4e-année-informatique-fise-fisa-programme-leader-4th-year-computer-science-fise-fisa",
+          title: 'Responsable pédagogique, 4e année Informatique (FISE/FISA)Programme Leader, 4th-year Computer Science (FISE/FISA)',
+          description: "Responsable des promotions 2021–2022 et 2022–2023 de la filière Informatique en 4e année (FISE : formation initiale, FISA : apprentissage), avec une stratégie pédagogique fondée sur l&#39;apprentissage par problèmes (PBL) et l&#39;Active Project-Based Learning (A2P2).Responsible for the 2021–2022 and 2022–2023 cohorts of the 4th-year Computer Science programme (FISE: full-time track; FISA: apprenticeship track), with a pedagogical strategy based on Problem-Based Learning (PBL) and Active Project-Based Learning (A2P2).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/cesi-responsable-pedagogique-informatique/";
+            },},{id: "teachings-développement-de-projets-logiciels-java-sql-uml-software-project-development-java-sql-uml",
+          title: 'Développement de projets logiciels (Java, SQL, UML)Software project development (Java, SQL, UML)',
+          description: "Enseignement du développement logiciel avec Java, SQL et UML : conception d&#39;une application Java à travers les phases de spécification, codage, implémentation et test.Teaching software development with Java, SQL and UML: developing a Java application through the specification, coding, implementation and testing phases.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/esigelec-genie-logiciel/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/CV_Delamare_Mickael.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6D%64%65%6C%61%6D%61%72%65@%63%65%73%69.%66%72", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/DelamareMicka", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0003-0119-2326", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=G35xNaQAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-hal',
+        title: 'HAL',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://cv.hal.science/mickael-delamare", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/delamaremickael", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script>
+      (function () {
+        var toggle = document.getElementById('lang-dropdown-toggle');
+        var menu = document.getElementById('lang-dropdown-menu');
+        var label = document.getElementById('lang-dropdown-label');
+        if (!toggle || !menu) return;
+
+        function apply(lang) {
+          if (lang === 'en') {
+            document.documentElement.setAttribute('data-lang', 'en');
+          } else {
+            document.documentElement.removeAttribute('data-lang');
+          }
+          if (label) label.textContent = lang === 'en' ? 'EN' : 'FR';
+          Array.prototype.forEach.call(menu.querySelectorAll('[data-lang-option]'), function (item) {
+            var isActive = item.getAttribute('data-lang-option') === lang;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-current', isActive ? 'true' : 'false');
+          });
+        }
+        function openMenu() {
+          menu.classList.add('show');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+        function closeMenu() {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        apply(document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr');
+
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (menu.classList.contains('show')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+        Array.prototype.forEach.call(menu.querySelectorAll('[data-lang-option]'), function (item) {
+          item.addEventListener('click', function () {
+            var lang = item.getAttribute('data-lang-option');
+            try { localStorage.setItem('lang-pref', lang); } catch (e) {}
+            apply(lang);
+            closeMenu();
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!toggle.contains(e.target) && !menu.contains(e.target)) closeMenu();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenu();
+        });
+      })();
+    </script> </body> </html>
