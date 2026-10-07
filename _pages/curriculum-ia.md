@@ -37,8 +37,8 @@ _styles: >
   .curric-panel h3 { margin: 0.25rem 0 0.5rem; }
   .curric-panel .meta { font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 0.5rem; }
   .curric-panel .prereq { background: color-mix(in srgb, var(--global-theme-color) 8%, transparent); border-left: 3px solid var(--global-theme-color); padding: 0.5rem 0.75rem; margin: 0.5rem 0; border-radius: 0.25rem; }
-  .curric-grid { display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.75rem; }
-  .curric-sem { flex: 0 0 15.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .curric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); gap: 0.75rem; }
+  .curric-sem { display: flex; flex-direction: column; gap: 0.5rem; }
   .curric-sem-title { font-weight: 700; text-align: center; padding: 0.4rem; border-bottom: 2px solid var(--global-theme-color); margin-bottom: 0.25rem; }
   .curric-ue { border: 1px solid var(--global-divider-color); border-radius: 0.4rem; overflow: hidden; }
   .curric-ue-header { padding: 0.4rem 0.6rem; cursor: pointer; background: color-mix(in srgb, var(--global-theme-color) 6%, transparent); font-size: 0.85rem; line-height: 1.25; }
@@ -50,6 +50,32 @@ _styles: >
   .curric-ue-header.active { background: color-mix(in srgb, var(--global-theme-color) 18%, transparent); }
   .curric-item .code { font-weight: 700; opacity: 0.7; margin-right: 0.25em; }
   .curric-item.prereq-highlight { border-color: #d9822b; background: color-mix(in srgb, #d9822b 16%, transparent); }
+  .curric-item.unlocks-highlight { border-color: #3d72b4; background: color-mix(in srgb, #3d72b4 14%, transparent); }
+  .curric-item.prereq-highlight.unlocks-highlight {
+    border-color: #3d72b4;
+    background: linear-gradient(90deg, color-mix(in srgb, #d9822b 16%, transparent) 50%, color-mix(in srgb, #3d72b4 14%, transparent) 50%);
+  }
+  .curric-ue-header .ue-fiche-hint { display: block; font-size: 0.72rem; opacity: 0.6; margin-top: 0.15rem; font-style: italic; }
+  .curric-modal-backdrop {
+    position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.55);
+    display: flex; align-items: flex-start; justify-content: center;
+    overflow-y: auto; padding: 3rem 1rem;
+  }
+  .curric-modal {
+    position: relative; background: var(--global-card-bg-color); color: var(--global-text-color);
+    border-radius: 0.6rem; max-width: 52rem; width: 100%; padding: 1.75rem 2rem 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+  .curric-modal-close {
+    position: absolute; top: 0.6rem; right: 0.75rem; background: none; border: none;
+    font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--global-text-color-light);
+  }
+  .curric-modal-close:hover { color: var(--global-text-color); }
+  .curric-fiche-ecue { border-top: 1px solid var(--global-divider-color); margin-top: 1.25rem; padding-top: 1.25rem; }
+  @media (max-width: 600px) {
+    .curric-modal-backdrop { padding: 1rem 0.5rem; }
+    .curric-modal { padding: 1.5rem 1.25rem 1.75rem; }
+  }
   .curric-panel .prereq-links { list-style: none; padding: 0; margin: 0.25rem 0 0.75rem; }
   .curric-panel .prereq-links li { display: inline-block; margin: 0.15rem 0.35rem 0.15rem 0; }
   .curric-panel .prereq-links a {
@@ -65,14 +91,14 @@ _styles: >
 
 Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez (ou touchez sur mobile) une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
 
-Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille : c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
+Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille : c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Au clic (ou au survol), les ECUE plus tardifs qui s'appuient à leur tour sur l'élément sélectionné sont mis en surbrillance <span style="color:#3d72b4; font-weight:700;">bleu</span> : c'est la relation inverse, ce que l'élément sélectionné permet d'aborder ensuite. Cliquer sur le bandeau d'une UE ouvre sa fiche complète (UE et tous ses ECUE) dans une fenêtre dédiée. Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
 
 </div>
 <div class="lang-en" markdown="1">
 
 Interactive map of the **Artificial Intelligence programme** that I run at CESI (6 semesters). Hover (or tap on mobile) over a UE (teaching unit) or an ECUE (course component) to display its detail in the panel (on the right on large screens, at the top on mobile): ECTS credits, hours, prerequisites and learning objectives.
 
-Content taken directly from the official course specification sheets (one sheet per UE). The **prerequisites shown are the text exactly as written in each sheet**. In addition, earlier ECUEs likely to cover these prerequisites are **automatically detected by keyword matching** between this text and the titles of previous ECUEs, and highlighted in <span style="color:#d9822b; font-weight:700;">orange</span> in the grid: this is an approximate visual aid, not an official link validated in the curriculum (the sheets do not encode this link explicitly). Deliberately absent from this page: teacher names and detailed hourly breakdown (lecture/tutorial/lab), which fall under the internal management of the programme.
+Content taken directly from the official course specification sheets (one sheet per UE). The **prerequisites shown are the text exactly as written in each sheet**. In addition, earlier ECUEs likely to cover these prerequisites are **automatically detected by keyword matching** between this text and the titles of previous ECUEs, and highlighted in <span style="color:#d9822b; font-weight:700;">orange</span> in the grid: this is an approximate visual aid, not an official link validated in the curriculum (the sheets do not encode this link explicitly). On click (or hover), later ECUEs that in turn rely on the selected item are highlighted in <span style="color:#3d72b4; font-weight:700;">blue</span>: this is the reverse relationship, what the selected item leads to next. Clicking a UE's header opens its full sheet (the UE and all its ECUEs) in a dedicated window. Deliberately absent from this page: teacher names and detailed hourly breakdown (lecture/tutorial/lab), which fall under the internal management of the programme.
 
 </div>
 
@@ -88,6 +114,7 @@ Content taken directly from the official course specification sheets (one sheet 
           <span class="code">UE {{ ue.code }}</span>
           <span class="ects">{{ ue.ects }} ECTS</span><br>
           <span class="lang-fr-i">{{ ue.title }}</span><span class="lang-en-i">{{ ue.title_en | default: ue.title }}</span>
+          <span class="ue-fiche-hint"><span class="lang-fr-i">Cliquer pour la fiche complète</span><span class="lang-en-i">Click for the full sheet</span></span>
           <div class="item-detail" hidden>
             <div class="breadcrumb"><span class="lang-fr-i">Semestre {{ sem.number }} · UE {{ ue.code }}</span><span class="lang-en-i">Semester {{ sem.number }} · UE {{ ue.code }}</span></div>
             <h3><span class="lang-fr-i">{{ ue.title }}</span><span class="lang-en-i">{{ ue.title_en | default: ue.title }}</span></h3>
@@ -142,6 +169,13 @@ Content taken directly from the official course specification sheets (one sheet 
 </div>
 </div>
 
+<div id="curric-modal-backdrop" class="curric-modal-backdrop" hidden>
+  <div class="curric-modal" role="dialog" aria-modal="true">
+    <button type="button" class="curric-modal-close" id="curric-modal-close" aria-label="Fermer / Close">&times;</button>
+    <div id="curric-modal-body"></div>
+  </div>
+</div>
+
 <script>
 (function () {
   var panel = document.getElementById('curric-panel');
@@ -154,13 +188,27 @@ Content taken directly from the official course specification sheets (one sheet 
     if (code) byCode[code] = i;
   });
 
+  // Reverse index: code -> items that list this code among their prereq matches,
+  // i.e. what becomes reachable once the item with that code is covered.
+  var dependents = Object.create(null);
+  items.forEach(function (i) {
+    var codes = (i.getAttribute('data-prereqs') || '').trim();
+    if (!codes) return;
+    codes.split(/\s+/).forEach(function (code) {
+      (dependents[code] = dependents[code] || []).push(i);
+    });
+  });
+
   var highlighted = [];
+  var unlocked = [];
   var activeItem = null;
 
   function clearHighlights() {
     if (activeItem) activeItem.classList.remove('active');
     highlighted.forEach(function (i) { i.classList.remove('prereq-highlight'); });
     highlighted.length = 0;
+    unlocked.forEach(function (i) { i.classList.remove('unlocks-highlight'); });
+    unlocked.length = 0;
     activeItem = null;
   }
 
@@ -180,6 +228,14 @@ Content taken directly from the official course specification sheets (one sheet 
           target.classList.add('prereq-highlight');
           highlighted.push(target);
         }
+      });
+    }
+
+    var myCode = item.getAttribute('data-code');
+    if (myCode && dependents[myCode]) {
+      dependents[myCode].forEach(function (dep) {
+        dep.classList.add('unlocks-highlight');
+        unlocked.push(dep);
       });
     }
   }
@@ -210,7 +266,46 @@ Content taken directly from the official course specification sheets (one sheet 
     item.addEventListener('click', function () {
       if (pending) clearTimeout(pending);
       reveal(item);
+      if (item.classList.contains('curric-ue-header')) openFiche(item);
     });
+  });
+
+  // Fiche UE modal: assembled from the already-rendered detail markup of the
+  // UE header itself plus every ECUE underneath it, no extra templating needed.
+  var modalBackdrop = document.getElementById('curric-modal-backdrop');
+  var modalBody = document.getElementById('curric-modal-body');
+  var modalClose = document.getElementById('curric-modal-close');
+  var lastFocused = null;
+
+  function openFiche(ueHeader) {
+    var ueDetail = ueHeader.querySelector('.item-detail');
+    if (!ueDetail) return;
+    var ueBlock = ueHeader.closest('.curric-ue');
+    var html = '<div class="curric-fiche-ue">' + ueDetail.innerHTML + '</div>';
+    if (ueBlock) {
+      Array.prototype.forEach.call(ueBlock.querySelectorAll('.curric-ue-body > .curric-ecue'), function (ecue) {
+        var d = ecue.querySelector('.item-detail');
+        if (d) html += '<div class="curric-fiche-ecue">' + d.innerHTML + '</div>';
+      });
+    }
+    modalBody.innerHTML = html;
+    lastFocused = document.activeElement;
+    modalBackdrop.hidden = false;
+    modalClose.focus();
+  }
+
+  function closeFiche() {
+    modalBackdrop.hidden = true;
+    modalBody.innerHTML = '';
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  modalClose.addEventListener('click', closeFiche);
+  modalBackdrop.addEventListener('click', function (e) {
+    if (e.target === modalBackdrop) closeFiche();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modalBackdrop.hidden) closeFiche();
   });
 })();
 </script>
