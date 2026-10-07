@@ -57,7 +57,7 @@ _styles: >
   }
   .curric-ue-header .ue-fiche-hint { display: block; font-size: 0.72rem; opacity: 0.6; margin-top: 0.15rem; font-style: italic; }
   .curric-modal-backdrop {
-    position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.55);
+    position: fixed; inset: 0; z-index: 2000; background: rgba(0, 0, 0, 0.55);
     display: flex; align-items: flex-start; justify-content: center;
     overflow-y: auto; padding: 3rem 1rem;
   }
