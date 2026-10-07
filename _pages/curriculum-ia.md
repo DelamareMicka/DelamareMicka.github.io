@@ -260,8 +260,22 @@ Content taken directly from the official course specification sheets (one sheet 
     pending = setTimeout(function () { reveal(item); }, 60);
   }
 
+  // Scrolling the page with the cursor held still fires mouseenter on whatever
+  // card now sits under it, as if it had been hovered on purpose, which wiped
+  // out a clicked selection's highlight mid-scroll. Only treat mouseenter as a
+  // real hover when the pointer has actually moved since the last time we checked.
+  var lastMouseX = null;
+  var lastMouseY = null;
+  document.addEventListener('mousemove', function (e) {
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+  });
+
   items.forEach(function (item) {
-    item.addEventListener('mouseenter', function () { scheduleReveal(item); });
+    item.addEventListener('mouseenter', function (e) {
+      if (e.clientX === lastMouseX && e.clientY === lastMouseY) return;
+      scheduleReveal(item);
+    });
     item.addEventListener('focus', function () { scheduleReveal(item); });
     item.addEventListener('click', function () {
       if (pending) clearTimeout(pending);
