@@ -89,14 +89,14 @@ _styles: >
 
 <div class="lang-fr" markdown="1">
 
-Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez (ou touchez sur mobile) une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques.
+Carte interactive du **parcours Intelligence Artificielle** que je pilote à CESI (6 semestres). Survolez (ou touchez sur mobile) une UE ou un ECUE pour afficher son détail dans le panneau (à droite sur grand écran, en haut sur mobile) : crédits ECTS, volume horaire, prérequis et objectifs pédagogiques. Un clic fixe la sélection : elle reste affichée, prérequis et dépendances compris, même en bougeant la souris ou en faisant défiler la page, jusqu'au prochain clic.
 
 Contenu directement issu des fiches pédagogiques officielles (une fiche par UE). Les **prérequis affichés sont le texte tel qu'écrit dans chaque fiche**. En complément, les ECUE antérieurs susceptibles de couvrir ces prérequis sont **détectés automatiquement par rapprochement de mots-clés** entre ce texte et les titres des ECUE précédents, et mis en surbrillance <span style="color:#d9822b; font-weight:700;">orange</span> dans la grille : c'est une aide visuelle approximative, pas un lien officiel validé dans la maquette (les fiches ne codent pas ce lien explicitement). Au clic (ou au survol), les ECUE plus tardifs qui s'appuient à leur tour sur l'élément sélectionné sont mis en surbrillance <span style="color:#1b9e96; font-weight:700;">turquoise</span> : c'est la relation inverse, ce que l'élément sélectionné permet d'aborder ensuite. Cliquer sur le bandeau d'une UE ouvre sa fiche complète (UE et tous ses ECUE) dans une fenêtre dédiée. Volontairement absents de cette page : noms des enseignants et répartition horaire détaillée (CM/TD/TP), qui relèvent de la gestion interne du programme.
 
 </div>
 <div class="lang-en" markdown="1">
 
-Interactive map of the **Artificial Intelligence programme** that I run at CESI (6 semesters). Hover (or tap on mobile) over a UE (teaching unit) or an ECUE (course component) to display its detail in the panel (on the right on large screens, at the top on mobile): ECTS credits, hours, prerequisites and learning objectives.
+Interactive map of the **Artificial Intelligence programme** that I run at CESI (6 semesters). Hover (or tap on mobile) over a UE (teaching unit) or an ECUE (course component) to display its detail in the panel (on the right on large screens, at the top on mobile): ECTS credits, hours, prerequisites and learning objectives. A click locks the selection in place: it stays displayed, prerequisites and dependents included, even if you move the mouse or scroll the page, until the next click.
 
 Content taken directly from the official course specification sheets (one sheet per UE). The **prerequisites shown are the text exactly as written in each sheet**. In addition, earlier ECUEs likely to cover these prerequisites are **automatically detected by keyword matching** between this text and the titles of previous ECUEs, and highlighted in <span style="color:#d9822b; font-weight:700;">orange</span> in the grid: this is an approximate visual aid, not an official link validated in the curriculum (the sheets do not encode this link explicitly). On click (or hover), later ECUEs that in turn rely on the selected item are highlighted in <span style="color:#1b9e96; font-weight:700;">turquoise</span>: this is the reverse relationship, what the selected item leads to next. Clicking a UE's header opens its full sheet (the UE and all its ECUEs) in a dedicated window. Deliberately absent from this page: teacher names and detailed hourly breakdown (lecture/tutorial/lab), which fall under the internal management of the programme.
 
@@ -202,6 +202,10 @@ Content taken directly from the official course specification sheets (one sheet 
   var highlighted = [];
   var unlocked = [];
   var activeItem = null;
+  // A click pins the selection: it stays put through later mouse movement or
+  // scrolling, and only another click moves it. Hover-preview (for anyone who
+  // hasn't clicked anything yet) stays free to follow the cursor as before.
+  var pinned = false;
 
   function clearHighlights() {
     if (activeItem) activeItem.classList.remove('active');
@@ -273,12 +277,17 @@ Content taken directly from the official course specification sheets (one sheet 
 
   items.forEach(function (item) {
     item.addEventListener('mouseenter', function (e) {
+      if (pinned) return;
       if (e.clientX === lastMouseX && e.clientY === lastMouseY) return;
       scheduleReveal(item);
     });
-    item.addEventListener('focus', function () { scheduleReveal(item); });
+    item.addEventListener('focus', function () {
+      if (pinned) return;
+      scheduleReveal(item);
+    });
     item.addEventListener('click', function () {
       if (pending) clearTimeout(pending);
+      pinned = true;
       reveal(item);
       if (item.classList.contains('curric-ue-header')) openFiche(item);
     });
