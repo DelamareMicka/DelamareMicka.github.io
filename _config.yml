@@ -306,7 +306,7 @@ jekyll-minifier:
   # breaking every spacing/positioning utility (e.g. .fixed-top -> broken navbar). Disable it.
   compress_css: false
   # JS minification is delegated to jekyll-terser (compress_javascript above is false).
-  exclude: ["robots.txt"]
+  exclude: ["robots.txt", "assets/tools/bslr-tri/index.html", "assets/tools/bslr-tri/data.js"]
 
 # -----------------------------------------------------------------------------
 # Terser
