@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Double évaluation B-SLR</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#191919;--ink2:#5f6368;--line:#e3e5e8;--blue:#257de0;--blue-soft:#e8f1fc;--green:#0a8a3a;--green-soft:#e6f4ea;--red:#c63a3a;--red-soft:#fbeaea;--amber:#b7791f;--amber-soft:#fdf3e1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111316;--card:#1b1e22;--ink:#eceff1;--ink2:#a3a9b0;--line:#2c3036;--blue:#4b9bf0;--blue-soft:#17283d;--green:#3fbf6a;--green-soft:#12291b;--red:#ef6b6b;--red-soft:#33181a;--amber:#e0a84a;--amber-soft:#33281a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;position:sticky;top:0;z-index:5}
+header h1{font-size:17px;margin:0 12px 0 0}
+.tabs button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:6px 14px;border-radius:8px;cursor:pointer;font:inherit}
+.tabs button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.save{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.save .st{font-size:13px;color:var(--ink2)}
+.st.ok{color:var(--green)}.st.warn{color:var(--amber)}
+button.b{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer;font:inherit;font-size:14px}
+button.b:hover{border-color:var(--blue)}
+button.p{background:var(--blue);color:#fff;border-color:var(--blue)}
+main{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.muted{color:var(--ink2);font-size:13px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.progress{height:8px;background:var(--line);border-radius:4px;overflow:hidden;flex:1;min-width:160px}
+.progress>div{height:100%;background:var(--blue)}
+.rec-title{font-size:18px;font-weight:600;margin:6px 0}
+.abstract{white-space:pre-wrap;max-height:340px;overflow:auto;border-left:3px solid var(--line);padding-left:12px;margin:10px 0}
+.dec button{font-size:15px;padding:10px 18px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-weight:600}
+.dec .inc.on{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+.dec .exc.on{background:var(--red-soft);border-color:var(--red);color:var(--red)}
+.dec .uns.on{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
+select,input[type=text],textarea{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+textarea{width:100%;min-height:54px}
+.crit{font-size:13px;color:var(--ink2);margin:0;padding-left:18px}
+table{border-collapse:collapse;width:100%}
+td,th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top;font-size:14px}
+.opt label{margin-right:12px;cursor:pointer;white-space:nowrap}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;border:1px solid var(--line)}
+.pill.done{background:var(--green-soft);color:var(--green);border-color:var(--green)}
+.agree{color:var(--green);font-weight:600}.disagree{color:var(--red);font-weight:600}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.list button{text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 10px;cursor:pointer;font:inherit;font-size:13px}
+.list button:hover{border-color:var(--blue)}
+.hide{display:none}
+kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;font-size:12px}
+</style>
+<style>#tab-mm,#tab-vf{display:none!important}</style>
+</head>
+<body>
+<header>
+  <h1>Double évaluation — B-SLR</h1>
+  <div class="tabs"><button id="tab-scr" class="on">1. Second tri</button> <button id="tab-mm">2. Vérification MMAT</button> <button id="tab-vf">3. Vérifier le juge LLM</button></div>
+  <div class="save">
+    <span class="st" id="saveState">Non relié à un fichier</span>
+    <button class="b p" id="btnFile">Choisir / créer le fichier de sauvegarde</button>
+    <button class="b" id="btnOpen">Reprendre depuis un fichier</button>
+    <button class="b" id="btnExport">Exporter (copie)</button>
+  </div>
+</header>
+<main>
+  <div class="card" id="raterCard">
+    <div class="row"><b>Évaluateur :</b> <input type="text" id="rater" placeholder="Nom ou initiales" style="min-width:220px"> <span class="muted">Le second tri doit être fait par une personne différente de celle qui a réalisé le tri d'origine.</span></div>
+  </div>
+
+  <!-- SCREENING -->
+  <section id="sec-scr">
+    <div class="card">
+      <div class="row"><b id="scrCount"></b><div class="progress"><div id="scrBar" style="width:0"></div></div>
+        <select id="scrFilter"><option value="all">Toutes les notices</option><option value="todo">Non traitées</option><option value="uns">Incertaines</option></select>
+        <button class="b" id="scrPrev">← Préc.</button><button class="b" id="scrNext">Suiv. →</button><button class="b" id="scrNextTodo">Prochaine non traitée</button></div>
+      <p class="muted" style="margin:8px 0 0">Raccourcis : <kbd>I</kbd> inclure · <kbd>E</kbd> exclure · <kbd>U</kbd> incertain · <kbd>→</kbd>/<kbd>←</kbd> naviguer. Jugez sur le titre et le résumé, selon les critères ci-dessous ; si le résumé affiché est incomplet, lisez seulement le résumé via le lien DOI (pas le texte intégral).</p>
+    </div>
+    <div class="card" id="scrRec"></div>
+    <div class="card">
+      <b>Critères d'éligibilité (Tableau 2 du manuscrit)</b>
+      <ul class="crit">
+        <li><b>Inclure</b> si : article de revue à comité de lecture (y c. revues systématiques, scoping, bibliométriques), en anglais, 2019–juin 2026, où l'IA est explicitement appliquée à l'éducation formelle (petite enfance, K-12, supérieur, formation professionnelle ou des enseignants) ou étudiée comme partie de l'enseignement, l'apprentissage, l'évaluation ou la gouvernance éducative.</li>
+        <li><b>Exclure</b> si : actes de conférence, chapitres, littérature grise, éditoriaux, opinions, errata ; IA utilisée dans un autre domaine (ex. diagnostic médical) avec l'éducation comme simple contexte ; pas d'IA ; hors période ou langue.</li>
+        <li><b>Incertain</b> si le titre et le résumé ne permettent pas de trancher (à discuter ensuite).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VERIFY LLM JUDGE -->
+  <section id="sec-vf" class="hide">
+    <div class="card">
+      <div class="row"><b id="vfCount"></b><div class="progress"><div id="vfBar" style="width:0"></div></div><button class="b" id="vfPrev">&larr; Préc.</button><button class="b" id="vfNext">Suiv. &rarr;</button><button class="b" id="vfRestart" title="Archive les réponses actuelles et repart de zéro">Recommencer la vérification</button></div>
+      <p class="muted" style="margin:8px 0 0">Un modèle de langage a trié toutes les notices de l'échantillon à l'aveugle. Vérifiez ses décisions sur cet échantillon : êtes-vous d'accord, au vu du titre et du résumé et des critères d'éligibilité ? Raccourcis : <kbd>A</kbd> d'accord · <kbd>D</kbd> pas d'accord.</p>
+    </div>
+    <div class="card" id="vfRec"></div>
+  </section>
+
+  <!-- MMAT -->
+  <section id="sec-mm" class="hide">
+    <div class="card">
+      <div class="row"><b id="mmCount"></b><div class="progress"><div id="mmBar" style="width:0"></div></div></div>
+      <p class="muted" style="margin:8px 0 0">Évaluez chaque étude à partir du PDF, <b>sans connaître l'évaluation du modèle de langage</b>. Celle-ci n'apparaît qu'après validation, pour comparaison. MMAT, version 2018 (Hong et al.).</p>
+      <div class="list" id="mmList" style="margin-top:10px"></div>
+    </div>
+    <div class="card hide" id="mmRec"></div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+
+<script>
+const D = window.RATER_DATA;
+const LS_KEY = 'bslr_rater_v1';
+let state = { version: 1, tool: 'bslr-rater', data_built: D.built, rater: '', screening: {}, mmat: {}, log: [] };
+let fileHandle = null, curScr = 0, curMm = null;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const now = () => new Date().toISOString();
+
+// ---------- persistence
+try { const s = localStorage.getItem(LS_KEY); if (s) { const o = JSON.parse(s); if (o && o.tool === 'bslr-rater') state = Object.assign(state, o); } } catch (e) {}
+$('rater').value = state.rater || '';
+function setSave(msg, cls) { const el = $('saveState'); el.textContent = msg; el.className = 'st ' + (cls || ''); }
+let saveTimer = null;
+function persist() {
+  state.updated = now();
+  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
+  clearTimeout(saveTimer); saveTimer = setTimeout(writeFile, 250);
+}
+async function writeFile() {
+  if (!fileHandle) { setSave('Sauvegarde navigateur seulement — choisissez un fichier', 'warn'); return; }
+  try { const w = await fileHandle.createWritable(); await w.write(JSON.stringify(state, null, 1)); await w.close(); setSave('Enregistré dans ' + fileHandle.name + ' à ' + new Date().toLocaleTimeString(), 'ok'); }
+  catch (e) { setSave('Erreur d\'écriture : ' + e.message + ' — utilisez Exporter', 'warn'); }
+}
+$('btnFile').onclick = async () => {
+  if (!window.showSaveFilePicker) { alert('Ce navigateur ne permet pas l\'écriture directe. Utilisez Edge ou Chrome, ou le bouton Exporter régulièrement.'); return; }
+  try { fileHandle = await window.showSaveFilePicker({ suggestedName: 'rater_results_' + (state.rater || 'evaluateur').replace(/\W+/g, '_') + '.json', types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] }); await writeFile(); } catch (e) {}
+};
+$('btnOpen').onclick = async () => {
+  try {
+    let text;
+    if (window.showOpenFilePicker) { const [h] = await window.showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] }); text = await (await h.getFile()).text(); fileHandle = h; }
+    else { return alert('Utilisez Edge ou Chrome.'); }
+    const o = JSON.parse(text); if (o.tool !== 'bslr-rater') return alert('Fichier non reconnu.');
+    state = o; $('rater').value = state.rater || ''; persist(); renderScr(); renderMmList(); setSave('Repris depuis ' + fileHandle.name, 'ok');
+  } catch (e) {}
+};
+$('btnExport').onclick = () => { const b = new Blob([JSON.stringify(state, null, 1)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'rater_results_' + (state.rater || 'evaluateur').replace(/\W+/g, '_') + '_' + new Date().toISOString().slice(0, 10) + '.json'; a.click(); };
+$('rater').oninput = e => { state.rater = e.target.value.trim(); persist(); };
+function needRater() { if (!state.rater) { alert('Indiquez d\'abord le nom ou les initiales de l\'évaluateur.'); $('rater').focus(); return true; } return false; }
+
+// ---------- tabs
+function showTab(t) { ['scr', 'mm', 'vf'].forEach(x => { $('tab-' + x).classList.toggle('on', x === t); $('sec-' + x).classList.toggle('hide', x !== t); }); if (t === 'mm') renderMmList(); if (t === 'vf') renderVf(); }
+$('tab-scr').onclick = () => showTab('scr'); $('tab-mm').onclick = () => showTab('mm'); $('tab-vf').onclick = () => showTab('vf');
+
+// ---------- screening
+const S = D.screening;
+const reasons = ['', 'Pas d\'IA', 'Pas l\'éducation / éducation comme simple contexte', 'Pas un article de revue évalué par les pairs', 'Éditorial / opinion / erratum', 'Hors période ou hors langue', 'Autre (préciser)'];
+function visibleIdx() { const f = $('scrFilter').value; return S.map((r, i) => i).filter(i => { const d = state.screening[S[i].id]; if (f === 'todo') return !d || !d.decision; if (f === 'uns') return d && d.decision === 'uncertain'; return true; }); }
+function renderScr() {
+  const done = S.filter(r => state.screening[r.id] && state.screening[r.id].decision).length;
+  $('scrCount').textContent = done + ' / ' + S.length + ' notices traitées'; $('scrBar').style.width = (100 * done / S.length) + '%';
+  const r = S[curScr]; const d = state.screening[r.id] || {}; scrShownAt = Date.now();
+  $('scrRec').innerHTML = `<div class="muted">Notice ${curScr + 1} / ${S.length} · ${esc(r.id)}${r.pool ? ' · ' + (r.pool === 'initial' ? 'recherche initiale' : 'mise à jour') : ''}</div>
+    <div class="rec-title">${esc(r.title)}</div>
+    <div class="muted">${esc(r.journal || 'Revue non renseignée')}${r.year ? ' · ' + esc(r.year) : ''}${r.doi ? ' · <a href="https://doi.org/' + encodeURI(r.doi) + '" target="_blank" rel="noopener">doi:' + esc(r.doi) + '</a>' : ''}</div>
+    <div class="abstract">${r.abstract ? esc(r.abstract) : '<i class="muted">Pas de résumé disponible dans l\'export : décidez sur le titre ou cochez « Incertain ».</i>'}</div>
+    ${(r.abstract || '').length < 400 && r.doi ? '<div class="muted" style="margin-top:6px">Résumé incomplet : ouvrez le lien DOI pour lire le résumé complet avant de décider.</div>' : ''}
+    <div class="row dec"><button class="inc ${d.decision === 'include' ? 'on' : ''}" data-d="include">Inclure (I)</button><button class="exc ${d.decision === 'exclude' ? 'on' : ''}" data-d="exclude">Exclure (E)</button><button class="uns ${d.decision === 'uncertain' ? 'on' : ''}" data-d="uncertain">Incertain (U)</button></div>
+    <div class="row" style="margin-top:10px"><label>Motif d'exclusion :</label><select id="reason">${reasons.map(x => `<option ${d.reason === x ? 'selected' : ''}>${esc(x)}</option>`).join('')}</select></div>
+    <div style="margin-top:8px"><textarea id="comment" placeholder="Commentaire (facultatif)">${esc(d.comment || '')}</textarea></div>`;
+  $('scrRec').querySelectorAll('.dec button').forEach(b => b.onclick = () => decide(b.dataset.d));
+  $('reason').onchange = e => { upd({ reason: e.target.value }); };
+  $('comment').onchange = e => { upd({ comment: e.target.value }); };
+}
+function upd(patch) { if (needRater()) return; const id = S[curScr].id; state.screening[id] = Object.assign({}, state.screening[id] || {}, patch, { rater: state.rater, ts: now() }); persist(); }
+var scrShownAt = Date.now();
+function decide(dec) { if (needRater()) return; upd({ decision: dec, seconds_on_item: Math.round((Date.now() - scrShownAt) / 1000) }); renderScr(); if (dec !== 'exclude') setTimeout(nextTodo, 150); }
+function go(delta) { const v = visibleIdx(); if (!v.length) return; let p = v.indexOf(curScr); p = p < 0 ? 0 : Math.min(v.length - 1, Math.max(0, p + delta)); curScr = v[p]; renderScr(); window.scrollTo(0, 0); }
+function nextTodo() { for (let k = 1; k <= S.length; k++) { const i = (curScr + k) % S.length; const d = state.screening[S[i].id]; if (!d || !d.decision) { curScr = i; renderScr(); window.scrollTo(0, 0); return; } } renderScr(); }
+$('scrPrev').onclick = () => go(-1); $('scrNext').onclick = () => go(1); $('scrNextTodo').onclick = nextTodo; $('scrFilter').onchange = () => go(0);
+document.addEventListener('keydown', e => {
+  if ($('sec-scr').classList.contains('hide') || ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+  const k = e.key.toLowerCase();
+  if (k === 'i') decide('include'); else if (k === 'e') decide('exclude'); else if (k === 'u') decide('uncertain');
+  else if (e.key === 'ArrowRight') go(1); else if (e.key === 'ArrowLeft') go(-1);
+});
+
+// ---------- MMAT
+const M = D.mmat;
+const DESIGNS = { '1_qualitative': 'Qualitative', '2_rct': 'Quantitative randomisée (RCT)', '3_nonrandomised': 'Quantitative non randomisée', '4_descriptive': 'Quantitative descriptive', '5_mixed': 'Méthodes mixtes' };
+const CRIT = {
+  '1_qualitative': ['1.1 L\'approche qualitative est-elle appropriée pour répondre à la question de recherche ?', '1.2 Les méthodes de collecte qualitatives sont-elles adéquates pour répondre à la question ?', '1.3 Les résultats sont-ils dérivés de manière adéquate des données ?', '1.4 L\'interprétation des résultats est-elle suffisamment étayée par les données ?', '1.5 Y a-t-il cohérence entre sources, collecte, analyse et interprétation des données qualitatives ?'],
+  '2_rct': ['2.1 La randomisation est-elle réalisée de façon appropriée ?', '2.2 Les groupes sont-ils comparables au départ ?', '2.3 Les données de résultat sont-elles complètes ?', '2.4 Les évaluateurs des résultats sont-ils aveugles à l\'intervention ?', '2.5 Les participants ont-ils adhéré à l\'intervention assignée ?'],
+  '3_nonrandomised': ['3.1 Les participants sont-ils représentatifs de la population cible ?', '3.2 Les mesures sont-elles appropriées (résultat et intervention/exposition) ?', '3.3 Les données de résultat sont-elles complètes ?', '3.4 Les facteurs de confusion sont-ils pris en compte dans le plan et l\'analyse ?', '3.5 Pendant l\'étude, l\'intervention a-t-elle été administrée comme prévu ?'],
+  '4_descriptive': ['4.1 La stratégie d\'échantillonnage est-elle pertinente pour répondre à la question ?', '4.2 L\'échantillon est-il représentatif de la population cible ?', '4.3 Les mesures sont-elles appropriées ?', '4.4 Le risque de biais de non-réponse est-il faible ?', '4.5 L\'analyse statistique est-elle appropriée pour répondre à la question ?'],
+  '5_mixed': ['5.1 Y a-t-il une justification adéquate pour utiliser un devis mixte ?', '5.2 Les composantes de l\'étude sont-elles effectivement intégrées pour répondre à la question ?', '5.3 Les résultats de l\'intégration qualitatif/quantitatif sont-ils interprétés de façon adéquate ?', '5.4 Les divergences entre résultats quantitatifs et qualitatifs sont-elles traitées de façon adéquate ?', '5.5 Les composantes respectent-elles les critères de qualité de chaque tradition méthodologique ?']
+};
+const ANS = ['Yes', 'No', "Can't tell"]; const ANS_FR = { 'Yes': 'Oui', 'No': 'Non', "Can't tell": 'Ne sait pas' };
+function renderMmList() {
+  const done = M.filter(m => state.mmat[m.id] && state.mmat[m.id].validated).length;
+  $('mmCount').textContent = done + ' / ' + M.length + ' études évaluées (vérifier au moins 10)'; $('mmBar').style.width = (100 * done / M.length) + '%';
+  $('mmList').innerHTML = M.map(m => `<button data-id="${m.id}">${state.mmat[m.id] && state.mmat[m.id].validated ? '<span class="pill done">fait</span> ' : ''}<b>${m.id}</b> — ${esc(m.title.slice(0, 90))}${m.title.length > 90 ? '…' : ''}</button>`).join('');
+  $('mmList').querySelectorAll('button').forEach(b => b.onclick = () => openMm(b.dataset.id));
+}
+function openMm(id) {
+  curMm = M.find(m => m.id === id); const r = state.mmat[id] || {}; const box = $('mmRec'); box.classList.remove('hide');
+  const design = r.design || '';
+  const radio = (name, val, dis) => ANS.map(a => `<label><input type="radio" name="${name}" value="${a}" ${val === a ? 'checked' : ''} ${dis ? 'disabled' : ''}> ${ANS_FR[a]}</label>`).join('');
+  const locked = !!r.validated;
+  let html = `<div class="muted">${esc(curMm.id)} · ${esc(curMm.record_id || '')}</div><div class="rec-title">${esc(curMm.title)}</div>
+    <div class="row"><a href="${esc(encodeURI(curMm.pdf))}" target="_blank" rel="noopener"><button class="b">Ouvrir le PDF</button></a><span class="muted">Si le lien ne s'ouvre pas, le PDF est dans MAJ_2026\\P2_second_coder_PDFs</span></div>
+    <table style="margin-top:12px"><tr><td style="width:55%"><b>S1.</b> Les questions (ou l'objectif) de recherche sont-elles claires ?</td><td class="opt">${radio('S1', r.S1, locked)}</td></tr>
+    <tr><td><b>S2.</b> Les données collectées permettent-elles de répondre aux questions ?</td><td class="opt">${radio('S2', r.S2, locked)}</td></tr>
+    <tr><td><b>Catégorie de devis</b></td><td><select id="mmDesign" ${locked ? 'disabled' : ''}><option value="">— choisir —</option>${Object.entries(DESIGNS).map(([k, v]) => `<option value="${k}" ${design === k ? 'selected' : ''}>${v}</option>`).join('')}</select></td></tr></table>
+    <div id="mmCrit"></div>
+    <div style="margin-top:10px"><textarea id="mmNote" placeholder="Notes / justification (facultatif)" ${locked ? 'disabled' : ''}>${esc(r.note || '')}</textarea></div>
+    <div class="row" style="margin-top:10px">${locked ? `<span class="pill done">Validé le ${esc((r.validated || '').slice(0, 16).replace('T', ' '))}</span><button class="b" id="mmUnlock">Modifier (la révision sera journalisée)</button>` : '<button class="b p" id="mmValidate">Valider et afficher la comparaison</button>'}</div>
+    <div id="mmCompare"></div>`;
+  box.innerHTML = html;
+  const critBox = () => { const dsg = $('mmDesign').value; if (!dsg) { $('mmCrit').innerHTML = '<p class="muted">Choisissez la catégorie de devis pour afficher ses 5 critères.</p>'; return; }
+    $('mmCrit').innerHTML = '<table>' + CRIT[dsg].map((c, i) => `<tr><td style="width:55%">${esc(c)}</td><td class="opt">${radio('Q' + (i + 1), (r.design === dsg ? r['Q' + (i + 1)] : ''), locked)}</td></tr>`).join('') + '</table>'; bindRadios(); };
+  const bindRadios = () => box.querySelectorAll('input[type=radio]').forEach(inp => inp.onchange = () => saveMm({ [inp.name]: inp.value }));
+  $('mmDesign').onchange = e => { saveMm({ design: e.target.value, Q1: '', Q2: '', Q3: '', Q4: '', Q5: '' }); critBox(); };
+  $('mmNote') && ($('mmNote').onchange = e => saveMm({ note: e.target.value }));
+  critBox(); bindRadios();
+  if ($('mmValidate')) $('mmValidate').onclick = () => { const x = state.mmat[id] || {}; const miss = ['S1', 'S2', 'design', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5'].filter(k => !x[k]); if (miss.length) return alert('Il manque : ' + miss.join(', ')); saveMm({ validated: now() }); openMm(id); renderMmList(); };
+  if ($('mmUnlock')) $('mmUnlock').onclick = () => { const x = state.mmat[id]; x.revisions = (x.revisions || []).concat([{ at: now(), previous: JSON.parse(JSON.stringify(Object.assign({}, x, { revisions: undefined }))) }]); delete x.validated; x.revised_after_reveal = true; persist(); openMm(id); renderMmList(); };
+  if (locked) showCompare(id);
+  box.scrollIntoView({ behavior: 'smooth' });
+}
+function saveMm(patch) { if (needRater()) return; const id = curMm.id; state.mmat[id] = Object.assign({}, state.mmat[id] || {}, patch, { rater: state.rater, ts: now() }); persist(); }
+function showCompare(id) {
+  const r = state.mmat[id], m = M.find(x => x.id === id), l = m.llm; const same = (a, b) => a === b ? '<span class="agree">accord</span>' : '<span class="disagree">désaccord</span>';
+  const rows = [['Devis', DESIGNS[r.design] || r.design, DESIGNS[l.design] || l.design, same(r.design, l.design)], ['S1', ANS_FR[r.S1], ANS_FR[l.S1] || l.S1, same(r.S1, l.S1)], ['S2', ANS_FR[r.S2], ANS_FR[l.S2] || l.S2, same(r.S2, l.S2)]];
+  for (let i = 1; i <= 5; i++) rows.push(['Q' + i, ANS_FR[r['Q' + i]], ANS_FR[l['Q' + i]] || l['Q' + i], r.design === l.design ? same(r['Q' + i], l['Q' + i]) : '<span class="muted">devis différent</span>']);
+  const yes = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5'].filter(k => r[k] === 'Yes').length;
+  $('mmCompare').innerHTML = `<h3 style="margin:16px 0 6px;font-size:15px">Comparaison avec l'évaluation du modèle de langage</h3><table><tr><th></th><th>Vous</th><th>Modèle</th><th></th></tr>${rows.map(x => `<tr><td>${x[0]}</td><td>${esc(x[1] || '')}</td><td>${esc(x[2] || '')}</td><td>${x[3]}</td></tr>`).join('')}
+    <tr><td>Critères « Oui »</td><td>${yes}/5</td><td>${esc(l.yes)}/5 (${esc(l.tier)})</td><td></td></tr></table>`;
+}
+
+// ---------- verify LLM judge
+const V = D.verify || window.RATER_VERIFY || []; let curVf = 0; state.verify = state.verify || {};
+const DEC_FR = { include: 'Inclure', exclude: 'Exclure', uncertain: 'Incertain' };
+function renderVf() {
+  if (!V.length) { $('vfCount').textContent = 'Aucune décision du juge LLM chargée pour le moment.'; $('vfRec').innerHTML = ''; return; }
+  const done = V.filter(r => state.verify[r.id] && state.verify[r.id].agree !== undefined).length;
+  $('vfCount').textContent = done + ' / ' + V.length + ' décisions vérifiées'; $('vfBar').style.width = (100 * done / V.length) + '%';
+  const r = V[curVf], v = state.verify[r.id] || {}; vfShownAt = Date.now();
+  $('vfRec').innerHTML = `<div class="muted">Vérification ${curVf + 1} / ${V.length} · ${esc(r.id)}</div>
+    <div class="rec-title">${esc(r.title)}</div><div class="muted">${esc(r.journal || '')}${r.year ? ' · ' + esc(r.year) : ''}</div>
+    <div class="abstract">${r.abstract ? esc(r.abstract) : '<i class="muted">Pas de résumé.</i>'}</div>
+    <div class="card" style="background:var(--blue-soft);margin:10px 0"><b>Décision du juge LLM : ${esc(DEC_FR[r.llm_decision] || r.llm_decision)}</b>${r.llm_reason ? ' — ' + esc(r.llm_reason) : ''}<div class="muted">${esc(r.llm_rationale || '')}</div></div>
+    <div class="row dec"><button class="inc ${v.agree === true ? 'on' : ''}" id="vfYes">D'accord (A)</button><button class="exc ${v.agree === false ? 'on' : ''}" id="vfNo">Pas d'accord (D)</button></div>
+    <div class="row ${v.agree === false ? '' : 'hide'}" id="vfFix" style="margin-top:10px"><label>Votre décision :</label><select id="vfDec"><option value="">—</option>${['include', 'exclude', 'uncertain'].map(x => `<option value="${x}" ${v.decision === x ? 'selected' : ''}>${DEC_FR[x]}</option>`).join('')}</select></div>`;
+  $('vfYes').onclick = () => vfSet(true); $('vfNo').onclick = () => vfSet(false);
+  $('vfDec').onchange = e => { const id = V[curVf].id; state.verify[id] = Object.assign({}, state.verify[id], { decision: e.target.value, ts: now() }); persist(); };
+}
+let vfShownAt = Date.now();
+$('vfRestart').onclick = () => { if (!Object.keys(state.verify).length) return; if (!confirm('Archiver les ' + Object.keys(state.verify).length + ' réponses actuelles et recommencer la vérification à zéro ?')) return; state.verify_archive = (state.verify_archive || []).concat([{ archived: now(), answers: state.verify }]); state.verify = {}; curVf = 0; persist(); renderVf(); };
+function vfSet(agree) { if (needRater()) return; const r = V[curVf]; state.verify[r.id] = Object.assign({}, state.verify[r.id] || {}, { agree, decision: agree ? r.llm_decision : (state.verify[r.id] || {}).decision || '', rater: state.rater, ts: now(), seconds_on_item: Math.round((Date.now() - vfShownAt) / 1000) }); persist(); renderVf(); if (agree) setTimeout(() => { if (curVf < V.length - 1) { curVf++; renderVf(); window.scrollTo(0, 0); } }, 150); }
+$('vfPrev').onclick = () => { curVf = Math.max(0, curVf - 1); renderVf(); }; $('vfNext').onclick = () => { curVf = Math.min(V.length - 1, curVf + 1); renderVf(); };
+document.addEventListener('keydown', e => { if ($('sec-vf').classList.contains('hide') || ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return; const k = e.key.toLowerCase(); if (k === 'a') vfSet(true); else if (k === 'd') vfSet(false); else if (e.key === 'ArrowRight') $('vfNext').click(); else if (e.key === 'ArrowLeft') $('vfPrev').click(); });
+
+renderScr(); renderMmList();if (location.hash === '#vf') showTab('vf'); else if (location.hash === '#mm') showTab('mm');
+if (!fileHandle) setSave(Object.keys(state.screening).length || Object.keys(state.mmat).length ? 'Progression retrouvée (navigateur) — reliez un fichier' : 'Non relié à un fichier', 'warn');
+</script>
+</body>
+</html>
